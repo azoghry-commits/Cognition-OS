@@ -3,7 +3,7 @@
   "agent_id": "AG-02",
   "name": "RICE Scoring",
   "category": "Decision Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -24,8 +24,31 @@
     "time_horizon"
   ],
   "activation_conditions": [
-    "User requests RICE Scoring or the orchestrator justifies it against the problem."
+    "The host selects RICE Scoring to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied initiatives or an explicit UNKNOWN gap before analysis.",
+    "Supplied reach_unit or an explicit UNKNOWN gap before analysis.",
+    "Supplied effort_unit or an explicit UNKNOWN gap before analysis.",
+    "Supplied time_horizon or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "initiatives",
+      "reach_unit",
+      "effort_unit",
+      "time_horizon"
+    ],
+    "properties": {
+      "initiatives": {},
+      "reach_unit": {},
+      "effort_unit": {},
+      "time_horizon": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-02.schema.json",
   "required_inputs": [
     "initiatives",
     "reach_unit",

@@ -6,8 +6,8 @@ import zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'plugin.json').read_text())['version']
-RUNTIME_DIRS=['skills','cognitive-core','cognition','schemas','references','templates','assets','agents','adapters']
-SCRIPTS=['scripts/cognition.py']
+RUNTIME_DIRS=['skills','cognitive-core','cognition','schemas','references','templates','assets','agents','adapters','hooks']
+SCRIPTS=['scripts/cognition.py','scripts/check_artifact.py']
 RUNTIME_FILES=['plugin.json','.claude-plugin/plugin.json','.codex-plugin/plugin.json','README.md','CHANGELOG.md']
 
 def runtime_files():

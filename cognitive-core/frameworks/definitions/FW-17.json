@@ -3,7 +3,7 @@
   "agent_id": "AG-17",
   "name": "Theory of Constraints (TOC)",
   "category": "Systems Thinking Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -23,8 +23,28 @@
     "demand"
   ],
   "activation_conditions": [
-    "User requests Theory of Constraints (TOC) or the orchestrator justifies it against the problem."
+    "The host selects Theory of Constraints (TOC) to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied process or an explicit UNKNOWN gap before analysis.",
+    "Supplied capacities or an explicit UNKNOWN gap before analysis.",
+    "Supplied demand or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "process",
+      "capacities",
+      "demand"
+    ],
+    "properties": {
+      "process": {},
+      "capacities": {},
+      "demand": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-17.schema.json",
   "required_inputs": [
     "process",
     "capacities",

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cognition-os",
-  "version": "0.1.0",
-  "description": "Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.",
+  "version": "0.2.0",
+  "description": "Selective cognitive assistance for host models and agents: 50 mental models, evidence checks and bounded advisory.",
   "author": {
     "name": "Cognition OS project"
   },
@@ -10,19 +10,19 @@
     "com.openai": {
       "interface": {
         "displayName": "Cognition OS",
-        "shortDescription": "Structured analysis with evidence and validated calculations",
-        "longDescription": "Native skills share one catalog of 50 mental models and 52 logical specialist roles. Optional local Python helpers validate calculations and project cases.",
+        "shortDescription": "Selective cognitive assistance for host agents",
+        "longDescription": "Agent-facing cognitive capabilities, one shared 50-model core, bounded advisory and optional deterministic artifact checks. The host owns the task and deliverable.",
         "developerName": "Cognition OS project",
         "category": "Productivity",
         "defaultPrompt": [
-          "Analyze this problem with Cognition OS.",
-          "Use Kepner-Tregoe to diagnose this deviation.",
-          "Teach me MECE with an infrastructure example."
+          "Check the installed cognitive capabilities.",
+          "Diagnose this deviation using supplied evidence."
         ],
         "composerIcon": "./assets/icon.svg",
         "logo": "./assets/icon.svg"
       },
-      "onboardingSkill": "./skills/setup/SKILL.md"
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "hooks": "./hooks/codex/hooks.json"
     }
   }
 }

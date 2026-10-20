@@ -3,7 +3,7 @@
   "agent_id": "AG-44",
   "name": "SCQA Framework",
   "category": "Communication Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -22,8 +22,25 @@
     "context"
   ],
   "activation_conditions": [
-    "User requests SCQA Framework or the orchestrator justifies it against the problem."
+    "The host selects SCQA Framework to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied problem or an explicit UNKNOWN gap before analysis.",
+    "Supplied context or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "problem",
+      "context"
+    ],
+    "properties": {
+      "problem": {},
+      "context": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-44.schema.json",
   "required_inputs": [
     "problem",
     "context"

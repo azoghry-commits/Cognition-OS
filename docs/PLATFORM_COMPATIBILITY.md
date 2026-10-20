@@ -1,5 +1,7 @@
 # Platform compatibility, checked 2026-10-20
 
+**Rebuild V4.1:** pemeriksaan dokumentasi resmi terbaru dan batas adapter kandidat dicatat di [PLATFORM_VERIFICATION_V4_1.md](PLATFORM_VERIFICATION_V4_1.md). Paket 0.2.0 memiliki hook advisory opsional; kalimat package has no hooks pada catatan baseline berikut hanya merujuk 0.1.0.
+
 Documentation establishes the advertised integration path; local observation establishes only what was tested. Installed clients observed: Claude Code 2.1.201 and codex-cli 0.153.0. Desktop product branding is not proof that every documented feature is active on this account.
 
 Status vocabulary: SUPPORTED, SUPPORTED_WITH_LIMITATIONS, UNSUPPORTED, NOT_VERIFIED, REQUIRES_OPTIONAL_DEPENDENCY. None of the documented support labels means this package passed all native behavior tests.

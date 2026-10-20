@@ -1,0 +1,295 @@
+[
+  {
+    "id": "simple-code",
+    "ordinary_prompt": "Rename this label from Save to Apply.",
+    "task_context": {
+      "objective": "Rename this label from Save to Apply.",
+      "task_type": "simple_edit",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "translation",
+    "ordinary_prompt": "Translate this sentence into English.",
+    "task_context": {
+      "objective": "Translate this sentence into English.",
+      "task_type": "translation",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "formatting",
+    "ordinary_prompt": "Format this list alphabetically.",
+    "task_context": {
+      "objective": "Format this list alphabetically.",
+      "task_type": "formatting",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "simple-math",
+    "ordinary_prompt": "What is 2 + 2?",
+    "task_context": {
+      "objective": "What is 2 + 2?",
+      "task_type": "arithmetic",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "documentation",
+    "ordinary_prompt": "Write a long explanation of this supplied function.",
+    "task_context": {
+      "objective": "Write a long explanation of this supplied function.",
+      "task_type": "documentation",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "architecture",
+    "ordinary_prompt": "Compare bounded retries and a dead-letter queue for this worker.",
+    "task_context": {
+      "objective": "Compare bounded retries and a dead-letter queue for this worker.",
+      "task_type": "architecture",
+      "complexity": "medium",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "STANDARD_AUGMENTATION",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "debugging",
+    "ordinary_prompt": "Investigate recurring database failures using these logs.",
+    "task_context": {
+      "objective": "Investigate recurring database failures using these logs.",
+      "task_type": "debugging",
+      "complexity": "medium",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      },
+      "evidence_sufficiency": "partial"
+    },
+    "expected_policy": "STANDARD_AUGMENTATION",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "db-incident",
+    "ordinary_prompt": "Assess recovery alternatives for this critical database incident.",
+    "task_context": {
+      "objective": "Assess recovery alternatives for this critical database incident.",
+      "task_type": "debugging",
+      "complexity": "high",
+      "risk": "critical",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "CRITICAL_REVIEW",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "security-review",
+    "ordinary_prompt": "Review this authorization boundary against the supplied requirements.",
+    "task_context": {
+      "objective": "Review this authorization boundary against the supplied requirements.",
+      "task_type": "artifact_review",
+      "complexity": "high",
+      "risk": "high",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "DEEP_ADVISORY",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "strategy",
+    "ordinary_prompt": "Compare the supplied alternatives with their financial assumptions.",
+    "task_context": {
+      "objective": "Compare the supplied alternatives with their financial assumptions.",
+      "task_type": "strategic_decision",
+      "complexity": "medium",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "STANDARD_AUGMENTATION",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "implementation",
+    "ordinary_prompt": "Plan these dependent implementation steps and failure checks.",
+    "task_context": {
+      "objective": "Plan these dependent implementation steps and failure checks.",
+      "task_type": "implementation",
+      "complexity": "medium",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      }
+    },
+    "expected_policy": "STANDARD_AUGMENTATION",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "math-model",
+    "ordinary_prompt": "Validate these expected-value assumptions and calculate the result.",
+    "task_context": {
+      "objective": "Validate these expected-value assumptions and calculate the result.",
+      "task_type": "arithmetic",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      },
+      "requested_frameworks": [
+        "FW-04"
+      ]
+    },
+    "expected_policy": "LIGHT_AUGMENTATION",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "completed-analysis",
+    "ordinary_prompt": "Continue implementation; architecture is already sufficiently analyzed.",
+    "task_context": {
+      "objective": "Continue implementation; architecture is already sufficiently analyzed.",
+      "task_type": "architecture",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      },
+      "analysis_sufficient": true
+    },
+    "expected_policy": "PASS_THROUGH",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "contradiction",
+    "ordinary_prompt": "Reconcile contradictory observations of retry amplification.",
+    "task_context": {
+      "objective": "Reconcile contradictory observations of retry amplification.",
+      "task_type": "architecture",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      },
+      "evidence_sufficiency": "contradictory"
+    },
+    "expected_policy": "DEEP_ADVISORY",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "optional-unavailable",
+    "ordinary_prompt": "Compare the architecture using available native reasoning.",
+    "task_context": {
+      "objective": "Compare the architecture using available native reasoning.",
+      "task_type": "architecture",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": false
+      }
+    },
+    "expected_policy": "DEGRADED",
+    "expected_status": "PLANNED",
+    "host_status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "required-check",
+    "ordinary_prompt": "Validate this artifact before delivery; the mandatory validator is unavailable.",
+    "task_context": {
+      "objective": "Validate this artifact before delivery; the mandatory validator is unavailable.",
+      "task_type": "artifact_review",
+      "complexity": "low",
+      "risk": "normal",
+      "capabilities": {
+        "skills": true,
+        "deep_advisory": true,
+        "deterministic_validation": false
+      },
+      "required_validation": true
+    },
+    "expected_policy": "DEGRADED",
+    "expected_status": "BLOCKED",
+    "host_status": "NOT_RUN_ON_HOST"
+  }
+]

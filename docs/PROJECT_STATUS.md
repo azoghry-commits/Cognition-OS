@@ -2,6 +2,8 @@
 
 ## Arah aktif V4.1 — 2026-10-20
 
+**Update rebuild:** paket kandidat 0.2.0 kini mengimplementasikan governor, request/result V4.1, deep-plan terbatas, adapter hook dan 12 skill. Kontrak artifact framework 3.1 dipertahankan untuk kompatibilitas. Lihat [status rebuild dan gate](REBUILD_STATUS_V4_1.md), [arsitektur implementasi](HYBRID_ARCHITECTURE.md), [audit delta sumber](SOURCE_TRANSFORMATION_V4_1.md) dan [verifikasi platform](PLATFORM_VERIFICATION_V4_1.md). Catatan konsep awal di bawah adalah riwayat sebelum rebuild; bukan status implementasi terakhir.
+
 Konsep terbaru adalah **Hybrid Agent Cognitive Augmentation Layer**: model-selected assistance sebagai jalur utama, validasi deterministik melalui event yang didukung, dan deep advisory kondisional. Host tetap pemilik tugas dan deliverable. Kajian prompt serta gap checkout selesai dalam [CONCEPT_V4_1.md](CONCEPT_V4_1.md); rencana eksekusi Phase 0–8 ada di [V4_1_MIGRATION_PLAN.md](V4_1_MIGRATION_PLAN.md).
 
 Status target: `SOURCE_DERIVED` / `PROPOSED`. Runtime tetap paket 0.1.0, kontrak 3.1; governor hybrid, hook, kontrak advisory baru dan benchmark A/B/C/D belum diterapkan. Permintaan sesi ini mencakup pemahaman konsep, dokumentasi dan proses Git. Evidence pengujian lama di bawah tidak menjadi bukti V4.1.

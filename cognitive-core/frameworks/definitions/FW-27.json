@@ -3,7 +3,7 @@
   "agent_id": "AG-27",
   "name": "Porter's Five Forces",
   "category": "Strategic Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -22,8 +22,25 @@
     "market_evidence"
   ],
   "activation_conditions": [
-    "User requests Porter's Five Forces or the orchestrator justifies it against the problem."
+    "The host selects Porter's Five Forces to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied industry or an explicit UNKNOWN gap before analysis.",
+    "Supplied market_evidence or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "industry",
+      "market_evidence"
+    ],
+    "properties": {
+      "industry": {},
+      "market_evidence": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-27.schema.json",
   "required_inputs": [
     "industry",
     "market_evidence"

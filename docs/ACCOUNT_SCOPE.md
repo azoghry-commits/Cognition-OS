@@ -2,6 +2,8 @@
 
 Updated 2026-10-20 after the user's clarification.
 
+V4.1 update: the same authorized Codex-only installation has been updated through the native CLI to package 0.2.0 and reports installed/enabled. Its installed inventory and helper checks are recorded in [v4-1-codex-installation.json](evidence/v4-1-codex-installation.json). A rollback snapshot of 0.1.0 is retained locally. Desktop model selection, hook trust/event delivery and host outcome benchmarks remain unverified. The 0.1.0 records below describe the earlier baseline.
+
 The user specifically identified **ChatGPT Desktop** as the intended host. See DESKTOP_QUICKSTART.md. CLI installation and helper checks are engineering evidence; they do not certify activation in that desktop surface.
 
 - User-provided entitlement: ChatGPT Plus / Codex subscription; Claude Free. The subscription tier is user-reported, not inferred from a stored credential.

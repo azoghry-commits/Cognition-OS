@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "specification_version",
+    "request_id",
+    "host_id",
+    "agent_role",
+    "task_context",
+    "capability",
+    "evidence_references",
+    "constraints",
+    "authorization_scope"
+  ],
+  "properties": {
+    "specification_version": {
+      "const": "4.1"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "host_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_context": {
+      "type": "object",
+      "required": [
+        "objective",
+        "task_type"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_type": {
+          "enum": [
+            "simple_edit",
+            "translation",
+            "formatting",
+            "arithmetic",
+            "debugging",
+            "architecture",
+            "strategic_decision",
+            "artifact_review",
+            "documentation",
+            "implementation",
+            "learning",
+            "other"
+          ]
+        },
+        "risk": {
+          "enum": [
+            "normal",
+            "high",
+            "critical",
+            "unknown"
+          ]
+        },
+        "complexity": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "evidence_sufficiency": {
+          "enum": [
+            "sufficient",
+            "partial",
+            "missing",
+            "contradictory",
+            "unknown"
+          ]
+        },
+        "capabilities": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "skills": {
+              "type": "boolean"
+            },
+            "deterministic_validation": {
+              "type": "boolean"
+            },
+            "deep_advisory": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "augmentation_relevant": {
+          "type": "boolean"
+        },
+        "analysis_sufficient": {
+          "type": "boolean"
+        },
+        "required_validation": {
+          "type": "boolean"
+        },
+        "deep_requested": {
+          "type": "boolean"
+        },
+        "requested_frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^FW-(0[1-9]|[1-4][0-9]|50)$"
+          },
+          "maxItems": 50,
+          "uniqueItems": true
+        },
+        "completed_frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^FW-(0[1-9]|[1-4][0-9]|50)$"
+          },
+          "maxItems": 50,
+          "uniqueItems": true
+        },
+        "budget": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "framework_invocations": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "subagent_calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "debate_rounds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool_calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "computation_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "context_tokens": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 100
+        },
+        "relevant_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 100
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    },
+    "authorization_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 100
+    }
+  },
+  "additionalProperties": false
+}

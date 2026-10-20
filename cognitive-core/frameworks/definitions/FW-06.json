@@ -3,7 +3,7 @@
   "agent_id": "AG-06",
   "name": "Pareto Principle (80/20)",
   "category": "Decision Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -22,8 +22,25 @@
     "unit"
   ],
   "activation_conditions": [
-    "User requests Pareto Principle (80/20) or the orchestrator justifies it against the problem."
+    "The host selects Pareto Principle (80/20) to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied contributions or an explicit UNKNOWN gap before analysis.",
+    "Supplied unit or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "contributions",
+      "unit"
+    ],
+    "properties": {
+      "contributions": {},
+      "unit": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-06.schema.json",
   "required_inputs": [
     "contributions",
     "unit"

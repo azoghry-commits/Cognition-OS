@@ -1,5 +1,7 @@
 # Unified architecture
 
+**Implementasi terbaru:** [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md) mendeskripsikan rebuild V4.1 / kandidat 0.2.0 dan batas verifikasi native. Bagian berikut mempertahankan riwayat rancangan dan arsitektur baseline.
+
 **Arah target V4.1:** satu Cognitive Core dengan adapter Claude/Codex, model-selected assistance, event-driven deterministic validation, dan deep advisory kondisional. Host memiliki eksekusi dan deliverable; governor dapat memilih `PASS_THROUGH`. Lihat [diagram dan kontrak target](CONCEPT_V4_1.md) serta [rencana migrasi](V4_1_MIGRATION_PLAN.md).
 
 Bagian berikut mendeskripsikan **implementasi baseline 3.1 / paket 0.1.0**. Belum ada governor hybrid atau hook terdaftar; diagram ini tidak menyatakan V4.1 sudah diimplementasikan.

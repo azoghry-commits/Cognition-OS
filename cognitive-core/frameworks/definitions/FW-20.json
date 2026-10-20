@@ -3,7 +3,7 @@
   "agent_id": "AG-20",
   "name": "Second-Order Thinking",
   "category": "Systems Thinking Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -23,8 +23,28 @@
     "horizons"
   ],
   "activation_conditions": [
-    "User requests Second-Order Thinking or the orchestrator justifies it against the problem."
+    "The host selects Second-Order Thinking to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied action or an explicit UNKNOWN gap before analysis.",
+    "Supplied actors or an explicit UNKNOWN gap before analysis.",
+    "Supplied horizons or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "action",
+      "actors",
+      "horizons"
+    ],
+    "properties": {
+      "action": {},
+      "actors": {},
+      "horizons": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-20.schema.json",
   "required_inputs": [
     "action",
     "actors",

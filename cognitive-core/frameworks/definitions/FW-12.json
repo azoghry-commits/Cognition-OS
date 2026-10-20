@@ -3,7 +3,7 @@
   "agent_id": "AG-12",
   "name": "Fishbone (Ishikawa) Diagram",
   "category": "Problem Solving Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -22,8 +22,25 @@
     "operational_context"
   ],
   "activation_conditions": [
-    "User requests Fishbone (Ishikawa) Diagram or the orchestrator justifies it against the problem."
+    "The host selects Fishbone (Ishikawa) Diagram to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied effect or an explicit UNKNOWN gap before analysis.",
+    "Supplied operational_context or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "effect",
+      "operational_context"
+    ],
+    "properties": {
+      "effect": {},
+      "operational_context": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-12.schema.json",
   "required_inputs": [
     "effect",
     "operational_context"

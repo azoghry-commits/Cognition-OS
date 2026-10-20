@@ -1,5 +1,7 @@
 # Orchestration design
 
+**Update implementasi:** governor dan deep-plan V4.1 ada pada `cognition/augmentation.py`; [arsitektur hybrid](HYBRID_ARCHITECTURE.md) menjelaskan policy, budget dan kontrak baru. Mode planner di bawah dipertahankan hanya untuk compatibility action `plan`. Pemilihan model oleh host tetap perlu evidence native.
+
 **Delta V4.1 yang belum diimplementasikan:** governor menilai relevansi, risiko, kompleksitas, kecukupan bukti, izin, budget dan duplikasi; menyediakan tujuh kebijakan internal termasuk `PASS_THROUGH`; mengembalikan advisory ringkas ke host. AG-51 mengoordinasikan analisis terpilih, sementara host tetap pemilik tugas. Mode dan default di bawah adalah baseline 3.1. Lihat [kajian konsep](CONCEPT_V4_1.md) dan [rencana migrasi](V4_1_MIGRATION_PLAN.md).
 
 AG-51 collects objective and only decision-relevant missing context, reviewing domain/type/criticality/complexity/reversibility/evidence/stakeholders/exposure/risks/time/output/tools/budget. The Python planner is a disclosed keyword heuristic with explicit framework selection precedence. Host judgment can revise it. AUTO is an efficient default heuristic, not a trained autonomous classifier.

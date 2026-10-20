@@ -3,7 +3,7 @@
   "agent_id": "AG-46",
   "name": "Stakeholder Grid",
   "category": "Communication Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -23,8 +23,28 @@
     "influence"
   ],
   "activation_conditions": [
-    "User requests Stakeholder Grid or the orchestrator justifies it against the problem."
+    "The host selects Stakeholder Grid to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied stakeholders or an explicit UNKNOWN gap before analysis.",
+    "Supplied interests or an explicit UNKNOWN gap before analysis.",
+    "Supplied influence or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "stakeholders",
+      "interests",
+      "influence"
+    ],
+    "properties": {
+      "stakeholders": {},
+      "interests": {},
+      "influence": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-46.schema.json",
   "required_inputs": [
     "stakeholders",
     "interests",

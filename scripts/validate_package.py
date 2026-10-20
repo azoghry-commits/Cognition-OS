@@ -22,7 +22,11 @@ def validate():
     for path in ['logo','composerIcon']:
         assert (ROOT/manifest['extensions']['com.openai']['interface'][path]).is_file()
     catalog=e.registry()
-    for entry in catalog:jsonschema.validate(e.framework(entry['id']),schemas['framework.schema'])
+    for entry in catalog:
+        model=e.framework(entry['id'])
+        jsonschema.validate(model,schemas['framework.schema'])
+        jsonschema.Draft202012Validator.check_schema(model['input_schema'])
+        assert (ROOT/model['output_schema']).is_file()
     for agent in e.read_json(ROOT/'cognitive-core/agents/registry.json')['agents']:jsonschema.validate(agent,schemas['agent.schema'])
     skill_paths=list((ROOT/'skills').glob('*/SKILL.md'))
     for p in skill_paths:
@@ -34,7 +38,16 @@ def validate():
         assert (p.parent/'../../cognitive-core/frameworks/definitions/FW-11.json').resolve().is_file()
     core_code='\n'.join(p.read_text() for p in (ROOT/'cognition').glob('*.py'))
     assert not re.search(r'\b(eval|exec|subprocess|requests|urllib)\b',core_code)
-    assert not (ROOT/'mcp.json').exists() and not (ROOT/'hooks').exists()
+    assert not (ROOT/'mcp.json').exists()
+    for platform in ['codex','claude']:
+        config=e.read_json(ROOT/f'hooks/{platform}/hooks.json')
+        assert set(config['hooks'])=={'PostToolUse'}
+        handlers=config['hooks']['PostToolUse']
+        assert len(handlers)==1 and handlers[0]['matcher']=='Write|Edit|apply_patch'
+        assert handlers[0]['hooks'][0]['type']=='command'
+        assert handlers[0]['hooks'][0]['timeout']==3
+    assert manifest['extensions']['com.openai']['hooks']=='./hooks/codex/hooks.json'
+    assert (ROOT/'scripts/check_artifact.py').is_file()
     required=['SOURCE_ANALYSIS','REQUIREMENTS_TRACEABILITY','PLATFORM_COMPATIBILITY','ARCHITECTURE','ARCHITECTURE_DECISIONS','MENTAL_MODEL_REGISTRY','AGENT_REGISTRY','SKILL_SPECIFICATIONS','ORCHESTRATION_DESIGN','DATA_CONTRACTS','MATHEMATICAL_VALIDATION','DECISION_PROVENANCE','MEMORY_ARCHITECTURE','MCP_DECISION','SECURITY_MODEL','PERFORMANCE_EVALUATION','TEST_PLAN','INSTALLATION_CLAUDE','INSTALLATION_CODEX','USER_GUIDE','TROUBLESHOOTING','RELEASE_CHECKLIST']
     for n in required:assert (ROOT/f'docs/{n}.md').is_file(),n
     return {'status':'TESTED','full_schema_validator':importlib.metadata.version('jsonschema'),'frameworks':len(catalog),'logical_agents':52,'skills':len(skill_paths),'required_documents':len(required),'note':'Structural validation; native semantic behavior is a separate gate.'}

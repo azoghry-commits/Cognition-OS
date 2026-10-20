@@ -5,6 +5,15 @@ import unittest
 from cognition import engine as e
 
 class ContractTests(unittest.TestCase):
+    def test_all_models_define_v4_1_agent_consumable_contracts(self):
+        for entry in e.registry():
+            model=e.framework(entry['id'])
+            with self.subTest(framework=entry['id']):
+                self.assertTrue(model['preconditions'])
+                self.assertEqual(model['input_schema']['required'],model['required_inputs'])
+                self.assertTrue((e.ROOT/model['output_schema']).is_file())
+                self.assertIn('host',model['activation_conditions'][0].lower())
+
     def test_catalog_exact_source_identities(self):
         rows={}
         for line in (e.ROOT/'Cognition Os Master Blueprint.md').read_text(encoding='utf-8').splitlines():

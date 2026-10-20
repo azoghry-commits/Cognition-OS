@@ -3,7 +3,7 @@
   "agent_id": "AG-07",
   "name": "Cost-Benefit & Marginal Utility",
   "category": "Decision Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -24,8 +24,31 @@
     "time_period"
   ],
   "activation_conditions": [
-    "User requests Cost-Benefit & Marginal Utility or the orchestrator justifies it against the problem."
+    "The host selects Cost-Benefit & Marginal Utility to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied costs or an explicit UNKNOWN gap before analysis.",
+    "Supplied benefits or an explicit UNKNOWN gap before analysis.",
+    "Supplied unit or an explicit UNKNOWN gap before analysis.",
+    "Supplied time_period or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "costs",
+      "benefits",
+      "unit",
+      "time_period"
+    ],
+    "properties": {
+      "costs": {},
+      "benefits": {},
+      "unit": {},
+      "time_period": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-07.schema.json",
   "required_inputs": [
     "costs",
     "benefits",

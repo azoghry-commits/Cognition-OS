@@ -2,6 +2,8 @@
 
 ## Rencana aktif: V4.1
 
+**Rebuild dilaksanakan:** sumber generator sudah diselaraskan dan paket kandidat 0.2.0 dibangun. Kemajuan serta bukti per Phase 0–8 ada di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Pernyataan belum dimulai pada catatan awal berikut adalah riwayat kajian sebelum pengguna mengotorisasi rebuild.
+
 Acuan terbaru adalah [kajian konsep V4.1](CONCEPT_V4_1.md) dan [rencana migrasi Phase 0–8](V4_1_MIGRATION_PLAN.md). Urutan: audit delta sumber → verifikasi host → desain governor/kontrak/tiga jalur → prototype minimum dan satu hook yang didukung → kelengkapan core → deep advisory → uji dua adapter → evaluasi A/B/C/D → hardening.
 
 Permintaan 2026-10-20 ditangani sebagai kajian konsep dan dokumentasi. Implementasi hybrid belum dimulai; paket tetap 0.1.0. Perbarui sumber generator sebelum regenerasi agar tidak menimpa arah V4.1 dengan baseline. Gate dan evidence harus dinilai per fase serta per host.

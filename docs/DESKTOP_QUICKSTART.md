@@ -2,6 +2,8 @@
 
 The user's target is ChatGPT Desktop on Windows, using the existing ChatGPT Plus/Codex login. CLI commands used during engineering are not the ordinary operating interface.
 
+The local Codex installation now reports package **0.2.0** installed/enabled with 12 model-facing skills. See [installation evidence](evidence/v4-1-codex-installation.json). A fresh chat or application refresh is needed to observe the new package; the current chat's loaded skills can still refer to 0.1.0. Review the host's optional hook trust prompt if offered; no trust decision was changed by the build or installer.
+
 1. Save any ongoing work and restart ChatGPT Desktop to refresh local plugin discovery.
 2. Open a new Codex or supported local Work chat, then open Plugins Directory.
 3. Select the local source named **Cognition OS local** or **Cognition OS local development** and locate **Cognition OS**. Confirm it is installed/enabled; if the directory offers Install, use that native action.

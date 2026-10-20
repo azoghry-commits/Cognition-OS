@@ -1,0 +1,135 @@
+{
+  "scope": "Deterministic routing rules only. Task context labels are authored fixtures, not inferred model behavior.",
+  "specification_version": "4.1",
+  "rule_cases": 16,
+  "rule_cases_passed": 16,
+  "results": [
+    {
+      "id": "simple-code",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "translation",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "formatting",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "simple-math",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "documentation",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "architecture",
+      "actual_policy": "STANDARD_AUGMENTATION",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "debugging",
+      "actual_policy": "STANDARD_AUGMENTATION",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "db-incident",
+      "actual_policy": "CRITICAL_REVIEW",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "security-review",
+      "actual_policy": "DEEP_ADVISORY",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "strategy",
+      "actual_policy": "STANDARD_AUGMENTATION",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "implementation",
+      "actual_policy": "STANDARD_AUGMENTATION",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "math-model",
+      "actual_policy": "LIGHT_AUGMENTATION",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "completed-analysis",
+      "actual_policy": "PASS_THROUGH",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "contradiction",
+      "actual_policy": "DEEP_ADVISORY",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "optional-unavailable",
+      "actual_policy": "DEGRADED",
+      "actual_status": "PLANNED",
+      "passed": true
+    },
+    {
+      "id": "required-check",
+      "actual_policy": "DEGRADED",
+      "actual_status": "BLOCKED",
+      "passed": true
+    }
+  ],
+  "native_skill_selection": "NOT_RUN_ON_HOST",
+  "host_experiments": {
+    "A": {
+      "configuration": "unaugmented host",
+      "status": "NOT_RUN",
+      "task_success": null,
+      "token_overhead": null,
+      "latency": null
+    },
+    "B": {
+      "configuration": "model-selected skills",
+      "status": "NOT_RUN",
+      "task_success": null,
+      "token_overhead": null,
+      "latency": null
+    },
+    "C": {
+      "configuration": "B + supported deterministic hooks",
+      "status": "NOT_RUN",
+      "task_success": null,
+      "token_overhead": null,
+      "latency": null
+    },
+    "D": {
+      "configuration": "C + conditional deep advisory",
+      "status": "NOT_RUN",
+      "task_success": null,
+      "token_overhead": null,
+      "latency": null
+    }
+  }
+}

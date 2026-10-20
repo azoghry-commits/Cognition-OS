@@ -1,0 +1,1310 @@
+{
+  "specification_version": "4.1",
+  "review_date": "2026-10-20",
+  "classification": "SOURCE_DERIVED + ENGINEERING_ADAPTATION",
+  "sources": {
+    "Cognition_OS_Strategic_Intelligence.pdf": {
+      "bytes": 13022106,
+      "sha256": "a68f77beb333fa17a863d66721823aa8c2cde1563aa7f96c62d907534c9426e1"
+    },
+    "Cognition Os Master Blueprint.md": {
+      "bytes": 95435,
+      "sha256": "e3bdb456e2fcae3449db8c57fef9469c14895cee0eac07cffffb84299e973405"
+    }
+  },
+  "blueprint_lines_read": 1362,
+  "blueprint_headings": [
+    {
+      "line": 10,
+      "heading": "## Ringkasan Struktur Dokumen (Master Blueprint Overview)"
+    },
+    {
+      "line": 25,
+      "heading": "## Bagian 1: Visi Produk, Paradigma Tripartit & Penyempurnaan Cetak Biru (PRD)"
+    },
+    {
+      "line": 27,
+      "heading": "### 1.1 Paradigma Baru Pemikiran Strategis: Sinergi Tripartit Berbasis Komputasi"
+    },
+    {
+      "line": 39,
+      "heading": "### 1.2 Audit, Koreksi & Penyempurnaan atas Dokumen Konsep Awal"
+    },
+    {
+      "line": 69,
+      "heading": "### 1.3 Target Pengguna & Metrik Keberhasilan Produk (Product KPIs)"
+    },
+    {
+      "line": 81,
+      "heading": "## Bagian 2: Arsitektur Sistem 5-Lapis (5-Layer Full-Stack Architecture) & Tech Stack"
+    },
+    {
+      "line": 83,
+      "heading": "### 2.1 Struktur Arsitektur 5-Lapis (5-Layer Cognitive Augmentation Stack)"
+    },
+    {
+      "line": 129,
+      "heading": "### 2.2 Spesifikasi Tech Stack Produksi (Full-Stack SaaS)"
+    },
+    {
+      "line": 148,
+      "heading": "## Bagian 3: Spesifikasi Fungsional, UI/UX Interaktif & Alur Kerja 5 Fase"
+    },
+    {
+      "line": 152,
+      "heading": "### 3.1 Arsitektur 4 Modul Utama Ruang Kerja (OS Workspace Modules)"
+    },
+    {
+      "line": 165,
+      "heading": "### 3.2 Spesifikasi Detail 5 Fase Alur Kerja Pengguna (End-to-End User Journey)"
+    },
+    {
+      "line": 167,
+      "heading": "#### Fase 1: Problem Ingestion Wizard (Dari Ambiguitas Menuju Ketajaman Analitik)"
+    },
+    {
+      "line": 182,
+      "heading": "#### Fase 2: Framework Stack Builder (Merangkai Algoritma Pemecahan Masalah)"
+    },
+    {
+      "line": 194,
+      "heading": "#### Fase 3: The Thinking Canvas (Isolasi Masalah Tanpa Blind Spots)"
+    },
+    {
+      "line": 205,
+      "heading": "#### Fase 4: Adversarial Debate Mode (Sistem Kekebalan terhadap Bias Grup)"
+    },
+    {
+      "line": 216,
+      "heading": "#### Fase 5: Scenario Simulator (Mengubah Tebakan Menjadi Probabilitas Absolut)"
+    },
+    {
+      "line": 228,
+      "heading": "### 3.3 Spesifikasi Modul Pendukung (Guardrails, Synthesis, Memory & Mastery)"
+    },
+    {
+      "line": 266,
+      "heading": "## Bagian 4: Katalog Lengkap 50 Model Mental (8 Kategori) & 52 Agen AI Spesialis"
+    },
+    {
+      "line": 270,
+      "heading": "### 4.1 Tabel Spesifikasi 50 Model Mental & Agen AI Spesialis (AG-01 s/d AG-50)"
+    },
+    {
+      "line": 272,
+      "heading": "#### Kategori 1: Decision Models (8 Model Mental — Fokus: Prioritas & Kalkulus Probabilitas)"
+    },
+    {
+      "line": 285,
+      "heading": "#### Kategori 2: Problem Solving Models (8 Model Mental — Fokus: Akar Penyebab & Optimasi Proses)"
+    },
+    {
+      "line": 298,
+      "heading": "#### Kategori 3: Systems Thinking Models (7 Model Mental — Fokus: Dinamika Loop & Titik Ungkit)"
+    },
+    {
+      "line": 310,
+      "heading": "#### Kategori 4: Strategic Models (8 Model Mental — Fokus: Inovasi Nilai & Analisis Industri)"
+    },
+    {
+      "line": 323,
+      "heading": "#### Kategori 5: Innovation Models (6 Model Mental — Fokus: Desain Berpusat pada Manusia & R&D)"
+    },
+    {
+      "line": 334,
+      "heading": "#### Kategori 6: Execution Models (5 Model Mental — Fokus: Tata Kelola RACI & Alur Kerja GTD)"
+    },
+    {
+      "line": 344,
+      "heading": "#### Kategori 7: Communication Models (6 Model Mental — Fokus: Struktur Narasi & Umpan Balik)"
+    },
+    {
+      "line": 355,
+      "heading": "#### Kategori 8: Meta-Thinking Models (2 Model Mental — Fokus: Deteksi Bias & Validasi Belajar)"
+    },
+    {
+      "line": 362,
+      "heading": "### 4.2 Spesifikasi 2 Agen Inti Sistem (AG-51 & AG-52)"
+    },
+    {
+      "line": 369,
+      "heading": "### 4.3 Kontrak Pertukaran Data Antar-Agen (JSON Schema Payload) & System Prompt Produksi"
+    },
+    {
+      "line": 425,
+      "heading": "#### Template System Prompt Standar untuk Agen Spesialis (Contoh: `AG-11 Kepner-Tregoe Agent` & `AG-52 Evaluator Jury`)"
+    },
+    {
+      "line": 461,
+      "heading": "## Bagian 5: Mesin Komputasi Matematis & Algoritma Validasi Real-Time"
+    },
+    {
+      "line": 465,
+      "heading": "### 5.1 Formulasi Matematis Inti"
+    },
+    {
+      "line": 490,
+      "heading": "### 5.2 Implementasi Kode Produksi Python (`cognition_engine/math_guardrails.py`)"
+    },
+    {
+      "line": 685,
+      "heading": "## Bagian 6: Skema Database (PostgreSQL + pgvector) & Reasoning Knowledge Graph (Neo4j PROV-O)"
+    },
+    {
+      "line": 687,
+      "heading": "### 6.1 Skema Database Relasional & Vektor (`PostgreSQL 16 + pgvector`)"
+    },
+    {
+      "line": 806,
+      "heading": "### 6.2 Skema Reasoning Knowledge Graph Berstandar W3C PROV-O (`Neo4j 5 Cypher`)"
+    },
+    {
+      "line": 866,
+      "heading": "## Bagian 7: Orkestrasi Backend LangGraph, Kontrak API Streaming & Komponen Frontend"
+    },
+    {
+      "line": 868,
+      "heading": "### 7.1 Implementasi Orkestrasi Multi-Agen Paralel dengan LangGraph (`cognition_engine/orchestrator.py`)"
+    },
+    {
+      "line": 1033,
+      "heading": "### 7.2 Spesifikasi Kontrak API REST & Streaming (`FastAPI Endpoints`)"
+    },
+    {
+      "line": 1045,
+      "heading": "### 7.3 Arsitektur Komponen Frontend Interaktif (`Next.js 15 + React Flow`)"
+    },
+    {
+      "line": 1234,
+      "heading": "## Bagian 8: Struktur Direktori Monorepo, Deployment Docker, Pengujian & Roadmap 16 Minggu"
+    },
+    {
+      "line": 1236,
+      "heading": "### 8.1 Struktur Direktori Proyek (`cognition-os/` Monorepo)"
+    },
+    {
+      "line": 1289,
+      "heading": "### 8.2 Konfigurasi Infrastruktur Lokal & Produksi (`docker-compose.yml`)"
+    },
+    {
+      "line": 1355,
+      "heading": "### 8.3 Roadmap Implementasi Rekayasa (16 Minggu / 4 Kuartal Sprint)"
+    }
+  ],
+  "pdf_pages_visually_reviewed": [
+    {
+      "page": 1,
+      "finding": "Radial core illustration; optimal/risk/density labels are illustrative."
+    },
+    {
+      "page": 2,
+      "finding": "Human/model/agent tripartite concept; absolute diagnosis/bias elimination lacks evidence."
+    },
+    {
+      "page": 3,
+      "finding": "Four modules and 50/52/100% telemetry; transform to host-native capabilities."
+    },
+    {
+      "page": 4,
+      "finding": "Four-stage intake and western stores -25%; do not force human wizard."
+    },
+    {
+      "page": 5,
+      "finding": "SCQA→MECE→KT→RICE; handoff compatibility and missing inputs need explicit mapping."
+    },
+    {
+      "page": 6,
+      "finding": "Revenue/cost tree, 340% stockout and 94% certainty are worked examples."
+    },
+    {
+      "page": 7,
+      "finding": "Optimist, jury, challenger; conditional review, no mandatory consensus or real parallelism claim."
+    },
+    {
+      "page": 8,
+      "finding": "65%, 2.4M, 0.3M, 0.8M gives exact net 0.655M; positive EV is not execution authority."
+    },
+    {
+      "page": 9,
+      "finding": "99.2/78/92.5 metrics uncalibrated; example Asia/Europe text mismatches western-store explanation."
+    },
+    {
+      "page": 10,
+      "finding": "52 trained-agent claim unsupported; MoSCoW quadrant conflicts with precise A catalog category."
+    },
+    {
+      "page": 11,
+      "finding": "Lineage labels 5 Whys linked to KT Agent; preserve AG-10 versus AG-11 distinction."
+    },
+    {
+      "page": 12,
+      "finding": "Netflix/Toyota/SpaceX cases and success-pattern assertion require external evidence before reuse."
+    },
+    {
+      "page": 13,
+      "finding": "+1.2M EV and 94% unsupported under supplied inputs; export only when requested."
+    },
+    {
+      "page": 14,
+      "finding": "Three mastery phases and progress badges; progress is illustrative and learning is optional."
+    },
+    {
+      "page": 15,
+      "finding": "50×52 count is conceptual; unlimited decision quality is not a measured outcome."
+    }
+  ],
+  "pdf_render": "pdftoppm -scale-to 1400 -png; tmp/pdfs/v4-1/page-01..15.png",
+  "frameworks": [
+    {
+      "framework_id": "FW-01",
+      "agent_id": "AG-01",
+      "name": "Eisenhower Matrix",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 276
+      },
+      "source_contract": {
+        "purpose": "Pemisahan tugas berdasarkan sumbu *Urgency* vs *Importance* untuk mencegah jebakan reaktif",
+        "inputs": "Daftar inisiatif, tenggat waktu, dampak strategis",
+        "outputs": "Matriks 4 kuadran (`Do First`, `Schedule`, `Delegate`, `Eliminate`)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-02",
+      "agent_id": "AG-02",
+      "name": "RICE Scoring",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 277
+      },
+      "source_contract": {
+        "purpose": "Kuantifikasi prioritas inisiatif dengan rumus `(Reach × Impact × Confidence) / Effort`",
+        "inputs": "Daftar solusi, estimasi jangkauan, dampak, keyakinan, usaha",
+        "outputs": "Tabel peringkat inisiatif terurut berdasarkan *RICE Score*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-03",
+      "agent_id": "AG-03",
+      "name": "MoSCoW Method",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 278
+      },
+      "source_contract": {
+        "purpose": "Penetapan batas cakupan eksekusi (*Must-have, Should-have, Could-have, Won't-have*)",
+        "inputs": "Daftar fitur/tindakan, batasan waktu & anggaran",
+        "outputs": "Klasifikasi 4 kategori MoSCoW dengan bobot alokasi sumber daya"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-04",
+      "agent_id": "AG-04",
+      "name": "Expected Value (EV) Calculus",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 279
+      },
+      "source_contract": {
+        "purpose": "Kalkulasi nilai harapan matematis dari multi-skenario probabilitas *upside* vs *downside*",
+        "inputs": "Distribusi probabilitas sukses/gagal, nilai finansial, biaya",
+        "outputs": "Nilai `gross_ev`, `net_ev`, `risk_reward_ratio`, dan status kelayakan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-05",
+      "agent_id": "AG-05",
+      "name": "Bayesian Updating",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 280
+      },
+      "source_contract": {
+        "purpose": "Pembaruan probabilitas hipotesis (*Prior ➔ Posterior*) setiap kali bukti baru ditemukan",
+        "inputs": "`prior_probability`, `likelihood_if_true`, `false_positive_rate`",
+        "outputs": "`posterior_probability`, `bayes_factor`, dan kurva pergeseran keyakinan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-06",
+      "agent_id": "AG-06",
+      "name": "Pareto Principle (80/20)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 281
+      },
+      "source_contract": {
+        "purpose": "Identifikasi 20% faktor penggerak yang menghasilkan 80% dampak atau kerugian",
+        "inputs": "Dataset kontribusi penyebab atau segmen pendapatan/masalah",
+        "outputs": "Kurva distribusi kumulatif Pareto dan isolasi *vital few drivers*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-07",
+      "agent_id": "AG-07",
+      "name": "Cost-Benefit & Marginal Utility",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 282
+      },
+      "source_contract": {
+        "purpose": "Analisis titik impas, ROI, dan penurunan utilitas marjinal dari penambahan investasi",
+        "inputs": "Rincian biaya tetap/variabel, proyeksi manfaat per unit waktu",
+        "outputs": "Rasio *Benefit-Cost (BCR)*, *Net Present Value (NPV)*, dan titik jenuh"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-08",
+      "agent_id": "AG-08",
+      "name": "Regret Minimization Framework",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 283
+      },
+      "source_contract": {
+        "purpose": "Evaluasi keputusan strategis jangka panjang untuk meminimalkan penyesalan di masa depan",
+        "inputs": "Opsi keputusan berisiko tinggi, horizon waktu (10–20 tahun)",
+        "outputs": "Matriks proyeksi *Action Regret* vs *Inaction Regret* & rekomendasi"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-09",
+      "agent_id": "AG-09",
+      "name": "MECE Issue Tree",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 289
+      },
+      "source_contract": {
+        "purpose": "Dekomposisi masalah menjadi cabang yang *Mutually Exclusive* & *Collectively Exhaustive*",
+        "inputs": "Pertanyaan utama masalah (`core_question`) dan konteks domain",
+        "outputs": "Pohon hierarki *node* masalah dengan skor validasi *MECE*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-10",
+      "agent_id": "AG-10",
+      "name": "5 Whys Analysis",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 290
+      },
+      "source_contract": {
+        "purpose": "Penelusuran rantai sebab-akibat berlapis (5 iterasi) untuk menembus gejala permukaan",
+        "inputs": "Gejala masalah spesifik atau anomali cabang dari *Issue Tree*",
+        "outputs": "Rantai kausal `Why 1` s/d `Why 5` + identifikasi akar masalah sistemik"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-11",
+      "agent_id": "AG-11",
+      "name": "Kepner-Tregoe (KT) Matrix",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 291
+      },
+      "source_contract": {
+        "purpose": "Isolasi penyimpangan secara presisi dengan membandingkan spesifikasi *IS* vs *IS NOT*",
+        "inputs": "Pernyataan deviasi, data *What, Where, When, Extent*",
+        "outputs": "Matriks kontras *IS / IS NOT*, daftar *distinctions*, dan penyebab teruji"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-12",
+      "agent_id": "AG-12",
+      "name": "Fishbone (Ishikawa) Diagram",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 292
+      },
+      "source_contract": {
+        "purpose": "Pemetaan faktor penyebab lintas kategori (6M: *Man, Machine, Material, Method, Measurement, Milieu*)",
+        "inputs": "Efek/masalah utama dan data operasional lintas departemen",
+        "outputs": "Struktur diagram tulang ikan 6 kategori beserta sub-penyebab utama"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-13",
+      "agent_id": "AG-13",
+      "name": "First Principles Thinking",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 293
+      },
+      "source_contract": {
+        "purpose": "Dekonstruksi asumsi industri hingga ke kebenaran fundamental fisika/ekonomi lalu merekonstruksi solusi",
+        "inputs": "Masalah biaya/inovasi dan daftar asumsi konvensional saat ini",
+        "outputs": "Daftar asumsi yang dipatahkan, aksioma dasar, dan arsitektur solusi baru"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-14",
+      "agent_id": "AG-14",
+      "name": "Hypothesis-Driven Problem Solving",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 294
+      },
+      "source_contract": {
+        "purpose": "Perumusan hipotesis awal yang dapat diuji (*falsifiable*) beserta desain eksperimen pembuktiannya",
+        "inputs": "Dekomposisi masalah dan keterbatasan data/waktu analisis",
+        "outputs": "Pohon hipotesis (`H0`, `H1`), metrik uji, dan ambang batas penerimaan/penolakan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-15",
+      "agent_id": "AG-15",
+      "name": "Cynefin Framework",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 295
+      },
+      "source_contract": {
+        "purpose": "Klasifikasi rezim masalah (*Clear, Complicated, Complex, Chaotic, Disorder*) untuk memilih cara respons",
+        "inputs": "Tingkat prediktabilitas kausal dan volatilitas lingkungan masalah",
+        "outputs": "Klasifikasi domain Cynefin dan protokol tindakan (mis. *Probe-Sense-Respond*)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-16",
+      "agent_id": "AG-16",
+      "name": "Inversion Thinking",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 296
+      },
+      "source_contract": {
+        "purpose": "Pembalikan masalah (*\"Bagaimana cara memastikan proyek ini hancur total?\"*) untuk menutup celah kegagalan",
+        "inputs": "Tujuan strategis utama yang ingin dicapai pengguna",
+        "outputs": "Daftar kondisi pemicu kegagalan mutlak dan langkah pencegahannya (*anti-goals*)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-17",
+      "agent_id": "AG-17",
+      "name": "Theory of Constraints (TOC)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 302
+      },
+      "source_contract": {
+        "purpose": "Identifikasi satu *bottleneck* utama yang membatasi *throughput* seluruh sistem (5 Focusing Steps)",
+        "inputs": "Alur proses end-to-end, kapasitas tiap stasiun, tumpukan inventori",
+        "outputs": "Lokasi *bottleneck* kritis dan rencana *Identify, Exploit, Subordinate, Elevate*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-18",
+      "agent_id": "AG-18",
+      "name": "Causal Loop Diagrams (CLD)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 303
+      },
+      "source_contract": {
+        "purpose": "Pemetaan putaran umpan balik penguat (*Reinforcing R*) dan penyeimbang (*Balancing B*)",
+        "inputs": "Variabel-variabel sistem yang saling memengaruhi dari waktu ke waktu",
+        "outputs": "Graf berarah dengan polaritas tautan (`+`/`-`) dan deteksi siklus *R/B*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-19",
+      "agent_id": "AG-19",
+      "name": "Meadows' 12 Leverage Points",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 304
+      },
+      "source_contract": {
+        "purpose": "Pencarian titik intervensi sistem dengan dampak perubahan terbesar (dari parameter hingga paradigma)",
+        "inputs": "Struktur sistem saat ini dan daftar rencana intervensi kebijakan",
+        "outputs": "Peringkat intervensi berdasarkan 12 level titik ungkit Donella Meadows"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-20",
+      "agent_id": "AG-20",
+      "name": "Second-Order Thinking",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 305
+      },
+      "source_contract": {
+        "purpose": "Simulasi konsekuensi orde ke-2 dan ke-3 (*\"And then what?\"*) dari suatu keputusan dalam horizon waktu",
+        "inputs": "Tindakan intervensi yang diusulkan dan respons aktor di ekosistem",
+        "outputs": "Pohon dampak berantai (Horizon 1: 0–3 bln, Horizon 2: 3–12 bln, Horizon 3: >1 thn)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-21",
+      "agent_id": "AG-21",
+      "name": "Stock and Flow Modeling",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 306
+      },
+      "source_contract": {
+        "purpose": "Pemodelan akumulasi sumber daya (*Stocks*), laju aliran masuk (*Inflows*), dan aliran keluar (*Outflows*)",
+        "inputs": "Kapasitas awal, laju penambahan, laju penyusutan/churn, waktu tunda",
+        "outputs": "Persamaan diferensial diskrit dan grafik simulasi akumulasi *stock*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-22",
+      "agent_id": "AG-22",
+      "name": "System Archetypes",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 307
+      },
+      "source_contract": {
+        "purpose": "Deteksi pola disfungsi sistemik klasik (*Fixes that Fail, Shifting the Burden, Tragedy of the Commons*)",
+        "inputs": "Gejala berulang dan riwayat solusi masa lalu yang gagal bertahan",
+        "outputs": "Identifikasi *System Archetype* yang aktif dan strategi pemutusan siklus"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-23",
+      "agent_id": "AG-23",
+      "name": "Network Effects & Feedback",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 308
+      },
+      "source_contract": {
+        "purpose": "Analisis dinamika pertumbuhan jaringan (*direct, indirect, two-sided, local network effects*)",
+        "inputs": "Struktur interaksi pengguna/pemasok, biaya perpindahan (*switching cost*)",
+        "outputs": "Koefisien elastisitas jaringan, titik *critical mass*, dan risiko *moat decay*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-24",
+      "agent_id": "AG-24",
+      "name": "Blue Ocean Strategy (ERRC)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 314
+      },
+      "source_contract": {
+        "purpose": "Penciptaan ruang pasar baru melalui matriks *Eliminate-Reduce-Raise-Create* & kanvas strategi nilai",
+        "inputs": "Faktor kompetisi industri saat ini dan segmen non-pelanggan",
+        "outputs": "Matriks ERRC 4 kuadran, kurva nilai baru, dan argumen optimis pertumbuhan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-25",
+      "agent_id": "AG-25",
+      "name": "Wardley Mapping",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 315
+      },
+      "source_contract": {
+        "purpose": "Pemetaan komponen rantai nilai (*Value Chain*) terhadap tingkat evolusi (*Genesis ➔ Commodity*)",
+        "inputs": "Kebutuhan pengguna (*anchor*), komponen sistem, dan maturitas teknologi",
+        "outputs": "Koordinat peta Wardley `[visibility_y, evolution_x]` & rekomendasi *build vs buy*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-26",
+      "agent_id": "AG-26",
+      "name": "OODA Loop",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 316
+      },
+      "source_contract": {
+        "purpose": "Percepatan siklus *Observe-Orient-Decide-Act* untuk mengungguli manuver kompetitor di pasar dinamis",
+        "inputs": "Sinyal perubahan pasar, kecepatan respons organisasi saat ini",
+        "outputs": "Protokol percepatan *OODA Loop* dan titik disrupsi ritme kompetitor"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-27",
+      "agent_id": "AG-27",
+      "name": "Porter's Five Forces",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 317
+      },
+      "source_contract": {
+        "purpose": "Evaluasi daya tarik struktural industri dan tekanan margin dari 5 kekuatan kompetitif",
+        "inputs": "Struktur pasar, jumlah pemasok/pembeli, hambatan masuk, produk substitusi",
+        "outputs": "Skor intensitas 5 kekuatan (1–10) dan strategi pertahanan margin"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-28",
+      "agent_id": "AG-28",
+      "name": "VRIO Framework",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 318
+      },
+      "source_contract": {
+        "purpose": "Audit sumber daya internal (*Value, Rarity, Inimitability, Organization*) untuk keunggulan berkelanjutan",
+        "inputs": "Daftar aset, kapabilitas, teknologi, atau paten milik perusahaan",
+        "outputs": "Matriks klasifikasi keunggulan kompetitif (*Temporary* vs *Sustained*)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-29",
+      "agent_id": "AG-29",
+      "name": "Ansoff Matrix",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 319
+      },
+      "source_contract": {
+        "purpose": "Penentuan vektor pertumbuhan korporat (*Market Penetration, Market Dev, Product Dev, Diversification*)",
+        "inputs": "Portofolio produk saat ini, target pasar, dan profil toleransi risiko",
+        "outputs": "Kuadran strategi pertumbuhan Ansoff beserta bobot risiko eksekusi"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-30",
+      "agent_id": "AG-30",
+      "name": "Game Theory (Nash Equilibrium)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 320
+      },
+      "source_contract": {
+        "purpose": "Pemodelan interaksi strategis multi-aktor, matriks *payoff*, dan pencarian ekuilibrium Nash",
+        "inputs": "Daftar pemain (perusahaan vs kompetitor), opsi langkah, dan *payoff*",
+        "outputs": "Matriks *payoff*, strategi dominan, *Nash Equilibrium*, dan langkah *first-mover*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-31",
+      "agent_id": "AG-31",
+      "name": "Business Model Canvas (BMC)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 321
+      },
+      "source_contract": {
+        "purpose": "Pemetaan 9 blok arsitektur model bisnis untuk memastikan keselarasan proposisi nilai dan struktur biaya",
+        "inputs": "Deskripsi bisnis/inisiatif baru, segmen pelanggan, saluran, arus kas",
+        "outputs": "Struktur lengkap 9 blok BMC beserta uji koherensi antar-blok"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-32",
+      "agent_id": "AG-32",
+      "name": "Jobs-to-be-Done (JTBD)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 327
+      },
+      "source_contract": {
+        "purpose": "Mengungkap kemajuan fungsional, sosial, dan emosional yang ingin dicapai pelanggan saat \"menyewa\" produk",
+        "inputs": "Perilaku pelanggan, keluhan penggunaan, dan solusi alternatif saat ini",
+        "outputs": "Pernyataan *Job Story* (`When... I want to... So I can...`) & *Underserved Needs*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-33",
+      "agent_id": "AG-33",
+      "name": "Design Thinking",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 328
+      },
+      "source_contract": {
+        "purpose": "Orkestrasi empati pengguna, pendefinisian ulang masalah (*How Might We*), ideasi, dan prototipe cepat",
+        "inputs": "Hasil observasi pengguna, titik friksi perjalanan pelanggan (*journey*)",
+        "outputs": "Rumusan pertanyaan *How Might We (HMW)* dan spesifikasi eksperimen prototipe"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-34",
+      "agent_id": "AG-34",
+      "name": "Value Proposition Canvas (VPC)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 329
+      },
+      "source_contract": {
+        "purpose": "Pencocokan presisi antara *Customer Profile* (*Jobs, Pains, Gains*) dengan *Value Map* (*Pain Relievers, Gain Creators*)",
+        "inputs": "Segmen pelanggan target dan fitur produk/solusi yang dirancang",
+        "outputs": "Peta kesesuaian *Problem-Solution Fit* dan daftar celah proposisi nilai"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-35",
+      "agent_id": "AG-35",
+      "name": "Kano Model",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 330
+      },
+      "source_contract": {
+        "purpose": "Klasifikasi atribut produk menjadi *Basic (Must-be)*, *Performance*, dan *Delighters (Attractive)*",
+        "inputs": "Daftar kandidat fitur produk dan respons kepuasan/ketidakpuasan pengguna",
+        "outputs": "Pemetaan kurva Kano dan prioritas investasi fitur pembeda"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-36",
+      "agent_id": "AG-36",
+      "name": "SCAMPER",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 331
+      },
+      "source_contract": {
+        "purpose": "Eksplorasi inovasi produk/proses melalui 7 lensa (*Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse*)",
+        "inputs": "Produk, layanan, atau alur kerja eksisting yang mengalami stagnasi",
+        "outputs": "7 variasi konsep inovasi terstruktur berdasarkan matriks SCAMPER"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-37",
+      "agent_id": "AG-37",
+      "name": "TRIZ (Inventive Problem Solving)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 332
+      },
+      "source_contract": {
+        "purpose": "Penyelesaian kontradiksi teknis/bisnis menggunakan 40 Prinsip Inventif tanpa kompromi (*trade-off*)",
+        "inputs": "Parameter yang ingin ditingkatkan vs parameter yang memburuk (*contradiction*)",
+        "outputs": "Prinsip TRIZ yang relevan dan solusi eliminasi kontradiksi"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-38",
+      "agent_id": "AG-38",
+      "name": "RACI Governance Matrix",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 338
+      },
+      "source_contract": {
+        "purpose": "Pemetaan akuntabilitas eksekusi (*Responsible, Accountable, Consulted, Informed*) tanpa tumpang tindih",
+        "inputs": "Daftar paket kerja (*workstreams*) dan daftar peran/pemangku kepentingan",
+        "outputs": "Tabel matriks RACI tervalidasi (memastikan tepat 1 *Accountable* per baris)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-39",
+      "agent_id": "AG-39",
+      "name": "OKRs (Objectives & Key Results)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 339
+      },
+      "source_contract": {
+        "purpose": "Penerjemahan keputusan strategis menjadi *Objectives* kualitatif dan *Key Results* kuantitatif terukur",
+        "inputs": "Rekomendasi strategis akhir dan target metrik kuartalan/tahunan",
+        "outputs": "Hierarki OKR tingkat korporat/tim beserta *leading & lagging indicators*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-40",
+      "agent_id": "AG-40",
+      "name": "PDCA (Plan-Do-Check-Act)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 340
+      },
+      "source_contract": {
+        "purpose": "Perancangan siklus perbaikan berkelanjutan dan kontrol kualitas implementasi di lapangan",
+        "inputs": "Rencana intervensi operasional dan metrik standar kinerja (*baseline*)",
+        "outputs": "Siklus iterasi 4 tahap PDCA lengkap dengan ambang batas evaluasi *Check*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-41",
+      "agent_id": "AG-41",
+      "name": "Getting Things Done (GTD)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 341
+      },
+      "source_contract": {
+        "purpose": "Dekomposisi proyek menjadi tindakan fisik berikutnya (*Next Concrete Actions*), konteks, dan pemicu",
+        "inputs": "Rencana proyek tingkat tinggi dan daftar hambatan operasional harian",
+        "outputs": "Daftar *Next Actions* bebas ambiguitas, pemilik tugas, dan jadwal *review*"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-42",
+      "agent_id": "AG-42",
+      "name": "Critical Path Method (CPM)",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 342
+      },
+      "source_contract": {
+        "purpose": "Kalkulasi jalur terpanjang aktivitas dependen yang menentukan durasi minimum penyelesaian proyek",
+        "inputs": "Daftar tugas, estimasi durasi, dan ketergantungan (*predecessors*)",
+        "outputs": "Jalur kritis (*Critical Path*), waktu *float/slack* tiap tugas, dan jadwal"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-43",
+      "agent_id": "AG-43",
+      "name": "Minto Pyramid Principle",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 348
+      },
+      "source_contract": {
+        "purpose": "Penyusunan argumen eksekutif *top-down* (*Answer First* ➔ *MECE Key Line Arguments* ➔ *Validated Evidence*)",
+        "inputs": "Seluruh temuan dari *Thinking Canvas*, *Debate*, dan *Scenario Simulator*",
+        "outputs": "Struktur pohon Minto Pyramid siap ekspor ke laporan PDF & dek PPTX"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-44",
+      "agent_id": "AG-44",
+      "name": "SCQA Framework",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 349
+      },
+      "source_contract": {
+        "purpose": "Pembingkaian konteks masalah secara tajam (*Situation, Complication, Question, Answer*)",
+        "inputs": "Deskripsi masalah mentah dan metrik perubahan kondisi bisnis",
+        "outputs": "Narasi terstruktur 4 bagian SCQA untuk menyelaraskan pemahaman pemangku kepentingan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-45",
+      "agent_id": "AG-45",
+      "name": "Storyboarding & Narrative",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 350
+      },
+      "source_contract": {
+        "purpose": "Perancangan alur presentasi visual *slide-by-slide* dengan *declarative action titles*",
+        "inputs": "Struktur Minto Pyramid dan grafik data pendukung",
+        "outputs": "Spesifikasi *storyboard* per halaman (*Action Title, Visual Layout, Key Data*)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-46",
+      "agent_id": "AG-46",
+      "name": "Stakeholder Grid",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 351
+      },
+      "source_contract": {
+        "purpose": "Pemetaan pemangku kepentingan berdasarkan *Power/Influence* vs *Interest* untuk strategi persuasi",
+        "inputs": "Daftar pengambil keputusan, kepentingan departemen, dan potensi resistensi",
+        "outputs": "Matriks 4 kuadran pemangku kepentingan dan taktik komunikasi per aktor"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-47",
+      "agent_id": "AG-47",
+      "name": "Radical Candor Feedback",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 352
+      },
+      "source_contract": {
+        "purpose": "Perumusan komunikasi kepemimpinan yang memadukan *Care Personally* dan *Challenge Directly*",
+        "inputs": "Situasi konflik tim, kegagalan eksekusi, atau kebutuhan evaluasi kinerja",
+        "outputs": "Naskah umpan balik yang lugas, objektif, dan konstruktif tanpa agresi"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-48",
+      "agent_id": "AG-48",
+      "name": "Toulmin Argumentation Model",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 353
+      },
+      "source_contract": {
+        "purpose": "Pengujian struktur mikro-argumen (*Claim, Grounds/Data, Warrant, Backing, Qualifier, Rebuttal*)",
+        "inputs": "Pernyataan klaim strategis dan kumpulan bukti pendukung",
+        "outputs": "Dekonstruksi 6 elemen Toulmin dan identifikasi celah *warrant* logika"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-49",
+      "agent_id": "AG-49",
+      "name": "Pre-Mortem & Red Teaming",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Meta-Thinking Models",
+        "line": 359
+      },
+      "source_contract": {
+        "purpose": "Simulasi ke masa depan dengan asumsi keputusan **telah gagal total**, lalu merunut balik penyebab kehancurannya",
+        "inputs": "Rekomendasi keputusan yang akan dieksekusi dan asumsi keberhasilannya",
+        "outputs": "Daftar skenario kegagalan kritis, titik rapuh tersembunyi, dan tindakan pencegahan"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    },
+    {
+      "framework_id": "FW-50",
+      "agent_id": "AG-50",
+      "name": "Cognitive Bias Deconstruction",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Meta-Thinking Models",
+        "line": 360
+      },
+      "source_contract": {
+        "purpose": "Pemindaian aktif terhadap lebih dari 20 bias kognitif (*Confirmation, Anchoring, Sunk Cost, Survivorship, Availability*)",
+        "inputs": "Teks argumen pengguna, bobot bukti di kanvas, dan riwayat revisi hipotesis",
+        "outputs": "Laporan deteksi bias (`bias_type`, `probability`, `evidence_span`, `debiasing_prompt`)"
+      },
+      "target": "Lazy-loaded canonical methodology, typed artifact and logical role selected by the host",
+      "adaptation": "Framework steps, FW numbering and executable schemas are engineering adaptations",
+      "behavioral_status": "NOT_RUN_ON_HOST"
+    }
+  ],
+  "features": [
+    {
+      "name": "Command Center / telemetry",
+      "locator": "A 3.1; B 1,3",
+      "transformation": "Host task context and observed status; illustrative health/density values are excluded",
+      "delivery": "advisory resource"
+    },
+    {
+      "name": "Problem Ingestion",
+      "locator": "A 3.2 phase 1; B 4",
+      "transformation": "Observable task-context envelope; ask only blocking questions",
+      "delivery": "skill + schema"
+    },
+    {
+      "name": "Framework Stack Builder / presets",
+      "locator": "A 3.2 phase 2; B 5",
+      "transformation": "Small complementary selection with explicit semantic handoffs",
+      "delivery": "routing + skill"
+    },
+    {
+      "name": "Thinking Canvas / drill-down / 5 Whys",
+      "locator": "A 3.2 phase 3; B 6",
+      "transformation": "Optional inspectable Markdown/Mermaid/JSON artifacts within host work",
+      "delivery": "artifact resource"
+    },
+    {
+      "name": "Adversarial Debate / rebuttals / jury",
+      "locator": "A 3.2 phase 4; B 7",
+      "transformation": "Conditional bounded advocate/challenger/jury analysis; no forced consensus",
+      "delivery": "deep advisory"
+    },
+    {
+      "name": "Scenario Simulator / sliders / distributions",
+      "locator": "A 3.2 phase 5; B 8",
+      "transformation": "Supplied numerical parameters, local calculation, explicit distributions and seed",
+      "delivery": "deterministic tool"
+    },
+    {
+      "name": "MECE / edge cases / contradiction review",
+      "locator": "A 3.3.1,5.1,5.2; B 9",
+      "transformation": "Exact finite-universe sets when possible, otherwise qualified semantic review",
+      "delivery": "validation + advisory"
+    },
+    {
+      "name": "Cognitive Bias Detector",
+      "locator": "A 3.3.1,4.1 AG-50; B 9",
+      "transformation": "Evidence-span review without fabricated probability",
+      "delivery": "advisory"
+    },
+    {
+      "name": "Executive Synthesis / Minto / storyboard",
+      "locator": "A 3.3.2,4.1 AG-43..45; B 13",
+      "transformation": "Optional synthesis appropriate to original requested format",
+      "delivery": "skill"
+    },
+    {
+      "name": "Export PDF/PPTX",
+      "locator": "A 2.2,7.2; B 13",
+      "transformation": "Use existing authorized host artifact tools only when requested; no export service",
+      "delivery": "optional retained feature"
+    },
+    {
+      "name": "Institutional Memory / case assistant",
+      "locator": "A 3.3.3,6.1; B 12",
+      "transformation": "Explicitly authorized project cases, provenance and review before reuse",
+      "delivery": "optional local knowledge"
+    },
+    {
+      "name": "Human Mastery Track / badges",
+      "locator": "A 3.3.4; B 14",
+      "transformation": "Separate opt-in human learning; no assumed progress or model training",
+      "delivery": "optional skill"
+    },
+    {
+      "name": "Agent orchestration / 52 roles",
+      "locator": "A 4.1,4.2,7.1; B 10,15",
+      "transformation": "52 logical roles; host owns execution, no mandatory parallel processes",
+      "delivery": "logical registry"
+    },
+    {
+      "name": "Inter-agent envelope",
+      "locator": "A 4.3",
+      "transformation": "Versioned V4.1 request/result with explicit conversion from preserved 3.1 artifacts",
+      "delivery": "schema"
+    },
+    {
+      "name": "EV and Monte Carlo",
+      "locator": "A 5.1,5.2; B 8,13",
+      "transformation": "Retain formula; require input/model assumptions; no automatic PROCEED",
+      "delivery": "calculation"
+    },
+    {
+      "name": "Bayesian updates / log odds",
+      "locator": "A 5.1,5.2",
+      "transformation": "Use conditional likelihoods and justified independence; reject impossible evidence",
+      "delivery": "calculation"
+    },
+    {
+      "name": "MECE score formula",
+      "locator": "A 5.1,5.2",
+      "transformation": "Similarity cannot prove exclusivity/completeness; no invented integrity constants",
+      "delivery": "qualified adaptation"
+    },
+    {
+      "name": "SQL users/problems/canvas/debates/simulations/alerts/cases",
+      "locator": "A 6.1",
+      "transformation": "Host context, typed artifacts and opt-in local cases; no server database",
+      "delivery": "schema + optional local files"
+    },
+    {
+      "name": "Reasoning Knowledge Graph / decision lineage",
+      "locator": "A 6.2; B 11",
+      "transformation": "Observable artifact/evidence DAG; no hidden reasoning access",
+      "delivery": "provenance validation"
+    },
+    {
+      "name": "LangGraph fan-out/fan-in / hardcoded sample",
+      "locator": "A 7.1",
+      "transformation": "Host-native logical workflow; sample outputs are illustrative, never findings",
+      "delivery": "skill + bounded plan"
+    },
+    {
+      "name": "REST routes / SSE / agent_thought / WebSocket",
+      "locator": "A 7.2",
+      "transformation": "Native supported boundaries only; no mandatory server or reasoning interception",
+      "delivery": "excluded infrastructure, retained capabilities"
+    },
+    {
+      "name": "React Flow / real-time UI",
+      "locator": "A 7.3",
+      "transformation": "Host-owned output and optional diagrams; no standalone application",
+      "delivery": "artifact resource"
+    },
+    {
+      "name": "Monorepo / Docker / deployment defaults",
+      "locator": "A 8.1,8.2",
+      "transformation": "Single native plugin repository; no copied example passwords or infrastructure",
+      "delivery": "native packaging"
+    },
+    {
+      "name": "Roadmap / KPIs / acceptance",
+      "locator": "A 1.3,8.3; B 1,3,15",
+      "transformation": "V4.1 phase gates, actual host outcomes and A/B/C/D comparison",
+      "delivery": "evaluation protocol"
+    }
+  ],
+  "limitations": [
+    "Source methodology is not empirical calibration.",
+    "Source gaps/corrections C01-C14 remain applicable; PDF page 11 adds role-label mismatch.",
+    "Native invocation and A/B/C/D performance are separate gates."
+  ]
+}

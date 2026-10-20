@@ -1,5 +1,7 @@
 # Rencana migrasi Cognition OS V4.1
 
+**Pelaksanaan rebuild:** rencana ini kini dijalankan atas instruksi pengguna. Kemajuan, evidence dan gate yang masih terbuka dicatat di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Teks cakupan kajian di bagian akhir dipertahankan sebagai konteks awal, bukan pembatas otorisasi rebuild terbaru.
+
 Tanggal: 2026-10-20. Status: `PROPOSED`. Arah konsep berasal dari [prompt V4.1](evidence/master-implementation-prompt-v4.1.txt); analisis checkout ada pada [kajian konsep](CONCEPT_V4_1.md). Rencana ini belum merupakan catatan implementasi atau hasil evaluasi V4.1.
 
 ## Prinsip pelaksanaan

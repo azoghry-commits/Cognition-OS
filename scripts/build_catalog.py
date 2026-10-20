@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 def write(path, value):
     p = ROOT / path
@@ -84,7 +84,10 @@ def build():
         f={'id':fid,'agent_id':aid,'name':name,'category':category,'version':VERSION,
            'provenance':'SOURCE_DERIVED','id_mapping':'ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11',
            'source':ref,'source_original':{'purpose':cells[3],'inputs':cells[4],'outputs':cells[5]},
-           'purpose':method[0],'applicability':required,'activation_conditions':[f'User requests {name} or the orchestrator justifies it against the problem.'],
+           'purpose':method[0],'applicability':required,'activation_conditions':[f'The host selects {name} to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient.'],
+           'preconditions':[f'Supplied {field} or an explicit UNKNOWN gap before analysis.' for field in required],
+           'input_schema':{'type':'object','required':required,'properties':{field:{} for field in required},'additionalProperties':True},
+           'output_schema':f'schemas/framework-output/{fid}.schema.json',
            'required_inputs':required,'optional_inputs':['constraints','evidence','previous_findings','desired_deliverable'],
            'methodology':method,'methodology_provenance':'ENGINEERING_ADAPTATION grounded in source scope',
            'expected_outputs':outputs,'mathematical_requirements': ('Use deterministic helper or independently validated host calculation; disclose units and assumptions.' if num in [2,4,5,6,7,21,23,30,35,42] else 'No unsupported numerical scores.'),

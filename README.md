@@ -37,7 +37,7 @@ Cognition OS supplies cognitive capabilities to **host models and agents**. A pe
 
 The host remains responsible for the objective, tools, permissions, execution, and final deliverable. Cognition OS returns useful findings to the host, which incorporates them into the requested result. Users should not need to open another application, choose mental models, or manage a separate analysis workflow.
 
-**V4.1 is the target specification. Migration is in progress.** This README describes that target and identifies the available baseline evidence separately. Package versions are independent of specification versions; inspect [plugin.json](plugin.json) for the package identity and [project status](docs/PROJECT_STATUS.md) for recorded milestones. A design, source file, or installed package alone does not prove native activation or production readiness.
+**The V4.1 rebuild is available as package candidate 0.2.0 and installed/enabled in the authorized local Codex marketplace.** It implements a selective governor, V4.1 advisory contracts, bounded deep-advisory plans, 12 model-facing skills, and separate Codex/Claude hook configurations. Legacy framework artifacts retain the 3.1 contract with explicit advisory conversion. Native model selection, trusted hook delivery, and host A/B/C/D outcomes remain unverified. Package versions are independent of specification versions; see the [rebuild status](docs/REBUILD_STATUS_V4_1.md) and [package identity](plugin.json).
 
 Read the [V4.1 concept review](docs/CONCEPT_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [complete specification](docs/evidence/master-implementation-prompt-v4.1.txt) for the engineering requirements. This README is in English; supporting engineering documentation is primarily in Indonesian.
 
@@ -74,14 +74,15 @@ The paths can be combined when each adds value. A simple edit may need none of t
 
 ## Core capabilities
 
-The existing catalog and helpers provide a foundation for the V4.1 migration. Their presence is separate from evidence that the hybrid behavior works in a particular host.
+The rebuilt catalog, routing and helpers implement the local V4.1 candidate. Their presence is separate from evidence that hybrid behavior works in a particular host.
 
 | Capability | What it contributes | Scope |
 | --- | --- | --- |
 | **50 mental models across eight categories** | Distinctive methodologies, required inputs, expected outputs, and validation criteria | Canonical definitions loaded selectively |
 | **52 logical specialist definitions** | AG-01 through AG-50, AG-51 Chief Orchestrator, and AG-52 Evaluator Jury | Logical analytical roles; native subagents only when supported and useful |
-| **Focused native skills** | Root-cause analysis, framework composition, decisions, systems analysis, review, synthesis, cases, and optional learning | Host-facing capability entrypoints; setup remains a diagnostic tool |
-| **Framework routing** | Selects a small complementary set and checks dependencies, missing inputs, and duplicate analysis | V4.1 introduces selective internal policies and `PASS_THROUGH` |
+| **12 focused native skills** | Routing, root-cause analysis, framework composition, decisions, systems analysis, adversarial/artifact review, synthesis, optional cases/learning and setup | Model-facing capability entrypoints; setup remains a diagnostic tool |
+| **Framework routing** | Selects a small complementary set and checks dependencies, missing inputs, and duplicate analysis | Seven internal policies including `PASS_THROUGH`, configurable budgets, no automatic dispatch |
+| **Native hook adapters** | Optional PostToolUse schema checks for explicitly edited `.cognition/artifacts` JSON | Separate configurations; bounded read-only scripts; host trust and native delivery still need evaluation |
 | **Deterministic computation** | Expected value, Bayes, RICE, decision matrices, Monte Carlo, sensitivity, Pareto, CPM, and stock-and-flow | Requires explicit inputs, units, assumptions, and permitted execution |
 | **Evidence and logic checks** | Claim classification, finite-universe MECE checks, artifact contracts, and observable decision provenance | Structural checks and semantic judgment remain distinct |
 | **Adversarial evaluation** | Constructive advocate, critical challenger, and a jury that can withhold endorsement | Bounded, conditional analysis that preserves unresolved disagreement |
@@ -172,11 +173,11 @@ The seven V4.1 policies are internal coordination choices: `PASS_THROUGH`, `LIGH
 
 MCP remains optional. The baseline must work without a remote service, separate application, Docker stack, database server, or new model API credential. Native subagents are an execution option when available, authorized, and useful; logical role definitions do not imply concurrent model processes.
 
-See the [architecture](docs/ARCHITECTURE.md), [orchestration design](docs/ORCHESTRATION_DESIGN.md), [data contracts](docs/DATA_CONTRACTS.md), and [architecture decisions](docs/ARCHITECTURE_DECISIONS.md).
+See the [V4.1 hybrid architecture](docs/HYBRID_ARCHITECTURE.md), [source transformation audit](docs/SOURCE_TRANSFORMATION_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), and [architecture decisions](docs/ARCHITECTURE_DECISIONS.md).
 
 ## Verification status
 
-**Migration in progress. Production readiness has not been established.**
+**Local rebuild checks pass. Native acceptance and production readiness remain incomplete.**
 
 The recorded baseline package 0.1.0 predates the V4.1 migration. Its results remain historical evidence and do not certify unfinished migration code or native hybrid behavior.
 
@@ -184,9 +185,11 @@ The recorded baseline package 0.1.0 predates the V4.1 migration. Its results rem
 | --- | --- | --- |
 | **Source preservation and catalog** | Source hashes, 50 framework contracts, eight categories, and 52 logical roles recorded in the baseline audit | Contract coverage does not prove methodological fidelity in host-generated answers |
 | **Baseline automated checks** | October 20, 2026 record: 56 checks, 55 passed, one skipped because the OS denied test symlink creation | These are baseline results; migration changes require their own fresh test evidence |
-| **Native integration** | Baseline Codex installation/enabled state and installed-helper integrity recorded | Fresh-chat desktop skill selection, invocation, and end-to-end behavior remain separate gates |
+| **V4.1 automated checks** | 85 tests: 83 passed, two symlink checks skipped under Windows permissions; full schema validation and extracted-package helper/hook execution | Local checks do not prove native model selection or event delivery |
+| **Routing evaluation** | 16 deterministic cases passed, including negative controls and required-check failure handling | Fixture context labels are authored; these are not observed model choices |
+| **Native integration** | Codex 0.2.0 installed/enabled; installed inventory and deterministic helper verified; rollback 0.1.0 retained | Fresh-chat desktop skill selection, invocation, and end-to-end behavior remain separate gates |
 | **Local calculation timing** | Helper-only benchmark recorded separately | Excludes model latency, skill selection, token overhead, and improvement in user-task outcomes |
-| **V4.1 hybrid behavior** | Concept, migration plan, and implementation work are tracked in the repository | Governor, advisory contracts, hook adapters, and deep advisory need implementation and native acceptance evidence |
+| **V4.1 hybrid behavior** | Governor, contracts, deep plans and hook adapters are implemented and locally checked | Native skill invocation, trust/permission behavior and host outcome improvement still need evidence |
 | **Cross-host readiness** | Separate adapter documentation and baseline compatibility findings exist | Passing one host or surface does not establish equivalent behavior elsewhere |
 
 V4.1 requires the following comparison, using equivalent tasks and recorded host/model settings:
@@ -200,7 +203,7 @@ V4.1 requires the following comparison, using equivalent tasks and recorded host
 
 Measure task correctness, requirement coverage, regressions, selection relevance, unnecessary activation, false-positive warnings, calls, token overhead, latency, artifact quality, and error recovery where observable. Include negative controls. Missing instrumentation is unavailable data, not zero overhead. No completed native A/B/C/D improvement result is claimed here.
 
-Evidence and gates: [test report](docs/TEST_REPORT.md), [recorded baseline checks](docs/evidence/checks.json), [helper benchmark](docs/evidence/benchmark.json), [performance evaluation](docs/PERFORMANCE_EVALUATION.md), [release checklist](docs/RELEASE_CHECKLIST.md), and [project status](docs/PROJECT_STATUS.md).
+Current evidence and gates: [rebuild report](docs/REBUILD_STATUS_V4_1.md), [routing results](docs/evidence/v4-1-activation-evals.json), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), and [project status](docs/PROJECT_STATUS.md). Historical baseline checks and helper timings remain in their original reports.
 
 ## Boundaries and limitations
 
@@ -216,12 +219,15 @@ Evidence and gates: [test report](docs/TEST_REPORT.md), [recorded baseline check
 
 ## Development
 
-Python 3.10+ supports the existing local helper and validation pipeline. Follow the migration plan and the current package's documented checks before preparing a release. During migration, generator sources and their outputs must stay aligned; the baseline generators can overwrite manual changes if run unchanged.
+Python 3.10+ supports the local helper and rebuild pipeline. The generators now produce the V4.1 candidate and preserve historical audit records. Rebuilding neither installs the package nor changes host trust or permissions.
 
 Typical local verification and packaging entrypoints are:
 
 ```powershell
+python scripts/rebuild_plugin.py
+python scripts/verify_rebuild.py
 python -m unittest discover -s tests -v
+python scripts/evaluate_activation.py
 python scripts/validate_package.py
 python scripts/package_release.py
 ```

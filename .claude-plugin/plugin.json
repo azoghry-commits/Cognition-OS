@@ -1,8 +1,9 @@
 {
   "name": "cognition-os",
-  "version": "0.1.0",
-  "description": "Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.",
+  "version": "0.2.0",
+  "description": "Selective cognitive assistance for host models and agents: 50 mental models, evidence checks and bounded advisory.",
   "author": {
     "name": "Cognition OS project"
-  }
+  },
+  "hooks": "./hooks/claude/hooks.json"
 }

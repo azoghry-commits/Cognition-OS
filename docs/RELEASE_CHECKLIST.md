@@ -1,5 +1,7 @@
 # Release acceptance checklist
 
+**Kandidat aktif:** rebuild V4.1 / paket 0.2.0. Daftar 18 acceptance criteria dengan status/evidence ada pada [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Suite terbaru: 85 tests, 83 passed, 2 symlink skips; routing rules 16/16. Native model selection, hook trust/delivery, semantic fidelity dan benchmark host A/B/C/D belum lulus. Checklist baseline berikut dipertahankan sebagai riwayat; perbandingan mode QUICK/STANDARD/DEEP bukan pengganti eksperimen A/B/C/D V4.1.
+
 This package is an engineering candidate, not a production-certified release. Refer to TEST_REPORT.md for observed checks.
 
 - [x] One shared source catalog; 50 source names/category memberships and 52 logical roles.

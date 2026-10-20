@@ -3,7 +3,7 @@
   "agent_id": "AG-40",
   "name": "PDCA (Plan-Do-Check-Act)",
   "category": "Execution Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -24,8 +24,31 @@
     "metrics"
   ],
   "activation_conditions": [
-    "User requests PDCA (Plan-Do-Check-Act) or the orchestrator justifies it against the problem."
+    "The host selects PDCA (Plan-Do-Check-Act) to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied problem or an explicit UNKNOWN gap before analysis.",
+    "Supplied baseline or an explicit UNKNOWN gap before analysis.",
+    "Supplied intervention or an explicit UNKNOWN gap before analysis.",
+    "Supplied metrics or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "problem",
+      "baseline",
+      "intervention",
+      "metrics"
+    ],
+    "properties": {
+      "problem": {},
+      "baseline": {},
+      "intervention": {},
+      "metrics": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-40.schema.json",
   "required_inputs": [
     "problem",
     "baseline",

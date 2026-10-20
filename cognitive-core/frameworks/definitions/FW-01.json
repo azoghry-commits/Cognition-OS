@@ -3,7 +3,7 @@
   "agent_id": "AG-01",
   "name": "Eisenhower Matrix",
   "category": "Decision Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -21,8 +21,22 @@
     "tasks"
   ],
   "activation_conditions": [
-    "User requests Eisenhower Matrix or the orchestrator justifies it against the problem."
+    "The host selects Eisenhower Matrix to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied tasks or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "tasks"
+    ],
+    "properties": {
+      "tasks": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-01.schema.json",
   "required_inputs": [
     "tasks"
   ],

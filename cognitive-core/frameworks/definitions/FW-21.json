@@ -3,7 +3,7 @@
   "agent_id": "AG-21",
   "name": "Stock and Flow Modeling",
   "category": "Systems Thinking Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -25,8 +25,34 @@
     "unit"
   ],
   "activation_conditions": [
-    "User requests Stock and Flow Modeling or the orchestrator justifies it against the problem."
+    "The host selects Stock and Flow Modeling to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied initial_stock or an explicit UNKNOWN gap before analysis.",
+    "Supplied inflows or an explicit UNKNOWN gap before analysis.",
+    "Supplied outflows or an explicit UNKNOWN gap before analysis.",
+    "Supplied time_step or an explicit UNKNOWN gap before analysis.",
+    "Supplied unit or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "initial_stock",
+      "inflows",
+      "outflows",
+      "time_step",
+      "unit"
+    ],
+    "properties": {
+      "initial_stock": {},
+      "inflows": {},
+      "outflows": {},
+      "time_step": {},
+      "unit": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-21.schema.json",
   "required_inputs": [
     "initial_stock",
     "inflows",

@@ -1,0 +1,28 @@
+{
+  "authorization": "Existing user approval: Yes, install in Codex only",
+  "package_version": "0.2.0",
+  "plugin_id": "cognition-os@cognition-os-local",
+  "installed_path": "C:\\Users\\rizky\\.codex\\plugins\\cache\\cognition-os-local\\cognition-os\\0.2.0",
+  "installed": true,
+  "enabled": true,
+  "inventory_files": 194,
+  "all_packaged_hashes_match": true,
+  "skills": 12,
+  "framework_definitions": 50,
+  "installed_helper": {
+    "exit_code": 0,
+    "policy": "PASS_THROUGH",
+    "scope": "Deterministic local helper; no model inference"
+  },
+  "rollback": {
+    "path": "D:\\Bisnisan\\CognitionOS-Plugin\\dist\\cognition-os-rollback-0.1.0.zip",
+    "sha256": "b15df7b40f8ee33a3794c39d5dc1a35f414cbc199e00300fae6e97082105853b",
+    "version": "0.1.0",
+    "restore_tested": false
+  },
+  "native_model_selection": "NOT_RUN_ON_HOST",
+  "native_hook_delivery": "NOT_RUN_ON_HOST",
+  "hook_trust_changed": false,
+  "claude_installed": false,
+  "api_inference_used": false
+}

@@ -3,7 +3,7 @@
   "agent_id": "AG-05",
   "name": "Bayesian Updating",
   "category": "Decision Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -23,8 +23,28 @@
     "likelihood_if_false"
   ],
   "activation_conditions": [
-    "User requests Bayesian Updating or the orchestrator justifies it against the problem."
+    "The host selects Bayesian Updating to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied prior or an explicit UNKNOWN gap before analysis.",
+    "Supplied likelihood_if_true or an explicit UNKNOWN gap before analysis.",
+    "Supplied likelihood_if_false or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "prior",
+      "likelihood_if_true",
+      "likelihood_if_false"
+    ],
+    "properties": {
+      "prior": {},
+      "likelihood_if_true": {},
+      "likelihood_if_false": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-05.schema.json",
   "required_inputs": [
     "prior",
     "likelihood_if_true",

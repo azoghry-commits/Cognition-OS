@@ -64,6 +64,20 @@
         "minLength": 1
       }
     },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "input_schema": {
+      "type": "object"
+    },
+    "output_schema": {
+      "type": "string",
+      "minLength": 1
+    },
     "required_inputs": {
       "type": "array",
       "items": {

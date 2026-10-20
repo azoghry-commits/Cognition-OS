@@ -4,6 +4,11 @@ import re
 from build_catalog import ROOT,write,VERSION
 
 def build():
+    if VERSION != '0.1.0':
+        # Preserve baseline audit/status records. V4.1 maintains its own current guides.
+        from build_hybrid import build as build_hybrid
+        build_hybrid()
+        return
     write('references/EXECUTION.md','''# Shared execution rules
 
 The host provides the model, tools, permission controls and ordinary conversational interface. This plugin calls no model API and starts no background service. Its Python helpers plan or validate; they never manufacture specialist reasoning.

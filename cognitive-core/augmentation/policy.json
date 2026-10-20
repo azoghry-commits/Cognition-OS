@@ -1,0 +1,19 @@
+{
+  "specification_version": "4.1",
+  "classification": "ENGINEERING_ADAPTATION",
+  "policies": ["PASS_THROUGH", "LIGHT_AUGMENTATION", "STANDARD_AUGMENTATION", "DETERMINISTIC_VALIDATION", "DEEP_ADVISORY", "CRITICAL_REVIEW", "DEGRADED"],
+  "default_budget": {"framework_invocations": 3, "subagent_calls": 0, "debate_rounds": 1, "tool_calls": 8, "computation_ms": 5000, "context_tokens": 4000},
+  "budget_note": "Initial configurable engineering allowances, not measured tokens or calibrated optimal limits. Exhaustion returns an incomplete outcome, never a safety endorsement.",
+  "routes": {
+    "architecture": ["FW-13", "FW-18", "FW-49"],
+    "debugging": ["FW-09", "FW-11", "FW-10"],
+    "strategic_decision": ["FW-04", "FW-20", "FW-49"],
+    "artifact_review": ["FW-48", "FW-49"],
+    "implementation": ["FW-13", "FW-16"],
+    "learning": ["FW-09"]
+  },
+  "minimum_context_allowance": 300,
+  "stop_on": ["sufficient answer", "missing required evidence or tool", "remaining budget exhausted", "no incremental analytical value"],
+  "native_delegation": "No automatic dispatch. The host may delegate only with observed support, existing authorization and a useful independent question.",
+  "failure_policy": {"advisory": "DEGRADED with limitations", "required_validation": "BLOCKED until the required host-supported check is available"}
+}

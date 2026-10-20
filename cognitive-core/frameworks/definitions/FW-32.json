@@ -3,7 +3,7 @@
   "agent_id": "AG-32",
   "name": "Jobs-to-be-Done (JTBD)",
   "category": "Innovation Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -23,8 +23,28 @@
     "alternatives"
   ],
   "activation_conditions": [
-    "User requests Jobs-to-be-Done (JTBD) or the orchestrator justifies it against the problem."
+    "The host selects Jobs-to-be-Done (JTBD) to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied customer_context or an explicit UNKNOWN gap before analysis.",
+    "Supplied observations or an explicit UNKNOWN gap before analysis.",
+    "Supplied alternatives or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "customer_context",
+      "observations",
+      "alternatives"
+    ],
+    "properties": {
+      "customer_context": {},
+      "observations": {},
+      "alternatives": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-32.schema.json",
   "required_inputs": [
     "customer_context",
     "observations",

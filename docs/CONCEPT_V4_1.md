@@ -1,5 +1,7 @@
 # Kajian perubahan konsep Cognition OS V4.1
 
+**Catatan historis:** dokumen ini merekam pemahaman sebelum rebuild diotorisasi. Implementasi kandidat 0.2.0 dan status aktual per fase ada di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md); kontrak serta governor yang kini diimplementasikan dijelaskan di [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md).
+
 Tanggal: 2026-10-20. Status kajian: selesai untuk pembacaan prompt dan perbandingan dengan checkout. Status arsitektur V4.1: `SOURCE_DERIVED` / `PROPOSED`; implementasi hybrid belum dilakukan.
 
 Acuan lengkap: [Master Implementation Prompt V4.1](evidence/master-implementation-prompt-v4.1.txt). Salinan dipertahankan byte-identik, 36.889 byte, SHA-256 `2bea071346bc243cdf6bac965c86d27b7f515278fae0c72817dc462ee5d6b99b`. Metadata: [concept-v4.1.json](evidence/concept-v4.1.json).

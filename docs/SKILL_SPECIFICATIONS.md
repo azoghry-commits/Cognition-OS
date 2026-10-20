@@ -1,7 +1,7 @@
-# Native skill boundaries
+# Native skill boundaries — V4.1
 
-- **setup**: Inspect Cognition OS native plugin capabilities and run its onboarding smoke check after installation.
-- **cognition-orchestrator**: Analyze a complex decision or problem using an adaptive Cognition OS workflow, evidence review and qualified synthesis.
+- **setup**: Inspect installed cognitive capabilities and diagnose model-selected skill or optional hook availability.
+- **cognition-orchestrator**: Help the host agent select minimal cognitive assistance for architecture, debugging, decisions or artifact review when existing analysis has a material gap.
 - **framework-composer**: Select, order or run specific Cognition OS mental models and check workflow dependencies and handoffs.
 - **root-cause-analysis**: Diagnose recurring incidents or operational deviations with MECE, Kepner-Tregoe and evidence-based causal tests.
 - **strategic-decision**: Evaluate a strategic business choice, competitive position or expansion with explicit alternatives, evidence and decision conditions.
@@ -11,5 +11,6 @@
 - **executive-synthesis**: Turn existing analytical findings into an evidence-linked Minto executive brief, decision record or Thinking Canvas.
 - **case-intelligence**: Save, retrieve, review or delete explicitly authorized project cases and propose governed workflow improvements.
 - **cognitive-mastery**: Teach and practice a Cognition OS framework or guide the optional 90-day cognitive mastery curriculum.
+- **artifact-quality**: Inspect a deliverable against the original requirements, constraints and available test evidence when the host needs a focused completion review.
 
-Each entrypoint defines inputs, optional inputs, method, output, nonactivation, validation, recovery, permissions and progressively loaded resources. Eleven skills replace the proposed fifteen to reduce overlapping metadata. No skill is exposed per individual framework.
+12 focused entrypoints share the canonical core. Model-selected assistance is primary; setup and manual invocation are optional diagnostics. No skill is exposed per individual framework. Each entrypoint defines scope, method, nonactivation, internal output, recovery and permissions. The host retains task and deliverable ownership.

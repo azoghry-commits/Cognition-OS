@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-CLAIM_TYPES={'VERIFIED_FACT','SOURCE_SUPPORTED','CALCULATED_RESULT','SIMULATED_RESULT','USER_ASSUMPTION','MODEL_INFERENCE','HYPOTHESIS','UNKNOWN'}
+CLAIM_TYPES={'VERIFIED_FACT','SOURCE_SUPPORTED','CALCULATED_RESULT','SIMULATED_RESULT','ASSUMPTION','INFERENCE','USER_ASSUMPTION','MODEL_INFERENCE','HYPOTHESIS','UNKNOWN'}
 MODES={'AUTO':(4,1),'QUICK':(2,0),'STANDARD':(4,1),'DEEP':(8,2),'EXECUTIVE':(3,1),'CUSTOM':(12,2),'LEARN':(1,0)}
 ALIASES={'mece':'FW-09','5 whys':'FW-10','kepner-tregoe':'FW-11','rice':'FW-02','scqa':'FW-44','first principles':'FW-13','theory of constraints':'FW-17','wardley mapping':'FW-25','pre-mortem':'FW-49','minto pyramid':'FW-43','jtbd':'FW-32','triz':'FW-37'}
 

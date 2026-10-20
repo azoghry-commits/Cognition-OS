@@ -3,7 +3,7 @@
   "agent_id": "AG-34",
   "name": "Value Proposition Canvas (VPC)",
   "category": "Innovation Models",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {
@@ -22,8 +22,25 @@
     "value_map"
   ],
   "activation_conditions": [
-    "User requests Value Proposition Canvas (VPC) or the orchestrator justifies it against the problem."
+    "The host selects Value Proposition Canvas (VPC) to address an identified analytical gap, or the user explicitly requests it. Skip when prior host analysis is sufficient."
   ],
+  "preconditions": [
+    "Supplied customer_profile or an explicit UNKNOWN gap before analysis.",
+    "Supplied value_map or an explicit UNKNOWN gap before analysis."
+  ],
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "customer_profile",
+      "value_map"
+    ],
+    "properties": {
+      "customer_profile": {},
+      "value_map": {}
+    },
+    "additionalProperties": true
+  },
+  "output_schema": "schemas/framework-output/FW-34.schema.json",
   "required_inputs": [
     "customer_profile",
     "value_map"
