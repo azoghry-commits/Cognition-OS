@@ -145,6 +145,18 @@ class AdvisoryTests(unittest.TestCase):
             bad['findings'][0].update(classification=kind, evidence_ids=['e1'])
             self.assertEqual(a.review_advisory(request(), bad)['status'], 'BLOCKED')
 
+    def test_simulation_claim_requires_integer_seed(self):
+        candidate = result()
+        candidate['findings'][0].update(classification='SIMULATED_RESULT', evidence_ids=['e1'])
+        candidate['supporting_evidence'] = [{'id':'e1','kind':'simulation','locator':'local helper',
+            'content':'Simulated mean', 'inputs':{'iterations':100, 'seed':None},
+            'method':'monte-carlo', 'result':{'mean':1}}]
+        for invalid_seed in [None, True, '42']:
+            candidate['supporting_evidence'][0]['inputs']['seed'] = invalid_seed
+            self.assertEqual(a.review_advisory(request(), candidate)['status'], 'BLOCKED')
+        candidate['supporting_evidence'][0]['inputs']['seed'] = 42
+        self.assertEqual(a.review_advisory(request(), candidate)['status'], 'STRUCTURALLY_VALID')
+
     def test_legacy_conversion_preserves_original_and_origin(self):
         old = {'envelope_version': '3.1', 'session_id': 's', 'trace_id': 't', 'agent_id': 'AG-11',
                'framework_id': 'FW-11', 'execution_kind': 'SEQUENTIAL_HOST_ROLE', 'status': 'PARTIAL',

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Align generic evidence audits with V4.1 advisory validation: calculated claims require typed calculation records, and simulated claims require typed simulation records with explicit integer seeds.
+
 ## 0.2.0 — V4.1 rebuild candidate — 2026-10-20
 
 - Rebuild menjadi kapabilitas internal untuk host model/agen: governor tujuh kebijakan, pass-through, budget dan degradasi eksplisit.

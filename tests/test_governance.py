@@ -21,7 +21,21 @@ class GovernanceTests(unittest.TestCase):
         ev=self.evidence()
         self.assertTrue(e.audit_evidence([self.claim('CALCULATED_RESULT')],[ev])['gaps'])
         ev.update(inputs={'a':0},method='a',result=0)
+        self.assertTrue(e.audit_evidence([self.claim('CALCULATED_RESULT')],[ev])['gaps'])
+        ev['kind']='calculation'
         self.assertFalse(e.audit_evidence([self.claim('CALCULATED_RESULT')],[ev])['gaps'])
+    def test_simulation_requires_kind_and_seed(self):
+        ev=self.evidence()
+        ev.update(inputs={'trials':100},method='monte-carlo',result={'mean':1})
+        self.assertTrue(e.audit_evidence([self.claim('SIMULATED_RESULT')],[ev])['gaps'])
+        ev['kind']='simulation'
+        self.assertTrue(e.audit_evidence([self.claim('SIMULATED_RESULT')],[ev])['gaps'])
+        ev['inputs']['seed']=None
+        self.assertTrue(e.audit_evidence([self.claim('SIMULATED_RESULT')],[ev])['gaps'])
+        ev['inputs']['seed']=True
+        self.assertTrue(e.audit_evidence([self.claim('SIMULATED_RESULT')],[ev])['gaps'])
+        ev['inputs']['seed']=42
+        self.assertFalse(e.audit_evidence([self.claim('SIMULATED_RESULT')],[ev])['gaps'])
     def test_duplicate_and_unknown_evidence(self):
         with self.assertRaises(ValueError):e.audit_evidence([], [self.evidence(),self.evidence()])
         with self.assertRaises(ValueError):e.audit_evidence([self.claim('FAKE')],[])

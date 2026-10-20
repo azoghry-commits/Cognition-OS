@@ -182,7 +182,8 @@ def review_advisory(request, result):
             if kind == 'SIMULATED_RESULT':
                 matches = [record for record in evidence if record['id'] in refs]
                 if not matches or not all(record.get('kind') == 'simulation' and
-                        isinstance(record.get('inputs'), dict) and 'seed' in record['inputs'] for record in matches):
+                        isinstance(record.get('inputs'), dict) and isinstance(record['inputs'].get('seed'), int) and
+                        not isinstance(record['inputs']['seed'], bool) for record in matches):
                     raise ValueError('Simulation claim needs simulation evidence with reproducibility inputs')
             legacy = copy.deepcopy(finding)
             legacy['classification'] = {'ASSUMPTION': 'USER_ASSUMPTION', 'INFERENCE': 'MODEL_INFERENCE'}.get(kind, kind)

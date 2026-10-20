@@ -146,12 +146,14 @@ def audit_evidence(claims,evidence):
         if not c.get('material',True): continue
         material+=1; refs=c.get('evidence_ids',[])
         valid=bool(refs) and len(refs)==len(set(refs)) and all(r in by and by[r].get('locator') and by[r].get('content') for r in refs)
-        if c['classification'] in ['CALCULATED_RESULT','SIMULATED_RESULT']:
-            valid=valid and any(by[r].get('method') and by[r].get('inputs') is not None and by[r].get('result') is not None for r in refs)
+        if c['classification']=='CALCULATED_RESULT':
+            valid=valid and any(by[r].get('kind')=='calculation' and by[r].get('method') and isinstance(by[r].get('inputs'),dict) and by[r].get('result') is not None for r in refs)
+        if c['classification']=='SIMULATED_RESULT':
+            valid=valid and any(by[r].get('kind')=='simulation' and isinstance(by[r].get('inputs'),dict) and isinstance(by[r]['inputs'].get('seed'),int) and not isinstance(by[r]['inputs']['seed'],bool) and by[r].get('method') and by[r].get('result') is not None for r in refs)
         if c['classification']=='VERIFIED_FACT':
             valid=valid and all(by[r].get('verification',{}).get('status')=='VERIFIED' and by[r].get('verification',{}).get('checked_at') for r in refs)
         if valid: linked+=1
-        else: gaps.append({'claim_id':c.get('id'),'reason':'Missing, dangling or insufficient source/calculation/verification record'})
+        else: gaps.append({'claim_id':c.get('id'),'reason':'Missing, dangling, mistyped or insufficient source/calculation/simulation/verification record'})
     return {'material_claims':material,'linked_material_claims':linked,'traceability_coverage':linked/material if material else None,'gaps':gaps,
         'note':'Coverage measures inspectable links, not factual certainty; citations and verification assertions need human/host review.'}
 
