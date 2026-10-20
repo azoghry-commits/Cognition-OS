@@ -1,0 +1,9 @@
+{
+  "target": "ChatGPT Desktop on Windows",
+  "user_authorization": "Yes, install in Codex only",
+  "catalog": "C:\\Users\\rizky\\.agents\\plugins\\marketplace.json",
+  "source": "C:\\Users\\rizky\\.codex\\plugins\\local-sources\\cognition-os",
+  "marketplace_name": "cognition-os-local",
+  "version": "0.1.0",
+  "desktop_activation": "UNVERIFIED; requires native fresh-chat observation"
+}

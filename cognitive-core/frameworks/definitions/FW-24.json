@@ -1,0 +1,81 @@
+{
+  "id": "FW-24",
+  "agent_id": "AG-24",
+  "name": "Blue Ocean Strategy (ERRC)",
+  "category": "Strategic Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Strategic Models",
+    "line": 314
+  },
+  "source_original": {
+    "purpose": "Penciptaan ruang pasar baru melalui matriks *Eliminate-Reduce-Raise-Create* & kanvas strategi nilai",
+    "inputs": "Faktor kompetisi industri saat ini dan segmen non-pelanggan",
+    "outputs": "Matriks ERRC 4 kuadran, kurva nilai baru, dan argumen optimis pertumbuhan"
+  },
+  "purpose": "Identify industry value factors and noncustomer barriers",
+  "applicability": [
+    "competitive_factors",
+    "noncustomers"
+  ],
+  "activation_conditions": [
+    "User requests Blue Ocean Strategy (ERRC) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "competitive_factors",
+    "noncustomers"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Identify industry value factors and noncustomer barriers",
+    "Build Eliminate, Reduce, Raise and Create choices with cost and buyer-value logic",
+    "Compare current and proposed value curves",
+    "Test demand, delivery and economic assumptions before asserting a blue ocean"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "errc",
+    "value_curve",
+    "tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-49"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide errc or declare it UNKNOWN with reason.",
+    "Provide value_curve or declare it UNKNOWN with reason.",
+    "Provide tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Strategic Models",
+      "line": 314
+    }
+  ]
+}

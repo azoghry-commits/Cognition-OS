@@ -1,0 +1,79 @@
+{
+  "id": "FW-27",
+  "agent_id": "AG-27",
+  "name": "Porter's Five Forces",
+  "category": "Strategic Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Strategic Models",
+    "line": 317
+  },
+  "source_original": {
+    "purpose": "Evaluasi daya tarik struktural industri dan tekanan margin dari 5 kekuatan kompetitif",
+    "inputs": "Struktur pasar, jumlah pemasok/pembeli, hambatan masuk, produk substitusi",
+    "outputs": "Skor intensitas 5 kekuatan (1–10) dan strategi pertahanan margin"
+  },
+  "purpose": "Define industry boundary and horizon",
+  "applicability": [
+    "industry",
+    "market_evidence"
+  ],
+  "activation_conditions": [
+    "User requests Porter's Five Forces or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "industry",
+    "market_evidence"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define industry boundary and horizon",
+    "Assess rivalry, entry threat, substitutes, supplier power and buyer power separately",
+    "Ground intensity judgments in evidence and define any numeric rubric",
+    "Explain how structural forces affect margins and defensive choices"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "forces",
+    "margin_implications",
+    "options"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide forces or declare it UNKNOWN with reason.",
+    "Provide margin_implications or declare it UNKNOWN with reason.",
+    "Provide options or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Strategic Models",
+      "line": 317
+    }
+  ]
+}

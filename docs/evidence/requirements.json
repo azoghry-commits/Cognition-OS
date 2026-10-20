@@ -1,0 +1,2112 @@
+[
+  {
+    "id": "A-0010",
+    "source": "A line 10: Ringkasan Struktur Dokumen (Master Blueprint Overview)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0025",
+    "source": "A line 25: Bagian 1: Visi Produk, Paradigma Tripartit & Penyempurnaan Cetak Biru (PRD)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0027",
+    "source": "A line 27: 1.1 Paradigma Baru Pemikiran Strategis: Sinergi Tripartit Berbasis Komputasi",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0039",
+    "source": "A line 39: 1.2 Audit, Koreksi & Penyempurnaan atas Dokumen Konsep Awal",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0069",
+    "source": "A line 69: 1.3 Target Pengguna & Metrik Keberhasilan Produk (Product KPIs)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0081",
+    "source": "A line 81: Bagian 2: Arsitektur Sistem 5-Lapis (5-Layer Full-Stack Architecture) & Tech Stack",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0083",
+    "source": "A line 83: 2.1 Struktur Arsitektur 5-Lapis (5-Layer Cognitive Augmentation Stack)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0129",
+    "source": "A line 129: 2.2 Spesifikasi Tech Stack Produksi (Full-Stack SaaS)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0148",
+    "source": "A line 148: Bagian 3: Spesifikasi Fungsional, UI/UX Interaktif & Alur Kerja 5 Fase",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0152",
+    "source": "A line 152: 3.1 Arsitektur 4 Modul Utama Ruang Kerja (OS Workspace Modules)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0165",
+    "source": "A line 165: 3.2 Spesifikasi Detail 5 Fase Alur Kerja Pengguna (End-to-End User Journey)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0167",
+    "source": "A line 167: Fase 1: Problem Ingestion Wizard (Dari Ambiguitas Menuju Ketajaman Analitik)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0182",
+    "source": "A line 182: Fase 2: Framework Stack Builder (Merangkai Algoritma Pemecahan Masalah)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0194",
+    "source": "A line 194: Fase 3: The Thinking Canvas (Isolasi Masalah Tanpa Blind Spots)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0205",
+    "source": "A line 205: Fase 4: Adversarial Debate Mode (Sistem Kekebalan terhadap Bias Grup)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0216",
+    "source": "A line 216: Fase 5: Scenario Simulator (Mengubah Tebakan Menjadi Probabilitas Absolut)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0228",
+    "source": "A line 228: 3.3 Spesifikasi Modul Pendukung (Guardrails, Synthesis, Memory & Mastery)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0266",
+    "source": "A line 266: Bagian 4: Katalog Lengkap 50 Model Mental (8 Kategori) & 52 Agen AI Spesialis",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0270",
+    "source": "A line 270: 4.1 Tabel Spesifikasi 50 Model Mental & Agen AI Spesialis (AG-01 s/d AG-50)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0272",
+    "source": "A line 272: Kategori 1: Decision Models (8 Model Mental — Fokus: Prioritas & Kalkulus Probabilitas)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0285",
+    "source": "A line 285: Kategori 2: Problem Solving Models (8 Model Mental — Fokus: Akar Penyebab & Optimasi Proses)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0298",
+    "source": "A line 298: Kategori 3: Systems Thinking Models (7 Model Mental — Fokus: Dinamika Loop & Titik Ungkit)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0310",
+    "source": "A line 310: Kategori 4: Strategic Models (8 Model Mental — Fokus: Inovasi Nilai & Analisis Industri)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0323",
+    "source": "A line 323: Kategori 5: Innovation Models (6 Model Mental — Fokus: Desain Berpusat pada Manusia & R&D)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0334",
+    "source": "A line 334: Kategori 6: Execution Models (5 Model Mental — Fokus: Tata Kelola RACI & Alur Kerja GTD)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0344",
+    "source": "A line 344: Kategori 7: Communication Models (6 Model Mental — Fokus: Struktur Narasi & Umpan Balik)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0355",
+    "source": "A line 355: Kategori 8: Meta-Thinking Models (2 Model Mental — Fokus: Deteksi Bias & Validasi Belajar)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0362",
+    "source": "A line 362: 4.2 Spesifikasi 2 Agen Inti Sistem (AG-51 & AG-52)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0369",
+    "source": "A line 369: 4.3 Kontrak Pertukaran Data Antar-Agen (JSON Schema Payload) & System Prompt Produksi",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognitive-core/frameworks; cognitive-core/agents; schemas",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0425",
+    "source": "A line 425: Template System Prompt Standar untuk Agen Spesialis (Contoh: `AG-11 Kepner-Tregoe Agent` & `AG-52 Evaluator Jury`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0461",
+    "source": "A line 461: Bagian 5: Mesin Komputasi Matematis & Algoritma Validasi Real-Time",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0465",
+    "source": "A line 465: 5.1 Formulasi Matematis Inti",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognition/mathematics.py; cognition/engine.py",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0490",
+    "source": "A line 490: 5.2 Implementasi Kode Produksi Python (`cognition_engine/math_guardrails.py`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "cognition/mathematics.py; cognition/engine.py",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0685",
+    "source": "A line 685: Bagian 6: Skema Database (PostgreSQL + pgvector) & Reasoning Knowledge Graph (Neo4j PROV-O)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0687",
+    "source": "A line 687: 6.1 Skema Database Relasional & Vektor (`PostgreSQL 16 + pgvector`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "schemas; cognition/engine.py; cognition/memory.py",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0806",
+    "source": "A line 806: 6.2 Skema Reasoning Knowledge Graph Berstandar W3C PROV-O (`Neo4j 5 Cypher`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "schemas; cognition/engine.py; cognition/memory.py",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0866",
+    "source": "A line 866: Bagian 7: Orkestrasi Backend LangGraph, Kontrak API Streaming & Komponen Frontend",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-0868",
+    "source": "A line 868: 7.1 Implementasi Orkestrasi Multi-Agen Paralel dengan LangGraph (`cognition_engine/orchestrator.py`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "skills; docs/ARCHITECTURE_DECISIONS.md (SaaS removed)",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1033",
+    "source": "A line 1033: 7.2 Spesifikasi Kontrak API REST & Streaming (`FastAPI Endpoints`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "skills; docs/ARCHITECTURE_DECISIONS.md (SaaS removed)",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1045",
+    "source": "A line 1045: 7.3 Arsitektur Komponen Frontend Interaktif (`Next.js 15 + React Flow`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "skills; docs/ARCHITECTURE_DECISIONS.md (SaaS removed)",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1234",
+    "source": "A line 1234: Bagian 8: Struktur Direktori Monorepo, Deployment Docker, Pengujian & Roadmap 16 Minggu",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "docs/SOURCE_ANALYSIS.md; native transformation and acceptance below",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1236",
+    "source": "A line 1236: 8.1 Struktur Direktori Proyek (`cognition-os/` Monorepo)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "scripts/package_release.py; docs/RELEASE_CHECKLIST.md",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1289",
+    "source": "A line 1289: 8.2 Konfigurasi Infrastruktur Lokal & Produksi (`docker-compose.yml`)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "scripts/package_release.py; docs/RELEASE_CHECKLIST.md",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "A-1355",
+    "source": "A line 1355: 8.3 Roadmap Implementasi Rekayasa (16 Minggu / 4 Kuartal Sprint)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Preserve analytical intent via native skills; replace SaaS delivery per V3.1",
+    "component": "scripts/package_release.py; docs/RELEASE_CHECKLIST.md",
+    "acceptance": "Source scope accounted for; runtime/host evidence required",
+    "evidence": "SOURCE_ANALYSIS.md; tests; host evals",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "FW-01",
+    "source": "A 4.1 line 276: Eisenhower Matrix",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-01.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-02",
+    "source": "A 4.1 line 277: RICE Scoring",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-02.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-03",
+    "source": "A 4.1 line 278: MoSCoW Method",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-03.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-04",
+    "source": "A 4.1 line 279: Expected Value (EV) Calculus",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-04.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-05",
+    "source": "A 4.1 line 280: Bayesian Updating",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-05.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-06",
+    "source": "A 4.1 line 281: Pareto Principle (80/20)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-06.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-07",
+    "source": "A 4.1 line 282: Cost-Benefit & Marginal Utility",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-07.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-08",
+    "source": "A 4.1 line 283: Regret Minimization Framework",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-08.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-09",
+    "source": "A 4.1 line 289: MECE Issue Tree",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-09.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-10",
+    "source": "A 4.1 line 290: 5 Whys Analysis",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-10.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-11",
+    "source": "A 4.1 line 291: Kepner-Tregoe (KT) Matrix",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-11.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-12",
+    "source": "A 4.1 line 292: Fishbone (Ishikawa) Diagram",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-12.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-13",
+    "source": "A 4.1 line 293: First Principles Thinking",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-13.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-14",
+    "source": "A 4.1 line 294: Hypothesis-Driven Problem Solving",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-14.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-15",
+    "source": "A 4.1 line 295: Cynefin Framework",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-15.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-16",
+    "source": "A 4.1 line 296: Inversion Thinking",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-16.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-17",
+    "source": "A 4.1 line 302: Theory of Constraints (TOC)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-17.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-18",
+    "source": "A 4.1 line 303: Causal Loop Diagrams (CLD)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-18.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-19",
+    "source": "A 4.1 line 304: Meadows' 12 Leverage Points",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-19.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-20",
+    "source": "A 4.1 line 305: Second-Order Thinking",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-20.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-21",
+    "source": "A 4.1 line 306: Stock and Flow Modeling",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-21.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-22",
+    "source": "A 4.1 line 307: System Archetypes",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-22.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-23",
+    "source": "A 4.1 line 308: Network Effects & Feedback",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-23.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-24",
+    "source": "A 4.1 line 314: Blue Ocean Strategy (ERRC)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-24.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-25",
+    "source": "A 4.1 line 315: Wardley Mapping",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-25.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-26",
+    "source": "A 4.1 line 316: OODA Loop",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-26.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-27",
+    "source": "A 4.1 line 317: Porter's Five Forces",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-27.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-28",
+    "source": "A 4.1 line 318: VRIO Framework",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-28.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-29",
+    "source": "A 4.1 line 319: Ansoff Matrix",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-29.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-30",
+    "source": "A 4.1 line 320: Game Theory (Nash Equilibrium)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-30.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-31",
+    "source": "A 4.1 line 321: Business Model Canvas (BMC)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-31.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-32",
+    "source": "A 4.1 line 327: Jobs-to-be-Done (JTBD)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-32.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-33",
+    "source": "A 4.1 line 328: Design Thinking",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-33.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-34",
+    "source": "A 4.1 line 329: Value Proposition Canvas (VPC)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-34.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-35",
+    "source": "A 4.1 line 330: Kano Model",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-35.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-36",
+    "source": "A 4.1 line 331: SCAMPER",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-36.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-37",
+    "source": "A 4.1 line 332: TRIZ (Inventive Problem Solving)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-37.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-38",
+    "source": "A 4.1 line 338: RACI Governance Matrix",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-38.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-39",
+    "source": "A 4.1 line 339: OKRs (Objectives & Key Results)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-39.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-40",
+    "source": "A 4.1 line 340: PDCA (Plan-Do-Check-Act)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-40.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-41",
+    "source": "A 4.1 line 341: Getting Things Done (GTD)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-41.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-42",
+    "source": "A 4.1 line 342: Critical Path Method (CPM)",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-42.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-43",
+    "source": "A 4.1 line 348: Minto Pyramid Principle",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-43.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-44",
+    "source": "A 4.1 line 349: SCQA Framework",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-44.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-45",
+    "source": "A 4.1 line 350: Storyboarding & Narrative",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-45.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-46",
+    "source": "A 4.1 line 351: Stakeholder Grid",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-46.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-47",
+    "source": "A 4.1 line 352: Radical Candor Feedback",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-47.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-48",
+    "source": "A 4.1 line 353: Toulmin Argumentation Model",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-48.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-49",
+    "source": "A 4.1 line 359: Pre-Mortem & Red Teaming",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-49.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "FW-50",
+    "source": "A 4.1 line 360: Cognitive Bias Deconstruction",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Host-executed distinctive method",
+    "component": "cognitive-core/frameworks/definitions/FW-50.json",
+    "acceptance": "Identity/category and contract correct; method fidelity tested separately",
+    "evidence": "tests/test_contracts.py; tests/cognitive-evals/cases.json",
+    "status": "IMPLEMENTED / behavioral UNVERIFIED"
+  },
+  {
+    "id": "B-01",
+    "source": "B page 1",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-01.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-02",
+    "source": "B page 2",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-02.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-03",
+    "source": "B page 3",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-03.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-04",
+    "source": "B page 4",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-04.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-05",
+    "source": "B page 5",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-05.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-06",
+    "source": "B page 6",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-06.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-07",
+    "source": "B page 7",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-07.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-08",
+    "source": "B page 8",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-08.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-09",
+    "source": "B page 9",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-09.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-10",
+    "source": "B page 10",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-10.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-11",
+    "source": "B page 11",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-11.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-12",
+    "source": "B page 12",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-12.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-13",
+    "source": "B page 13",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-13.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-14",
+    "source": "B page 14",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-14.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "B-15",
+    "source": "B page 15",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "See page-specific transformation in SOURCE_ANALYSIS",
+    "component": "skills; references; templates",
+    "acceptance": "Visual scope retained as native artifact/workflow",
+    "evidence": "evidence/pdf/page-15.png; SOURCE_ANALYSIS",
+    "status": "IMPLEMENTED / host behavior UNVERIFIED"
+  },
+  {
+    "id": "V31-0018",
+    "source": "V3.1 line 18: 0. SUPREME EXECUTIVE DIRECTIVE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0058",
+    "source": "V3.1 line 58: 1. SOURCE DOCUMENT INTELLIGENCE AND REVERSE ENGINEERING",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0060",
+    "source": "V3.1 line 60: 1.1 Mandatory source materials",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0090",
+    "source": "V3.1 line 90: 1.2 Mandatory analysis procedure",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0115",
+    "source": "V3.1 line 115: 1.3 Source fidelity requirements",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0130",
+    "source": "V3.1 line 130: 1.4 Requirements provenance",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0164",
+    "source": "V3.1 line 164: 2. NON-NEGOTIABLE ARCHITECTURAL CONSTRAINTS",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0166",
+    "source": "V3.1 line 166: 2.1 Required architecture",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0202",
+    "source": "V3.1 line 202: 2.2 Prohibited architectural outcomes",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0232",
+    "source": "V3.1 line 232: 2.3 Native UX preservation",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0251",
+    "source": "V3.1 line 251: 3. OFFICIAL PLATFORM COMPATIBILITY RESEARCH",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0255",
+    "source": "V3.1 line 255: 3.1 OpenAI references",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0278",
+    "source": "V3.1 line 278: 3.2 Claude references",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0301",
+    "source": "V3.1 line 301: 3.3 Compatibility verification rules",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0328",
+    "source": "V3.1 line 328: 3.4 Required compatibility matrix",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0357",
+    "source": "V3.1 line 357: 4. PORTABLE PLUGIN PACKAGING STANDARD",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0359",
+    "source": "V3.1 line 359: 4.1 Canonical packaging strategy",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0389",
+    "source": "V3.1 line 389: 4.2 Portable resources",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0399",
+    "source": "V3.1 line 399: 4.3 Manifest integrity",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0413",
+    "source": "V3.1 line 413: 4.4 Marketplace strategy",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0425",
+    "source": "V3.1 line 425: 5. COMPLETE MENTAL MODEL PRESERVATION",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0441",
+    "source": "V3.1 line 441: 5.1 Canonical registry",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0468",
+    "source": "V3.1 line 468: 5.2 Analytical fidelity",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0486",
+    "source": "V3.1 line 486: 5.3 Avoid excessive skills proliferation",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0502",
+    "source": "V3.1 line 502: 6. COMPLETE 52-SPECIALIST LOGICAL AGENT ARCHITECTURE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0512",
+    "source": "V3.1 line 512: 6.1 Logical versus physical agents",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0526",
+    "source": "V3.1 line 526: 6.2 Agent execution policy",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0538",
+    "source": "V3.1 line 538: 6.3 Chief Orchestrator responsibilities",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0556",
+    "source": "V3.1 line 556: 6.4 Evaluator Jury responsibilities",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0574",
+    "source": "V3.1 line 574: 7. AUTONOMOUS COGNITIVE ORCHESTRATION ENGINE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0580",
+    "source": "V3.1 line 580: 7.1 Problem classification",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0600",
+    "source": "V3.1 line 600: 7.2 Framework composition",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0628",
+    "source": "V3.1 line 628: 7.3 Analysis modes",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0660",
+    "source": "V3.1 line 660: 7.4 Intelligent stopping rules",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0675",
+    "source": "V3.1 line 675: 8. NATIVE SKILLS-FIRST ARCHITECTURE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0679",
+    "source": "V3.1 line 679: 8.1 Recommended capability skills",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0702",
+    "source": "V3.1 line 702: 8.2 Required skill structure",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0720",
+    "source": "V3.1 line 720: 8.3 Progressive disclosure",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0730",
+    "source": "V3.1 line 730: 8.4 Context engineering",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0749",
+    "source": "V3.1 line 749: 9. ORIGINAL FEATURE-TO-PLUGIN TRANSFORMATION",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0753",
+    "source": "V3.1 line 753: 9.1 Problem Ingestion Wizard",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0768",
+    "source": "V3.1 line 768: 9.2 Framework Stack Builder",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0780",
+    "source": "V3.1 line 780: 9.3 Thinking Canvas",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0796",
+    "source": "V3.1 line 796: 9.4 Adversarial Debate Mode",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0807",
+    "source": "V3.1 line 807: 9.5 Scenario Simulator",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0815",
+    "source": "V3.1 line 815: 9.6 Logic Guardrails",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0821",
+    "source": "V3.1 line 821: 9.7 Synthesis Engine",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0825",
+    "source": "V3.1 line 825: 9.8 Case Library",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0829",
+    "source": "V3.1 line 829: 9.9 Human Mastery Track",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0835",
+    "source": "V3.1 line 835: 10. DETERMINISTIC COMPUTATIONAL INTELLIGENCE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0839",
+    "source": "V3.1 line 839: 10.1 Required mathematical capabilities",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0855",
+    "source": "V3.1 line 855: 10.2 Mathematical integrity",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0877",
+    "source": "V3.1 line 877: 10.3 Implementation preference",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0890",
+    "source": "V3.1 line 890: 11. COGNITIVE VALIDATION AND LOGIC GUARDRAILS",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0892",
+    "source": "V3.1 line 892: 11.1 MECE validation",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0907",
+    "source": "V3.1 line 907: 11.2 Cognitive bias auditing",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0925",
+    "source": "V3.1 line 925: 11.3 Evidence-grounded outputs",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0947",
+    "source": "V3.1 line 947: 11.4 Confidence calibration",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0964",
+    "source": "V3.1 line 964: 12. REASONING PROVENANCE AND DECISION LINEAGE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0968",
+    "source": "V3.1 line 968: 12.1 Traceability model",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0985",
+    "source": "V3.1 line 985: 12.2 No hidden reasoning requirement",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-0991",
+    "source": "V3.1 line 991: 12.3 Storage format",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1002",
+    "source": "V3.1 line 1002: 12.4 Traceability measurement",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1012",
+    "source": "V3.1 line 1012: 13. INSTITUTIONAL MEMORY AND STATE MANAGEMENT",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1016",
+    "source": "V3.1 line 1016: 13.1 Memory categories",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1026",
+    "source": "V3.1 line 1026: 13.2 Storage preference",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1035",
+    "source": "V3.1 line 1035: 13.3 Memory governance",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1047",
+    "source": "V3.1 line 1047: 14. GOVERNED COGNITIVE SELF-IMPROVEMENT",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1082",
+    "source": "V3.1 line 1082: 15. MCP-OPTIONAL TOOL ARCHITECTURE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1086",
+    "source": "V3.1 line 1086: 15.1 When MCP is appropriate",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1097",
+    "source": "V3.1 line 1097: 15.2 Proposed MCP tools",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1110",
+    "source": "V3.1 line 1110: 15.3 MCP constraints",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1125",
+    "source": "V3.1 line 1125: 16. SECURITY AND AI GOVERNANCE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1148",
+    "source": "V3.1 line 1148: 16.1 Human-in-the-loop checkpoints",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1163",
+    "source": "V3.1 line 1163: 17. PERFORMANCE AND TOKEN EFFICIENCY ENGINEERING",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1167",
+    "source": "V3.1 line 1167: 17.1 Optimization objectives",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1180",
+    "source": "V3.1 line 1180: 17.2 Required strategies",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1194",
+    "source": "V3.1 line 1194: 17.3 Evaluation metrics",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1216",
+    "source": "V3.1 line 1216: 17.4 Performance principle",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1222",
+    "source": "V3.1 line 1222: 18. PLUGIN LIFECYCLE MANAGEMENT",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1226",
+    "source": "V3.1 line 1226: 18.1 Installation",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1236",
+    "source": "V3.1 line 1236: 18.2 Onboarding",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1252",
+    "source": "V3.1 line 1252: 18.3 Updates",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1265",
+    "source": "V3.1 line 1265: 18.4 Removal",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1279",
+    "source": "V3.1 line 1279: 19. RECOMMENDED REPOSITORY ARCHITECTURE",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1405",
+    "source": "V3.1 line 1405: 20. COGNITIVE EVALUATION FRAMEWORK",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1409",
+    "source": "V3.1 line 1409: 20.1 Framework fidelity tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1420",
+    "source": "V3.1 line 1420: 20.2 Orchestration tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1432",
+    "source": "V3.1 line 1432: 20.3 Adversarial tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1444",
+    "source": "V3.1 line 1444: 20.4 Quantitative tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1450",
+    "source": "V3.1 line 1450: 20.5 Platform compatibility tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1466",
+    "source": "V3.1 line 1466: 20.6 Performance tests",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1481",
+    "source": "V3.1 line 1481: 21. IMPLEMENTATION ROADMAP AND QUALITY GATES",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1583",
+    "source": "V3.1 line 1583: 22. RELEASE ACCEPTANCE CRITERIA",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1638",
+    "source": "V3.1 line 1638: 23. MANDATORY DOCUMENTATION DELIVERABLES",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1673",
+    "source": "V3.1 line 1673: 24. REQUIRED EXAMPLE USER WORKFLOWS",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1751",
+    "source": "V3.1 line 1751: 25. ANTI-HALLUCINATION AND EXECUTION INTEGRITY",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1798",
+    "source": "V3.1 line 1798: 26. AUTONOMOUS ENGINEERING EXECUTION CONTRACT",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1836",
+    "source": "V3.1 line 1836: 27. DEFAULT OUTPUT LANGUAGE AND REPORTING",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1881",
+    "source": "V3.1 line 1881: 28. FINAL DELIVERABLE CONTRACT",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1948",
+    "source": "V3.1 line 1948: 29. FINAL ENGINEERING SUCCESS DEFINITION",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  },
+  {
+    "id": "V31-1971",
+    "source": "V3.1 line 1971: 30. EXECUTION COMMAND — BEGIN NOW",
+    "provenance": "SOURCE_DERIVED",
+    "transformation": "Approved native-plugin direction",
+    "component": "See component docs and phase status",
+    "acceptance": "Applicable contract/gate passes with actual evidence",
+    "evidence": "PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST",
+    "status": "IMPLEMENTED / remaining gates UNVERIFIED"
+  }
+]

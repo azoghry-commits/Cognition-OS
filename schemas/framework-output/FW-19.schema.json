@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-19 analytical payload",
+  "type": "object",
+  "required": [
+    "leverage_ranking",
+    "rationale",
+    "risks"
+  ],
+  "properties": {
+    "leverage_ranking": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "rationale": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "risks": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

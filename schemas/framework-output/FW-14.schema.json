@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-14 analytical payload",
+  "type": "object",
+  "required": [
+    "hypotheses",
+    "test_plan",
+    "decision_rules"
+  ],
+  "properties": {
+    "hypotheses": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "test_plan": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "decision_rules": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

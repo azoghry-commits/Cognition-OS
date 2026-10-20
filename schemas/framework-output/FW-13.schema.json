@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-13 analytical payload",
+  "type": "object",
+  "required": [
+    "assumption_ledger",
+    "fundamentals",
+    "reconstructed_options"
+  ],
+  "properties": {
+    "assumption_ledger": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "fundamentals": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "reconstructed_options": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

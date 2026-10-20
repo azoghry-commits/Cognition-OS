@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-44 analytical payload",
+  "type": "object",
+  "required": [
+    "situation",
+    "complication",
+    "question",
+    "answer"
+  ],
+  "properties": {
+    "situation": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "complication": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "question": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "answer": {
+      "type": [
+        "string",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

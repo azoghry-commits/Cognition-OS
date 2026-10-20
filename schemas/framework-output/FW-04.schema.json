@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-04 analytical payload",
+  "type": "object",
+  "required": [
+    "gross_ev",
+    "net_ev",
+    "assumptions"
+  ],
+  "properties": {
+    "gross_ev": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "net_ev": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "assumptions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

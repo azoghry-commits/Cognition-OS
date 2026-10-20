@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-30 analytical payload",
+  "type": "object",
+  "required": [
+    "payoff_matrix",
+    "best_responses",
+    "equilibria"
+  ],
+  "properties": {
+    "payoff_matrix": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "best_responses": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "equilibria": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

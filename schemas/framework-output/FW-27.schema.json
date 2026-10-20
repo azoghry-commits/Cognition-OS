@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-27 analytical payload",
+  "type": "object",
+  "required": [
+    "forces",
+    "margin_implications",
+    "options"
+  ],
+  "properties": {
+    "forces": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "margin_implications": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "options": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

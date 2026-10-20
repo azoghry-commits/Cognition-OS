@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-25 analytical payload",
+  "type": "object",
+  "required": [
+    "wardley_map",
+    "sourcing_options",
+    "uncertainties"
+  ],
+  "properties": {
+    "wardley_map": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "sourcing_options": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "uncertainties": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-29 analytical payload",
+  "type": "object",
+  "required": [
+    "ansoff_quadrants",
+    "options",
+    "risks"
+  ],
+  "properties": {
+    "ansoff_quadrants": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "options": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "risks": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-26 analytical payload",
+  "type": "object",
+  "required": [
+    "ooda_cycle",
+    "decision",
+    "feedback"
+  ],
+  "properties": {
+    "ooda_cycle": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "decision": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "feedback": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

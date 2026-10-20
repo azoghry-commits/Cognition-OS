@@ -1,0 +1,81 @@
+{
+  "id": "FW-47",
+  "agent_id": "AG-47",
+  "name": "Radical Candor Feedback",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 352
+  },
+  "source_original": {
+    "purpose": "Perumusan komunikasi kepemimpinan yang memadukan *Care Personally* dan *Challenge Directly*",
+    "inputs": "Situasi konflik tim, kegagalan eksekusi, atau kebutuhan evaluasi kinerja",
+    "outputs": "Naskah umpan balik yang lugas, objektif, dan konstruktif tanpa agresi"
+  },
+  "purpose": "Describe observable behavior and impact",
+  "applicability": [
+    "situation",
+    "observations",
+    "desired_change"
+  ],
+  "activation_conditions": [
+    "User requests Radical Candor Feedback or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "situation",
+    "observations",
+    "desired_change"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Describe observable behavior and impact",
+    "Combine Care Personally with Challenge Directly",
+    "Invite the other perspective and agree on concrete next behavior",
+    "Avoid personality diagnoses and invented motives"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "feedback_script",
+    "questions",
+    "followup"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide feedback_script or declare it UNKNOWN with reason.",
+    "Provide questions or declare it UNKNOWN with reason.",
+    "Provide followup or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 352
+    }
+  ]
+}

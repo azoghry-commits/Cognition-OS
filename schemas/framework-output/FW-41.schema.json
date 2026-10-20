@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-41 analytical payload",
+  "type": "object",
+  "required": [
+    "next_actions",
+    "contexts",
+    "review"
+  ],
+  "properties": {
+    "next_actions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "contexts": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "review": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

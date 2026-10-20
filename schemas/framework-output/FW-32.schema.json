@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-32 analytical payload",
+  "type": "object",
+  "required": [
+    "job_stories",
+    "forces",
+    "underserved_needs"
+  ],
+  "properties": {
+    "job_stories": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "forces": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "underserved_needs": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

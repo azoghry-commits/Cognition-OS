@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "recommendation",
+    "verdict",
+    "claims",
+    "alternatives",
+    "risks",
+    "conditions",
+    "human_decision"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommendation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict": {
+      "enum": [
+        "ACCEPT",
+        "CONDITIONAL",
+        "REJECT",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_decision": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "NOT_REQUESTED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,79 @@
+{
+  "id": "FW-36",
+  "agent_id": "AG-36",
+  "name": "SCAMPER",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 331
+  },
+  "source_original": {
+    "purpose": "Eksplorasi inovasi produk/proses melalui 7 lensa (*Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse*)",
+    "inputs": "Produk, layanan, atau alur kerja eksisting yang mengalami stagnasi",
+    "outputs": "7 variasi konsep inovasi terstruktur berdasarkan matriks SCAMPER"
+  },
+  "purpose": "Generate distinct Substitute, Combine, Adapt, Modify, Put to another use, Eliminate and Reverse or Rearrange variations",
+  "applicability": [
+    "existing_solution",
+    "constraints"
+  ],
+  "activation_conditions": [
+    "User requests SCAMPER or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "existing_solution",
+    "constraints"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Generate distinct Substitute, Combine, Adapt, Modify, Put to another use, Eliminate and Reverse or Rearrange variations",
+    "Explain the changed mechanism for each",
+    "Screen concepts against constraints",
+    "Prototype the highest learning-value options"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "scamper_concepts",
+    "selection",
+    "tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide scamper_concepts or declare it UNKNOWN with reason.",
+    "Provide selection or declare it UNKNOWN with reason.",
+    "Provide tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 331
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-22 analytical payload",
+  "type": "object",
+  "required": [
+    "archetype",
+    "loop_map",
+    "interventions"
+  ],
+  "properties": {
+    "archetype": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "loop_map": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "interventions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

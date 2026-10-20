@@ -1,0 +1,77 @@
+{
+  "id": "FW-16",
+  "agent_id": "AG-16",
+  "name": "Inversion Thinking",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 296
+  },
+  "source_original": {
+    "purpose": "Pembalikan masalah (*\"Bagaimana cara memastikan proyek ini hancur total?\"*) untuk menutup celah kegagalan",
+    "inputs": "Tujuan strategis utama yang ingin dicapai pengguna",
+    "outputs": "Daftar kondisi pemicu kegagalan mutlak dan langkah pencegahannya (*anti-goals*)"
+  },
+  "purpose": "Invert the desired outcome into ways to guarantee failure",
+  "applicability": [
+    "goal",
+    "constraints"
+  ],
+  "activation_conditions": [
+    "User requests Inversion Thinking or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "goal",
+    "constraints"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Invert the desired outcome into ways to guarantee failure",
+    "Identify necessary failure conditions and controllable precursors",
+    "Convert them into preventive checks and experiments",
+    "Do not assume avoiding failure alone guarantees success"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "failure_conditions",
+    "preventive_actions"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide failure_conditions or declare it UNKNOWN with reason.",
+    "Provide preventive_actions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 296
+    }
+  ]
+}

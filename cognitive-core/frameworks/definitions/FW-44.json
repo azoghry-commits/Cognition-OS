@@ -1,0 +1,84 @@
+{
+  "id": "FW-44",
+  "agent_id": "AG-44",
+  "name": "SCQA Framework",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 349
+  },
+  "source_original": {
+    "purpose": "Pembingkaian konteks masalah secara tajam (*Situation, Complication, Question, Answer*)",
+    "inputs": "Deskripsi masalah mentah dan metrik perubahan kondisi bisnis",
+    "outputs": "Narasi terstruktur 4 bagian SCQA untuk menyelaraskan pemahaman pemangku kepentingan"
+  },
+  "purpose": "State supported Situation",
+  "applicability": [
+    "problem",
+    "context"
+  ],
+  "activation_conditions": [
+    "User requests SCQA Framework or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "problem",
+    "context"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "State supported Situation",
+    "Identify the Complication and its consequences",
+    "Formulate a decision-relevant Question",
+    "Give a provisional Answer with assumptions and evidence gaps",
+    "Do not smuggle a root-cause conclusion into framing"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "situation",
+    "complication",
+    "question",
+    "answer"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-09"
+  ],
+  "workflow_position": "framing",
+  "validation_criteria": [
+    "Provide situation or declare it UNKNOWN with reason.",
+    "Provide complication or declare it UNKNOWN with reason.",
+    "Provide question or declare it UNKNOWN with reason.",
+    "Provide answer or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 349
+    }
+  ]
+}

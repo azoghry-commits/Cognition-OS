@@ -1,0 +1,84 @@
+{
+  "id": "FW-42",
+  "agent_id": "AG-42",
+  "name": "Critical Path Method (CPM)",
+  "category": "Execution Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Execution Models",
+    "line": 342
+  },
+  "source_original": {
+    "purpose": "Kalkulasi jalur terpanjang aktivitas dependen yang menentukan durasi minimum penyelesaian proyek",
+    "inputs": "Daftar tugas, estimasi durasi, dan ketergantungan (*predecessors*)",
+    "outputs": "Jalur kritis (*Critical Path*), waktu *float/slack* tiap tugas, dan jadwal"
+  },
+  "purpose": "Validate dependency DAG and common duration units",
+  "applicability": [
+    "tasks",
+    "durations",
+    "predecessors",
+    "time_unit"
+  ],
+  "activation_conditions": [
+    "User requests Critical Path Method (CPM) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "tasks",
+    "durations",
+    "predecessors",
+    "time_unit"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Validate dependency DAG and common duration units",
+    "Run a forward pass for earliest start and finish",
+    "Run a backward pass for latest start and finish",
+    "Compute slack and all critical activities",
+    "Disclose that resource constraints and uncertain duration need additional analysis"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "critical_path",
+    "schedule",
+    "slack"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide critical_path or declare it UNKNOWN with reason.",
+    "Provide schedule or declare it UNKNOWN with reason.",
+    "Provide slack or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Execution Models",
+      "line": 342
+    }
+  ]
+}

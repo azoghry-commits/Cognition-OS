@@ -1,0 +1,85 @@
+{
+  "id": "FW-07",
+  "agent_id": "AG-07",
+  "name": "Cost-Benefit & Marginal Utility",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 282
+  },
+  "source_original": {
+    "purpose": "Analisis titik impas, ROI, dan penurunan utilitas marjinal dari penambahan investasi",
+    "inputs": "Rincian biaya tetap/variabel, proyeksi manfaat per unit waktu",
+    "outputs": "Rasio *Benefit-Cost (BCR)*, *Net Present Value (NPV)*, dan titik jenuh"
+  },
+  "purpose": "Align currencies, price basis, horizon and time periods",
+  "applicability": [
+    "costs",
+    "benefits",
+    "unit",
+    "time_period"
+  ],
+  "activation_conditions": [
+    "User requests Cost-Benefit & Marginal Utility or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "costs",
+    "benefits",
+    "unit",
+    "time_period"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Align currencies, price basis, horizon and time periods",
+    "Require discount rate for discounted comparisons",
+    "Compute BCR and NPV using explicit period cash flows",
+    "Compare incremental benefits against incremental costs and state break-even conditions"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "bcr",
+    "npv",
+    "break_even",
+    "marginal_analysis"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide bcr or declare it UNKNOWN with reason.",
+    "Provide npv or declare it UNKNOWN with reason.",
+    "Provide break_even or declare it UNKNOWN with reason.",
+    "Provide marginal_analysis or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 282
+    }
+  ]
+}

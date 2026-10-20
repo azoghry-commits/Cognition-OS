@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "envelope_version",
+    "session_id",
+    "trace_id",
+    "agent_id",
+    "framework_id",
+    "execution_kind",
+    "status",
+    "upstream_entity_ids",
+    "inputs",
+    "payload",
+    "claims",
+    "gaps"
+  ],
+  "properties": {
+    "envelope_version": {
+      "const": "3.1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_id": {
+      "type": "string",
+      "pattern": "^AG-(0[1-9]|[1-4][0-9]|5[0-2])$"
+    },
+    "framework_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^FW-(0[1-9]|[1-4][0-9]|50)$"
+    },
+    "execution_kind": {
+      "enum": [
+        "SEQUENTIAL_HOST_ROLE",
+        "NATIVE_SUBAGENT",
+        "DETERMINISTIC_TOOL"
+      ]
+    },
+    "status": {
+      "enum": [
+        "COMPLETED",
+        "PARTIAL",
+        "BLOCKED",
+        "FAILED"
+      ]
+    },
+    "upstream_entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "classification",
+          "evidence_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "enum": [
+              "VERIFIED_FACT",
+              "SOURCE_SUPPORTED",
+              "CALCULATED_RESULT",
+              "SIMULATED_RESULT",
+              "USER_ASSUMPTION",
+              "MODEL_INFERENCE",
+              "HYPOTHESIS",
+              "UNKNOWN"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "material": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tool_execution_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

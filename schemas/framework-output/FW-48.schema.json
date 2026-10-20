@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-48 analytical payload",
+  "type": "object",
+  "required": [
+    "claim",
+    "grounds",
+    "warrant",
+    "backing",
+    "qualifier",
+    "rebuttal",
+    "gaps"
+  ],
+  "properties": {
+    "claim": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "grounds": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "warrant": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "backing": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "qualifier": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "rebuttal": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "gaps": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

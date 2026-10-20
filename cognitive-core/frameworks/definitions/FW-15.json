@@ -1,0 +1,79 @@
+{
+  "id": "FW-15",
+  "agent_id": "AG-15",
+  "name": "Cynefin Framework",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 295
+  },
+  "source_original": {
+    "purpose": "Klasifikasi rezim masalah (*Clear, Complicated, Complex, Chaotic, Disorder*) untuk memilih cara respons",
+    "inputs": "Tingkat prediktabilitas kausal dan volatilitas lingkungan masalah",
+    "outputs": "Klasifikasi domain Cynefin dan protokol tindakan (mis. *Probe-Sense-Respond*)"
+  },
+  "purpose": "Assess whether cause and effect are obvious, expert-discoverable, emergent or unstable",
+  "applicability": [
+    "context",
+    "causal_predictability"
+  ],
+  "activation_conditions": [
+    "User requests Cynefin Framework or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "context",
+    "causal_predictability"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Assess whether cause and effect are obvious, expert-discoverable, emergent or unstable",
+    "Classify Clear, Complicated, Complex, Chaotic or Disorder with reasons",
+    "Choose Sense-Categorize-Respond, Sense-Analyze-Respond, Probe-Sense-Respond or Act-Sense-Respond accordingly",
+    "Reassess domain as evidence changes"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "domain",
+    "response_protocol",
+    "reassessment"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide domain or declare it UNKNOWN with reason.",
+    "Provide response_protocol or declare it UNKNOWN with reason.",
+    "Provide reassessment or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 295
+    }
+  ]
+}

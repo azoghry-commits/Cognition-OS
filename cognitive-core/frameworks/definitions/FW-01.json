@@ -1,0 +1,74 @@
+{
+  "id": "FW-01",
+  "agent_id": "AG-01",
+  "name": "Eisenhower Matrix",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 276
+  },
+  "source_original": {
+    "purpose": "Pemisahan tugas berdasarkan sumbu *Urgency* vs *Importance* untuk mencegah jebakan reaktif",
+    "inputs": "Daftar inisiatif, tenggat waktu, dampak strategis",
+    "outputs": "Matriks 4 kuadran (`Do First`, `Schedule`, `Delegate`, `Eliminate`)"
+  },
+  "purpose": "Separate deadline urgency from outcome importance",
+  "applicability": [
+    "tasks"
+  ],
+  "activation_conditions": [
+    "User requests Eisenhower Matrix or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "tasks"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Separate deadline urgency from outcome importance",
+    "Assign Do First, Schedule, Delegate or Eliminate with reasons",
+    "Check delegated authority and revisit changing deadlines"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "quadrants",
+    "tradeoffs"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide quadrants or declare it UNKNOWN with reason.",
+    "Provide tradeoffs or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 276
+    }
+  ]
+}

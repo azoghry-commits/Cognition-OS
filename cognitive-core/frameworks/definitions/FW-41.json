@@ -1,0 +1,82 @@
+{
+  "id": "FW-41",
+  "agent_id": "AG-41",
+  "name": "Getting Things Done (GTD)",
+  "category": "Execution Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Execution Models",
+    "line": 341
+  },
+  "source_original": {
+    "purpose": "Dekomposisi proyek menjadi tindakan fisik berikutnya (*Next Concrete Actions*), konteks, dan pemicu",
+    "inputs": "Rencana proyek tingkat tinggi dan daftar hambatan operasional harian",
+    "outputs": "Daftar *Next Actions* bebas ambiguitas, pemilik tugas, dan jadwal *review*"
+  },
+  "purpose": "Capture commitments",
+  "applicability": [
+    "commitments",
+    "projects",
+    "constraints"
+  ],
+  "activation_conditions": [
+    "User requests Getting Things Done (GTD) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "commitments",
+    "projects",
+    "constraints"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Capture commitments",
+    "Clarify actionable items and desired outcomes",
+    "Organize concrete next physical actions by context and project",
+    "Reflect through a review and engage according to constraints",
+    "Avoid treating a vague project title as a next action"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "next_actions",
+    "contexts",
+    "review"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide next_actions or declare it UNKNOWN with reason.",
+    "Provide contexts or declare it UNKNOWN with reason.",
+    "Provide review or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Execution Models",
+      "line": 341
+    }
+  ]
+}

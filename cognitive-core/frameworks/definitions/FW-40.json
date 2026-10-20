@@ -1,0 +1,83 @@
+{
+  "id": "FW-40",
+  "agent_id": "AG-40",
+  "name": "PDCA (Plan-Do-Check-Act)",
+  "category": "Execution Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Execution Models",
+    "line": 340
+  },
+  "source_original": {
+    "purpose": "Perancangan siklus perbaikan berkelanjutan dan kontrol kualitas implementasi di lapangan",
+    "inputs": "Rencana intervensi operasional dan metrik standar kinerja (*baseline*)",
+    "outputs": "Siklus iterasi 4 tahap PDCA lengkap dengan ambang batas evaluasi *Check*"
+  },
+  "purpose": "Plan a testable change and success criteria",
+  "applicability": [
+    "problem",
+    "baseline",
+    "intervention",
+    "metrics"
+  ],
+  "activation_conditions": [
+    "User requests PDCA (Plan-Do-Check-Act) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "problem",
+    "baseline",
+    "intervention",
+    "metrics"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Plan a testable change and success criteria",
+    "Do a bounded intervention with observation",
+    "Check outcomes against baseline and thresholds",
+    "Act by adopting, adjusting or abandoning and start the next cycle"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "pdca_cycle",
+    "thresholds",
+    "decision"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide pdca_cycle or declare it UNKNOWN with reason.",
+    "Provide thresholds or declare it UNKNOWN with reason.",
+    "Provide decision or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Execution Models",
+      "line": 340
+    }
+  ]
+}

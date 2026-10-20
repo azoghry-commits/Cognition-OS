@@ -1,0 +1,994 @@
+{
+  "version": "0.1.0",
+  "agents": [
+    {
+      "id": "AG-01",
+      "name": "Eisenhower Agent",
+      "framework_id": "FW-01",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 276
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Separate deadline urgency from outcome importance",
+        "Assign Do First, Schedule, Delegate or Eliminate with reasons",
+        "Check delegated authority and revisit changing deadlines"
+      ]
+    },
+    {
+      "id": "AG-02",
+      "name": "RICE Agent",
+      "framework_id": "FW-02",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 277
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Require reach, impact, confidence fraction and positive effort for every initiative",
+        "Use common reach period and effort units",
+        "Calculate RICE with the local helper and expose each factor",
+        "Sensitivity-test uncertain factors without interpreting confidence as truth probability"
+      ]
+    },
+    {
+      "id": "AG-03",
+      "name": "MoSCoW Agent",
+      "framework_id": "FW-03",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 278
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define the release or timebox and budget",
+        "Define Must as absence making the outcome unviable and distinguish Should from Could",
+        "Place explicitly excluded scope in Won't for this timebox",
+        "Check Must set feasibility against capacity"
+      ]
+    },
+    {
+      "id": "AG-04",
+      "name": "EV Calculus Agent",
+      "framework_id": "FW-04",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 279
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Require mutually exclusive outcomes with probabilities summing to one",
+        "Calculate probability-weighted signed payoffs and subtract explicitly supplied common costs",
+        "Display gross and net EV separately",
+        "Compare downside and constraints before any conditional recommendation"
+      ]
+    },
+    {
+      "id": "AG-05",
+      "name": "Bayesian Agent",
+      "framework_id": "FW-05",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 280
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define hypothesis and observed evidence",
+        "Require justified prior and conditional likelihoods",
+        "Compute Bayes using the helper and reject impossible evidence",
+        "For multiple updates justify conditional independence or use conditional likelihoods"
+      ]
+    },
+    {
+      "id": "AG-06",
+      "name": "Pareto 80/20 Agent",
+      "framework_id": "FW-06",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 281
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Validate nonnegative comparable contributions and common period",
+        "Sort descending and calculate cumulative shares",
+        "Find the smallest group meeting the stated coverage target",
+        "Report the observed concentration rather than forcing an 80/20 split"
+      ]
+    },
+    {
+      "id": "AG-07",
+      "name": "Marginal Utility Agent",
+      "framework_id": "FW-07",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 282
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Align currencies, price basis, horizon and time periods",
+        "Require discount rate for discounted comparisons",
+        "Compute BCR and NPV using explicit period cash flows",
+        "Compare incremental benefits against incremental costs and state break-even conditions"
+      ]
+    },
+    {
+      "id": "AG-08",
+      "name": "Regret Minimization Agent",
+      "framework_id": "FW-08",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Decision Models",
+        "line": 283
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define future viewpoints and user values",
+        "Compare action and inaction regret for each option",
+        "Separate reversible experiments from irreversible commitments",
+        "Make the recommendation conditional on values and unresolved uncertainty"
+      ]
+    },
+    {
+      "id": "AG-09",
+      "name": "MECE Agent",
+      "framework_id": "FW-09",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 289
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define universe, unit of analysis and decomposition rule",
+        "Test sibling overlap, duplicates and consistent abstraction levels",
+        "Test collective coverage including boundary and exceptional cases",
+        "If a finite universe exists use set validation",
+        "Treat semantic assessments as qualitative judgments"
+      ]
+    },
+    {
+      "id": "AG-10",
+      "name": "5 Whys Agent",
+      "framework_id": "FW-10",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 290
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "State the observed symptom and evidence",
+        "Ask successive why questions with supporting evidence per causal link",
+        "Branch when causes diverge and stop at an actionable supported cause or evidence gap",
+        "Do not force exactly five answers or confirm causality by repetition"
+      ]
+    },
+    {
+      "id": "AG-11",
+      "name": "KT Agent",
+      "framework_id": "FW-11",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 291
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Specify What, Where, When and Extent with IS, IS NOT, distinction and change",
+        "Generate causes from distinctions and relevant changes",
+        "Test each candidate against every IS and IS NOT condition",
+        "Separate plausible causes from verified causes and identify falsifying checks",
+        "Request missing contrasts before a confirmed diagnosis"
+      ]
+    },
+    {
+      "id": "AG-12",
+      "name": "Fishbone Agent",
+      "framework_id": "FW-12",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 292
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define a measurable effect and boundary",
+        "Explore Man, Machine, Material, Method, Measurement and Milieu",
+        "Attach evidence or hypothesis labels to each subcause",
+        "Test interactions and prioritize discriminating checks without declaring the diagram causal proof"
+      ]
+    },
+    {
+      "id": "AG-13",
+      "name": "First Principles Agent",
+      "framework_id": "FW-13",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 293
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Separate observations, constraints and conventional assumptions",
+        "Challenge each assumption using evidence and underlying physical or economic constraints",
+        "Reconstruct candidate solutions from supported fundamentals",
+        "Compare feasibility and identify tests for remaining assumptions"
+      ]
+    },
+    {
+      "id": "AG-14",
+      "name": "Hypothesis Agent",
+      "framework_id": "FW-14",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 294
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "State falsifiable competing hypotheses including a null when appropriate",
+        "Predict observations that distinguish alternatives",
+        "Specify metrics, sampling, thresholds and disconfirming evidence before inspecting outcomes",
+        "Update or reject hypotheses using actual results"
+      ]
+    },
+    {
+      "id": "AG-15",
+      "name": "Cynefin Agent",
+      "framework_id": "FW-15",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 295
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Assess whether cause and effect are obvious, expert-discoverable, emergent or unstable",
+        "Classify Clear, Complicated, Complex, Chaotic or Disorder with reasons",
+        "Choose Sense-Categorize-Respond, Sense-Analyze-Respond, Probe-Sense-Respond or Act-Sense-Respond accordingly",
+        "Reassess domain as evidence changes"
+      ]
+    },
+    {
+      "id": "AG-16",
+      "name": "Inversion Agent",
+      "framework_id": "FW-16",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Problem Solving Models",
+        "line": 296
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Invert the desired outcome into ways to guarantee failure",
+        "Identify necessary failure conditions and controllable precursors",
+        "Convert them into preventive checks and experiments",
+        "Do not assume avoiding failure alone guarantees success"
+      ]
+    },
+    {
+      "id": "AG-17",
+      "name": "TOC Agent",
+      "framework_id": "FW-17",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 302
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Measure end-to-end throughput, queues and effective capacities",
+        "Identify the current constraint and test it against demand and dependencies",
+        "Exploit the constraint then subordinate other work then elevate when justified",
+        "Repeat identification after improvement and guard against inertia"
+      ]
+    },
+    {
+      "id": "AG-18",
+      "name": "Causal Loop Agent",
+      "framework_id": "FW-18",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 303
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Set system boundary and time horizon",
+        "Draw directed influences with positive or negative polarity and supporting mechanism",
+        "Mark delays and label reinforcing or balancing loops by sign product",
+        "Keep observed associations distinct from causal hypotheses"
+      ]
+    },
+    {
+      "id": "AG-19",
+      "name": "Leverage Points Agent",
+      "framework_id": "FW-19",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 304
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Describe system goals, rules, flows and feedback",
+        "Compare interventions at parameters, buffers, structures, delays, balancing loops, reinforcing loops, information, rules, self-organization, goals, paradigms and transcending paradigms",
+        "Explain leverage and feasibility for each candidate",
+        "Treat ranking as a hypothesis requiring tests"
+      ]
+    },
+    {
+      "id": "AG-20",
+      "name": "Second-Order Agent",
+      "framework_id": "FW-20",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 305
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "State the immediate intended effect",
+        "Ask And then what for actor responses and feedback across second and third orders",
+        "Separate near, medium and long horizons",
+        "Identify countervailing effects, leading indicators and reversible probes"
+      ]
+    },
+    {
+      "id": "AG-21",
+      "name": "Stock & Flow Agent",
+      "framework_id": "FW-21",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 306
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define stock units and flow units per time",
+        "Apply stock_next equals stock plus inflows minus outflows times time_step",
+        "Represent delays and boundary constraints explicitly",
+        "Test conservation, nonnegative limits where applicable and sensitivity to step size"
+      ]
+    },
+    {
+      "id": "AG-22",
+      "name": "Archetypes Agent",
+      "framework_id": "FW-22",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 307
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Compare evidence with Fixes that Fail, Shifting the Burden and Tragedy of the Commons",
+        "Map short-term relief, delays and long-term feedback",
+        "Test competing archetypes against history",
+        "Target structural loop changes rather than symptom suppression"
+      ]
+    },
+    {
+      "id": "AG-23",
+      "name": "Network Effects Agent",
+      "framework_id": "FW-23",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Systems Thinking Models",
+        "line": 308
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Distinguish direct, indirect, two-sided and local effects",
+        "Define whose utility changes when which participants join",
+        "Separate network effects from scale economies and viral acquisition",
+        "Estimate elasticity or critical mass only from suitable data and assess congestion or moat decay"
+      ]
+    },
+    {
+      "id": "AG-24",
+      "name": "Blue Ocean Agent",
+      "framework_id": "FW-24",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 314
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Identify industry value factors and noncustomer barriers",
+        "Build Eliminate, Reduce, Raise and Create choices with cost and buyer-value logic",
+        "Compare current and proposed value curves",
+        "Test demand, delivery and economic assumptions before asserting a blue ocean"
+      ]
+    },
+    {
+      "id": "AG-25",
+      "name": "Wardley Map Agent",
+      "framework_id": "FW-25",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 315
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Anchor the map on user need and visibility",
+        "Build dependency value chain",
+        "Position each component from Genesis through Custom Built and Product to Commodity using evidence",
+        "Use evolution and dependencies to evaluate build, buy or utility choices",
+        "Do not substitute a generic maturity quadrant"
+      ]
+    },
+    {
+      "id": "AG-26",
+      "name": "OODA Loop Agent",
+      "framework_id": "FW-26",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 316
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Observe current signals and uncertainty",
+        "Orient through context, assumptions, culture and competing interpretations",
+        "Decide a bounded hypothesis or action",
+        "Act with feedback and revisit orientation rather than optimizing speed alone"
+      ]
+    },
+    {
+      "id": "AG-27",
+      "name": "Five Forces Agent",
+      "framework_id": "FW-27",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 317
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define industry boundary and horizon",
+        "Assess rivalry, entry threat, substitutes, supplier power and buyer power separately",
+        "Ground intensity judgments in evidence and define any numeric rubric",
+        "Explain how structural forces affect margins and defensive choices"
+      ]
+    },
+    {
+      "id": "AG-28",
+      "name": "VRIO Agent",
+      "framework_id": "FW-28",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 318
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Assess Value, Rarity, Inimitability and Organization for each resource",
+        "Require evidence per dimension",
+        "Distinguish disadvantage, parity, temporary advantage, unused advantage and potential sustained advantage",
+        "Avoid asserting enduring advantage without evidence of durability"
+      ]
+    },
+    {
+      "id": "AG-29",
+      "name": "Ansoff Agent",
+      "framework_id": "FW-29",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 319
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define existing versus new products and markets relative to the organization",
+        "Map penetration, market development, product development and diversification",
+        "Compare capability gaps and execution risks",
+        "Do not invent numerical risk weights"
+      ]
+    },
+    {
+      "id": "AG-30",
+      "name": "Game Theory Agent",
+      "framework_id": "FW-30",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 320
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Specify players, information, timing and utility units",
+        "Require complete payoff assumptions",
+        "Find best responses and test unilateral deviations before identifying Nash equilibria",
+        "Distinguish pure and mixed strategies and disclose when none is computed"
+      ]
+    },
+    {
+      "id": "AG-31",
+      "name": "BMC Agent",
+      "framework_id": "FW-31",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Strategic Models",
+        "line": 321
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Populate segments, value propositions, channels, relationships, revenues, resources, activities, partners and costs",
+        "Separate validated inputs from hypotheses in every block",
+        "Check revenue-cost and delivery-customer coherence",
+        "Design tests for the weakest links"
+      ]
+    },
+    {
+      "id": "AG-32",
+      "name": "JTBD Agent",
+      "framework_id": "FW-32",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 327
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Identify progress sought in a specific situation",
+        "Separate functional, emotional and social jobs",
+        "Write When, I want to, So I can job stories from observations",
+        "Analyze push, pull, habit and anxiety without inventing customer interviews"
+      ]
+    },
+    {
+      "id": "AG-33",
+      "name": "Design Thinking Agent",
+      "framework_id": "FW-33",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 328
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Empathize using actual user evidence",
+        "Define a bounded How Might We question",
+        "Ideate multiple approaches and select a testable assumption",
+        "Prototype and test against explicit learning criteria",
+        "Iterate based on observations"
+      ]
+    },
+    {
+      "id": "AG-34",
+      "name": "VPC Agent",
+      "framework_id": "FW-34",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 329
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Map customer jobs, pains and gains by importance with evidence",
+        "Map products, pain relievers and gain creators",
+        "Connect each offer element to an actual prioritized need",
+        "Identify unsupported fit claims and test them"
+      ]
+    },
+    {
+      "id": "AG-35",
+      "name": "Kano Agent",
+      "framework_id": "FW-35",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 330
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Require paired functional and dysfunctional responses",
+        "Classify Must-be, One-dimensional, Attractive, Indifferent, Reverse or Questionable using a declared evaluation table",
+        "Report counts and sample limitations",
+        "Do not label delighters from intuition alone"
+      ]
+    },
+    {
+      "id": "AG-36",
+      "name": "SCAMPER Agent",
+      "framework_id": "FW-36",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 331
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Generate distinct Substitute, Combine, Adapt, Modify, Put to another use, Eliminate and Reverse or Rearrange variations",
+        "Explain the changed mechanism for each",
+        "Screen concepts against constraints",
+        "Prototype the highest learning-value options"
+      ]
+    },
+    {
+      "id": "AG-37",
+      "name": "TRIZ Agent",
+      "framework_id": "FW-37",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Innovation Models",
+        "line": 332
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "State the technical or physical contradiction",
+        "Seek separation in space, time, condition or system level and applicable inventive principles",
+        "Distinguish a verified contradiction-matrix lookup from a proposed principle",
+        "Do not invent matrix cells or force a compromise disguised as contradiction resolution"
+      ]
+    },
+    {
+      "id": "AG-38",
+      "name": "RACI Agent",
+      "framework_id": "FW-38",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 338
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Map Responsible, Accountable, Consulted and Informed for every workstream",
+        "Require exactly one Accountable and at least one Responsible per row",
+        "Check role authority and capacity",
+        "Resolve gaps and conflicting accountability with stakeholders"
+      ]
+    },
+    {
+      "id": "AG-39",
+      "name": "OKR Agent",
+      "framework_id": "FW-39",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 339
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Write a qualitative outcome objective",
+        "Define measurable key results with baseline, target, owner and deadline",
+        "Separate outcomes from activity lists and leading from lagging indicators",
+        "Schedule evidence-based reviews without inventing progress"
+      ]
+    },
+    {
+      "id": "AG-40",
+      "name": "PDCA Agent",
+      "framework_id": "FW-40",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 340
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Plan a testable change and success criteria",
+        "Do a bounded intervention with observation",
+        "Check outcomes against baseline and thresholds",
+        "Act by adopting, adjusting or abandoning and start the next cycle"
+      ]
+    },
+    {
+      "id": "AG-41",
+      "name": "GTD Workflow Agent",
+      "framework_id": "FW-41",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 341
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Capture commitments",
+        "Clarify actionable items and desired outcomes",
+        "Organize concrete next physical actions by context and project",
+        "Reflect through a review and engage according to constraints",
+        "Avoid treating a vague project title as a next action"
+      ]
+    },
+    {
+      "id": "AG-42",
+      "name": "Critical Path Agent",
+      "framework_id": "FW-42",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Execution Models",
+        "line": 342
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Validate dependency DAG and common duration units",
+        "Run a forward pass for earliest start and finish",
+        "Run a backward pass for latest start and finish",
+        "Compute slack and all critical activities",
+        "Disclose that resource constraints and uncertain duration need additional analysis"
+      ]
+    },
+    {
+      "id": "AG-43",
+      "name": "Minto Pyramid Agent",
+      "framework_id": "FW-43",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 348
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Lead with a supported answer or conditional conclusion",
+        "Group supporting reasons by a consistent MECE logic",
+        "Attach evidence and counterarguments to each key line",
+        "State uncertainty, decision conditions and concrete next actions"
+      ]
+    },
+    {
+      "id": "AG-44",
+      "name": "SCQA Agent",
+      "framework_id": "FW-44",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 349
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "State supported Situation",
+        "Identify the Complication and its consequences",
+        "Formulate a decision-relevant Question",
+        "Give a provisional Answer with assumptions and evidence gaps",
+        "Do not smuggle a root-cause conclusion into framing"
+      ]
+    },
+    {
+      "id": "AG-45",
+      "name": "Storyboarding Agent",
+      "framework_id": "FW-45",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 350
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define audience decision and governing narrative",
+        "Sequence declarative action titles that form a coherent argument",
+        "Choose a visual and cited data for each page",
+        "Check that evidence supports each title and flag missing data"
+      ]
+    },
+    {
+      "id": "AG-46",
+      "name": "Stakeholder Agent",
+      "framework_id": "FW-46",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 351
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Define power or influence and interest with evidence",
+        "Map manage closely, keep satisfied, keep informed and monitor",
+        "Identify conflicting interests and legitimate decision rights",
+        "Specify communication and feedback tactics without manipulative assumptions"
+      ]
+    },
+    {
+      "id": "AG-47",
+      "name": "Radical Candor Agent",
+      "framework_id": "FW-47",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 352
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Describe observable behavior and impact",
+        "Combine Care Personally with Challenge Directly",
+        "Invite the other perspective and agree on concrete next behavior",
+        "Avoid personality diagnoses and invented motives"
+      ]
+    },
+    {
+      "id": "AG-48",
+      "name": "Toulmin Agent",
+      "framework_id": "FW-48",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Communication Models",
+        "line": 353
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Separate claim from grounds",
+        "Make the connecting warrant explicit and identify backing",
+        "State the qualifier and strongest rebuttal conditions",
+        "Test unsupported warrants and alternate explanations before endorsement"
+      ]
+    },
+    {
+      "id": "AG-49",
+      "name": "Pre-Mortem Agent",
+      "framework_id": "FW-49",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Meta-Thinking Models",
+        "line": 359
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Assume the proposal has failed at the stated horizon",
+        "Generate independent failure explanations and challenge optimistic assumptions",
+        "Tie each scenario to mechanism, early signal and mitigation",
+        "Specify stop or rollback conditions and retain unresolved objections"
+      ]
+    },
+    {
+      "id": "AG-50",
+      "name": "Bias Detector Agent",
+      "framework_id": "FW-50",
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.1 / Meta-Thinking Models",
+        "line": 360
+      },
+      "kind": "logical_specialist",
+      "execution": "host_role_or_native_subagent",
+      "contract": "schemas/agent-envelope.schema.json",
+      "responsibilities": [
+        "Inspect evidence selection, base rates, anchors, sunk costs, survival filtering, salience, group pressure, certainty, framing and outcome hindsight",
+        "Quote observable argument spans rather than diagnosing people",
+        "Offer competing interpretations and disconfirming checks",
+        "Do not invent bias probabilities"
+      ]
+    },
+    {
+      "id": "AG-51",
+      "name": "Chief Orchestrator Agent",
+      "kind": "logical_orchestrator",
+      "framework_id": null,
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.2"
+      },
+      "responsibilities": [
+        "Classify problem and gaps",
+        "Select justified workflows",
+        "Bound execution and evidence retrieval",
+        "Check dependencies",
+        "Stop when sufficient or blocked"
+      ]
+    },
+    {
+      "id": "AG-52",
+      "name": "Evaluator Jury & Critic Agent",
+      "kind": "logical_evaluator",
+      "framework_id": null,
+      "source": {
+        "document": "Cognition Os Master Blueprint.md",
+        "section": "4.2"
+      },
+      "responsibilities": [
+        "Review arguments and calculations",
+        "Retain contradictions",
+        "Reject unsupported conclusions",
+        "Return ACCEPT, CONDITIONAL, REJECT or INSUFFICIENT_EVIDENCE"
+      ]
+    }
+  ]
+}

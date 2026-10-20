@@ -1,0 +1,79 @@
+{
+  "id": "FW-46",
+  "agent_id": "AG-46",
+  "name": "Stakeholder Grid",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 351
+  },
+  "source_original": {
+    "purpose": "Pemetaan pemangku kepentingan berdasarkan *Power/Influence* vs *Interest* untuk strategi persuasi",
+    "inputs": "Daftar pengambil keputusan, kepentingan departemen, dan potensi resistensi",
+    "outputs": "Matriks 4 kuadran pemangku kepentingan dan taktik komunikasi per aktor"
+  },
+  "purpose": "Define power or influence and interest with evidence",
+  "applicability": [
+    "stakeholders",
+    "interests",
+    "influence"
+  ],
+  "activation_conditions": [
+    "User requests Stakeholder Grid or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "stakeholders",
+    "interests",
+    "influence"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define power or influence and interest with evidence",
+    "Map manage closely, keep satisfied, keep informed and monitor",
+    "Identify conflicting interests and legitimate decision rights",
+    "Specify communication and feedback tactics without manipulative assumptions"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "stakeholder_grid",
+    "engagement_plan"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide stakeholder_grid or declare it UNKNOWN with reason.",
+    "Provide engagement_plan or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 351
+    }
+  ]
+}

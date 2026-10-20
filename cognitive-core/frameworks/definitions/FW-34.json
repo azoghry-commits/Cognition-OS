@@ -1,0 +1,79 @@
+{
+  "id": "FW-34",
+  "agent_id": "AG-34",
+  "name": "Value Proposition Canvas (VPC)",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 329
+  },
+  "source_original": {
+    "purpose": "Pencocokan presisi antara *Customer Profile* (*Jobs, Pains, Gains*) dengan *Value Map* (*Pain Relievers, Gain Creators*)",
+    "inputs": "Segmen pelanggan target dan fitur produk/solusi yang dirancang",
+    "outputs": "Peta kesesuaian *Problem-Solution Fit* dan daftar celah proposisi nilai"
+  },
+  "purpose": "Map customer jobs, pains and gains by importance with evidence",
+  "applicability": [
+    "customer_profile",
+    "value_map"
+  ],
+  "activation_conditions": [
+    "User requests Value Proposition Canvas (VPC) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "customer_profile",
+    "value_map"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Map customer jobs, pains and gains by importance with evidence",
+    "Map products, pain relievers and gain creators",
+    "Connect each offer element to an actual prioritized need",
+    "Identify unsupported fit claims and test them"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "fit_map",
+    "gaps",
+    "tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide fit_map or declare it UNKNOWN with reason.",
+    "Provide gaps or declare it UNKNOWN with reason.",
+    "Provide tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 329
+    }
+  ]
+}

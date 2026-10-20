@@ -1,0 +1,6 @@
+{
+  "case": "incident",
+  "status": "BLOCKED_PRECHECK",
+  "inference_attempted": false,
+  "reason": "Numerical native smoke failed on CLI model availability and skill context budget. No repeated request was made."
+}

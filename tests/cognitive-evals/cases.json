@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "FW-01",
+    "prompt": "Use Eisenhower Matrix on a user-supplied case. The required tasks is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Separate deadline urgency from outcome importance",
+      "Assign Do First, Schedule, Delegate or Eliminate with reasons",
+      "Check delegated authority and revisit changing deadlines"
+    ],
+    "required_outputs": [
+      "quadrants",
+      "tradeoffs"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-02",
+    "prompt": "Use RICE Scoring on a user-supplied case. The required initiatives is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Require reach, impact, confidence fraction and positive effort for every initiative",
+      "Use common reach period and effort units",
+      "Calculate RICE with the local helper and expose each factor",
+      "Sensitivity-test uncertain factors without interpreting confidence as truth probability"
+    ],
+    "required_outputs": [
+      "rankings",
+      "assumptions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-03",
+    "prompt": "Use MoSCoW Method on a user-supplied case. The required items is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define the release or timebox and budget",
+      "Define Must as absence making the outcome unviable and distinguish Should from Could",
+      "Place explicitly excluded scope in Won't for this timebox",
+      "Check Must set feasibility against capacity"
+    ],
+    "required_outputs": [
+      "must",
+      "should",
+      "could",
+      "wont"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-04",
+    "prompt": "Use Expected Value (EV) Calculus on a user-supplied case. The required scenarios is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Require mutually exclusive outcomes with probabilities summing to one",
+      "Calculate probability-weighted signed payoffs and subtract explicitly supplied common costs",
+      "Display gross and net EV separately",
+      "Compare downside and constraints before any conditional recommendation"
+    ],
+    "required_outputs": [
+      "gross_ev",
+      "net_ev",
+      "assumptions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-05",
+    "prompt": "Use Bayesian Updating on a user-supplied case. The required prior is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define hypothesis and observed evidence",
+      "Require justified prior and conditional likelihoods",
+      "Compute Bayes using the helper and reject impossible evidence",
+      "For multiple updates justify conditional independence or use conditional likelihoods"
+    ],
+    "required_outputs": [
+      "posterior",
+      "bayes_factor",
+      "assumptions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-06",
+    "prompt": "Use Pareto Principle (80/20) on a user-supplied case. The required contributions is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Validate nonnegative comparable contributions and common period",
+      "Sort descending and calculate cumulative shares",
+      "Find the smallest group meeting the stated coverage target",
+      "Report the observed concentration rather than forcing an 80/20 split"
+    ],
+    "required_outputs": [
+      "ranked_contributions",
+      "cumulative_share",
+      "vital_few"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-07",
+    "prompt": "Use Cost-Benefit & Marginal Utility on a user-supplied case. The required costs is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Align currencies, price basis, horizon and time periods",
+      "Require discount rate for discounted comparisons",
+      "Compute BCR and NPV using explicit period cash flows",
+      "Compare incremental benefits against incremental costs and state break-even conditions"
+    ],
+    "required_outputs": [
+      "bcr",
+      "npv",
+      "break_even",
+      "marginal_analysis"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-08",
+    "prompt": "Use Regret Minimization Framework on a user-supplied case. The required options is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define future viewpoints and user values",
+      "Compare action and inaction regret for each option",
+      "Separate reversible experiments from irreversible commitments",
+      "Make the recommendation conditional on values and unresolved uncertainty"
+    ],
+    "required_outputs": [
+      "regret_matrix",
+      "tradeoffs",
+      "recommendation"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-09",
+    "prompt": "Use MECE Issue Tree on a user-supplied case. The required question is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define universe, unit of analysis and decomposition rule",
+      "Test sibling overlap, duplicates and consistent abstraction levels",
+      "Test collective coverage including boundary and exceptional cases",
+      "If a finite universe exists use set validation",
+      "Treat semantic assessments as qualitative judgments"
+    ],
+    "required_outputs": [
+      "issue_tree",
+      "exclusivity",
+      "coverage",
+      "gaps"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-10",
+    "prompt": "Use 5 Whys Analysis on a user-supplied case. The required symptom is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "State the observed symptom and evidence",
+      "Ask successive why questions with supporting evidence per causal link",
+      "Branch when causes diverge and stop at an actionable supported cause or evidence gap",
+      "Do not force exactly five answers or confirm causality by repetition"
+    ],
+    "required_outputs": [
+      "causal_chain",
+      "alternative_causes",
+      "diagnostic_tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-11",
+    "prompt": "Use Kepner-Tregoe (KT) Matrix on a user-supplied case. The required deviation is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Specify What, Where, When and Extent with IS, IS NOT, distinction and change",
+      "Generate causes from distinctions and relevant changes",
+      "Test each candidate against every IS and IS NOT condition",
+      "Separate plausible causes from verified causes and identify falsifying checks",
+      "Request missing contrasts before a confirmed diagnosis"
+    ],
+    "required_outputs": [
+      "is_vs_is_not_matrix",
+      "candidate_causes",
+      "diagnostic_tests",
+      "conclusion"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-12",
+    "prompt": "Use Fishbone (Ishikawa) Diagram on a user-supplied case. The required effect is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define a measurable effect and boundary",
+      "Explore Man, Machine, Material, Method, Measurement and Milieu",
+      "Attach evidence or hypothesis labels to each subcause",
+      "Test interactions and prioritize discriminating checks without declaring the diagram causal proof"
+    ],
+    "required_outputs": [
+      "fishbone",
+      "hypotheses",
+      "tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-13",
+    "prompt": "Use First Principles Thinking on a user-supplied case. The required problem is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Separate observations, constraints and conventional assumptions",
+      "Challenge each assumption using evidence and underlying physical or economic constraints",
+      "Reconstruct candidate solutions from supported fundamentals",
+      "Compare feasibility and identify tests for remaining assumptions"
+    ],
+    "required_outputs": [
+      "assumption_ledger",
+      "fundamentals",
+      "reconstructed_options"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-14",
+    "prompt": "Use Hypothesis-Driven Problem Solving on a user-supplied case. The required question is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "State falsifiable competing hypotheses including a null when appropriate",
+      "Predict observations that distinguish alternatives",
+      "Specify metrics, sampling, thresholds and disconfirming evidence before inspecting outcomes",
+      "Update or reject hypotheses using actual results"
+    ],
+    "required_outputs": [
+      "hypotheses",
+      "test_plan",
+      "decision_rules"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-15",
+    "prompt": "Use Cynefin Framework on a user-supplied case. The required context is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Assess whether cause and effect are obvious, expert-discoverable, emergent or unstable",
+      "Classify Clear, Complicated, Complex, Chaotic or Disorder with reasons",
+      "Choose Sense-Categorize-Respond, Sense-Analyze-Respond, Probe-Sense-Respond or Act-Sense-Respond accordingly",
+      "Reassess domain as evidence changes"
+    ],
+    "required_outputs": [
+      "domain",
+      "response_protocol",
+      "reassessment"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-16",
+    "prompt": "Use Inversion Thinking on a user-supplied case. The required goal is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Invert the desired outcome into ways to guarantee failure",
+      "Identify necessary failure conditions and controllable precursors",
+      "Convert them into preventive checks and experiments",
+      "Do not assume avoiding failure alone guarantees success"
+    ],
+    "required_outputs": [
+      "failure_conditions",
+      "preventive_actions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-17",
+    "prompt": "Use Theory of Constraints (TOC) on a user-supplied case. The required process is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Measure end-to-end throughput, queues and effective capacities",
+      "Identify the current constraint and test it against demand and dependencies",
+      "Exploit the constraint then subordinate other work then elevate when justified",
+      "Repeat identification after improvement and guard against inertia"
+    ],
+    "required_outputs": [
+      "constraint",
+      "focusing_steps",
+      "throughput_tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-18",
+    "prompt": "Use Causal Loop Diagrams (CLD) on a user-supplied case. The required variables is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Set system boundary and time horizon",
+      "Draw directed influences with positive or negative polarity and supporting mechanism",
+      "Mark delays and label reinforcing or balancing loops by sign product",
+      "Keep observed associations distinct from causal hypotheses"
+    ],
+    "required_outputs": [
+      "causal_graph",
+      "loops",
+      "delays"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-19",
+    "prompt": "Use Meadows' 12 Leverage Points on a user-supplied case. The required system is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Describe system goals, rules, flows and feedback",
+      "Compare interventions at parameters, buffers, structures, delays, balancing loops, reinforcing loops, information, rules, self-organization, goals, paradigms and transcending paradigms",
+      "Explain leverage and feasibility for each candidate",
+      "Treat ranking as a hypothesis requiring tests"
+    ],
+    "required_outputs": [
+      "leverage_ranking",
+      "rationale",
+      "risks"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-20",
+    "prompt": "Use Second-Order Thinking on a user-supplied case. The required action is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "State the immediate intended effect",
+      "Ask And then what for actor responses and feedback across second and third orders",
+      "Separate near, medium and long horizons",
+      "Identify countervailing effects, leading indicators and reversible probes"
+    ],
+    "required_outputs": [
+      "consequence_tree",
+      "uncertainties",
+      "indicators"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-21",
+    "prompt": "Use Stock and Flow Modeling on a user-supplied case. The required initial_stock is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define stock units and flow units per time",
+      "Apply stock_next equals stock plus inflows minus outflows times time_step",
+      "Represent delays and boundary constraints explicitly",
+      "Test conservation, nonnegative limits where applicable and sensitivity to step size"
+    ],
+    "required_outputs": [
+      "stock_series",
+      "equations",
+      "assumptions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-22",
+    "prompt": "Use System Archetypes on a user-supplied case. The required symptoms is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Compare evidence with Fixes that Fail, Shifting the Burden and Tragedy of the Commons",
+      "Map short-term relief, delays and long-term feedback",
+      "Test competing archetypes against history",
+      "Target structural loop changes rather than symptom suppression"
+    ],
+    "required_outputs": [
+      "archetype",
+      "loop_map",
+      "interventions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-23",
+    "prompt": "Use Network Effects & Feedback on a user-supplied case. The required network is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Distinguish direct, indirect, two-sided and local effects",
+      "Define whose utility changes when which participants join",
+      "Separate network effects from scale economies and viral acquisition",
+      "Estimate elasticity or critical mass only from suitable data and assess congestion or moat decay"
+    ],
+    "required_outputs": [
+      "effect_type",
+      "mechanisms",
+      "measurement_plan"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-24",
+    "prompt": "Use Blue Ocean Strategy (ERRC) on a user-supplied case. The required competitive_factors is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Identify industry value factors and noncustomer barriers",
+      "Build Eliminate, Reduce, Raise and Create choices with cost and buyer-value logic",
+      "Compare current and proposed value curves",
+      "Test demand, delivery and economic assumptions before asserting a blue ocean"
+    ],
+    "required_outputs": [
+      "errc",
+      "value_curve",
+      "tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-25",
+    "prompt": "Use Wardley Mapping on a user-supplied case. The required user_need is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Anchor the map on user need and visibility",
+      "Build dependency value chain",
+      "Position each component from Genesis through Custom Built and Product to Commodity using evidence",
+      "Use evolution and dependencies to evaluate build, buy or utility choices",
+      "Do not substitute a generic maturity quadrant"
+    ],
+    "required_outputs": [
+      "wardley_map",
+      "sourcing_options",
+      "uncertainties"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-26",
+    "prompt": "Use OODA Loop on a user-supplied case. The required observations is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Observe current signals and uncertainty",
+      "Orient through context, assumptions, culture and competing interpretations",
+      "Decide a bounded hypothesis or action",
+      "Act with feedback and revisit orientation rather than optimizing speed alone"
+    ],
+    "required_outputs": [
+      "ooda_cycle",
+      "decision",
+      "feedback"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-27",
+    "prompt": "Use Porter's Five Forces on a user-supplied case. The required industry is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define industry boundary and horizon",
+      "Assess rivalry, entry threat, substitutes, supplier power and buyer power separately",
+      "Ground intensity judgments in evidence and define any numeric rubric",
+      "Explain how structural forces affect margins and defensive choices"
+    ],
+    "required_outputs": [
+      "forces",
+      "margin_implications",
+      "options"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-28",
+    "prompt": "Use VRIO Framework on a user-supplied case. The required resources is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Assess Value, Rarity, Inimitability and Organization for each resource",
+      "Require evidence per dimension",
+      "Distinguish disadvantage, parity, temporary advantage, unused advantage and potential sustained advantage",
+      "Avoid asserting enduring advantage without evidence of durability"
+    ],
+    "required_outputs": [
+      "vrio_matrix",
+      "advantage",
+      "actions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-29",
+    "prompt": "Use Ansoff Matrix on a user-supplied case. The required products is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define existing versus new products and markets relative to the organization",
+      "Map penetration, market development, product development and diversification",
+      "Compare capability gaps and execution risks",
+      "Do not invent numerical risk weights"
+    ],
+    "required_outputs": [
+      "ansoff_quadrants",
+      "options",
+      "risks"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-30",
+    "prompt": "Use Game Theory (Nash Equilibrium) on a user-supplied case. The required players is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Specify players, information, timing and utility units",
+      "Require complete payoff assumptions",
+      "Find best responses and test unilateral deviations before identifying Nash equilibria",
+      "Distinguish pure and mixed strategies and disclose when none is computed"
+    ],
+    "required_outputs": [
+      "payoff_matrix",
+      "best_responses",
+      "equilibria"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-31",
+    "prompt": "Use Business Model Canvas (BMC) on a user-supplied case. The required business is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Populate segments, value propositions, channels, relationships, revenues, resources, activities, partners and costs",
+      "Separate validated inputs from hypotheses in every block",
+      "Check revenue-cost and delivery-customer coherence",
+      "Design tests for the weakest links"
+    ],
+    "required_outputs": [
+      "business_model_canvas",
+      "coherence",
+      "gaps"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-32",
+    "prompt": "Use Jobs-to-be-Done (JTBD) on a user-supplied case. The required customer_context is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Identify progress sought in a specific situation",
+      "Separate functional, emotional and social jobs",
+      "Write When, I want to, So I can job stories from observations",
+      "Analyze push, pull, habit and anxiety without inventing customer interviews"
+    ],
+    "required_outputs": [
+      "job_stories",
+      "forces",
+      "underserved_needs"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-33",
+    "prompt": "Use Design Thinking on a user-supplied case. The required observations is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Empathize using actual user evidence",
+      "Define a bounded How Might We question",
+      "Ideate multiple approaches and select a testable assumption",
+      "Prototype and test against explicit learning criteria",
+      "Iterate based on observations"
+    ],
+    "required_outputs": [
+      "hmw",
+      "ideas",
+      "prototype",
+      "test_plan"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-34",
+    "prompt": "Use Value Proposition Canvas (VPC) on a user-supplied case. The required customer_profile is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Map customer jobs, pains and gains by importance with evidence",
+      "Map products, pain relievers and gain creators",
+      "Connect each offer element to an actual prioritized need",
+      "Identify unsupported fit claims and test them"
+    ],
+    "required_outputs": [
+      "fit_map",
+      "gaps",
+      "tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-35",
+    "prompt": "Use Kano Model on a user-supplied case. The required attributes is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Require paired functional and dysfunctional responses",
+      "Classify Must-be, One-dimensional, Attractive, Indifferent, Reverse or Questionable using a declared evaluation table",
+      "Report counts and sample limitations",
+      "Do not label delighters from intuition alone"
+    ],
+    "required_outputs": [
+      "kano_categories",
+      "uncertainty",
+      "priorities"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-36",
+    "prompt": "Use SCAMPER on a user-supplied case. The required existing_solution is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Generate distinct Substitute, Combine, Adapt, Modify, Put to another use, Eliminate and Reverse or Rearrange variations",
+      "Explain the changed mechanism for each",
+      "Screen concepts against constraints",
+      "Prototype the highest learning-value options"
+    ],
+    "required_outputs": [
+      "scamper_concepts",
+      "selection",
+      "tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-37",
+    "prompt": "Use TRIZ (Inventive Problem Solving) on a user-supplied case. The required improving_parameter is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "State the technical or physical contradiction",
+      "Seek separation in space, time, condition or system level and applicable inventive principles",
+      "Distinguish a verified contradiction-matrix lookup from a proposed principle",
+      "Do not invent matrix cells or force a compromise disguised as contradiction resolution"
+    ],
+    "required_outputs": [
+      "contradiction",
+      "principles",
+      "solutions",
+      "tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-38",
+    "prompt": "Use RACI Governance Matrix on a user-supplied case. The required workstreams is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Map Responsible, Accountable, Consulted and Informed for every workstream",
+      "Require exactly one Accountable and at least one Responsible per row",
+      "Check role authority and capacity",
+      "Resolve gaps and conflicting accountability with stakeholders"
+    ],
+    "required_outputs": [
+      "raci_matrix",
+      "conflicts",
+      "actions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-39",
+    "prompt": "Use OKRs (Objectives & Key Results) on a user-supplied case. The required objective is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Write a qualitative outcome objective",
+      "Define measurable key results with baseline, target, owner and deadline",
+      "Separate outcomes from activity lists and leading from lagging indicators",
+      "Schedule evidence-based reviews without inventing progress"
+    ],
+    "required_outputs": [
+      "okrs",
+      "indicators",
+      "review_plan"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-40",
+    "prompt": "Use PDCA (Plan-Do-Check-Act) on a user-supplied case. The required problem is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Plan a testable change and success criteria",
+      "Do a bounded intervention with observation",
+      "Check outcomes against baseline and thresholds",
+      "Act by adopting, adjusting or abandoning and start the next cycle"
+    ],
+    "required_outputs": [
+      "pdca_cycle",
+      "thresholds",
+      "decision"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-41",
+    "prompt": "Use Getting Things Done (GTD) on a user-supplied case. The required commitments is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Capture commitments",
+      "Clarify actionable items and desired outcomes",
+      "Organize concrete next physical actions by context and project",
+      "Reflect through a review and engage according to constraints",
+      "Avoid treating a vague project title as a next action"
+    ],
+    "required_outputs": [
+      "next_actions",
+      "contexts",
+      "review"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-42",
+    "prompt": "Use Critical Path Method (CPM) on a user-supplied case. The required tasks is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Validate dependency DAG and common duration units",
+      "Run a forward pass for earliest start and finish",
+      "Run a backward pass for latest start and finish",
+      "Compute slack and all critical activities",
+      "Disclose that resource constraints and uncertain duration need additional analysis"
+    ],
+    "required_outputs": [
+      "critical_path",
+      "schedule",
+      "slack"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-43",
+    "prompt": "Use Minto Pyramid Principle on a user-supplied case. The required findings is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Lead with a supported answer or conditional conclusion",
+      "Group supporting reasons by a consistent MECE logic",
+      "Attach evidence and counterarguments to each key line",
+      "State uncertainty, decision conditions and concrete next actions"
+    ],
+    "required_outputs": [
+      "governing_thought",
+      "key_line",
+      "evidence_links",
+      "conditions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-44",
+    "prompt": "Use SCQA Framework on a user-supplied case. The required problem is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "State supported Situation",
+      "Identify the Complication and its consequences",
+      "Formulate a decision-relevant Question",
+      "Give a provisional Answer with assumptions and evidence gaps",
+      "Do not smuggle a root-cause conclusion into framing"
+    ],
+    "required_outputs": [
+      "situation",
+      "complication",
+      "question",
+      "answer"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-45",
+    "prompt": "Use Storyboarding & Narrative on a user-supplied case. The required pyramid is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define audience decision and governing narrative",
+      "Sequence declarative action titles that form a coherent argument",
+      "Choose a visual and cited data for each page",
+      "Check that evidence supports each title and flag missing data"
+    ],
+    "required_outputs": [
+      "storyboard",
+      "action_titles",
+      "visual_specs"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-46",
+    "prompt": "Use Stakeholder Grid on a user-supplied case. The required stakeholders is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Define power or influence and interest with evidence",
+      "Map manage closely, keep satisfied, keep informed and monitor",
+      "Identify conflicting interests and legitimate decision rights",
+      "Specify communication and feedback tactics without manipulative assumptions"
+    ],
+    "required_outputs": [
+      "stakeholder_grid",
+      "engagement_plan"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-47",
+    "prompt": "Use Radical Candor Feedback on a user-supplied case. The required situation is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Describe observable behavior and impact",
+      "Combine Care Personally with Challenge Directly",
+      "Invite the other perspective and agree on concrete next behavior",
+      "Avoid personality diagnoses and invented motives"
+    ],
+    "required_outputs": [
+      "feedback_script",
+      "questions",
+      "followup"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-48",
+    "prompt": "Use Toulmin Argumentation Model on a user-supplied case. The required claim is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Separate claim from grounds",
+      "Make the connecting warrant explicit and identify backing",
+      "State the qualifier and strongest rebuttal conditions",
+      "Test unsupported warrants and alternate explanations before endorsement"
+    ],
+    "required_outputs": [
+      "claim",
+      "grounds",
+      "warrant",
+      "backing",
+      "qualifier",
+      "rebuttal",
+      "gaps"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-49",
+    "prompt": "Use Pre-Mortem & Red Teaming on a user-supplied case. The required proposal is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Assume the proposal has failed at the stated horizon",
+      "Generate independent failure explanations and challenge optimistic assumptions",
+      "Tie each scenario to mechanism, early signal and mitigation",
+      "Specify stop or rollback conditions and retain unresolved objections"
+    ],
+    "required_outputs": [
+      "failure_scenarios",
+      "signals",
+      "mitigations",
+      "stop_conditions"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  },
+  {
+    "id": "FW-50",
+    "prompt": "Use Cognitive Bias Deconstruction on a user-supplied case. The required arguments is deliberately missing. Request or explicitly mark the gap before any conclusion.",
+    "expected_method": [
+      "Inspect evidence selection, base rates, anchors, sunk costs, survival filtering, salience, group pressure, certainty, framing and outcome hindsight",
+      "Quote observable argument spans rather than diagnosing people",
+      "Offer competing interpretations and disconfirming checks",
+      "Do not invent bias probabilities"
+    ],
+    "required_outputs": [
+      "bias_flags",
+      "alternative_interpretations",
+      "debiasing_tests"
+    ],
+    "reject": [
+      "invented evidence",
+      "unsupported numeric confidence",
+      "unqualified recommendation"
+    ],
+    "status": "NOT_RUN_ON_HOST"
+  }
+]

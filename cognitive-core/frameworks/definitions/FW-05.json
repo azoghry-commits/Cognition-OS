@@ -1,0 +1,81 @@
+{
+  "id": "FW-05",
+  "agent_id": "AG-05",
+  "name": "Bayesian Updating",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 280
+  },
+  "source_original": {
+    "purpose": "Pembaruan probabilitas hipotesis (*Prior ➔ Posterior*) setiap kali bukti baru ditemukan",
+    "inputs": "`prior_probability`, `likelihood_if_true`, `false_positive_rate`",
+    "outputs": "`posterior_probability`, `bayes_factor`, dan kurva pergeseran keyakinan"
+  },
+  "purpose": "Define hypothesis and observed evidence",
+  "applicability": [
+    "prior",
+    "likelihood_if_true",
+    "likelihood_if_false"
+  ],
+  "activation_conditions": [
+    "User requests Bayesian Updating or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "prior",
+    "likelihood_if_true",
+    "likelihood_if_false"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define hypothesis and observed evidence",
+    "Require justified prior and conditional likelihoods",
+    "Compute Bayes using the helper and reject impossible evidence",
+    "For multiple updates justify conditional independence or use conditional likelihoods"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "posterior",
+    "bayes_factor",
+    "assumptions"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide posterior or declare it UNKNOWN with reason.",
+    "Provide bayes_factor or declare it UNKNOWN with reason.",
+    "Provide assumptions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 280
+    }
+  ]
+}

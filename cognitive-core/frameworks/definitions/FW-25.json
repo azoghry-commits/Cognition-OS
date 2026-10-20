@@ -1,0 +1,84 @@
+{
+  "id": "FW-25",
+  "agent_id": "AG-25",
+  "name": "Wardley Mapping",
+  "category": "Strategic Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Strategic Models",
+    "line": 315
+  },
+  "source_original": {
+    "purpose": "Pemetaan komponen rantai nilai (*Value Chain*) terhadap tingkat evolusi (*Genesis ➔ Commodity*)",
+    "inputs": "Kebutuhan pengguna (*anchor*), komponen sistem, dan maturitas teknologi",
+    "outputs": "Koordinat peta Wardley `[visibility_y, evolution_x]` & rekomendasi *build vs buy*"
+  },
+  "purpose": "Anchor the map on user need and visibility",
+  "applicability": [
+    "user_need",
+    "components",
+    "dependencies",
+    "evolution_evidence"
+  ],
+  "activation_conditions": [
+    "User requests Wardley Mapping or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "user_need",
+    "components",
+    "dependencies",
+    "evolution_evidence"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Anchor the map on user need and visibility",
+    "Build dependency value chain",
+    "Position each component from Genesis through Custom Built and Product to Commodity using evidence",
+    "Use evolution and dependencies to evaluate build, buy or utility choices",
+    "Do not substitute a generic maturity quadrant"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "wardley_map",
+    "sourcing_options",
+    "uncertainties"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide wardley_map or declare it UNKNOWN with reason.",
+    "Provide sourcing_options or declare it UNKNOWN with reason.",
+    "Provide uncertainties or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Strategic Models",
+      "line": 315
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "FW-17",
+  "agent_id": "AG-17",
+  "name": "Theory of Constraints (TOC)",
+  "category": "Systems Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Systems Thinking Models",
+    "line": 302
+  },
+  "source_original": {
+    "purpose": "Identifikasi satu *bottleneck* utama yang membatasi *throughput* seluruh sistem (5 Focusing Steps)",
+    "inputs": "Alur proses end-to-end, kapasitas tiap stasiun, tumpukan inventori",
+    "outputs": "Lokasi *bottleneck* kritis dan rencana *Identify, Exploit, Subordinate, Elevate*"
+  },
+  "purpose": "Measure end-to-end throughput, queues and effective capacities",
+  "applicability": [
+    "process",
+    "capacities",
+    "demand"
+  ],
+  "activation_conditions": [
+    "User requests Theory of Constraints (TOC) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "process",
+    "capacities",
+    "demand"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Measure end-to-end throughput, queues and effective capacities",
+    "Identify the current constraint and test it against demand and dependencies",
+    "Exploit the constraint then subordinate other work then elevate when justified",
+    "Repeat identification after improvement and guard against inertia"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "constraint",
+    "focusing_steps",
+    "throughput_tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-40"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide constraint or declare it UNKNOWN with reason.",
+    "Provide focusing_steps or declare it UNKNOWN with reason.",
+    "Provide throughput_tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Systems Thinking Models",
+      "line": 302
+    }
+  ]
+}

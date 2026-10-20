@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-16 analytical payload",
+  "type": "object",
+  "required": [
+    "failure_conditions",
+    "preventive_actions"
+  ],
+  "properties": {
+    "failure_conditions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "preventive_actions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-23 analytical payload",
+  "type": "object",
+  "required": [
+    "effect_type",
+    "mechanisms",
+    "measurement_plan"
+  ],
+  "properties": {
+    "effect_type": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "mechanisms": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "measurement_plan": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

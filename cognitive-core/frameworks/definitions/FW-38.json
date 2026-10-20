@@ -1,0 +1,79 @@
+{
+  "id": "FW-38",
+  "agent_id": "AG-38",
+  "name": "RACI Governance Matrix",
+  "category": "Execution Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Execution Models",
+    "line": 338
+  },
+  "source_original": {
+    "purpose": "Pemetaan akuntabilitas eksekusi (*Responsible, Accountable, Consulted, Informed*) tanpa tumpang tindih",
+    "inputs": "Daftar paket kerja (*workstreams*) dan daftar peran/pemangku kepentingan",
+    "outputs": "Tabel matriks RACI tervalidasi (memastikan tepat 1 *Accountable* per baris)"
+  },
+  "purpose": "Map Responsible, Accountable, Consulted and Informed for every workstream",
+  "applicability": [
+    "workstreams",
+    "roles"
+  ],
+  "activation_conditions": [
+    "User requests RACI Governance Matrix or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "workstreams",
+    "roles"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Map Responsible, Accountable, Consulted and Informed for every workstream",
+    "Require exactly one Accountable and at least one Responsible per row",
+    "Check role authority and capacity",
+    "Resolve gaps and conflicting accountability with stakeholders"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "raci_matrix",
+    "conflicts",
+    "actions"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide raci_matrix or declare it UNKNOWN with reason.",
+    "Provide conflicts or declare it UNKNOWN with reason.",
+    "Provide actions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Execution Models",
+      "line": 338
+    }
+  ]
+}

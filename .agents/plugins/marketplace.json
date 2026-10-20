@@ -1,0 +1,20 @@
+{
+  "name": "cognition-os-local",
+  "interface": {
+    "displayName": "Cognition OS local development"
+  },
+  "plugins": [
+    {
+      "name": "cognition-os",
+      "source": {
+        "source": "local",
+        "path": "./local-marketplace/plugins/cognition-os"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

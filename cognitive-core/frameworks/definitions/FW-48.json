@@ -1,0 +1,87 @@
+{
+  "id": "FW-48",
+  "agent_id": "AG-48",
+  "name": "Toulmin Argumentation Model",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 353
+  },
+  "source_original": {
+    "purpose": "Pengujian struktur mikro-argumen (*Claim, Grounds/Data, Warrant, Backing, Qualifier, Rebuttal*)",
+    "inputs": "Pernyataan klaim strategis dan kumpulan bukti pendukung",
+    "outputs": "Dekonstruksi 6 elemen Toulmin dan identifikasi celah *warrant* logika"
+  },
+  "purpose": "Separate claim from grounds",
+  "applicability": [
+    "claim",
+    "grounds"
+  ],
+  "activation_conditions": [
+    "User requests Toulmin Argumentation Model or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "claim",
+    "grounds"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Separate claim from grounds",
+    "Make the connecting warrant explicit and identify backing",
+    "State the qualifier and strongest rebuttal conditions",
+    "Test unsupported warrants and alternate explanations before endorsement"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "claim",
+    "grounds",
+    "warrant",
+    "backing",
+    "qualifier",
+    "rebuttal",
+    "gaps"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "review",
+  "validation_criteria": [
+    "Provide claim or declare it UNKNOWN with reason.",
+    "Provide grounds or declare it UNKNOWN with reason.",
+    "Provide warrant or declare it UNKNOWN with reason.",
+    "Provide backing or declare it UNKNOWN with reason.",
+    "Provide qualifier or declare it UNKNOWN with reason.",
+    "Provide rebuttal or declare it UNKNOWN with reason.",
+    "Provide gaps or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 353
+    }
+  ]
+}

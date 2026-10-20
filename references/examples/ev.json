@@ -1,0 +1,10 @@
+{
+  "operation": "ev",
+  "inputs": {
+    "probability": 0.65,
+    "upside": 2.4,
+    "downside": 0.3,
+    "costs": 0.8,
+    "unit": "USD million"
+  }
+}

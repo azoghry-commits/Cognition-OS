@@ -1,0 +1,85 @@
+{
+  "id": "FW-49",
+  "agent_id": "AG-49",
+  "name": "Pre-Mortem & Red Teaming",
+  "category": "Meta-Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Meta-Thinking Models",
+    "line": 359
+  },
+  "source_original": {
+    "purpose": "Simulasi ke masa depan dengan asumsi keputusan **telah gagal total**, lalu merunut balik penyebab kehancurannya",
+    "inputs": "Rekomendasi keputusan yang akan dieksekusi dan asumsi keberhasilannya",
+    "outputs": "Daftar skenario kegagalan kritis, titik rapuh tersembunyi, dan tindakan pencegahan"
+  },
+  "purpose": "Assume the proposal has failed at the stated horizon",
+  "applicability": [
+    "proposal",
+    "assumptions",
+    "horizon"
+  ],
+  "activation_conditions": [
+    "User requests Pre-Mortem & Red Teaming or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "proposal",
+    "assumptions",
+    "horizon"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Assume the proposal has failed at the stated horizon",
+    "Generate independent failure explanations and challenge optimistic assumptions",
+    "Tie each scenario to mechanism, early signal and mitigation",
+    "Specify stop or rollback conditions and retain unresolved objections"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "failure_scenarios",
+    "signals",
+    "mitigations",
+    "stop_conditions"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-43"
+  ],
+  "workflow_position": "review",
+  "validation_criteria": [
+    "Provide failure_scenarios or declare it UNKNOWN with reason.",
+    "Provide signals or declare it UNKNOWN with reason.",
+    "Provide mitigations or declare it UNKNOWN with reason.",
+    "Provide stop_conditions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Meta-Thinking Models",
+      "line": 359
+    }
+  ]
+}

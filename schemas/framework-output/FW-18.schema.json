@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-18 analytical payload",
+  "type": "object",
+  "required": [
+    "causal_graph",
+    "loops",
+    "delays"
+  ],
+  "properties": {
+    "causal_graph": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "loops": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "delays": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-07 analytical payload",
+  "type": "object",
+  "required": [
+    "bcr",
+    "npv",
+    "break_even",
+    "marginal_analysis"
+  ],
+  "properties": {
+    "bcr": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "npv": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "break_even": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "marginal_analysis": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

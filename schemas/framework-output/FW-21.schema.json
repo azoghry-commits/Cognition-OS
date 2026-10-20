@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-21 analytical payload",
+  "type": "object",
+  "required": [
+    "stock_series",
+    "equations",
+    "assumptions"
+  ],
+  "properties": {
+    "stock_series": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "equations": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "assumptions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

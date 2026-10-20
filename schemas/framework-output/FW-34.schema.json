@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-34 analytical payload",
+  "type": "object",
+  "required": [
+    "fit_map",
+    "gaps",
+    "tests"
+  ],
+  "properties": {
+    "fit_map": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "gaps": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "tests": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

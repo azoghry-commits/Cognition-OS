@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-42 analytical payload",
+  "type": "object",
+  "required": [
+    "critical_path",
+    "schedule",
+    "slack"
+  ],
+  "properties": {
+    "critical_path": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "schedule": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "slack": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

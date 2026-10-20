@@ -1,0 +1,85 @@
+{
+  "id": "FW-43",
+  "agent_id": "AG-43",
+  "name": "Minto Pyramid Principle",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 348
+  },
+  "source_original": {
+    "purpose": "Penyusunan argumen eksekutif *top-down* (*Answer First* ➔ *MECE Key Line Arguments* ➔ *Validated Evidence*)",
+    "inputs": "Seluruh temuan dari *Thinking Canvas*, *Debate*, dan *Scenario Simulator*",
+    "outputs": "Struktur pohon Minto Pyramid siap ekspor ke laporan PDF & dek PPTX"
+  },
+  "purpose": "Lead with a supported answer or conditional conclusion",
+  "applicability": [
+    "findings",
+    "recommendation",
+    "evidence"
+  ],
+  "activation_conditions": [
+    "User requests Minto Pyramid Principle or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "findings",
+    "recommendation",
+    "evidence"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Lead with a supported answer or conditional conclusion",
+    "Group supporting reasons by a consistent MECE logic",
+    "Attach evidence and counterarguments to each key line",
+    "State uncertainty, decision conditions and concrete next actions"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "governing_thought",
+    "key_line",
+    "evidence_links",
+    "conditions"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-48"
+  ],
+  "workflow_position": "synthesis",
+  "validation_criteria": [
+    "Provide governing_thought or declare it UNKNOWN with reason.",
+    "Provide key_line or declare it UNKNOWN with reason.",
+    "Provide evidence_links or declare it UNKNOWN with reason.",
+    "Provide conditions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 348
+    }
+  ]
+}

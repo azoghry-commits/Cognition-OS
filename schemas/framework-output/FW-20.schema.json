@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-20 analytical payload",
+  "type": "object",
+  "required": [
+    "consequence_tree",
+    "uncertainties",
+    "indicators"
+  ],
+  "properties": {
+    "consequence_tree": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "uncertainties": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "indicators": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

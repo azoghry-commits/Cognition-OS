@@ -1,0 +1,81 @@
+{
+  "id": "FW-45",
+  "agent_id": "AG-45",
+  "name": "Storyboarding & Narrative",
+  "category": "Communication Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Communication Models",
+    "line": 350
+  },
+  "source_original": {
+    "purpose": "Perancangan alur presentasi visual *slide-by-slide* dengan *declarative action titles*",
+    "inputs": "Struktur Minto Pyramid dan grafik data pendukung",
+    "outputs": "Spesifikasi *storyboard* per halaman (*Action Title, Visual Layout, Key Data*)"
+  },
+  "purpose": "Define audience decision and governing narrative",
+  "applicability": [
+    "pyramid",
+    "audience",
+    "data"
+  ],
+  "activation_conditions": [
+    "User requests Storyboarding & Narrative or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "pyramid",
+    "audience",
+    "data"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define audience decision and governing narrative",
+    "Sequence declarative action titles that form a coherent argument",
+    "Choose a visual and cited data for each page",
+    "Check that evidence supports each title and flag missing data"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "storyboard",
+    "action_titles",
+    "visual_specs"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide storyboard or declare it UNKNOWN with reason.",
+    "Provide action_titles or declare it UNKNOWN with reason.",
+    "Provide visual_specs or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Communication Models",
+      "line": 350
+    }
+  ]
+}

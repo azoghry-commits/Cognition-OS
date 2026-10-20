@@ -1,0 +1,79 @@
+{
+  "id": "FW-35",
+  "agent_id": "AG-35",
+  "name": "Kano Model",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 330
+  },
+  "source_original": {
+    "purpose": "Klasifikasi atribut produk menjadi *Basic (Must-be)*, *Performance*, dan *Delighters (Attractive)*",
+    "inputs": "Daftar kandidat fitur produk dan respons kepuasan/ketidakpuasan pengguna",
+    "outputs": "Pemetaan kurva Kano dan prioritas investasi fitur pembeda"
+  },
+  "purpose": "Require paired functional and dysfunctional responses",
+  "applicability": [
+    "attributes",
+    "survey_responses"
+  ],
+  "activation_conditions": [
+    "User requests Kano Model or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "attributes",
+    "survey_responses"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Require paired functional and dysfunctional responses",
+    "Classify Must-be, One-dimensional, Attractive, Indifferent, Reverse or Questionable using a declared evaluation table",
+    "Report counts and sample limitations",
+    "Do not label delighters from intuition alone"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "kano_categories",
+    "uncertainty",
+    "priorities"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide kano_categories or declare it UNKNOWN with reason.",
+    "Provide uncertainty or declare it UNKNOWN with reason.",
+    "Provide priorities or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 330
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-33 analytical payload",
+  "type": "object",
+  "required": [
+    "hmw",
+    "ideas",
+    "prototype",
+    "test_plan"
+  ],
+  "properties": {
+    "hmw": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "ideas": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "prototype": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "test_plan": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

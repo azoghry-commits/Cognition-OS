@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-43 analytical payload",
+  "type": "object",
+  "required": [
+    "governing_thought",
+    "key_line",
+    "evidence_links",
+    "conditions"
+  ],
+  "properties": {
+    "governing_thought": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "key_line": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "evidence_links": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "conditions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

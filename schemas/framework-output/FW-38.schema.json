@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-38 analytical payload",
+  "type": "object",
+  "required": [
+    "raci_matrix",
+    "conflicts",
+    "actions"
+  ],
+  "properties": {
+    "raci_matrix": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "conflicts": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "actions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

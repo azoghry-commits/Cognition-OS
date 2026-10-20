@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.dev-deps/
+.cognition/
+dist/
+tmp/
+local-marketplace/
+.env*
+!.env.example

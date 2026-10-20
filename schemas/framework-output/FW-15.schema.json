@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-15 analytical payload",
+  "type": "object",
+  "required": [
+    "domain",
+    "response_protocol",
+    "reassessment"
+  ],
+  "properties": {
+    "domain": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "response_protocol": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "reassessment": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

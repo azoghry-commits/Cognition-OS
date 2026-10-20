@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-08 analytical payload",
+  "type": "object",
+  "required": [
+    "regret_matrix",
+    "tradeoffs",
+    "recommendation"
+  ],
+  "properties": {
+    "regret_matrix": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "tradeoffs": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "recommendation": {
+      "type": [
+        "string",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

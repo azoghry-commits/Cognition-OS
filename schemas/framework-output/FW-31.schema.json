@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-31 analytical payload",
+  "type": "object",
+  "required": [
+    "business_model_canvas",
+    "coherence",
+    "gaps"
+  ],
+  "properties": {
+    "business_model_canvas": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "coherence": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "gaps": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

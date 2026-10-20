@@ -1,0 +1,81 @@
+{
+  "id": "FW-31",
+  "agent_id": "AG-31",
+  "name": "Business Model Canvas (BMC)",
+  "category": "Strategic Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Strategic Models",
+    "line": 321
+  },
+  "source_original": {
+    "purpose": "Pemetaan 9 blok arsitektur model bisnis untuk memastikan keselarasan proposisi nilai dan struktur biaya",
+    "inputs": "Deskripsi bisnis/inisiatif baru, segmen pelanggan, saluran, arus kas",
+    "outputs": "Struktur lengkap 9 blok BMC beserta uji koherensi antar-blok"
+  },
+  "purpose": "Populate segments, value propositions, channels, relationships, revenues, resources, activities, partners and costs",
+  "applicability": [
+    "business",
+    "customers",
+    "economics"
+  ],
+  "activation_conditions": [
+    "User requests Business Model Canvas (BMC) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "business",
+    "customers",
+    "economics"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Populate segments, value propositions, channels, relationships, revenues, resources, activities, partners and costs",
+    "Separate validated inputs from hypotheses in every block",
+    "Check revenue-cost and delivery-customer coherence",
+    "Design tests for the weakest links"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "business_model_canvas",
+    "coherence",
+    "gaps"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide business_model_canvas or declare it UNKNOWN with reason.",
+    "Provide coherence or declare it UNKNOWN with reason.",
+    "Provide gaps or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Strategic Models",
+      "line": 321
+    }
+  ]
+}

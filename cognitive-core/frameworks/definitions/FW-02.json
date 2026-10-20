@@ -1,0 +1,83 @@
+{
+  "id": "FW-02",
+  "agent_id": "AG-02",
+  "name": "RICE Scoring",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 277
+  },
+  "source_original": {
+    "purpose": "Kuantifikasi prioritas inisiatif dengan rumus `(Reach × Impact × Confidence) / Effort`",
+    "inputs": "Daftar solusi, estimasi jangkauan, dampak, keyakinan, usaha",
+    "outputs": "Tabel peringkat inisiatif terurut berdasarkan *RICE Score*"
+  },
+  "purpose": "Require reach, impact, confidence fraction and positive effort for every initiative",
+  "applicability": [
+    "initiatives",
+    "reach_unit",
+    "effort_unit",
+    "time_horizon"
+  ],
+  "activation_conditions": [
+    "User requests RICE Scoring or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "initiatives",
+    "reach_unit",
+    "effort_unit",
+    "time_horizon"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Require reach, impact, confidence fraction and positive effort for every initiative",
+    "Use common reach period and effort units",
+    "Calculate RICE with the local helper and expose each factor",
+    "Sensitivity-test uncertain factors without interpreting confidence as truth probability"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "rankings",
+    "assumptions"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-43"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide rankings or declare it UNKNOWN with reason.",
+    "Provide assumptions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 277
+    }
+  ]
+}

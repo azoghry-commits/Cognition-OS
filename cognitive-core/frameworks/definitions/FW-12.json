@@ -1,0 +1,79 @@
+{
+  "id": "FW-12",
+  "agent_id": "AG-12",
+  "name": "Fishbone (Ishikawa) Diagram",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 292
+  },
+  "source_original": {
+    "purpose": "Pemetaan faktor penyebab lintas kategori (6M: *Man, Machine, Material, Method, Measurement, Milieu*)",
+    "inputs": "Efek/masalah utama dan data operasional lintas departemen",
+    "outputs": "Struktur diagram tulang ikan 6 kategori beserta sub-penyebab utama"
+  },
+  "purpose": "Define a measurable effect and boundary",
+  "applicability": [
+    "effect",
+    "operational_context"
+  ],
+  "activation_conditions": [
+    "User requests Fishbone (Ishikawa) Diagram or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "effect",
+    "operational_context"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define a measurable effect and boundary",
+    "Explore Man, Machine, Material, Method, Measurement and Milieu",
+    "Attach evidence or hypothesis labels to each subcause",
+    "Test interactions and prioritize discriminating checks without declaring the diagram causal proof"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "fishbone",
+    "hypotheses",
+    "tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide fishbone or declare it UNKNOWN with reason.",
+    "Provide hypotheses or declare it UNKNOWN with reason.",
+    "Provide tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 292
+    }
+  ]
+}

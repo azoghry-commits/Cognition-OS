@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-36 analytical payload",
+  "type": "object",
+  "required": [
+    "scamper_concepts",
+    "selection",
+    "tests"
+  ],
+  "properties": {
+    "scamper_concepts": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "selection": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "tests": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

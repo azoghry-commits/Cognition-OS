@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-03 analytical payload",
+  "type": "object",
+  "required": [
+    "must",
+    "should",
+    "could",
+    "wont"
+  ],
+  "properties": {
+    "must": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "should": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "could": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "wont": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

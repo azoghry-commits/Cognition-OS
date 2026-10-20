@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-37 analytical payload",
+  "type": "object",
+  "required": [
+    "contradiction",
+    "principles",
+    "solutions",
+    "tests"
+  ],
+  "properties": {
+    "contradiction": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "principles": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "solutions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "tests": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

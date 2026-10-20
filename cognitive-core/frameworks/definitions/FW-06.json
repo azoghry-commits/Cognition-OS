@@ -1,0 +1,79 @@
+{
+  "id": "FW-06",
+  "agent_id": "AG-06",
+  "name": "Pareto Principle (80/20)",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 281
+  },
+  "source_original": {
+    "purpose": "Identifikasi 20% faktor penggerak yang menghasilkan 80% dampak atau kerugian",
+    "inputs": "Dataset kontribusi penyebab atau segmen pendapatan/masalah",
+    "outputs": "Kurva distribusi kumulatif Pareto dan isolasi *vital few drivers*"
+  },
+  "purpose": "Validate nonnegative comparable contributions and common period",
+  "applicability": [
+    "contributions",
+    "unit"
+  ],
+  "activation_conditions": [
+    "User requests Pareto Principle (80/20) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "contributions",
+    "unit"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Validate nonnegative comparable contributions and common period",
+    "Sort descending and calculate cumulative shares",
+    "Find the smallest group meeting the stated coverage target",
+    "Report the observed concentration rather than forcing an 80/20 split"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "ranked_contributions",
+    "cumulative_share",
+    "vital_few"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide ranked_contributions or declare it UNKNOWN with reason.",
+    "Provide cumulative_share or declare it UNKNOWN with reason.",
+    "Provide vital_few or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 281
+    }
+  ]
+}

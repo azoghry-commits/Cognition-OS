@@ -1,0 +1,81 @@
+{
+  "id": "FW-23",
+  "agent_id": "AG-23",
+  "name": "Network Effects & Feedback",
+  "category": "Systems Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Systems Thinking Models",
+    "line": 308
+  },
+  "source_original": {
+    "purpose": "Analisis dinamika pertumbuhan jaringan (*direct, indirect, two-sided, local network effects*)",
+    "inputs": "Struktur interaksi pengguna/pemasok, biaya perpindahan (*switching cost*)",
+    "outputs": "Koefisien elastisitas jaringan, titik *critical mass*, dan risiko *moat decay*"
+  },
+  "purpose": "Distinguish direct, indirect, two-sided and local effects",
+  "applicability": [
+    "network",
+    "interactions",
+    "metrics"
+  ],
+  "activation_conditions": [
+    "User requests Network Effects & Feedback or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "network",
+    "interactions",
+    "metrics"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Distinguish direct, indirect, two-sided and local effects",
+    "Define whose utility changes when which participants join",
+    "Separate network effects from scale economies and viral acquisition",
+    "Estimate elasticity or critical mass only from suitable data and assess congestion or moat decay"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "effect_type",
+    "mechanisms",
+    "measurement_plan"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide effect_type or declare it UNKNOWN with reason.",
+    "Provide mechanisms or declare it UNKNOWN with reason.",
+    "Provide measurement_plan or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Systems Thinking Models",
+      "line": 308
+    }
+  ]
+}

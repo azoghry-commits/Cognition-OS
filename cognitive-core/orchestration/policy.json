@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "default_mode": "STANDARD",
+  "modes": {
+    "AUTO": {
+      "frameworks": 4,
+      "rebuttal_rounds": 1
+    },
+    "QUICK": {
+      "frameworks": 2,
+      "rebuttal_rounds": 0
+    },
+    "STANDARD": {
+      "frameworks": 4,
+      "rebuttal_rounds": 1
+    },
+    "DEEP": {
+      "frameworks": 8,
+      "rebuttal_rounds": 2
+    },
+    "EXECUTIVE": {
+      "frameworks": 3,
+      "rebuttal_rounds": 1
+    },
+    "CUSTOM": {
+      "frameworks": 12,
+      "rebuttal_rounds": 2
+    },
+    "LEARN": {
+      "frameworks": 1,
+      "rebuttal_rounds": 0
+    }
+  },
+  "default_token_allowance": 8000,
+  "budget_kind": "estimate unless host supplies measured usage",
+  "parallel_limit": "minimum of host capacity and authorized task limit; no assumed capacity",
+  "dependency_policy": "dependent tasks sequential; explicit semantic field mappings",
+  "stop_on": [
+    "sufficient answer",
+    "missing evidence/tool",
+    "budget limit",
+    "required human judgment"
+  ],
+  "further_analysis_condition": "new decision-relevant evidence or unresolved material objection"
+}

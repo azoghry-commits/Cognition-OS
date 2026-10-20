@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-10 analytical payload",
+  "type": "object",
+  "required": [
+    "causal_chain",
+    "alternative_causes",
+    "diagnostic_tests"
+  ],
+  "properties": {
+    "causal_chain": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "alternative_causes": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "diagnostic_tests": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

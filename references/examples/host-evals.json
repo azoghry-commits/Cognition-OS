@@ -1,0 +1,55 @@
+[
+  {
+    "id": "A",
+    "prompt": "Analyze recurring MariaDB service failures. No logs or timestamps are available. Identify likely causes and a verified mitigation plan.",
+    "rubric": [
+      "Distinguish observed symptom from hypotheses",
+      "Ask for logs and IS/IS NOT contrasts",
+      "No verified root cause or destructive recovery claims"
+    ],
+    "status": "NOT_RUN"
+  },
+  {
+    "id": "B",
+    "prompt": "Evaluate this architecture using First Principles Thinking, Causal Loop Diagrams (CLD), and Pre-Mortem & Red Teaming: one service writes a database, a queue retries failed writes indefinitely.",
+    "rubric": [
+      "Challenge assumptions",
+      "Map retry amplification loop",
+      "Examine failure and rollback",
+      "Produce conditional ADR"
+    ],
+    "status": "NOT_RUN"
+  },
+  {
+    "id": "C",
+    "prompt": "Is expansion into a new region viable? We have no financial projections or market evidence.",
+    "rubric": [
+      "Identify missing assumptions",
+      "No invented EV or viability certainty",
+      "Conditional evidence plan"
+    ],
+    "status": "NOT_RUN"
+  },
+  {
+    "id": "D",
+    "prompt": "Use Kepner-Tregoe to diagnose a throughput deviation. It starts at night; other contrasts are missing.",
+    "rubric": [
+      "What Where When Extent",
+      "IS and IS NOT distinctions",
+      "Candidate tests",
+      "No confirmed cause"
+    ],
+    "status": "NOT_RUN"
+  },
+  {
+    "id": "E",
+    "prompt": "Teach MECE using an IT infrastructure example.",
+    "rubric": [
+      "Explain exclusivity and exhaustiveness",
+      "Bound the universe",
+      "Give synthetic example and exercise",
+      "Do not grade an unprovided answer"
+    ],
+    "status": "NOT_RUN"
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "id": "FW-21",
+  "agent_id": "AG-21",
+  "name": "Stock and Flow Modeling",
+  "category": "Systems Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Systems Thinking Models",
+    "line": 306
+  },
+  "source_original": {
+    "purpose": "Pemodelan akumulasi sumber daya (*Stocks*), laju aliran masuk (*Inflows*), dan aliran keluar (*Outflows*)",
+    "inputs": "Kapasitas awal, laju penambahan, laju penyusutan/churn, waktu tunda",
+    "outputs": "Persamaan diferensial diskrit dan grafik simulasi akumulasi *stock*"
+  },
+  "purpose": "Define stock units and flow units per time",
+  "applicability": [
+    "initial_stock",
+    "inflows",
+    "outflows",
+    "time_step",
+    "unit"
+  ],
+  "activation_conditions": [
+    "User requests Stock and Flow Modeling or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "initial_stock",
+    "inflows",
+    "outflows",
+    "time_step",
+    "unit"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define stock units and flow units per time",
+    "Apply stock_next equals stock plus inflows minus outflows times time_step",
+    "Represent delays and boundary constraints explicitly",
+    "Test conservation, nonnegative limits where applicable and sensitivity to step size"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "stock_series",
+    "equations",
+    "assumptions"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide stock_series or declare it UNKNOWN with reason.",
+    "Provide equations or declare it UNKNOWN with reason.",
+    "Provide assumptions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Systems Thinking Models",
+      "line": 306
+    }
+  ]
+}

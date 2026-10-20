@@ -1,0 +1,11 @@
+# Adversarial and logic review
+
+Run an optimistic case and the strongest critical case against the same proposal and evidence. Bound rebuttals to the selected mode. A new round must resolve a material objection or incorporate new evidence. AG-52 must be able to reject both cases. Preserve disagreement and return ACCEPT, CONDITIONAL, REJECT or INSUFFICIENT_EVIDENCE with concrete reasons.
+
+Evidence review checks source identity, locator, content, applicability, time, contradictions and whether the claim exceeds what the source supports. Calculation review requires actual input/method/output and correct units. Simulation review additionally requires distributions, seed, limitations and risk thresholds. Traceability coverage is linked externally reportable material claims divided by all material claims; zero denominator is null. No coverage score becomes factual certainty.
+
+MECE review evaluates sibling overlap, domain coverage, duplicates, missing branches, edge cases and abstraction levels. Exact set validation is available only for an explicitly enumerated finite universe. Semantic similarity and human judgment are heuristic; do not claim universal mathematical completeness.
+
+Bias checklist: confirmation (selective evidence), anchoring (unjustified reference point), sunk cost (irrecoverable spend driving future choice), survivorship (missing failures), availability (salient examples replacing base rates), groupthink (suppressed alternatives), overconfidence (certainty exceeding evidence), framing effects (equivalent options represented inconsistently), outcome bias (hindsight replacing ex ante decision quality). Quote argument spans, describe evidence and alternative interpretations, and propose disconfirming checks. These are potential reasoning patterns, not psychological diagnoses or calibrated probabilities.
+
+The deterministic jury gate rejects unresolved critical issues and withholds endorsement when material evidence is missing. Passing it returns CONDITIONAL, never automatic ACCEPT. Content-level independent judgment remains required. A native evaluator wrapper is read-only; numerical rechecks must be requested from the main host or an authorized calculator.

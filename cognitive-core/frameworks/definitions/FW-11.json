@@ -1,0 +1,85 @@
+{
+  "id": "FW-11",
+  "agent_id": "AG-11",
+  "name": "Kepner-Tregoe (KT) Matrix",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 291
+  },
+  "source_original": {
+    "purpose": "Isolasi penyimpangan secara presisi dengan membandingkan spesifikasi *IS* vs *IS NOT*",
+    "inputs": "Pernyataan deviasi, data *What, Where, When, Extent*",
+    "outputs": "Matriks kontras *IS / IS NOT*, daftar *distinctions*, dan penyebab teruji"
+  },
+  "purpose": "Specify What, Where, When and Extent with IS, IS NOT, distinction and change",
+  "applicability": [
+    "deviation",
+    "is_is_not"
+  ],
+  "activation_conditions": [
+    "User requests Kepner-Tregoe (KT) Matrix or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "deviation",
+    "is_is_not"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Specify What, Where, When and Extent with IS, IS NOT, distinction and change",
+    "Generate causes from distinctions and relevant changes",
+    "Test each candidate against every IS and IS NOT condition",
+    "Separate plausible causes from verified causes and identify falsifying checks",
+    "Request missing contrasts before a confirmed diagnosis"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "is_vs_is_not_matrix",
+    "candidate_causes",
+    "diagnostic_tests",
+    "conclusion"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-10",
+    "FW-02"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide is_vs_is_not_matrix or declare it UNKNOWN with reason.",
+    "Provide candidate_causes or declare it UNKNOWN with reason.",
+    "Provide diagnostic_tests or declare it UNKNOWN with reason.",
+    "Provide conclusion or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 291
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "FW-50",
+  "agent_id": "AG-50",
+  "name": "Cognitive Bias Deconstruction",
+  "category": "Meta-Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Meta-Thinking Models",
+    "line": 360
+  },
+  "source_original": {
+    "purpose": "Pemindaian aktif terhadap lebih dari 20 bias kognitif (*Confirmation, Anchoring, Sunk Cost, Survivorship, Availability*)",
+    "inputs": "Teks argumen pengguna, bobot bukti di kanvas, dan riwayat revisi hipotesis",
+    "outputs": "Laporan deteksi bias (`bias_type`, `probability`, `evidence_span`, `debiasing_prompt`)"
+  },
+  "purpose": "Inspect evidence selection, base rates, anchors, sunk costs, survival filtering, salience, group pressure, certainty, framing and outcome hindsight",
+  "applicability": [
+    "arguments",
+    "evidence",
+    "alternatives"
+  ],
+  "activation_conditions": [
+    "User requests Cognitive Bias Deconstruction or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "arguments",
+    "evidence",
+    "alternatives"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Inspect evidence selection, base rates, anchors, sunk costs, survival filtering, salience, group pressure, certainty, framing and outcome hindsight",
+    "Quote observable argument spans rather than diagnosing people",
+    "Offer competing interpretations and disconfirming checks",
+    "Do not invent bias probabilities"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "bias_flags",
+    "alternative_interpretations",
+    "debiasing_tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "review",
+  "validation_criteria": [
+    "Provide bias_flags or declare it UNKNOWN with reason.",
+    "Provide alternative_interpretations or declare it UNKNOWN with reason.",
+    "Provide debiasing_tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Meta-Thinking Models",
+      "line": 360
+    }
+  ]
+}

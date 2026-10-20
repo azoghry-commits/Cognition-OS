@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-35 analytical payload",
+  "type": "object",
+  "required": [
+    "kano_categories",
+    "uncertainty",
+    "priorities"
+  ],
+  "properties": {
+    "kano_categories": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "uncertainty": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "priorities": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

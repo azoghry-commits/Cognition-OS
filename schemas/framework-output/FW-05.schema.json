@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-05 analytical payload",
+  "type": "object",
+  "required": [
+    "posterior",
+    "bayes_factor",
+    "assumptions"
+  ],
+  "properties": {
+    "posterior": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "bayes_factor": {
+      "type": [
+        "number",
+        "object",
+        "null"
+      ]
+    },
+    "assumptions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

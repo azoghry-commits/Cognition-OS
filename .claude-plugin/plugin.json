@@ -1,0 +1,8 @@
+{
+  "name": "cognition-os",
+  "version": "0.1.0",
+  "description": "Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.",
+  "author": {
+    "name": "Cognition OS project"
+  }
+}

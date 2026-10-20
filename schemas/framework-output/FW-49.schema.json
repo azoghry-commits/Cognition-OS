@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-49 analytical payload",
+  "type": "object",
+  "required": [
+    "failure_scenarios",
+    "signals",
+    "mitigations",
+    "stop_conditions"
+  ],
+  "properties": {
+    "failure_scenarios": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "signals": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "mitigations": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "stop_conditions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

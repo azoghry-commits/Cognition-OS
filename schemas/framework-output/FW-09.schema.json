@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-09 analytical payload",
+  "type": "object",
+  "required": [
+    "issue_tree",
+    "exclusivity",
+    "coverage",
+    "gaps"
+  ],
+  "properties": {
+    "issue_tree": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "exclusivity": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "coverage": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "gaps": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

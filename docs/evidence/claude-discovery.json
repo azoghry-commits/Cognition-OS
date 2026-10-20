@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\rizky\\.local\\bin\\claude.EXE",
+    "--plugin-dir",
+    "D:\\Bisnisan\\CognitionOS-Plugin",
+    "plugin",
+    "details",
+    "cognition-os"
+  ],
+  "returncode": 0,
+  "stdout": "cognition-os 0.1.0\n  Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.\n  Source: cognition-os@inline\n\nComponent inventory\n  Skills (11)  adversarial-review, case-intelligence, cognition-orchestrator, cognitive-mastery, executive-synthesis, framework-composer, quantitative-decision, root-cause-analysis, setup, strategic-decision, systems-analysis\n  Agents (2)  cognition-evaluator, cognition-specialist\n  Hooks (0)\n  MCP servers (0)\n  LSP servers (0)\n\nProjected token cost\n  Always-on:   ~463 tok   added to every session\n\nPer-component (rounded)\n  component               always-on  on-invoke\n  adversarial-review            ~40       ~810\n  case-intelligence             ~40       ~810\n  cognition-orchestrator        ~40       ~980\n  cognitive-mastery             ~30       ~710\n  executive-synthesis           ~40       ~760\n  framework-composer            ~30       ~780\n  quantitative-decision         ~40       ~780\n  root-cause-analysis           ~40       ~800\n  setup                         ~30       ~770\n  strategic-decision            ~40       ~710\n  systems-analysis              ~30       ~700\n  cognition-evaluator           ~30       ~100\n  cognition-specialist          ~30       ~100\n\n  On-invoke cost is paid each time a skill or agent fires.\n  Token counts are estimates and may differ from actual usage.\n",
+  "stderr": ""
+}

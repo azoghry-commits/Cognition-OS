@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-47 analytical payload",
+  "type": "object",
+  "required": [
+    "feedback_script",
+    "questions",
+    "followup"
+  ],
+  "properties": {
+    "feedback_script": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "questions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "followup": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

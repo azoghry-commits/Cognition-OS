@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "is_vs_is_not_matrix",
+    "candidate_causes",
+    "diagnostic_tests",
+    "conclusion"
+  ],
+  "properties": {
+    "is_vs_is_not_matrix": {
+      "type": "object",
+      "required": [
+        "what",
+        "where",
+        "when",
+        "extent"
+      ],
+      "properties": {
+        "what": {
+          "type": "object",
+          "required": [
+            "is",
+            "is_not",
+            "distinction",
+            "change"
+          ],
+          "properties": {
+            "is": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_not": {
+              "type": "string",
+              "minLength": 1
+            },
+            "distinction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "change": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "where": {
+          "type": "object",
+          "required": [
+            "is",
+            "is_not",
+            "distinction",
+            "change"
+          ],
+          "properties": {
+            "is": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_not": {
+              "type": "string",
+              "minLength": 1
+            },
+            "distinction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "change": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "when": {
+          "type": "object",
+          "required": [
+            "is",
+            "is_not",
+            "distinction",
+            "change"
+          ],
+          "properties": {
+            "is": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_not": {
+              "type": "string",
+              "minLength": 1
+            },
+            "distinction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "change": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "extent": {
+          "type": "object",
+          "required": [
+            "is",
+            "is_not",
+            "distinction",
+            "change"
+          ],
+          "properties": {
+            "is": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_not": {
+              "type": "string",
+              "minLength": 1
+            },
+            "distinction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "change": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidate_causes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cause",
+          "fits_is",
+          "fits_is_not",
+          "status",
+          "evidence_ids"
+        ],
+        "properties": {
+          "cause": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fits_is": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fits_is_not": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "HYPOTHESIS",
+              "REJECTED",
+              "SUPPORTED",
+              "VERIFIED"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "diagnostic_tests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "test",
+          "falsifies",
+          "required_evidence"
+        ],
+        "properties": {
+          "test": {
+            "type": "string",
+            "minLength": 1
+          },
+          "falsifies": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "conclusion": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-40 analytical payload",
+  "type": "object",
+  "required": [
+    "pdca_cycle",
+    "thresholds",
+    "decision"
+  ],
+  "properties": {
+    "pdca_cycle": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "thresholds": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "decision": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

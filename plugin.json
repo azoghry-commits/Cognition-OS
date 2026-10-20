@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cognition-os",
+  "version": "0.1.0",
+  "description": "Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.",
+  "author": {
+    "name": "Cognition OS project"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cognition OS",
+        "shortDescription": "Structured analysis with evidence and validated calculations",
+        "longDescription": "Native skills share one catalog of 50 mental models and 52 logical specialist roles. Optional local Python helpers validate calculations and project cases.",
+        "developerName": "Cognition OS project",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Analyze this problem with Cognition OS.",
+          "Use Kepner-Tregoe to diagnose this deviation.",
+          "Teach me MECE with an infrastructure example."
+        ],
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "onboardingSkill": "./skills/setup/SKILL.md"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "authorization": "User approved: Yes, install in Codex only",
+  "installed_path": "C:\\Users\\rizky\\.codex\\plugins\\cache\\cognition-os-local\\cognition-os\\0.1.0",
+  "manifest_name": "cognition-os",
+  "manifest_version": "0.1.0",
+  "skills": [
+    "adversarial-review",
+    "case-intelligence",
+    "cognition-orchestrator",
+    "cognitive-mastery",
+    "executive-synthesis",
+    "framework-composer",
+    "quantitative-decision",
+    "root-cause-analysis",
+    "setup",
+    "strategic-decision",
+    "systems-analysis"
+  ],
+  "framework_definitions": 50,
+  "logical_agents": 52,
+  "plugin_setting": {
+    "enabled": true
+  },
+  "all_packaged_hashes_match": true,
+  "source_and_dev_files_absent": true,
+  "installed_helper": {
+    "returncode": 0,
+    "result": {
+      "gross_ev": 1.455,
+      "net_ev": 0.655,
+      "unit": "USD million",
+      "formula": "gross = p*upside - (1-p)*downside; net = gross - costs",
+      "classification": "CALCULATED_RESULT",
+      "decision": "Requires user risk constraints; positive EV alone is insufficient."
+    }
+  }
+}

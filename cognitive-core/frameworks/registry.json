@@ -1,0 +1,355 @@
+{
+  "version": "0.1.0",
+  "frameworks": [
+    {
+      "id": "FW-01",
+      "agent_id": "AG-01",
+      "name": "Eisenhower Matrix",
+      "category": "Decision Models",
+      "path": "definitions/FW-01.json"
+    },
+    {
+      "id": "FW-02",
+      "agent_id": "AG-02",
+      "name": "RICE Scoring",
+      "category": "Decision Models",
+      "path": "definitions/FW-02.json"
+    },
+    {
+      "id": "FW-03",
+      "agent_id": "AG-03",
+      "name": "MoSCoW Method",
+      "category": "Decision Models",
+      "path": "definitions/FW-03.json"
+    },
+    {
+      "id": "FW-04",
+      "agent_id": "AG-04",
+      "name": "Expected Value (EV) Calculus",
+      "category": "Decision Models",
+      "path": "definitions/FW-04.json"
+    },
+    {
+      "id": "FW-05",
+      "agent_id": "AG-05",
+      "name": "Bayesian Updating",
+      "category": "Decision Models",
+      "path": "definitions/FW-05.json"
+    },
+    {
+      "id": "FW-06",
+      "agent_id": "AG-06",
+      "name": "Pareto Principle (80/20)",
+      "category": "Decision Models",
+      "path": "definitions/FW-06.json"
+    },
+    {
+      "id": "FW-07",
+      "agent_id": "AG-07",
+      "name": "Cost-Benefit & Marginal Utility",
+      "category": "Decision Models",
+      "path": "definitions/FW-07.json"
+    },
+    {
+      "id": "FW-08",
+      "agent_id": "AG-08",
+      "name": "Regret Minimization Framework",
+      "category": "Decision Models",
+      "path": "definitions/FW-08.json"
+    },
+    {
+      "id": "FW-09",
+      "agent_id": "AG-09",
+      "name": "MECE Issue Tree",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-09.json"
+    },
+    {
+      "id": "FW-10",
+      "agent_id": "AG-10",
+      "name": "5 Whys Analysis",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-10.json"
+    },
+    {
+      "id": "FW-11",
+      "agent_id": "AG-11",
+      "name": "Kepner-Tregoe (KT) Matrix",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-11.json"
+    },
+    {
+      "id": "FW-12",
+      "agent_id": "AG-12",
+      "name": "Fishbone (Ishikawa) Diagram",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-12.json"
+    },
+    {
+      "id": "FW-13",
+      "agent_id": "AG-13",
+      "name": "First Principles Thinking",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-13.json"
+    },
+    {
+      "id": "FW-14",
+      "agent_id": "AG-14",
+      "name": "Hypothesis-Driven Problem Solving",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-14.json"
+    },
+    {
+      "id": "FW-15",
+      "agent_id": "AG-15",
+      "name": "Cynefin Framework",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-15.json"
+    },
+    {
+      "id": "FW-16",
+      "agent_id": "AG-16",
+      "name": "Inversion Thinking",
+      "category": "Problem Solving Models",
+      "path": "definitions/FW-16.json"
+    },
+    {
+      "id": "FW-17",
+      "agent_id": "AG-17",
+      "name": "Theory of Constraints (TOC)",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-17.json"
+    },
+    {
+      "id": "FW-18",
+      "agent_id": "AG-18",
+      "name": "Causal Loop Diagrams (CLD)",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-18.json"
+    },
+    {
+      "id": "FW-19",
+      "agent_id": "AG-19",
+      "name": "Meadows' 12 Leverage Points",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-19.json"
+    },
+    {
+      "id": "FW-20",
+      "agent_id": "AG-20",
+      "name": "Second-Order Thinking",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-20.json"
+    },
+    {
+      "id": "FW-21",
+      "agent_id": "AG-21",
+      "name": "Stock and Flow Modeling",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-21.json"
+    },
+    {
+      "id": "FW-22",
+      "agent_id": "AG-22",
+      "name": "System Archetypes",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-22.json"
+    },
+    {
+      "id": "FW-23",
+      "agent_id": "AG-23",
+      "name": "Network Effects & Feedback",
+      "category": "Systems Thinking Models",
+      "path": "definitions/FW-23.json"
+    },
+    {
+      "id": "FW-24",
+      "agent_id": "AG-24",
+      "name": "Blue Ocean Strategy (ERRC)",
+      "category": "Strategic Models",
+      "path": "definitions/FW-24.json"
+    },
+    {
+      "id": "FW-25",
+      "agent_id": "AG-25",
+      "name": "Wardley Mapping",
+      "category": "Strategic Models",
+      "path": "definitions/FW-25.json"
+    },
+    {
+      "id": "FW-26",
+      "agent_id": "AG-26",
+      "name": "OODA Loop",
+      "category": "Strategic Models",
+      "path": "definitions/FW-26.json"
+    },
+    {
+      "id": "FW-27",
+      "agent_id": "AG-27",
+      "name": "Porter's Five Forces",
+      "category": "Strategic Models",
+      "path": "definitions/FW-27.json"
+    },
+    {
+      "id": "FW-28",
+      "agent_id": "AG-28",
+      "name": "VRIO Framework",
+      "category": "Strategic Models",
+      "path": "definitions/FW-28.json"
+    },
+    {
+      "id": "FW-29",
+      "agent_id": "AG-29",
+      "name": "Ansoff Matrix",
+      "category": "Strategic Models",
+      "path": "definitions/FW-29.json"
+    },
+    {
+      "id": "FW-30",
+      "agent_id": "AG-30",
+      "name": "Game Theory (Nash Equilibrium)",
+      "category": "Strategic Models",
+      "path": "definitions/FW-30.json"
+    },
+    {
+      "id": "FW-31",
+      "agent_id": "AG-31",
+      "name": "Business Model Canvas (BMC)",
+      "category": "Strategic Models",
+      "path": "definitions/FW-31.json"
+    },
+    {
+      "id": "FW-32",
+      "agent_id": "AG-32",
+      "name": "Jobs-to-be-Done (JTBD)",
+      "category": "Innovation Models",
+      "path": "definitions/FW-32.json"
+    },
+    {
+      "id": "FW-33",
+      "agent_id": "AG-33",
+      "name": "Design Thinking",
+      "category": "Innovation Models",
+      "path": "definitions/FW-33.json"
+    },
+    {
+      "id": "FW-34",
+      "agent_id": "AG-34",
+      "name": "Value Proposition Canvas (VPC)",
+      "category": "Innovation Models",
+      "path": "definitions/FW-34.json"
+    },
+    {
+      "id": "FW-35",
+      "agent_id": "AG-35",
+      "name": "Kano Model",
+      "category": "Innovation Models",
+      "path": "definitions/FW-35.json"
+    },
+    {
+      "id": "FW-36",
+      "agent_id": "AG-36",
+      "name": "SCAMPER",
+      "category": "Innovation Models",
+      "path": "definitions/FW-36.json"
+    },
+    {
+      "id": "FW-37",
+      "agent_id": "AG-37",
+      "name": "TRIZ (Inventive Problem Solving)",
+      "category": "Innovation Models",
+      "path": "definitions/FW-37.json"
+    },
+    {
+      "id": "FW-38",
+      "agent_id": "AG-38",
+      "name": "RACI Governance Matrix",
+      "category": "Execution Models",
+      "path": "definitions/FW-38.json"
+    },
+    {
+      "id": "FW-39",
+      "agent_id": "AG-39",
+      "name": "OKRs (Objectives & Key Results)",
+      "category": "Execution Models",
+      "path": "definitions/FW-39.json"
+    },
+    {
+      "id": "FW-40",
+      "agent_id": "AG-40",
+      "name": "PDCA (Plan-Do-Check-Act)",
+      "category": "Execution Models",
+      "path": "definitions/FW-40.json"
+    },
+    {
+      "id": "FW-41",
+      "agent_id": "AG-41",
+      "name": "Getting Things Done (GTD)",
+      "category": "Execution Models",
+      "path": "definitions/FW-41.json"
+    },
+    {
+      "id": "FW-42",
+      "agent_id": "AG-42",
+      "name": "Critical Path Method (CPM)",
+      "category": "Execution Models",
+      "path": "definitions/FW-42.json"
+    },
+    {
+      "id": "FW-43",
+      "agent_id": "AG-43",
+      "name": "Minto Pyramid Principle",
+      "category": "Communication Models",
+      "path": "definitions/FW-43.json"
+    },
+    {
+      "id": "FW-44",
+      "agent_id": "AG-44",
+      "name": "SCQA Framework",
+      "category": "Communication Models",
+      "path": "definitions/FW-44.json"
+    },
+    {
+      "id": "FW-45",
+      "agent_id": "AG-45",
+      "name": "Storyboarding & Narrative",
+      "category": "Communication Models",
+      "path": "definitions/FW-45.json"
+    },
+    {
+      "id": "FW-46",
+      "agent_id": "AG-46",
+      "name": "Stakeholder Grid",
+      "category": "Communication Models",
+      "path": "definitions/FW-46.json"
+    },
+    {
+      "id": "FW-47",
+      "agent_id": "AG-47",
+      "name": "Radical Candor Feedback",
+      "category": "Communication Models",
+      "path": "definitions/FW-47.json"
+    },
+    {
+      "id": "FW-48",
+      "agent_id": "AG-48",
+      "name": "Toulmin Argumentation Model",
+      "category": "Communication Models",
+      "path": "definitions/FW-48.json"
+    },
+    {
+      "id": "FW-49",
+      "agent_id": "AG-49",
+      "name": "Pre-Mortem & Red Teaming",
+      "category": "Meta-Thinking Models",
+      "path": "definitions/FW-49.json"
+    },
+    {
+      "id": "FW-50",
+      "agent_id": "AG-50",
+      "name": "Cognitive Bias Deconstruction",
+      "category": "Meta-Thinking Models",
+      "path": "definitions/FW-50.json"
+    }
+  ]
+}

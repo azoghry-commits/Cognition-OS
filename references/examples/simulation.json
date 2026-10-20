@@ -1,0 +1,24 @@
+{
+  "operation": "simulate",
+  "inputs": {
+    "probability": {
+      "type": "fixed",
+      "value": 0.65
+    },
+    "upside": {
+      "type": "fixed",
+      "value": 2.4
+    },
+    "downside": {
+      "type": "fixed",
+      "value": 0.3
+    },
+    "costs": {
+      "type": "fixed",
+      "value": 0.8
+    },
+    "iterations": 10000,
+    "seed": 42,
+    "unit": "USD million"
+  }
+}

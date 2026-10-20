@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-01 analytical payload",
+  "type": "object",
+  "required": [
+    "quadrants",
+    "tradeoffs"
+  ],
+  "properties": {
+    "quadrants": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "tradeoffs": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

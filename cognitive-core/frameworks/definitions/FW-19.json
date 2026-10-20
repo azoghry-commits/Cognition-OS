@@ -1,0 +1,79 @@
+{
+  "id": "FW-19",
+  "agent_id": "AG-19",
+  "name": "Meadows' 12 Leverage Points",
+  "category": "Systems Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Systems Thinking Models",
+    "line": 304
+  },
+  "source_original": {
+    "purpose": "Pencarian titik intervensi sistem dengan dampak perubahan terbesar (dari parameter hingga paradigma)",
+    "inputs": "Struktur sistem saat ini dan daftar rencana intervensi kebijakan",
+    "outputs": "Peringkat intervensi berdasarkan 12 level titik ungkit Donella Meadows"
+  },
+  "purpose": "Describe system goals, rules, flows and feedback",
+  "applicability": [
+    "system",
+    "interventions"
+  ],
+  "activation_conditions": [
+    "User requests Meadows' 12 Leverage Points or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "system",
+    "interventions"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Describe system goals, rules, flows and feedback",
+    "Compare interventions at parameters, buffers, structures, delays, balancing loops, reinforcing loops, information, rules, self-organization, goals, paradigms and transcending paradigms",
+    "Explain leverage and feasibility for each candidate",
+    "Treat ranking as a hypothesis requiring tests"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "leverage_ranking",
+    "rationale",
+    "risks"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide leverage_ranking or declare it UNKNOWN with reason.",
+    "Provide rationale or declare it UNKNOWN with reason.",
+    "Provide risks or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Systems Thinking Models",
+      "line": 304
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-06 analytical payload",
+  "type": "object",
+  "required": [
+    "ranked_contributions",
+    "cumulative_share",
+    "vital_few"
+  ],
+  "properties": {
+    "ranked_contributions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "cumulative_share": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "vital_few": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

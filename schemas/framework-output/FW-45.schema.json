@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-45 analytical payload",
+  "type": "object",
+  "required": [
+    "storyboard",
+    "action_titles",
+    "visual_specs"
+  ],
+  "properties": {
+    "storyboard": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "action_titles": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "visual_specs": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

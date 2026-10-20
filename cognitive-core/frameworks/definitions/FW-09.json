@@ -1,0 +1,87 @@
+{
+  "id": "FW-09",
+  "agent_id": "AG-09",
+  "name": "MECE Issue Tree",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 289
+  },
+  "source_original": {
+    "purpose": "Dekomposisi masalah menjadi cabang yang *Mutually Exclusive* & *Collectively Exhaustive*",
+    "inputs": "Pertanyaan utama masalah (`core_question`) dan konteks domain",
+    "outputs": "Pohon hierarki *node* masalah dengan skor validasi *MECE*"
+  },
+  "purpose": "Define universe, unit of analysis and decomposition rule",
+  "applicability": [
+    "question",
+    "scope",
+    "branches"
+  ],
+  "activation_conditions": [
+    "User requests MECE Issue Tree or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "question",
+    "scope",
+    "branches"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define universe, unit of analysis and decomposition rule",
+    "Test sibling overlap, duplicates and consistent abstraction levels",
+    "Test collective coverage including boundary and exceptional cases",
+    "If a finite universe exists use set validation",
+    "Treat semantic assessments as qualitative judgments"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "issue_tree",
+    "exclusivity",
+    "coverage",
+    "gaps"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-10",
+    "FW-11"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide issue_tree or declare it UNKNOWN with reason.",
+    "Provide exclusivity or declare it UNKNOWN with reason.",
+    "Provide coverage or declare it UNKNOWN with reason.",
+    "Provide gaps or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 289
+    }
+  ]
+}

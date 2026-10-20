@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-10-20T03:03:24.009458+00:00",
+  "python": "3.13.15",
+  "tests_run": 56,
+  "passed": 55,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [
+    {
+      "test": "test_governance.GovernanceTests.test_linked_storage_rejected",
+      "reason": "OS does not permit test symlink"
+    }
+  ],
+  "test_output": "test_50_evaluation_cases_are_explicitly_unrun (test_contracts.ContractTests.test_50_evaluation_cases_are_explicitly_unrun) ... ok\ntest_all_52_roles_and_single_catalog (test_contracts.ContractTests.test_all_52_roles_and_single_catalog) ... ok\ntest_all_framework_resources_have_distinct_procedures_and_contracts (test_contracts.ContractTests.test_all_framework_resources_have_distinct_procedures_and_contracts) ... ok\ntest_all_modes_and_caps (test_contracts.ContractTests.test_all_modes_and_caps) ... ok\ntest_budget_and_criticality (test_contracts.ContractTests.test_budget_and_criticality) ... ok\ntest_catalog_exact_source_identities (test_contracts.ContractTests.test_catalog_exact_source_identities) ... ok\ntest_category_counts (test_contracts.ContractTests.test_category_counts) ... ok\ntest_classification_examples (test_contracts.ContractTests.test_classification_examples) ... ok\ntest_cycle_and_unmet_handoff (test_contracts.ContractTests.test_cycle_and_unmet_handoff) ... ok\ntest_envelope_rejects_invented_confidence (test_contracts.ContractTests.test_envelope_rejects_invented_confidence) ... ok\ntest_explicit_framework_name (test_contracts.ContractTests.test_explicit_framework_name) ... ok\ntest_kepner_tregoe_requires_real_contrasts (test_contracts.ContractTests.test_kepner_tregoe_requires_real_contrasts) ... ok\ntest_named_models_not_silently_dropped (test_contracts.ContractTests.test_named_models_not_silently_dropped) ... ok\ntest_resolve_no_path_traversal (test_contracts.ContractTests.test_resolve_no_path_traversal) ... ok\ntest_unknown_payload_is_partial (test_contracts.ContractTests.test_unknown_payload_is_partial) ... ok\ntest_workflow_never_fabricates_artifacts (test_contracts.ContractTests.test_workflow_never_fabricates_artifacts) ... ok\ntest_case_size_and_class (test_governance.GovernanceTests.test_case_size_and_class) ... ok\ntest_cross_project_case_rejected (test_governance.GovernanceTests.test_cross_project_case_rejected) ... ok\ntest_duplicate_and_unknown_evidence (test_governance.GovernanceTests.test_duplicate_and_unknown_evidence) ... ok\ntest_empty_and_missing_evidence (test_governance.GovernanceTests.test_empty_and_missing_evidence) ... ok\ntest_jury_can_reject (test_governance.GovernanceTests.test_jury_can_reject) ... ok\ntest_linked_storage_rejected (test_governance.GovernanceTests.test_linked_storage_rejected) ... skipped 'OS does not permit test symlink'\ntest_math_requires_inputs_method_output (test_governance.GovernanceTests.test_math_requires_inputs_method_output) ... ok\ntest_mece_overlap_missing_scope_duplicates (test_governance.GovernanceTests.test_mece_overlap_missing_scope_duplicates) ... ok\ntest_path_traversal (test_governance.GovernanceTests.test_path_traversal) ... ok\ntest_persistence_requires_separate_intent_and_no_overwrite (test_governance.GovernanceTests.test_persistence_requires_separate_intent_and_no_overwrite) ... ok\ntest_provenance_kind_and_dag (test_governance.GovernanceTests.test_provenance_kind_and_dag) ... ok\ntest_verified_fact_requires_observed_check_record (test_governance.GovernanceTests.test_verified_fact_requires_observed_check_record) ... ok\ntest_bayes_endpoints (test_mathematics.MathematicsTests.test_bayes_endpoints) ... ok\ntest_bayes_reference (test_mathematics.MathematicsTests.test_bayes_reference) ... ok\ntest_bayes_sequence_underflow (test_mathematics.MathematicsTests.test_bayes_sequence_underflow) ... ok\ntest_beta_and_triangular (test_mathematics.MathematicsTests.test_beta_and_triangular) ... ok\ntest_break_even (test_mathematics.MathematicsTests.test_break_even) ... ok\ntest_cpm_cycle_and_unknown (test_mathematics.MathematicsTests.test_cpm_cycle_and_unknown) ... ok\ntest_cpm_independent_diamond (test_mathematics.MathematicsTests.test_cpm_independent_diamond) ... ok\ntest_decision_matrix_benefit_cost (test_mathematics.MathematicsTests.test_decision_matrix_benefit_cost) ... ok\ntest_discounted_cost_benefit (test_mathematics.MathematicsTests.test_discounted_cost_benefit) ... ok\ntest_ev_independent_decimal (test_mathematics.MathematicsTests.test_ev_independent_decimal) ... ok\ntest_ev_probability_endpoints (test_mathematics.MathematicsTests.test_ev_probability_endpoints) ... ok\ntest_invalid_probabilities (test_mathematics.MathematicsTests.test_invalid_probabilities) ... ok\ntest_mixed_units (test_mathematics.MathematicsTests.test_mixed_units) ... ok\ntest_multi_outcomes (test_mathematics.MathematicsTests.test_multi_outcomes) ... ok\ntest_overflow (test_mathematics.MathematicsTests.test_overflow) ... ok\ntest_pareto_measured_concentration (test_mathematics.MathematicsTests.test_pareto_measured_concentration) ... ok\ntest_quantile_interpolation (test_mathematics.MathematicsTests.test_quantile_interpolation) ... ok\ntest_rice (test_mathematics.MathematicsTests.test_rice) ... ok\ntest_scenario_comparison (test_mathematics.MathematicsTests.test_scenario_comparison) ... ok\ntest_seeded_reproducibility_and_numerical_error (test_mathematics.MathematicsTests.test_seeded_reproducibility_and_numerical_error) ... ok\ntest_sensitivity (test_mathematics.MathematicsTests.test_sensitivity) ... ok\ntest_simulation_exact_boundary (test_mathematics.MathematicsTests.test_simulation_exact_boundary) ... ok\ntest_simulation_no_missing_distribution_assumptions (test_mathematics.MathematicsTests.test_simulation_no_missing_distribution_assumptions) ... ok\ntest_stock_flow (test_mathematics.MathematicsTests.test_stock_flow) ... ok\ntest_units_and_negative_cost (test_mathematics.MathematicsTests.test_units_and_negative_cost) ... ok\ntest_cli_failure_is_structured_nonzero (test_packaging.PackagingTests.test_cli_failure_is_structured_nonzero) ... ok\ntest_runtime_archive_is_portable_and_excludes_sources_secrets (test_packaging.PackagingTests.test_runtime_archive_is_portable_and_excludes_sources_secrets) ... ok\ntest_supplied_source_hashes_preserved (test_packaging.PackagingTests.test_supplied_source_hashes_preserved) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 1.412s\n\nOK (skipped=1)\n",
+  "package_validation": {
+    "status": "TESTED",
+    "full_schema_validator": "4.26.0",
+    "frameworks": 50,
+    "logical_agents": 52,
+    "skills": 11,
+    "required_documents": 22,
+    "note": "Structural validation; native semantic behavior is a separate gate."
+  },
+  "skill_validator": [
+    {
+      "skill": "adversarial-review",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "case-intelligence",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "cognition-orchestrator",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "cognitive-mastery",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "executive-synthesis",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "framework-composer",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "quantitative-decision",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "root-cause-analysis",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "setup",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "strategic-decision",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    },
+    {
+      "skill": "systems-analysis",
+      "returncode": 0,
+      "output": "Skill is valid!",
+      "stderr": ""
+    }
+  ],
+  "claude_validation": [
+    {
+      "target": ".claude-plugin/plugin.json",
+      "returncode": 0,
+      "output": "Validating plugin manifest: D:\\Bisnisan\\CognitionOS-Plugin\\.claude-plugin\\plugin.json\n\n\u221a Validation passed\n",
+      "stderr": ""
+    },
+    {
+      "target": ".claude-plugin/marketplace.json",
+      "returncode": 0,
+      "output": "Validating marketplace manifest: D:\\Bisnisan\\CognitionOS-Plugin\\.claude-plugin\\marketplace.json\n\n\u221a Validation passed\n",
+      "stderr": ""
+    }
+  ]
+}

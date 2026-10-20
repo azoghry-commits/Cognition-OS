@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-28 analytical payload",
+  "type": "object",
+  "required": [
+    "vrio_matrix",
+    "advantage",
+    "actions"
+  ],
+  "properties": {
+    "vrio_matrix": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "advantage": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "actions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

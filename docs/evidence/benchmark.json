@@ -1,0 +1,57 @@
+{
+  "scope": "Local Python helper only, not host latency/token/quality",
+  "python": "3.13.15",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "runs": 7,
+  "inputs": {
+    "probability": {
+      "type": "fixed",
+      "value": 0.65
+    },
+    "upside": {
+      "type": "fixed",
+      "value": 2.4
+    },
+    "downside": {
+      "type": "fixed",
+      "value": 0.3
+    },
+    "costs": {
+      "type": "fixed",
+      "value": 0.8
+    },
+    "iterations": 10000,
+    "seed": 42,
+    "unit": "USD million"
+  },
+  "milliseconds": [
+    14.488300017546862,
+    14.773299975786358,
+    11.312699993140996,
+    12.934099999256432,
+    11.164299969095737,
+    11.11940003465861,
+    10.874399973545223
+  ],
+  "median_ms": 11.312699993140996,
+  "result": {
+    "classification": "SIMULATED_RESULT",
+    "mean": 0.6504099999999998,
+    "median": 1.5999999999999999,
+    "standard_error_of_simulated_mean": 0.0128931689886799,
+    "simulation_mean_interval_95_normal_approx": [
+      0.6251393887821872,
+      0.6756806112178124
+    ],
+    "interval_scope": "Monte Carlo numerical error only; not forecast accuracy or parameter uncertainty.",
+    "probability_positive": 0.6483,
+    "net_outcome_quantile_05": -1.1,
+    "loss_var_95": 1.1,
+    "iterations": 10000,
+    "seed": 42,
+    "unit": "USD million",
+    "rng": "Python random.Random; record Python version for reproducibility",
+    "assumptions": "Independent draws for all specified distributions. Caller must justify independence."
+  },
+  "native_baseline_comparison": "NOT_VERIFIED"
+}

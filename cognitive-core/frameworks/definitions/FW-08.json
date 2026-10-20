@@ -1,0 +1,81 @@
+{
+  "id": "FW-08",
+  "agent_id": "AG-08",
+  "name": "Regret Minimization Framework",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 283
+  },
+  "source_original": {
+    "purpose": "Evaluasi keputusan strategis jangka panjang untuk meminimalkan penyesalan di masa depan",
+    "inputs": "Opsi keputusan berisiko tinggi, horizon waktu (10–20 tahun)",
+    "outputs": "Matriks proyeksi *Action Regret* vs *Inaction Regret* & rekomendasi"
+  },
+  "purpose": "Define future viewpoints and user values",
+  "applicability": [
+    "options",
+    "horizon",
+    "values"
+  ],
+  "activation_conditions": [
+    "User requests Regret Minimization Framework or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "options",
+    "horizon",
+    "values"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Define future viewpoints and user values",
+    "Compare action and inaction regret for each option",
+    "Separate reversible experiments from irreversible commitments",
+    "Make the recommendation conditional on values and unresolved uncertainty"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "regret_matrix",
+    "tradeoffs",
+    "recommendation"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide regret_matrix or declare it UNKNOWN with reason.",
+    "Provide tradeoffs or declare it UNKNOWN with reason.",
+    "Provide recommendation or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 283
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "FW-22",
+  "agent_id": "AG-22",
+  "name": "System Archetypes",
+  "category": "Systems Thinking Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Systems Thinking Models",
+    "line": 307
+  },
+  "source_original": {
+    "purpose": "Deteksi pola disfungsi sistemik klasik (*Fixes that Fail, Shifting the Burden, Tragedy of the Commons*)",
+    "inputs": "Gejala berulang dan riwayat solusi masa lalu yang gagal bertahan",
+    "outputs": "Identifikasi *System Archetype* yang aktif dan strategi pemutusan siklus"
+  },
+  "purpose": "Compare evidence with Fixes that Fail, Shifting the Burden and Tragedy of the Commons",
+  "applicability": [
+    "symptoms",
+    "history",
+    "relationships"
+  ],
+  "activation_conditions": [
+    "User requests System Archetypes or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "symptoms",
+    "history",
+    "relationships"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Compare evidence with Fixes that Fail, Shifting the Burden and Tragedy of the Commons",
+    "Map short-term relief, delays and long-term feedback",
+    "Test competing archetypes against history",
+    "Target structural loop changes rather than symptom suppression"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "archetype",
+    "loop_map",
+    "interventions"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide archetype or declare it UNKNOWN with reason.",
+    "Provide loop_map or declare it UNKNOWN with reason.",
+    "Provide interventions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Systems Thinking Models",
+      "line": 307
+    }
+  ]
+}

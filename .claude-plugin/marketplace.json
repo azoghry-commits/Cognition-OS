@@ -1,0 +1,17 @@
+{
+  "name": "cognition-os-local",
+  "owner": {
+    "name": "Cognition OS project"
+  },
+  "metadata": {
+    "description": "Private local Cognition OS development catalog"
+  },
+  "plugins": [
+    {
+      "name": "cognition-os",
+      "source": "./",
+      "description": "Evidence-grounded cognitive workflows, 50 mental models and deterministic decision helpers.",
+      "version": "0.1.0"
+    }
+  ]
+}

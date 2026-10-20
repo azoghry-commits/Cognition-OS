@@ -1,0 +1,84 @@
+{
+  "id": "FW-33",
+  "agent_id": "AG-33",
+  "name": "Design Thinking",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 328
+  },
+  "source_original": {
+    "purpose": "Orkestrasi empati pengguna, pendefinisian ulang masalah (*How Might We*), ideasi, dan prototipe cepat",
+    "inputs": "Hasil observasi pengguna, titik friksi perjalanan pelanggan (*journey*)",
+    "outputs": "Rumusan pertanyaan *How Might We (HMW)* dan spesifikasi eksperimen prototipe"
+  },
+  "purpose": "Empathize using actual user evidence",
+  "applicability": [
+    "observations",
+    "user_problem",
+    "constraints"
+  ],
+  "activation_conditions": [
+    "User requests Design Thinking or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "observations",
+    "user_problem",
+    "constraints"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Empathize using actual user evidence",
+    "Define a bounded How Might We question",
+    "Ideate multiple approaches and select a testable assumption",
+    "Prototype and test against explicit learning criteria",
+    "Iterate based on observations"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "hmw",
+    "ideas",
+    "prototype",
+    "test_plan"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide hmw or declare it UNKNOWN with reason.",
+    "Provide ideas or declare it UNKNOWN with reason.",
+    "Provide prototype or declare it UNKNOWN with reason.",
+    "Provide test_plan or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 328
+    }
+  ]
+}

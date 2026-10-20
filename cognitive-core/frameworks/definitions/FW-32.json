@@ -1,0 +1,83 @@
+{
+  "id": "FW-32",
+  "agent_id": "AG-32",
+  "name": "Jobs-to-be-Done (JTBD)",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 327
+  },
+  "source_original": {
+    "purpose": "Mengungkap kemajuan fungsional, sosial, dan emosional yang ingin dicapai pelanggan saat \"menyewa\" produk",
+    "inputs": "Perilaku pelanggan, keluhan penggunaan, dan solusi alternatif saat ini",
+    "outputs": "Pernyataan *Job Story* (`When... I want to... So I can...`) & *Underserved Needs*"
+  },
+  "purpose": "Identify progress sought in a specific situation",
+  "applicability": [
+    "customer_context",
+    "observations",
+    "alternatives"
+  ],
+  "activation_conditions": [
+    "User requests Jobs-to-be-Done (JTBD) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "customer_context",
+    "observations",
+    "alternatives"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Identify progress sought in a specific situation",
+    "Separate functional, emotional and social jobs",
+    "Write When, I want to, So I can job stories from observations",
+    "Analyze push, pull, habit and anxiety without inventing customer interviews"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "job_stories",
+    "forces",
+    "underserved_needs"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [
+    "FW-34"
+  ],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide job_stories or declare it UNKNOWN with reason.",
+    "Provide forces or declare it UNKNOWN with reason.",
+    "Provide underserved_needs or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 327
+    }
+  ]
+}

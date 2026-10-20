@@ -1,0 +1,83 @@
+{
+  "id": "FW-37",
+  "agent_id": "AG-37",
+  "name": "TRIZ (Inventive Problem Solving)",
+  "category": "Innovation Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Innovation Models",
+    "line": 332
+  },
+  "source_original": {
+    "purpose": "Penyelesaian kontradiksi teknis/bisnis menggunakan 40 Prinsip Inventif tanpa kompromi (*trade-off*)",
+    "inputs": "Parameter yang ingin ditingkatkan vs parameter yang memburuk (*contradiction*)",
+    "outputs": "Prinsip TRIZ yang relevan dan solusi eliminasi kontradiksi"
+  },
+  "purpose": "State the technical or physical contradiction",
+  "applicability": [
+    "improving_parameter",
+    "worsening_parameter",
+    "constraints"
+  ],
+  "activation_conditions": [
+    "User requests TRIZ (Inventive Problem Solving) or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "improving_parameter",
+    "worsening_parameter",
+    "constraints"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "State the technical or physical contradiction",
+    "Seek separation in space, time, condition or system level and applicable inventive principles",
+    "Distinguish a verified contradiction-matrix lookup from a proposed principle",
+    "Do not invent matrix cells or force a compromise disguised as contradiction resolution"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "contradiction",
+    "principles",
+    "solutions",
+    "tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide contradiction or declare it UNKNOWN with reason.",
+    "Provide principles or declare it UNKNOWN with reason.",
+    "Provide solutions or declare it UNKNOWN with reason.",
+    "Provide tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Innovation Models",
+      "line": 332
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "FW-04",
+  "agent_id": "AG-04",
+  "name": "Expected Value (EV) Calculus",
+  "category": "Decision Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Decision Models",
+    "line": 279
+  },
+  "source_original": {
+    "purpose": "Kalkulasi nilai harapan matematis dari multi-skenario probabilitas *upside* vs *downside*",
+    "inputs": "Distribusi probabilitas sukses/gagal, nilai finansial, biaya",
+    "outputs": "Nilai `gross_ev`, `net_ev`, `risk_reward_ratio`, dan status kelayakan"
+  },
+  "purpose": "Require mutually exclusive outcomes with probabilities summing to one",
+  "applicability": [
+    "scenarios",
+    "unit"
+  ],
+  "activation_conditions": [
+    "User requests Expected Value (EV) Calculus or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "scenarios",
+    "unit"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "Require mutually exclusive outcomes with probabilities summing to one",
+    "Calculate probability-weighted signed payoffs and subtract explicitly supplied common costs",
+    "Display gross and net EV separately",
+    "Compare downside and constraints before any conditional recommendation"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "gross_ev",
+    "net_ev",
+    "assumptions"
+  ],
+  "mathematical_requirements": "Use deterministic helper or independently validated host calculation; disclose units and assumptions.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide gross_ev or declare it UNKNOWN with reason.",
+    "Provide net_ev or declare it UNKNOWN with reason.",
+    "Provide assumptions or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Decision Models",
+      "line": 279
+    }
+  ]
+}

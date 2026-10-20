@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FW-46 analytical payload",
+  "type": "object",
+  "required": [
+    "stakeholder_grid",
+    "engagement_plan"
+  ],
+  "properties": {
+    "stakeholder_grid": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "engagement_plan": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

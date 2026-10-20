@@ -1,0 +1,79 @@
+{
+  "id": "FW-10",
+  "agent_id": "AG-10",
+  "name": "5 Whys Analysis",
+  "category": "Problem Solving Models",
+  "version": "0.1.0",
+  "provenance": "SOURCE_DERIVED",
+  "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
+  "source": {
+    "document": "Cognition Os Master Blueprint.md",
+    "section": "4.1 / Problem Solving Models",
+    "line": 290
+  },
+  "source_original": {
+    "purpose": "Penelusuran rantai sebab-akibat berlapis (5 iterasi) untuk menembus gejala permukaan",
+    "inputs": "Gejala masalah spesifik atau anomali cabang dari *Issue Tree*",
+    "outputs": "Rantai kausal `Why 1` s/d `Why 5` + identifikasi akar masalah sistemik"
+  },
+  "purpose": "State the observed symptom and evidence",
+  "applicability": [
+    "symptom",
+    "evidence"
+  ],
+  "activation_conditions": [
+    "User requests 5 Whys Analysis or the orchestrator justifies it against the problem."
+  ],
+  "required_inputs": [
+    "symptom",
+    "evidence"
+  ],
+  "optional_inputs": [
+    "constraints",
+    "evidence",
+    "previous_findings",
+    "desired_deliverable"
+  ],
+  "methodology": [
+    "State the observed symptom and evidence",
+    "Ask successive why questions with supporting evidence per causal link",
+    "Branch when causes diverge and stop at an actionable supported cause or evidence gap",
+    "Do not force exactly five answers or confirm causality by repetition"
+  ],
+  "methodology_provenance": "ENGINEERING_ADAPTATION grounded in source scope",
+  "expected_outputs": [
+    "causal_chain",
+    "alternative_causes",
+    "diagnostic_tests"
+  ],
+  "mathematical_requirements": "No unsupported numerical scores.",
+  "tool_requirements": [
+    "Host reasoning and resource reading; calculation tool when required."
+  ],
+  "evidence_requirements": [
+    "Cite material claims; mark missing inputs UNKNOWN; do not reuse illustrative source conclusions."
+  ],
+  "limitations": [
+    "Host-authored analysis requires behavioral evaluation; schema validity does not prove truth."
+  ],
+  "failure_modes": [
+    "Invented inputs",
+    "Generic analysis replacing distinctive method",
+    "Unsupported certainty"
+  ],
+  "relationships": [],
+  "workflow_position": "analysis",
+  "validation_criteria": [
+    "Provide causal_chain or declare it UNKNOWN with reason.",
+    "Provide alternative_causes or declare it UNKNOWN with reason.",
+    "Provide diagnostic_tests or declare it UNKNOWN with reason.",
+    "Use all distinctive methodology steps and identify missing evidence."
+  ],
+  "reference_material": [
+    {
+      "document": "Cognition Os Master Blueprint.md",
+      "section": "4.1 / Problem Solving Models",
+      "line": 290
+    }
+  ]
+}
