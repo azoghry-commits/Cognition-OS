@@ -13,19 +13,21 @@
   <a href="docs/TEST_REPORT.md"><img src="https://img.shields.io/badge/tests-55%20passed%20%2F%201%20skipped-16A34A?style=for-the-badge" alt="55 tests passed and 1 skipped" /></a>
 </p>
 
-<p align="center"><strong>Bantuan kognitif selektif bagi agen Claude dan Codex, dengan satu core dan kendali tugas tetap pada host.</strong></p>
+<p align="center"><strong>Selective cognitive capabilities for the models and agents working inside Claude and Codex.</strong></p>
 
 ---
 
 ## Why Cognition OS?
 
-**Arah konsep terbaru: V4.1, dikaji pada 20 Oktober 2026.** Cognition OS menjadi kapabilitas internal bagi model/agen yang mengerjakan instruksi pengguna: **model-selected assistance** sebagai jalur utama, **event-driven deterministic validation** sesuai dukungan host, dan **conditional deep advisory** untuk tugas yang membenarkannya. Tugas sederhana dapat memakai `PASS_THROUGH`; deliverable asli pengguna tetap menjadi tujuan.
+**The direct consumers of this plugin are host models and agents.** Humans give ordinary tasks to Claude or Codex. The host selects relevant Cognition OS capabilities, incorporates their findings, and completes the requested deliverable. Users do not need to operate a separate application, select mental models, or manage an analysis session.
 
-**Paket saat ini tetap 0.1.0 dengan runtime/kontrak 3.1.** Hybrid governor, hook, kontrak advisory V4.1, dan evaluasi A/B/C/D belum diimplementasikan atau diuji. Baca [kajian perubahan konsep](docs/CONCEPT_V4_1.md), [rencana migrasi Phase 0–8](docs/V4_1_MIGRATION_PLAN.md), dan [prompt V4.1 lengkap](docs/evidence/master-implementation-prompt-v4.1.txt). Deskripsi komponen dan hasil uji di bawah merujuk baseline 0.1.0.
+**V4.1 is the target specification, reviewed on October 20, 2026.** It defines three complementary paths: **model-selected assistance** as the primary path, **event-driven deterministic validation** where the host supports it, and **conditional deep advisory** when complexity or consequences justify it. Simple tasks can use `PASS_THROUGH`. The host retains task ownership, permission control, and responsibility for the user's output.
+
+**Current package: 0.1.0, with the 3.1 runtime and contracts.** The V4.1 hybrid governor, hooks, advisory contracts, and A/B/C/D evaluations have not yet been implemented or tested. The existing components and test results below describe that baseline. See the [concept review](docs/CONCEPT_V4_1.md), [Phase 0–8 migration plan](docs/V4_1_MIGRATION_PLAN.md), and [complete V4.1 specification](docs/evidence/master-implementation-prompt-v4.1.txt). Engineering documentation is primarily in Indonesian; this README uses English.
 
 Most difficult decisions fail long before the final recommendation: the problem is framed poorly, evidence is mixed with assumptions, calculations lose their units, and criticism arrives too late. Cognition OS packages disciplined ways of thinking into native skills for supported AI hosts.
 
-It helps a host move from an initial question to a bounded plan, explicit evidence, framework artifacts, deterministic calculations where appropriate, and a decision record that can be reviewed later.
+The target is to improve the intelligence applied during the host's existing work: framing a requirement, investigating a failure, evaluating architecture, checking calculations, or reviewing an artifact. Each invocation should add useful findings without replacing the requested work with an unrelated Cognition OS report.
 
 | From | To |
 | --- | --- |
@@ -47,16 +49,20 @@ One canonical catalog powers every host adapter. It preserves the supplied sourc
 | **Evidence safeguards** | Typed artifacts, provenance DAG validation, exact finite-universe MECE checks, and explicit missing-evidence handling |
 | **Optional continuity** | Project-scoped JSON cases and a 90-day learning curriculum, only when explicitly requested |
 
+The following diagram describes the V4.1 target; it is not evidence that every path is already implemented.
+
 ```mermaid
 flowchart LR
-    Q[Question or decision] --> I[Structured intake]
-    I --> O[Native orchestration]
-    O --> F[Selected framework definitions]
-    F --> A[Evidence-bound artifacts]
-    A --> C[Validated calculations]
-    C --> R[Adversarial review / jury]
-    R --> D[Decision record and next actions]
-    D -. explicit opt-in .-> M[Project cases and mastery]
+    U[Ordinary user task] --> H[Claude / Codex host agent]
+    H --> D[Original deliverable]
+    H -. selects when useful .-> A[Model-selected assistance]
+    H -. supported events .-> B[Deterministic validation]
+    H -. justified complexity .-> C[Deep advisory]
+    A --> K[One canonical cognitive core]
+    B --> K
+    C --> K
+    K --> F[Concise findings and evidence]
+    F --> H
 ```
 
 ## What it does differently
@@ -89,11 +95,23 @@ This repository's primary tested installation target is **ChatGPT Desktop on Win
 
 The expected response is a structured request for missing evidence and safe checks, not an invented root cause.
 
-Langkah dan prompt manual ini adalah diagnosis untuk paket baseline. Pada target V4.1 pengguna cukup memberi tugas biasa kepada host; pemilihan skill oleh model harus dibuktikan melalui evaluasi native dan tidak dijamin hanya oleh instalasi.
+These manual steps diagnose the baseline package. In V4.1, the normal workflow is to give the host an ordinary task. Model selection must be observed in native evaluations; installing skills alone does not guarantee invocation.
 
 For exact local marketplace, update, and rollback steps, read the [ChatGPT Desktop quick start](docs/DESKTOP_QUICKSTART.md) and [Codex installation guide](docs/INSTALLATION_CODEX.md).
 
-## Example prompts
+## Ordinary tasks the host can augment
+
+The V4.1 target should help with requests such as these without requiring the user to name the plugin:
+
+- "Investigate these recurring database failures and implement the supported fix."
+- "Compare these architecture options, then document the chosen design."
+- "Review this release against its requirements and available test evidence."
+
+The host decides whether a capability is useful and returns the original requested output. A straightforward edit may need no augmentation.
+
+## Explicit diagnostic prompts
+
+The following examples are manual fallbacks for checking individual capabilities in the baseline package.
 
 <details>
 <summary><strong>Diagnose an operational problem</strong></summary>
@@ -144,6 +162,8 @@ The [architecture guide](docs/ARCHITECTURE.md) explains the layers. See the [men
 
 Requires Python 3.10+ for local build and validation work.
 
+During the V4.1 migration, update generator sources before regenerating baseline assets. The commands below describe the existing build pipeline; running the old generators unchanged can overwrite migration edits.
+
 ```powershell
 python scripts/build_catalog.py
 python scripts/build_plugin.py
@@ -171,7 +191,7 @@ Read the [verification report](docs/TEST_REPORT.md), [release checklist](docs/RE
 
 ## Boundaries
 
-- Cognition OS is a decision-support plugin, not an autonomous decision maker.
+- Cognition OS provides advisory capabilities to host models and agents; the host remains responsible for task execution.
 - Native hosts supply analytical judgment and permissions; the bundled helpers validate structures and calculations only.
 - Project cases are opt-in, scoped to a project, stored as plain JSON, and not encrypted by this package.
 - Original source documents are retained for traceability but excluded from installable runtime archives.
