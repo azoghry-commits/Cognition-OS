@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="460" viewBox="0 0 1280 460" role="img" aria-labelledby="title desc">
+<title id="title">Cognition OS — Cognitive augmentation for Claude and Codex agents</title>
+<desc id="desc">Dark navy banner with a connected geometric cognitive core, teal and violet accents, and the words Think with structure. Build with evidence.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081321"/><stop offset="1" stop-color="#17243d"/></linearGradient>
+<linearGradient id="edge"><stop stop-color="#77e6cd"/><stop offset="1" stop-color="#a497ff"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b8cbef" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="1280" height="460" rx="24" fill="url(#bg)"/>
+<rect width="1280" height="460" rx="24" fill="url(#grid)"/>
+<path d="M56 56h52" stroke="#77e6cd" stroke-width="4"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="56" y="98" fill="#77e6cd" font-size="14" letter-spacing="3">COGNITIVE AUGMENTATION / V4.1</text>
+<text x="52" y="184" fill="#f3f7ff" font-size="76" font-weight="700" letter-spacing="-3">Cognition OS</text>
+<text x="56" y="238" fill="#d0dcef" font-size="28">Think with structure. Build with evidence.</text>
+<text x="56" y="280" fill="#95a8c7" font-size="18">A shared cognitive core for Claude and Codex agents.</text>
+<rect x="56" y="336" width="178" height="42" rx="21" fill="#183d43"/>
+<text x="145" y="363" text-anchor="middle" fill="#91edd6" font-size="14">50 MENTAL MODELS</text>
+<rect x="246" y="336" width="158" height="42" rx="21" fill="#2a2d50"/>
+<text x="325" y="363" text-anchor="middle" fill="#c4baff" font-size="14">12 NATIVE SKILLS</text>
+<text x="56" y="423" fill="#7085a6" font-size="12" letter-spacing="2">SELECTIVE GUIDANCE · DETERMINISTIC CHECKS · BOUNDED ADVISORY</text>
+</g>
+<g transform="translate(1010 224)" fill="none" stroke="url(#edge)">
+<circle r="170" stroke-opacity=".12"/><circle r="136" stroke-opacity=".18" stroke-dasharray="3 9"/>
+<path d="M0-108 94-54v108L0 108-94 54V-54Z M0-108V108 M-94-54 94 54 M94-54-94 54 M-94-54H94 M-94 54H94" stroke-width="2"/>
+<path d="M0-108 0-170 M94-54 147-85 M94 54 147 85 M0 108v62 M-94 54-147 85 M-94-54-147-85" stroke-opacity=".4"/>
+<g fill="#86e6d1" stroke="#0b1728" stroke-width="5"><circle cy="-108" r="8"/><circle cx="94" cy="-54" r="8"/><circle cx="94" cy="54" r="8"/><circle cy="108" r="8"/><circle cx="-94" cy="54" r="8"/><circle cx="-94" cy="-54" r="8"/></g>
+<circle r="16" fill="#a497ff" stroke="#17243d" stroke-width="7"/>
+</g></svg>

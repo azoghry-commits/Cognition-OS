@@ -1,12 +1,10 @@
 <p align="center">
-  <img src="assets/icon.svg" width="96" height="96" alt="Cognition OS" />
+  <img src="assets/readme-banner.svg" width="100%" alt="Cognition OS — Think with structure. Build with evidence. A cognitive augmentation layer for Claude and Codex agents." />
 </p>
 
-<h1 align="center">Cognition OS</h1>
-
 <p align="center">
-  <strong>A cognitive augmentation layer for the agents doing the work.</strong><br />
-  One shared core for Claude and Codex. Selective guidance, deterministic checks, evidence-led results.
+  <strong>Give your agent a richer analytical toolkit.</strong><br />
+  From root causes to architecture decisions, bring structure and evidence into the work already underway.
 </p>
 
 <p align="center">
@@ -54,15 +52,55 @@ These are the V4.1 design paths, not a claim that every host integration has pas
 
 ## Capabilities
 
-- **50 mental models** with defined methods, inputs, outputs, and validation criteria.
-- **52 logical specialist roles** for structured analysis; these definitions do not imply 52 running agents.
-- **12 model-facing skills** for orchestration, root-cause analysis, decisions, systems analysis, quantitative work, review, synthesis, and setup diagnostics.
-- **Selective activation** to keep simple tasks simple and avoid redundant analysis.
-- **Deterministic calculations and artifact checks** when the task, inputs, host permissions, and supported integration justify them.
-- **Evidence discipline** that distinguishes observations, assumptions, inferences, hypotheses, calculations, and unknowns.
-- **Optional project memory and learning material**, with no required database, Docker service, or separate application.
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3>🧭 Find the right perspective</h3>
+<p><strong>50 mental models · 8 categories</strong></p>
+<p>Select complementary methods to uncover assumptions, map dependencies, and frame the real problem.</p>
+<a href="docs/MENTAL_MODEL_REGISTRY.md">Explore the cognitive catalog →</a>
+</td>
+<td width="50%" valign="top">
+<h3>🔬 Make evidence visible</h3>
+<p><strong>Claims · Sources · Uncertainty</strong></p>
+<p>Distinguish observations from hypotheses and calculations. Keep missing evidence visible in the result.</p>
+<a href="docs/DECISION_PROVENANCE.md">Follow the evidence model →</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>⚙️ Check what can be checked</h3>
+<p><strong>Calculations · Schemas · Artifacts</strong></p>
+<p>Use deterministic helpers for quantitative work and narrow structural validation when inputs and permissions allow.</p>
+<a href="docs/MATHEMATICAL_VALIDATION.md">Inspect the calculation methods →</a>
+</td>
+<td width="50%" valign="top">
+<h3>🎯 Go deeper when it matters</h3>
+<p><strong>Selective activation · Bounded advisory</strong></p>
+<p>Bring in complementary viewpoints and adversarial review when complexity warrants it. Let simple tasks pass through.</p>
+<a href="docs/HYBRID_ARCHITECTURE.md">Understand the activation design →</a>
+</td>
+</tr>
+</table>
 
-Explore the [architecture](docs/ARCHITECTURE.md), [V4.1 design](docs/HYBRID_ARCHITECTURE.md), [mental-model registry](docs/MENTAL_MODEL_REGISTRY.md), and [specialist registry](docs/AGENT_REGISTRY.md).
+**12 native skills** expose the core to the host. **52 logical specialist definitions** organize analytical roles; they do not imply 52 running agents. Optional project memory and learning resources extend the toolkit without a required database, Docker service, or separate application.
+
+## The toolkit at a glance
+
+| Investigate | Decide & model | Review & communicate |
+| :--- | :--- | :--- |
+| [Root-cause analysis](skills/root-cause-analysis/SKILL.md) | [Strategic decision](skills/strategic-decision/SKILL.md) | [Adversarial review](skills/adversarial-review/SKILL.md) |
+| [Systems analysis](skills/systems-analysis/SKILL.md) | [Quantitative decision](skills/quantitative-decision/SKILL.md) | [Artifact quality](skills/artifact-quality/SKILL.md) |
+| [Framework composer](skills/framework-composer/SKILL.md) | [Cognition orchestrator](skills/cognition-orchestrator/SKILL.md) | [Executive synthesis](skills/executive-synthesis/SKILL.md) |
+
+<details>
+<summary><strong>Continuity, learning, and setup</strong></summary>
+
+- [Case intelligence](skills/case-intelligence/SKILL.md) — authorized project knowledge reuse.
+- [Cognitive mastery](skills/cognitive-mastery/SKILL.md) — optional human learning resources.
+- [Setup](skills/setup/SKILL.md) — discover available capabilities and report gaps.
+
+</details>
 
 ## Try it
 
@@ -86,9 +124,29 @@ This repository is an engineering candidate. Installation does not itself establ
 
 ## Contribute
 
+### Build the next layer with us
+
+**Good contributions start with a useful question, a clear change, and evidence.** You do not need to work on the entire system to make a meaningful contribution.
+
+| Your interest | A useful starting point |
+| :--- | :--- |
+| Agent workflows | Refine a skill's inputs, procedure, or completion criteria |
+| Python & mathematics | Improve helper correctness, edge cases, or numerical validation |
+| Claude & Codex integration | Document reproducible discovery, activation, and permission behavior |
+| Evaluation & research | Design realistic tasks, negative controls, and fair comparisons |
+| Technical writing | Clarify a guide, improve an example, or fix a broken reference |
+
+<p align="center">
+  <a href="https://github.com/azoghry-commits/Cognition-OS/issues"><strong>Explore issues</strong></a> ·
+  <a href="https://github.com/azoghry-commits/Cognition-OS/issues/new"><strong>Propose an idea</strong></a> ·
+  <a href="https://github.com/azoghry-commits/Cognition-OS/pulls"><strong>Review pull requests</strong></a>
+</p>
+
 We welcome contributions that make Cognition OS more useful, reliable, and honest about its evidence. You can propose a focused improvement to a skill, framework, adapter, schema, helper, evaluation, or documentation.
 
-**Contributor requirements**
+<details open>
+<summary><strong>Contribution standards & review process</strong></summary>
+
 
 1. Open or link an issue for substantial changes. Describe the user or agent problem, proposed behavior, and how success can be observed.
 2. Keep changes focused and compatible with the shared core and host-owned workflow. Explain any changes to contracts, activation, permissions, or persistence.
@@ -100,6 +158,8 @@ We welcome contributions that make Cognition OS more useful, reliable, and hones
 Contributions are reviewed for scope, correctness, security, maintainability, and evidence quality. A submission is not accepted until a maintainer approves and merges it. Please discuss changes that introduce new dependencies, alter security boundaries, or change the V4.1 design before investing in a large implementation.
 
 **Licensing and distribution are still project gates.** The repository currently does not declare an open-source license. Before contributing code, please open an issue to discuss the proposed contribution and its licensing; do not assume that a pull request grants permission to redistribute your work. See the [release checklist](docs/RELEASE_CHECKLIST.md).
+
+</details>
 
 ## Project status
 
@@ -129,7 +189,8 @@ python scripts/validate_package.py
 
 These are local structural and deterministic checks. They do not certify native host behavior or publish a release. See the [test plan](docs/TEST_PLAN.md) and [release checklist](docs/RELEASE_CHECKLIST.md).
 
-## Repository layout
+<details>
+<summary><strong>Repository map — where everything lives</strong></summary>
 
 ```text
 .agents/ .claude-plugin/ .codex-plugin/  Host and marketplace manifests
@@ -141,8 +202,11 @@ docs/                                     Architecture, guides, and audit record
 scripts/ assets/                          Build tools and project identity
 ```
 
+</details>
+
 ---
 
 <p align="center">
+  <img src="assets/icon.svg" width="40" alt="Cognition OS mark" /><br /><br />
   <strong>One cognitive core. Native host execution. Evidence before confidence.</strong>
 </p>
