@@ -1,5 +1,13 @@
 # Architecture decisions
 
+## Arah V4.1
+
+Pada 2026-10-20, prompt V4.1 diterima sebagai arah konsep berikutnya. Identitas target adalah augmentation layer untuk agen host, dengan satu core, dual adapter, tiga jalur bantuan dan governor selektif. Status desain target `SOURCE_DERIVED` / `PROPOSED`; keputusan implementasi, dukungan host, dan rilis harus memiliki evidence sendiri. Detail: [kajian konsep](CONCEPT_V4_1.md), [rencana migrasi](V4_1_MIGRATION_PLAN.md).
+
+ADR-02 tetap mempertahankan satu katalog; jumlah/nama skill target mengikuti kebutuhan. ADR-05 berarti MCP/hook tidak wajib bagi baseline; V4.1 mengusulkan hook deterministik selektif pada host yang mendukung. Pernyataan tidak ada hook/daemon pada tabel merujuk paket 0.1.0. Versi paket dan schema tidak dinaikkan oleh kajian ini.
+
+## Keputusan baseline 3.1
+
 | Decision | Rationale | Classification | Consequence |
 |---|---|---|---|
 | ADR-01 root portable manifest + Claude manifest + optional Codex fallback | Current official packaging formats | EXTERNALLY_VERIFIED | Root com.openai replaces fallback OpenAI settings, never merged |

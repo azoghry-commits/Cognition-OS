@@ -1,5 +1,7 @@
 # Requirements traceability
 
+**Cakupan:** matriks di bawah adalah baseline V3.1. Perubahan konsep terbaru dan pemetaan seluruh bagian 0–26 V4.1 dicatat di [CONCEPT_V4_1.md](CONCEPT_V4_1.md); pekerjaan serta gate baru ada di [V4_1_MIGRATION_PLAN.md](V4_1_MIGRATION_PLAN.md). Label implementasi baseline tidak menyatakan requirement hybrid sudah terpenuhi.
+
 Every source major section, all 50 model rows, each PDF page and V3.1 numbered section are inventoried below. Atomic subrequirements remain in their preserved source section; the table is a coverage inventory, not a claim that all behavioral acceptance gates passed.
 
 Provenance vocabulary: SOURCE_DERIVED, EXTERNALLY_VERIFIED, ENGINEERING_ADAPTATION, NEW_PROPOSAL, UNVERIFIED, CONFLICTING, BLOCKED. Status vocabulary: VERIFIED, IMPLEMENTED, TESTED, PARTIALLY_TESTED, PROPOSED, BLOCKED, UNVERIFIED, FAILED. Source corrections are CONFLICTING with explicit ENGINEERING_ADAPTATION decisions in SOURCE_ANALYSIS. Platform findings are EXTERNALLY_VERIFIED, live outcomes separately recorded.

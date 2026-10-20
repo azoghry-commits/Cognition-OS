@@ -1,5 +1,7 @@
 # Orchestration design
 
+**Delta V4.1 yang belum diimplementasikan:** governor menilai relevansi, risiko, kompleksitas, kecukupan bukti, izin, budget dan duplikasi; menyediakan tujuh kebijakan internal termasuk `PASS_THROUGH`; mengembalikan advisory ringkas ke host. AG-51 mengoordinasikan analisis terpilih, sementara host tetap pemilik tugas. Mode dan default di bawah adalah baseline 3.1. Lihat [kajian konsep](CONCEPT_V4_1.md) dan [rencana migrasi](V4_1_MIGRATION_PLAN.md).
+
 AG-51 collects objective and only decision-relevant missing context, reviewing domain/type/criticality/complexity/reversibility/evidence/stakeholders/exposure/risks/time/output/tools/budget. The Python planner is a disclosed keyword heuristic with explicit framework selection precedence. Host judgment can revise it. AUTO is an efficient default heuristic, not a trained autonomous classifier.
 
 Limits are canonical in cognitive-core/orchestration/policy.json. Each step carries required inputs, expected outputs, predecessor IDs, logical specialist ID and status PLANNED. No analytical task is executed by planning. check-workflow accepts host-created artifacts, enforces predecessor order and blocks on absent or invalid artifacts. Semantically compatible fields must be mapped by the host; equal names are insufficient.

@@ -4,7 +4,7 @@
 
 <h1 align="center">Cognition OS</h1>
 
-<p align="center"><strong>Evidence-grounded cognitive workflows for native AI hosts</strong></p>
+<p align="center"><strong>Hybrid Agent Cognitive Augmentation Layer for Claude &amp; Codex</strong></p>
 
 <p align="center">
   <a href="#release-status"><img src="https://img.shields.io/badge/version-0.1.0-6D5DFB?style=for-the-badge" alt="Version 0.1.0" /></a>
@@ -13,11 +13,15 @@
   <a href="docs/TEST_REPORT.md"><img src="https://img.shields.io/badge/tests-55%20passed%20%2F%201%20skipped-16A34A?style=for-the-badge" alt="55 tests passed and 1 skipped" /></a>
 </p>
 
-<p align="center"><strong>Turn ambiguous decisions into structured, evidence-aware analysis — without a separate web app, server, database, or model API.</strong></p>
+<p align="center"><strong>Bantuan kognitif selektif bagi agen Claude dan Codex, dengan satu core dan kendali tugas tetap pada host.</strong></p>
 
 ---
 
 ## Why Cognition OS?
+
+**Arah konsep terbaru: V4.1, dikaji pada 20 Oktober 2026.** Cognition OS menjadi kapabilitas internal bagi model/agen yang mengerjakan instruksi pengguna: **model-selected assistance** sebagai jalur utama, **event-driven deterministic validation** sesuai dukungan host, dan **conditional deep advisory** untuk tugas yang membenarkannya. Tugas sederhana dapat memakai `PASS_THROUGH`; deliverable asli pengguna tetap menjadi tujuan.
+
+**Paket saat ini tetap 0.1.0 dengan runtime/kontrak 3.1.** Hybrid governor, hook, kontrak advisory V4.1, dan evaluasi A/B/C/D belum diimplementasikan atau diuji. Baca [kajian perubahan konsep](docs/CONCEPT_V4_1.md), [rencana migrasi Phase 0–8](docs/V4_1_MIGRATION_PLAN.md), dan [prompt V4.1 lengkap](docs/evidence/master-implementation-prompt-v4.1.txt). Deskripsi komponen dan hasil uji di bawah merujuk baseline 0.1.0.
 
 Most difficult decisions fail long before the final recommendation: the problem is framed poorly, evidence is mixed with assumptions, calculations lose their units, and criticism arrives too late. Cognition OS packages disciplined ways of thinking into native skills for supported AI hosts.
 
@@ -84,6 +88,8 @@ This repository's primary tested installation target is **ChatGPT Desktop on Win
    ```
 
 The expected response is a structured request for missing evidence and safe checks, not an invented root cause.
+
+Langkah dan prompt manual ini adalah diagnosis untuk paket baseline. Pada target V4.1 pengguna cukup memberi tugas biasa kepada host; pemilihan skill oleh model harus dibuktikan melalui evaluasi native dan tidak dijamin hanya oleh instalasi.
 
 For exact local marketplace, update, and rollback steps, read the [ChatGPT Desktop quick start](docs/DESKTOP_QUICKSTART.md) and [Codex installation guide](docs/INSTALLATION_CODEX.md).
 

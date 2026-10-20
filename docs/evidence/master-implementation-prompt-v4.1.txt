@@ -1,0 +1,1370 @@
+# MASTER IMPLEMENTATION PROMPT V4.1
+
+## COGNITION OS — HYBRID AGENT COGNITIVE AUGMENTATION ENGINE
+
+### Unified Cognitive Intelligence Middleware for Claude & OpenAI Codex
+
+**Architecture:** Agent-Native Hybrid Augmentation  
+**Target Consumers:** AI Models, Coding Agents, Research Agents, Planning Agents, Specialized Subagents  
+**Target Environments:** Claude and OpenAI Codex  
+**Core Architecture:** One Unified Cognitive Core + Dual Native Host Adapters  
+**Activation:** Model-Selected + Event-Driven + Conditional Deep Advisory  
+**Deployment:** Native Plugin, Local-First, Skills-First, MCP-Optional  
+**Primary Principle:** Improve the host agent's task outcomes without taking ownership of its task, interfering unnecessarily, or requiring a separate application.
+
+---
+
+# 0. SUPREME EXECUTIVE DIRECTIVE
+
+Act as a multidisciplinary engineering team combining world-class expertise in:
+
+- Agentic AI Systems Architecture
+- AI Runtime and Middleware Engineering
+- Claude and Codex Plugin Architecture
+- Model Context Protocol
+- Agent Skills Engineering
+- Cognitive Science and Mental Models
+- Multi-Agent Orchestration
+- Decision Intelligence
+- Formal and Practical Reasoning Validation
+- Context Engineering
+- Applied Mathematics
+- AI Safety and Governance
+- Autonomous Software Engineering
+- Software Reliability and Evaluation
+
+Your mission is to thoroughly study the two attached Cognition OS source documents and transform their capabilities into a **production-grade Hybrid Agent Augmentation Layer**.
+
+The resulting system must augment models and agents operating inside Claude and OpenAI Codex.
+
+The human user must not need to operate Cognition OS independently.
+
+Cognition OS is not a separate assistant. It is an internal cognitive capability provider.
+
+## Absolute architecture requirements
+
+1. Preserve one canonical Cognitive Core.
+2. Provide separate Claude and Codex native integration adapters.
+3. Make model-selected capability invocation the primary activation mechanism.
+4. Use event-driven deterministic checks only where supported and justified.
+5. Provide optional deep cognitive advisory for complex or consequential tasks.
+6. Preserve the host agent's control of task execution.
+7. Preserve the human user's original objective, constraints, and requested output.
+8. Minimize unnecessary tokens, tool calls, latency, and model invocations.
+9. Avoid mandatory external infrastructure.
+10. Validate effectiveness through measurable task outcomes.
+
+**Do not build a new application. Build an intelligence augmentation layer for the agents that already exist.**
+
+---
+
+# 1. SOURCE INTELLIGENCE AND REQUIREMENTS PRESERVATION
+
+Thoroughly analyze:
+
+**Document A:** `Cognition Os Master Blueprint.md`
+
+**Document B:** `Cognition_OS_Strategic_Intelligence.pdf`
+
+Read the complete Markdown file and inspect all 15 pages of the PDF.
+
+Preserve the complete intellectual scope of the original Cognition OS:
+
+- 50 Mental Models across eight categories.
+- 52 Logical AI Specialists.
+- Framework Stack Builder.
+- Problem Ingestion.
+- Thinking Canvas.
+- Adversarial Debate.
+- Scenario Simulation.
+- Logic Guardrails.
+- Mathematical Validation.
+- Reasoning Knowledge Graph.
+- Institutional Memory.
+- Executive Synthesis.
+- Human Mastery Track.
+
+## Required source audit
+
+Extract and classify:
+
+- Every cognitive capability.
+- Every framework methodology.
+- Every logical agent specification.
+- Input and output contracts.
+- Mathematical formulas.
+- Workflow dependencies.
+- Evidence requirements.
+- Original application-specific assumptions.
+- Security implications.
+- Incomplete specifications.
+- Contradictions and unverified claims.
+
+Develop a complete Source-to-Agent-Capability Transformation Matrix.
+
+For every original feature, explain how it becomes a model-consumable skill, deterministic tool, event-driven validator, advisory capability, knowledge resource, or optional retained feature.
+
+Do not discard original capabilities without documenting the reason.
+
+Differentiate source-derived specifications from engineering adaptations and new proposals.
+
+---
+
+# 2. ARCHITECTURAL IDENTITY
+
+Cognition OS V4.1 is a:
+
+**Hybrid Agent Cognitive Augmentation Layer.**
+
+Its primary consumers are the model and agents executing a user task.
+
+The human interacts normally with Claude or Codex.
+
+The host agent remains the task owner.
+
+Cognition OS supplies relevant analytical capabilities during the execution of that task.
+
+## Required architecture
+
+```text
+USER INSTRUCTION
+      |
+      v
+CLAUDE / CODEX HOST
+      |
+      v
+HOST MODEL / AGENT
+      |
+      +-----------------------------------+
+      |                                   |
+      v                                   v
+NATIVE TASK EXECUTION           COGNITION OS HYBRID LAYER
+                                          |
+                      +-------------------+------------------+
+                      |                   |                  |
+                      v                   v                  v
+               MODEL-SELECTED       EVENT-DRIVEN        DEEP COGNITIVE
+                ASSISTANCE           VALIDATION            ADVISORY
+                      |                   |                  |
+                      +-------------------+------------------+
+                                          |
+                                          v
+                              UNIFIED COGNITIVE CORE
+                                          |
+                    +---------------------+------------------+
+                    |                     |                  |
+                    v                     v                  v
+               50 FRAMEWORKS        52 SPECIALISTS     VALIDATION /
+                                                       COMPUTATION
+                                          |
+                                          v
+                              STRUCTURED ADVISORY
+                                          |
+                                          v
+                                  HOST MODEL / AGENT
+                                          |
+                                          v
+                                  ORIGINAL DELIVERABLE
+```
+
+This architecture is conceptual. Implement the interaction points using officially supported host features.
+
+Do not assume access to hidden model reasoning, arbitrary runtime interception, or unsupported lifecycle events.
+
+---
+
+# 3. THE THREE-PATH HYBRID AUGMENTATION MODEL
+
+This section defines the mandatory V4.1 architecture.
+
+## PATH A — MODEL-SELECTED COGNITIVE ASSISTANCE
+
+**Priority: Primary**
+
+**Default behavior: Available on demand to the model.**
+
+The host model or agent decides whether a Cognition OS capability is relevant to its current assignment.
+
+Use:
+
+- Agent Skills.
+- Skill metadata discovery.
+- On-demand cognitive references.
+- Host-supported tools.
+- Optional MCP tool invocation.
+- Supported agent delegation.
+
+### Activation examples
+
+When designing a software architecture, the model may select:
+
+- First Principles.
+- Systems Thinking.
+- Inversion.
+- Pre-Mortem.
+
+When troubleshooting database corruption, the model may select:
+
+- MECE.
+- Kepner-Tregoe.
+- 5 Whys.
+- Hypothesis-Driven Analysis.
+
+When evaluating a business decision, the model may select:
+
+- Expected Value.
+- Bayesian Updating.
+- Cost-Benefit Analysis.
+- Scenario Comparison.
+
+### Primary activation rules
+
+- Activation must be relevant to the task.
+- Frameworks must provide identifiable incremental value.
+- Avoid duplicate analysis already completed by the host.
+- Do not load the entire framework registry.
+- Do not automatically launch multiple specialist agents.
+- Permit the host to complete simple tasks without cognitive augmentation.
+
+### Invocation assurance
+
+Model-selected skills are probabilistic in practice.
+
+Do not claim that merely installing a skill guarantees its invocation.
+
+Use carefully designed metadata, evaluation cases, and lightweight host guidance to improve selection reliability.
+
+Preserve manual invocation as a diagnostic fallback, not as the primary user workflow.
+
+---
+
+## PATH B — EVENT-DRIVEN DETERMINISTIC CHECKS
+
+**Priority: Secondary**
+
+**Default behavior: Lightweight, selective, and controlled.**
+
+Use host-supported lifecycle hooks for checks that benefit from deterministic triggering.
+
+Potential examples:
+
+- File validation after an edit.
+- Schema checks after generating structured data.
+- Detection of dangerous command arguments before execution.
+- Secret leakage checks.
+- Relevant test-result inspection.
+- Static analysis of changed files.
+- Lightweight context injection at subagent initialization.
+- Validation of specified artifacts before delivery when a suitable event exists.
+
+### Hook selection policy
+
+Hooks must only be used when:
+
+1. The event is officially supported.
+2. The event payload provides sufficient information.
+3. The check is narrowly scoped.
+4. Processing overhead is acceptable.
+5. Required permissions are granted.
+6. Failure handling is defined.
+7. The check does not duplicate another validator unnecessarily.
+
+### Avoid unconditional LLM execution
+
+Do not invoke an AI model at every hook event.
+
+Prefer deterministic scripts for:
+
+- File format validation.
+- Schema checks.
+- Static linting.
+- Path validation.
+- Policy checks.
+- Structured artifact inspection.
+
+A hook may provide actionable findings to the host agent where the host supports feedback injection.
+
+Do not claim that all hooks can block, rewrite, or inject context.
+
+### Hook failure policy
+
+Distinguish:
+
+**Advisory checks:** Graceful degradation when unavailable, with appropriate diagnostics.
+
+**Security enforcement checks:** Follow verified host permission behavior; do not silently bypass a required policy.
+
+### Event deduplication
+
+Prevent repeated validation of unchanged artifacts.
+
+Where practical, use:
+
+- Content hashes.
+- File-change filtering.
+- Execution identifiers.
+- Bounded result caching.
+- Idempotent checks.
+
+Avoid persistent background monitoring unless explicitly justified and authorized.
+
+---
+
+## PATH C — OPTIONAL DEEP COGNITIVE ADVISORY
+
+**Priority: Conditional**
+
+**Default behavior: Dormant unless justified.**
+
+This path provides more comprehensive cognitive analysis when a task has meaningful complexity, uncertainty, or consequences.
+
+It may activate:
+
+- Multiple complementary mental models.
+- Specialist advisory roles.
+- Adversarial evaluation.
+- Decision-theoretic analysis.
+- Quantitative scenario simulation.
+- Systems-level consequences.
+- Detailed evidence validation.
+- Independent artifact review.
+
+### Activation conditions
+
+Consider deep advisory when:
+
+- The task involves substantial architectural trade-offs.
+- The consequences of incorrect output are significant.
+- Evidence is contradictory.
+- The problem has multiple interacting causes.
+- The task is unusually complex.
+- Conventional analysis has failed.
+- The user explicitly requests comprehensive analysis.
+- The model identifies a critical uncertainty requiring investigation.
+
+### Execution constraints
+
+Deep advisory must:
+
+- Respect user and host execution budgets.
+- Use bounded iterations.
+- Avoid spawning unnecessary agents.
+- Use deterministic computation where appropriate.
+- Return concise findings to the host.
+- Preserve the host's authority.
+- Require permission for costly or side-effecting operations.
+
+Do not activate deep advisory merely because the user requests lengthy output.
+
+Length and analytical complexity are different properties.
+
+---
+
+# 4. HYBRID ACTIVATION GOVERNOR
+
+Implement an internal decision policy that coordinates the three augmentation paths.
+
+## 4.1 Required inputs
+
+Assess only accessible context, including:
+
+- Current task objective.
+- Task type.
+- Risk.
+- Complexity.
+- Evidence sufficiency.
+- Relevant artifacts.
+- Available host capabilities.
+- Available computational tools.
+- Execution constraints.
+- Context budget.
+- Existing analysis.
+- Potential duplication.
+- Permission status.
+
+## 4.2 Decision policy
+
+Use this conceptual selection logic:
+
+```text
+Receive observable task context
+    |
+    v
+Is cognitive augmentation relevant?
+    |
+    +-- NO --> PASS THROUGH
+    |
+    +-- YES --> Assess task complexity and risk
+                    |
+                    v
+              Can a selected skill help?
+                    |
+                    +-- YES --> MODEL-SELECTED ASSISTANCE
+                    |
+                    v
+              Is there an appropriate host event
+              with a deterministic check?
+                    |
+                    +-- YES --> EVENT-DRIVEN VALIDATION
+                    |
+                    v
+              Is deep analysis justified?
+                    |
+                    +-- YES --> DEEP ADVISORY
+                    |
+                    v
+              Return relevant findings
+                    |
+                    v
+              Continue original host task
+```
+
+The paths are not mutually exclusive.
+
+A complex task may use model-selected skills, deterministic validation, and a targeted deep advisory review.
+
+However, each additional path must have a justified purpose.
+
+## 4.3 Operating policies
+
+Provide:
+
+`PASS_THROUGH`
+
+No Cognition OS processing beyond unavoidable discovery overhead.
+
+`LIGHT_AUGMENTATION`
+
+One narrowly relevant capability.
+
+`STANDARD_AUGMENTATION`
+
+A compact sequence of complementary frameworks.
+
+`DETERMINISTIC_VALIDATION`
+
+A bounded tool or hook-based check.
+
+`DEEP_ADVISORY`
+
+Comprehensive analysis with specialized review.
+
+`CRITICAL_REVIEW`
+
+Heightened evidence and artifact validation for consequential tasks.
+
+`DEGRADED`
+
+Continue with supported capabilities when optional components are unavailable.
+
+These are internal operating policies, not user-facing modes that must be manually selected.
+
+## 4.4 Selection quality
+
+Optimize for:
+
+**Expected improvement in task quality relative to additional cost, latency, and interference risk.**
+
+Do not invent a numerical optimization formula without defining measurable inputs.
+
+Calibrate routing decisions using real evaluation results.
+
+---
+
+# 5. UNIFIED COGNITIVE CORE
+
+The shared core must be independent of Claude and Codex.
+
+It contains:
+
+1. Mental Model Registry.
+2. Specialist Registry.
+3. Framework Routing Rules.
+4. Cognitive Workflow Definitions.
+5. Evidence Validation Rules.
+6. Mathematical Computation.
+7. Adversarial Evaluation.
+8. Decision Provenance.
+9. Output Quality Assurance.
+10. Optional Knowledge Reuse.
+
+## 5.1 Mental Model Registry
+
+Preserve all 50 source-defined frameworks across eight categories.
+
+Each framework must define:
+
+- Identifier.
+- Name.
+- Category.
+- Purpose.
+- Preconditions.
+- Trigger guidance.
+- Input schema.
+- Methodology.
+- Output schema.
+- Evidence requirements.
+- Limitations.
+- Compatibility with other frameworks.
+- Validation criteria.
+- Reference resources.
+
+Retain the source methodology.
+
+Do not reduce individual frameworks to generic advice.
+
+## 5.2 Specialist Registry
+
+Preserve:
+
+- AG-01 through AG-50.
+- AG-51 Chief Orchestrator.
+- AG-52 Evaluator Jury.
+
+Treat these as **52 logical analytical specializations**, not mandatory simultaneous model processes.
+
+Implement them using host-model reasoning, skill execution, deterministic computation, or native subagents as appropriate.
+
+## 5.3 Minimal execution principle
+
+Do not automatically run every model.
+
+Do not automatically invoke all specialists.
+
+Select the smallest effective combination for the task.
+
+---
+
+# 6. AGENT-TO-COGNITION INTERFACE CONTRACT
+
+Create a normalized internal advisory protocol.
+
+## Request envelope
+
+Include where available:
+
+- Request ID.
+- Host identifier.
+- Agent role.
+- Task summary.
+- Requested cognitive capability.
+- Evidence references.
+- Constraints.
+- Risk level.
+- Available tools.
+- Execution budget.
+- Authorization scope.
+
+## Response envelope
+
+Return:
+
+- Execution status.
+- Relevant findings.
+- Supporting evidence.
+- Detected issues.
+- Computed results.
+- Recommendations.
+- Confidence limitations.
+- Unresolved questions.
+- Optional follow-up checks.
+
+The advisory response must be concise enough for the host agent to incorporate without unnecessary context expansion.
+
+Do not expose hidden chain-of-thought.
+
+Do not include verbose debate transcripts when a structured conclusion is sufficient.
+
+---
+
+# 7. COGNITIVE SUPPORT DURING TASK EXECUTION
+
+The hybrid layer must support the host at relevant stages.
+
+## Task interpretation
+
+Help identify ambiguity, hidden constraints, and missing prerequisites.
+
+## Planning
+
+Evaluate decomposition, dependencies, alternatives, and risks.
+
+## Implementation
+
+Provide applicable framework guidance and mathematical tools.
+
+## Verification
+
+Evaluate observable artifacts, tool outputs, test results, and evidence.
+
+## Final synthesis
+
+Help detect unresolved contradictions, incomplete requirements, and output-format violations.
+
+### Critical constraint
+
+Do not assume the plugin can intercept each execution stage.
+
+Use native, supported invocation and observable event boundaries.
+
+The plugin must remain useful even when the host exposes only skills and MCP tools.
+
+---
+
+# 8. COGNITIVE SPECIALIZATION FOR SOFTWARE ENGINEERING
+
+Because Codex and Claude are frequently used for engineering, implement targeted cognitive workflows for software tasks.
+
+## Requirements Engineering
+
+Possible capabilities:
+
+- SCQA.
+- MECE.
+- First Principles.
+- Hypothesis-Driven Problem Solving.
+
+## Architecture Design
+
+Possible capabilities:
+
+- Systems Thinking.
+- Wardley Mapping.
+- Theory of Constraints.
+- Second-Order Thinking.
+- Inversion.
+
+## Implementation Planning
+
+Possible capabilities:
+
+- RICE.
+- MoSCoW.
+- Critical Path Method.
+- RACI.
+
+## Debugging
+
+Possible capabilities:
+
+- 5 Whys.
+- Kepner-Tregoe.
+- Fishbone.
+- Pareto.
+- Hypothesis Testing.
+
+## Security and Reliability Review
+
+Possible capabilities:
+
+- Pre-Mortem.
+- Inversion.
+- Systems Thinking.
+- Evidence Validation.
+- Risk Evaluation.
+
+## Release Readiness
+
+Possible capabilities:
+
+- PDCA.
+- Pre-Mortem.
+- Decision Matrix.
+- Evidence-Based Quality Review.
+
+These mappings are recommendations.
+
+The orchestration engine must adapt to the actual task rather than treating them as mandatory fixed sequences.
+
+---
+
+# 9. DETERMINISTIC AND ANALYTICAL GUARDRAILS
+
+Preserve and adapt the original Cognition OS Logic Guardrails.
+
+Include:
+
+- MECE validation.
+- Contradiction detection.
+- Assumption auditing.
+- Evidence classification.
+- Cognitive bias warnings.
+- Mathematical verification.
+- Causal reasoning checks.
+- Risk analysis.
+- Artifact consistency checks.
+
+Differentiate:
+
+`VERIFIED_FACT`
+
+`SOURCE_SUPPORTED`
+
+`CALCULATED_RESULT`
+
+`SIMULATED_RESULT`
+
+`ASSUMPTION`
+
+`INFERENCE`
+
+`HYPOTHESIS`
+
+`UNKNOWN`
+
+Do not manufacture confidence scores.
+
+Do not confuse semantic similarity with definitive logical validation.
+
+Use deterministic methods where objective checking is possible.
+
+---
+
+# 10. DEEP ADVISORY ORCHESTRATION
+
+Deep advisory must remain bounded and task-focused.
+
+## Execution pattern
+
+1. Define the analytical question.
+2. Identify missing evidence.
+3. Select complementary frameworks.
+4. Run relevant analyses.
+5. Execute deterministic calculations when needed.
+6. Challenge major assumptions.
+7. Evaluate competing findings.
+8. Return actionable conclusions.
+9. Stop when additional analysis has low expected value.
+
+## Adversarial roles
+
+Use the original conceptual roles:
+
+- Constructive Advocate.
+- Critical Challenger.
+- Evaluator Jury.
+
+Do not force a consensus when evidence remains insufficient.
+
+Use actual native subagents only when supported and useful.
+
+Avoid unnecessary recursive delegation.
+
+---
+
+# 11. NATIVE CLAUDE ADAPTER
+
+Implement Claude integration using officially documented capabilities.
+
+Evaluate:
+
+- Native plugin packaging.
+- Skills.
+- Model-invocable skills.
+- Subagents.
+- MCP.
+- Hooks.
+- Workspace instructions.
+
+For agent-facing Claude skills, consider `user-invocable: false` where applicable and officially supported.
+
+Do not use `disable-model-invocation: true` on capabilities intended for model-selected activation.
+
+Evaluate appropriate hook events such as:
+
+- `SessionStart`
+- `SubagentStart`
+- `PreToolUse`
+- `PostToolUse`
+
+Only use them when supported by the target runtime and relevant to the intended action.
+
+Verify individual event capabilities before implementing context injection, blocking, or validation feedback.
+
+Do not assume Claude Code, Claude Chat, Claude Desktop, and Cowork expose identical functionality.
+
+---
+
+# 12. NATIVE CODEX ADAPTER
+
+Implement Codex integration using supported OpenAI plugin and Agent Skills specifications.
+
+Prefer a portable Agent Plugins package where suitable.
+
+Evaluate:
+
+- Root `plugin.json`.
+- `skills/`.
+- Optional `mcp.json`.
+- `extensions.com.openai`.
+- Optional compatibility manifest.
+- Supported plugin hooks.
+- Workspace `AGENTS.md` guidance.
+- Native agent delegation.
+
+For Codex plugin hooks, account for installation, local script availability, user trust, and host-specific event behavior.
+
+Do not assume a plugin's availability guarantees execution of its hook scripts.
+
+Do not require an external IDE.
+
+Prioritize operation within the existing Codex experience in ChatGPT Desktop on Windows, subject to verified feature availability.
+
+---
+
+# 13. OPTIONAL MCP COMPUTATION LAYER
+
+MCP must remain optional.
+
+Use it when the plugin needs:
+
+- Deterministic computation.
+- Structured tool access.
+- Authorized data retrieval.
+- Persistent knowledge resources.
+- Repeatable validation services.
+
+Proposed tools:
+
+```text
+cognition_assess_task
+cognition_select_frameworks
+cognition_apply_framework
+cognition_validate_evidence
+cognition_challenge_assumptions
+cognition_simulate_scenarios
+cognition_review_artifact
+cognition_generate_provenance
+```
+
+These are implementation proposals, not existing host API names.
+
+Use validated schemas, bounded processing, and least-privilege permissions.
+
+Baseline cognitive augmentation must not depend on a remote MCP service.
+
+---
+
+# 14. TOKEN, LATENCY, AND COMPUTE GOVERNOR
+
+Optimize total task efficiency.
+
+## Primary optimization targets
+
+- Minimal always-loaded instructions.
+- Selective skill discovery.
+- Lazy loading of framework definitions.
+- Bounded specialist delegation.
+- Reduced duplicate analysis.
+- Cached deterministic results where appropriate.
+- Minimal hook overhead.
+- Concise advisory responses.
+- Adaptive analysis depth.
+- Early stopping.
+
+## Resource budgeting
+
+Define configurable budgets for:
+
+- Framework invocations.
+- Subagent calls.
+- Debate rounds.
+- Tool calls.
+- Computation runtime.
+- Context consumption.
+
+Do not use hardcoded limits that cause critical tasks to terminate unsafely.
+
+Escalate only when additional analysis is likely to improve outcomes.
+
+Benchmark against unaugmented host execution.
+
+---
+
+# 15. OUTPUT QUALITY ASSURANCE
+
+Cognition OS must help improve the host's actual deliverable.
+
+Evaluate, where observable and supported:
+
+1. Requirement coverage.
+2. Explicit constraint compliance.
+3. Functional correctness.
+4. Factual grounding.
+5. Architectural consistency.
+6. Mathematical validity.
+7. Security considerations.
+8. Missing edge cases.
+9. Test evidence.
+10. Output format compliance.
+
+Return targeted correction advice.
+
+Do not replace the deliverable with an unrelated Cognition OS report.
+
+Do not treat a model-generated quality score as proof of correctness.
+
+---
+
+# 16. NON-INTERFERENCE AND HUMAN CONTROL
+
+The plugin must not:
+
+- Redefine the user's objective.
+- Override host permission controls.
+- Perform unauthorized external actions.
+- Modify unrelated files.
+- Trigger costly model calls without justification.
+- Introduce unrelated deliverables.
+- Generate excessive commentary.
+- Continue recursively without a stopping condition.
+- Conceal material limitations.
+
+The host agent retains task ownership.
+
+Cognition OS is advisory unless an explicitly authorized, host-supported deterministic enforcement mechanism applies.
+
+---
+
+# 17. FAILURE RECOVERY AND GRACEFUL DEGRADATION
+
+Define explicit fallback behavior.
+
+If model-selected assistance is unavailable:
+
+- Continue with native host reasoning where sufficient.
+
+If a deterministic hook fails:
+
+- Record the failure when appropriate.
+- Apply the configured advisory or enforcement policy.
+- Do not invent successful validation.
+
+If deep advisory is unavailable:
+
+- Continue with a simpler supported workflow where safe.
+- Identify material limitations when necessary.
+
+If MCP is unavailable:
+
+- Use supported local tools or model-guided methods.
+- Do not fabricate computational results.
+
+The absence of optional augmentation must not unnecessarily disable the host's ordinary capabilities.
+
+---
+
+# 18. OPTIONAL MEMORY AND GOVERNED EVOLUTION
+
+Support authorized, controlled reuse of previous engineering findings.
+
+Possible records:
+
+- Validated analytical patterns.
+- Framework effectiveness.
+- Corrected assumptions.
+- Confirmed failures.
+- Successful remediation procedures.
+- Approved workflow optimizations.
+
+Use host-native or local-first storage.
+
+No mandatory database server.
+
+Apply:
+
+`Observe → Evaluate → Propose → Test → Approve → Version`
+
+Do not autonomously rewrite trusted plugin instructions.
+
+Maintain rollback support.
+
+Retain the original Human Mastery Track as an optional separate learning capability; do not misrepresent it as automatic model training.
+
+---
+
+# 19. PROPOSED REPOSITORY STRUCTURE
+
+Use one canonical repository.
+
+```text
+cognition-os/
+│
+├── plugin.json
+│
+├── .claude-plugin/
+│   └── plugin.json
+│
+├── skills/
+│   ├── task-intelligence/
+│   ├── cognitive-routing/
+│   ├── problem-solving/
+│   ├── architecture-analysis/
+│   ├── decision-intelligence/
+│   ├── systems-thinking/
+│   ├── adversarial-evaluation/
+│   ├── mathematical-validation/
+│   ├── evidence-integrity/
+│   └── artifact-quality/
+│
+├── cognitive-core/
+│   ├── mental-models/
+│   │   ├── registry.json
+│   │   └── definitions/
+│   │
+│   ├── specialists/
+│   │   ├── registry.json
+│   │   └── definitions/
+│   │
+│   ├── routing/
+│   ├── workflows/
+│   ├── computation/
+│   ├── validation/
+│   ├── provenance/
+│   └── knowledge/
+│
+├── adapters/
+│   ├── claude/
+│   └── codex/
+│
+├── hooks/
+│   ├── claude/
+│   └── codex/
+│
+├── schemas/
+│   ├── task-context.schema.json
+│   ├── cognitive-request.schema.json
+│   ├── advisory-result.schema.json
+│   ├── framework.schema.json
+│   └── validation-result.schema.json
+│
+├── scripts/
+│   ├── deterministic-checks/
+│   ├── calculations/
+│   └── packaging/
+│
+├── references/
+│   ├── methodologies/
+│   └── examples/
+│
+├── tests/
+│   ├── framework-contracts/
+│   ├── activation-evals/
+│   ├── hook-tests/
+│   ├── deep-advisory-evals/
+│   ├── integration/
+│   ├── performance/
+│   └── security/
+│
+├── docs/
+│   ├── source-audit.md
+│   ├── architecture.md
+│   ├── activation-policy.md
+│   ├── platform-compatibility.md
+│   ├── installation-claude.md
+│   ├── installation-codex.md
+│   └── evaluation-report.md
+│
+├── mcp.json
+└── README.md
+```
+
+This is a conceptual superset, not a guaranteed cross-platform layout.
+
+Create only supported and necessary files.
+
+Use platform-specific manifests and hook configurations according to verified documentation.
+
+Do not duplicate the canonical cognitive core.
+
+---
+
+# 20. EVALUATION AND PERFORMANCE BENCHMARKING
+
+The central evaluation question is:
+
+**Does the Hybrid Agent Augmentation Layer improve actual host-agent outcomes enough to justify its overhead?**
+
+## Required experiment configurations
+
+**A — Baseline**
+
+Host model without Cognition OS.
+
+**B — Model-Selected Only**
+
+Host model with cognitive skills available.
+
+**C — Model-Selected + Deterministic Hooks**
+
+Host model with cognitive skills and applicable event-driven checks.
+
+**D — Full Hybrid**
+
+Model-selected capabilities, targeted deterministic checks, and optional deep advisory.
+
+## Required test scenarios
+
+Include:
+
+- Simple coding tasks.
+- Complex architecture design.
+- Debugging.
+- Database incident analysis.
+- Security review.
+- Strategic decision analysis.
+- Multi-step implementation.
+- Documentation generation.
+- Mathematical evaluation.
+
+## Evaluation metrics
+
+Measure where observable:
+
+- Task success rate.
+- Correctness.
+- Regression failures.
+- Requirement coverage.
+- Framework selection relevance.
+- Unnecessary activation rate.
+- False-positive validation warnings.
+- Tool-call counts.
+- Model invocation counts.
+- Token overhead.
+- Latency.
+- Artifact quality.
+- Evidence quality.
+- Recovery from errors.
+
+Include negative-control tasks where Cognition OS should remain passive.
+
+Do not invent benchmark data.
+
+---
+
+# 21. DEVELOPMENT PHASES
+
+## Phase 0 — Complete Source Audit
+
+Inventory the original Cognition OS capabilities and identify required transformations.
+
+## Phase 1 — Platform Capability Verification
+
+Verify the latest official Claude and Codex support for plugins, skills, hooks, agents, MCP, and desktop integration.
+
+## Phase 2 — Hybrid Architecture Design
+
+Specify:
+
+- Three-path activation.
+- Routing policies.
+- Cognitive contracts.
+- Resource governor.
+- Permission boundaries.
+- Fallback behavior.
+
+## Phase 3 — Minimal Functional Prototype
+
+Implement a native model-consumable plugin containing:
+
+- Cognitive routing.
+- MECE.
+- First Principles.
+- 5 Whys.
+- Pre-Mortem.
+- Targeted artifact validation.
+
+Implement one safe deterministic hook where supported.
+
+Verify ordinary user tasks can benefit without explicitly invoking Cognition OS.
+
+## Phase 4 — Full Cognitive Core
+
+Complete 50 mental models and 52 logical specialist definitions.
+
+## Phase 5 — Deep Advisory
+
+Implement advanced analysis, mathematical validation, and adversarial evaluation.
+
+## Phase 6 — Dual Platform Integration
+
+Test Claude and Codex independently.
+
+## Phase 7 — Evaluation and Optimization
+
+Run A/B tests and refine routing, overhead, and task-quality outcomes.
+
+## Phase 8 — Release Hardening
+
+Complete security validation, packaging, documentation, and compatibility testing.
+
+At each phase, produce observable deliverables and record test evidence.
+
+---
+
+# 22. RELEASE ACCEPTANCE CRITERIA
+
+The project is complete only when:
+
+1. Cognition OS functions as a host-agent augmentation layer.
+2. The three activation paths are implemented where supported.
+3. Unsupported automatic interception is not claimed.
+4. Model-selected skills work on supported hosts.
+5. Relevant deterministic checks execute through authorized hooks.
+6. Deep advisory activates selectively rather than by default.
+7. The 50-model catalog is preserved.
+8. The 52-specialist logical registry is preserved.
+9. The host remains responsible for original task execution.
+10. The user's deliverable is not replaced by unrelated reports.
+11. No mandatory standalone application is introduced.
+12. No mandatory Docker or database server is required.
+13. Mathematical computations pass verification tests.
+14. Security and permission boundaries are respected.
+15. Relevant quality improvements are measured.
+16. Excessive overhead and unnecessary activation are identified and controlled.
+17. Claude and Codex adapters are tested independently.
+18. Installation, update, and rollback procedures are documented.
+
+Production readiness must be based on actual evidence.
+
+---
+
+# 23. ANTI-HALLUCINATION AND ENGINEERING INTEGRITY
+
+Never:
+
+- Invent host APIs.
+- Invent lifecycle events.
+- Invent plugin manifest fields.
+- Claim guaranteed automatic skill activation.
+- Claim access to hidden reasoning.
+- Claim unsupported runtime interception.
+- Present sequential execution as real parallelism.
+- Fabricate tests.
+- Fabricate benchmarks.
+- Invent confidence scores.
+- Claim verified calculations without performing them.
+- Confuse a logical specialist with a running model instance.
+- Replace original user instructions with plugin-specific goals.
+- Treat generated validation text as proof that code works.
+- Claim production readiness before testing.
+
+Maintain status classifications:
+
+`SOURCE_DERIVED`
+
+`PROPOSED`
+
+`IMPLEMENTED`
+
+`VERIFIED`
+
+`TESTED`
+
+`PARTIALLY_SUPPORTED`
+
+`UNSUPPORTED`
+
+`BLOCKED`
+
+---
+
+# 24. REQUIRED FINAL DELIVERABLES
+
+Produce:
+
+**A. Source Intelligence Package**
+
+Complete audit, capability inventory, and transformation matrix.
+
+**B. Hybrid Architecture Package**
+
+Three-path activation design, routing policies, interfaces, guardrails, and fallback behavior.
+
+**C. Unified Cognitive Core**
+
+All 50 models, 52 logical specialists, validators, mathematical routines, and shared schemas.
+
+**D. Claude Adapter**
+
+Verified native skills, supported agent mechanisms, optional hooks, optional MCP, and installation instructions.
+
+**E. Codex Adapter**
+
+Verified plugin packaging, agent-consumable skills, supported hooks, optional MCP, and installation instructions.
+
+**F. Validation Package**
+
+Functional tests, activation evaluations, A/B benchmarks, security tests, and compatibility findings.
+
+**G. Operational Package**
+
+Setup guides, configuration, troubleshooting, updates, rollback, and release documentation.
+
+---
+
+# 25. REPORTING AND EXECUTION LANGUAGE
+
+Use Bahasa Indonesia for:
+
+- Engineering findings.
+- Progress reports.
+- Technical explanations.
+- Documentation.
+- Installation instructions.
+- Validation summaries.
+- Final reports.
+
+Use English where necessary for:
+
+- Technical identifiers.
+- Source code.
+- Standard schema fields.
+- API names.
+- Official framework terminology.
+
+Progress reports must be concise, verifiable, and oriented toward concrete engineering outcomes.
+
+---
+
+# 26. FINAL EXECUTION COMMAND
+
+Begin immediately with the two attached Cognition OS documents.
+
+Execute:
+
+1. Complete source analysis.
+2. Official Claude and Codex platform verification.
+3. Design the Unified Cognitive Core.
+4. Define the Hybrid Activation Governor.
+5. Design all three augmentation paths.
+6. Implement the smallest native working prototype.
+7. Verify model-selected capability invocation.
+8. Add narrowly scoped deterministic hooks where supported.
+9. Implement optional deep advisory.
+10. Preserve all 50 mental models and 52 logical specialists.
+11. Implement the Claude and Codex adapters.
+12. Test on representative real-world tasks.
+13. Benchmark baseline versus augmented agents.
+14. Optimize quality relative to token and latency overhead.
+15. Complete security hardening and production packaging.
+
+Where the environment permits authorized implementation, produce real files and run real tests.
+
+Where execution is unavailable, provide reproducible artifacts and mark validation as incomplete.
+
+Do not stop at theoretical architecture when practical implementation is possible.
+
+Do not create a separate application.
+
+Do not interfere unnecessarily with the host agent.
+
+## ULTIMATE MISSION
+
+**Improve the intelligence applied by Claude and Codex agents during real work, through selective cognitive assistance, reliable deterministic validation, and conditional deep advisory.**
+
+**COGNITION OS V4.1**
+
+**HYBRID INTELLIGENCE. NATIVE EXECUTION. MEASURABLE IMPROVEMENT.**
+
+**END OF MASTER IMPLEMENTATION PROMPT V4.1**

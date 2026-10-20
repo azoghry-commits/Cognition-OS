@@ -1,0 +1,2 @@
+# Preserve the supplied V4.1 specification byte-for-byte, including line endings.
+docs/evidence/master-implementation-prompt-v4.1.txt -text

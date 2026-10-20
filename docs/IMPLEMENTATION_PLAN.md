@@ -1,5 +1,13 @@
 # Cognition OS native plugin implementation
 
+## Rencana aktif: V4.1
+
+Acuan terbaru adalah [kajian konsep V4.1](CONCEPT_V4_1.md) dan [rencana migrasi Phase 0–8](V4_1_MIGRATION_PLAN.md). Urutan: audit delta sumber → verifikasi host → desain governor/kontrak/tiga jalur → prototype minimum dan satu hook yang didukung → kelengkapan core → deep advisory → uji dua adapter → evaluasi A/B/C/D → hardening.
+
+Permintaan 2026-10-20 ditangani sebagai kajian konsep dan dokumentasi. Implementasi hybrid belum dimulai; paket tetap 0.1.0. Perbarui sumber generator sebelum regenerasi agar tidak menimpa arah V4.1 dengan baseline. Gate dan evidence harus dinilai per fase serta per host.
+
+## Rencana historis: baseline 3.1
+
 Specification: 3.1. Package version starts at 0.1.0, independently of specification version.
 
 1. Audit all eight blueprint sections and visually inspect all 15 PDF pages. Preserve hashes, row-level source references, contradictions, and feature transformations.

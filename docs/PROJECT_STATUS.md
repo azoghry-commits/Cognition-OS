@@ -1,5 +1,15 @@
 # Resumable engineering status
 
+## Arah aktif V4.1 — 2026-10-20
+
+Konsep terbaru adalah **Hybrid Agent Cognitive Augmentation Layer**: model-selected assistance sebagai jalur utama, validasi deterministik melalui event yang didukung, dan deep advisory kondisional. Host tetap pemilik tugas dan deliverable. Kajian prompt serta gap checkout selesai dalam [CONCEPT_V4_1.md](CONCEPT_V4_1.md); rencana eksekusi Phase 0–8 ada di [V4_1_MIGRATION_PLAN.md](V4_1_MIGRATION_PLAN.md).
+
+Status target: `SOURCE_DERIVED` / `PROPOSED`. Runtime tetap paket 0.1.0, kontrak 3.1; governor hybrid, hook, kontrak advisory baru dan benchmark A/B/C/D belum diterapkan. Permintaan sesi ini mencakup pemahaman konsep, dokumentasi dan proses Git. Evidence pengujian lama di bawah tidak menjadi bukti V4.1.
+
+Langkah pengembangan berikutnya: audit delta A/B terhadap V4.1 dan verifikasi kapabilitas resmi masing-masing host, kemudian governor/kontrak minimum. Perbarui generator sebelum meregenerasi file baseline. Cakupan akun pada ACCOUNT_SCOPE.md tetap berlaku; jangan beralih ke API berbayar untuk menutup gap evaluasi.
+
+## Catatan baseline 3.1 / paket 0.1.0
+
 Date: 2026-10-20. Specification 3.1; package 0.1.0. Overall: IMPLEMENTED / PARTIALLY_TESTED; not production-ready.
 
 | Phase | Status | Evidence / remaining gate |
