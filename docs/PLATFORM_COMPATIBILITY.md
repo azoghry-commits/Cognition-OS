@@ -1,6 +1,6 @@
 # Platform compatibility, checked 2026-10-20
 
-**Rebuild V4.1:** pemeriksaan dokumentasi resmi terbaru dan batas adapter kandidat dicatat di [PLATFORM_VERIFICATION_V4_1.md](PLATFORM_VERIFICATION_V4_1.md). Paket 0.2.0 memiliki hook advisory opsional; kalimat package has no hooks pada catatan baseline berikut hanya merujuk 0.1.0.
+**V4.1 rebuild:** the latest official documentation review and candidate adapter limits are recorded in [PLATFORM_VERIFICATION_V4_1.md](PLATFORM_VERIFICATION_V4_1.md). Package 0.2.0 includes optional advisory hooks; the baseline statement that the package has no hooks applies only to 0.1.0.
 
 Documentation establishes the advertised integration path; local observation establishes only what was tested. Installed clients observed: Claude Code 2.1.201 and codex-cli 0.153.0. Desktop product branding is not proof that every documented feature is active on this account.
 

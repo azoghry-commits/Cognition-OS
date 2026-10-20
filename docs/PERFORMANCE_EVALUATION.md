@@ -1,12 +1,12 @@
 # Performance evaluation
 
-## Protokol target V4.1 — belum dijalankan
+## V4.1 target protocol — not yet run
 
-Bandingkan A: host tanpa plugin, B: model-selected skills, C: B + hook deterministik yang didukung, dan D: C + deep advisory selektif. Sertakan tugas coding sederhana sebagai negative control serta arsitektur, debugging, insiden database, security review, keputusan strategis, implementasi multi-langkah, dokumentasi dan matematika. Ukur hasil deliverable asli, requirement coverage, regression, activation relevance, unnecessary activation, false-positive warning, calls/tokens/latency dan recovery bila teramati.
+Compare A: host without the plugin, B: model-selected skills, C: B plus supported deterministic hooks, and D: C plus selective deep advisory. Include simple coding tasks as negative controls, along with architecture, debugging, database incidents, security review, strategic decisions, multi-step implementation, documentation, and mathematics. Measure original deliverable quality, requirement coverage, regressions, activation relevance, unnecessary activation, false-positive warnings, calls/tokens/latency, and recovery when observable.
 
-Satu host yang tidak mendukung hook tidak dapat diberi hasil C/D penuh; nyatakan dukungan parsial dan konfigurasi aktual. Jangan memakai invocation script manual sebagai bukti hook. Status eksperimen V4.1: `NOT_RUN`. Lihat [kajian konsep](CONCEPT_V4_1.md) dan [rencana migrasi](V4_1_MIGRATION_PLAN.md).
+A host without hook support cannot receive a full C/D result; report partial support and the actual configuration. Manual script invocation is not evidence of hook delivery. V4.1 experiment status: `NOT_RUN`. See the [concept review](CONCEPT_V4_1.md) and [migration plan](V4_1_MIGRATION_PLAN.md).
 
-## Pengukuran dan rencana baseline 3.1
+## Baseline 3.1 measurement and plan
 
 No baseline-versus-plugin native performance gain is claimed. Deterministic helper timing can be measured using `python scripts/benchmark.py` and is recorded separately in evidence/benchmark.json. Those measurements exclude model calls, skill activation, token use and user-task quality.
 

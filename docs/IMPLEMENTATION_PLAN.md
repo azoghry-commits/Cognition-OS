@@ -1,14 +1,14 @@
 # Cognition OS native plugin implementation
 
-## Rencana aktif: V4.1
+## Active plan: V4.1
 
-**Rebuild dilaksanakan:** sumber generator sudah diselaraskan dan paket kandidat 0.2.0 dibangun. Kemajuan serta bukti per Phase 0–8 ada di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Pernyataan belum dimulai pada catatan awal berikut adalah riwayat kajian sebelum pengguna mengotorisasi rebuild.
+**Rebuild performed:** generator sources have been aligned and candidate package 0.2.0 has been built. Progress and evidence for Phases 0–8 are in [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Statements below that work had not started are historical notes from before the user authorized the rebuild.
 
-Acuan terbaru adalah [kajian konsep V4.1](CONCEPT_V4_1.md) dan [rencana migrasi Phase 0–8](V4_1_MIGRATION_PLAN.md). Urutan: audit delta sumber → verifikasi host → desain governor/kontrak/tiga jalur → prototype minimum dan satu hook yang didukung → kelengkapan core → deep advisory → uji dua adapter → evaluasi A/B/C/D → hardening.
+The current references are the [V4.1 concept review](CONCEPT_V4_1.md) and [Phase 0–8 migration plan](V4_1_MIGRATION_PLAN.md). Sequence: source delta audit → host verification → governor/contracts/three-path design → minimum prototype and one supported hook → complete core → deep advisory → dual-adapter tests → A/B/C/D evaluation → hardening.
 
-Permintaan 2026-10-20 ditangani sebagai kajian konsep dan dokumentasi. Implementasi hybrid belum dimulai; paket tetap 0.1.0. Perbarui sumber generator sebelum regenerasi agar tidak menimpa arah V4.1 dengan baseline. Gate dan evidence harus dinilai per fase serta per host.
+The initial 2026-10-20 request was handled as a concept and documentation review. At that point hybrid implementation had not started and the package remained at 0.1.0. Generator sources needed updating before regeneration to avoid overwriting V4.1 direction with the baseline. Gates and evidence are assessed by phase and host.
 
-## Rencana historis: baseline 3.1
+## Historical plan: baseline 3.1
 
 Specification: 3.1. Package version starts at 0.1.0, independently of specification version.
 

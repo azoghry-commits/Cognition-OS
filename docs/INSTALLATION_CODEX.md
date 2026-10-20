@@ -1,16 +1,16 @@
 # Codex installation and lifecycle
 
-## Kandidat rebuild V4.1 / paket 0.2.0
+## V4.1 rebuild candidate / package 0.2.0
 
-Build lokal: `python scripts/rebuild_plugin.py --package`. Paket runtime ada di `dist/cognition-os-0.2.0.zip`; marketplace lokal di `dist/cognition-os-marketplace-0.2.0.zip`; checksum ada di `dist/SHA256SUMS.json`. Verifikasi checksum/inventory sebelum memakai package. Build tidak mengubah source/cache personal maupun installed/enabled state.
+Build locally with `python scripts/rebuild_plugin.py --package`. The runtime package is `dist/cognition-os-0.2.0.zip`, the local marketplace is `dist/cognition-os-marketplace-0.2.0.zip`, and checksums are in `dist/SHA256SUMS.json`. Verify checksums and inventory before using a package. Building does not alter personal source/cache or installed/enabled state.
 
-Untuk update, simpan ZIP dan konfigurasi marketplace versi sebelumnya, pertahankan kasus pengguna di luar cache, lalu arahkan source marketplace yang telah ditinjau ke runtime kandidat dan refresh/install melalui UI atau perintah native yang tersedia. Verifikasi versi 0.2.0 dari installed manifest; discovery saja belum merupakan instalasi. Host mungkin memerlukan restart/chat baru untuk memuat skill terbaru.
+For updates, retain the previous ZIP and marketplace configuration, keep user cases outside the cache, point the reviewed marketplace source at the candidate runtime, and refresh/install through the UI or available native command. Verify version 0.2.0 in the installed manifest; discovery alone does not establish installation. The host may need a restart or new chat to load updated skills.
 
-Root manifest memilih `hooks/codex/hooks.json`. Hook hanya tersedia sesuai surface/instalasi yang didukung dan memerlukan review/trust pengguna pada host; build/enable plugin tidak memberi trust itu. Pastikan Python tersedia. Tanpa hook, skills dan helper yang didukung tetap dapat digunakan. Jalankan diagnosis setup, kemudian task natural dan negative control; simpan bukti skill/resource yang benar-benar dipilih, tool result, feedback event serta deliverable.
+The root manifest selects `hooks/codex/hooks.json`. Hook availability depends on the supported surface/installation and requires host-side user review/trust; building or enabling the plugin does not grant it. Ensure Python is available. Supported skills and helpers remain usable without the hook. Run setup diagnostics, then a natural task and negative control; retain evidence of the selected skill/resource, tool result, event feedback, and deliverable.
 
-Rollback: pilih source/ZIP 0.1.0 yang dipertahankan, reinstall melalui mekanisme native, dan periksa installed version serta kompatibilitas artifact. Framework envelope 3.1 masih tersedia; request/result advisory 4.1 adalah kontrak baru. Jangan menghapus atau mengonversi `.cognition/cases` otomatis. Sesi rebuild telah memperbarui instalasi Codex-only ke 0.2.0; native CLI melaporkan installed/enabled, hash inventory dan helper terpasang diverifikasi. Backup ada di `dist/cognition-os-rollback-0.1.0.zip`; restore belum diuji. [Bukti instalasi](evidence/v4-1-codex-installation.json) dan [status acceptance](REBUILD_STATUS_V4_1.md).
+Rollback: select the retained 0.1.0 source/ZIP, reinstall through the native mechanism, and inspect the installed version and artifact compatibility. Framework envelope 3.1 remains available; advisory request/result 4.1 is a new contract. Do not automatically delete or convert `.cognition/cases`. The rebuild session updated the Codex-only installation to 0.2.0; the native CLI reported installed/enabled, and installed inventory hashes and helpers were verified. A backup is at `dist/cognition-os-rollback-0.1.0.zip`; restore has not been tested. See [installation evidence](evidence/v4-1-codex-installation.json) and [acceptance status](REBUILD_STATUS_V4_1.md).
 
-## Riwayat instalasi baseline dan mekanisme lokal
+## Baseline installation history and local mechanism
 
 For this user's account, use the existing ChatGPT login and ChatGPT Plus/Codex allowance. `codex login status` was verified to report ChatGPT authentication. No API key or Claude subscription is required by this package. Do not switch to API billing or buy credits. See ACCOUNT_SCOPE.md for the current authorization and deferred Claude tests.
 

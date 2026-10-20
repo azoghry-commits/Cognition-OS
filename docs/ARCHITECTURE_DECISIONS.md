@@ -1,12 +1,12 @@
 # Architecture decisions
 
-## Arah V4.1
+## V4.1 direction
 
-Pada 2026-10-20, prompt V4.1 diterima sebagai arah konsep berikutnya. Identitas target adalah augmentation layer untuk agen host, dengan satu core, dual adapter, tiga jalur bantuan dan governor selektif. Status desain target `SOURCE_DERIVED` / `PROPOSED`; keputusan implementasi, dukungan host, dan rilis harus memiliki evidence sendiri. Detail: [kajian konsep](CONCEPT_V4_1.md), [rencana migrasi](V4_1_MIGRATION_PLAN.md).
+On 2026-10-20, the V4.1 prompt was accepted as the next conceptual direction. The target is an augmentation layer for host agents, with one core, two adapters, three assistance paths, and a selective governor. Target design status is `SOURCE_DERIVED` / `PROPOSED`; implementation decisions, host support, and releases require their own evidence. See the [concept review](CONCEPT_V4_1.md) and [migration plan](V4_1_MIGRATION_PLAN.md).
 
-ADR-02 tetap mempertahankan satu katalog; jumlah/nama skill target mengikuti kebutuhan. ADR-05 berarti MCP/hook tidak wajib bagi baseline; V4.1 mengusulkan hook deterministik selektif pada host yang mendukung. Pernyataan tidak ada hook/daemon pada tabel merujuk paket 0.1.0. Versi paket dan schema tidak dinaikkan oleh kajian ini.
+ADR-02 retains one catalog; the target skill count and names follow actual needs. ADR-05 means MCP/hooks were optional for the baseline; V4.1 proposes selective deterministic hooks on supporting hosts. The table's no-hook/no-daemon statement refers to package 0.1.0. This concept review alone did not advance package or schema versions.
 
-## Keputusan baseline 3.1
+## Baseline 3.1 decisions
 
 | Decision | Rationale | Classification | Consequence |
 |---|---|---|---|

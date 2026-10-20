@@ -1,8 +1,8 @@
 # Complete source intelligence audit
 
-**Audit delta selesai dalam rebuild:** Markdown dibaca lengkap dan 15 halaman PDF dirender serta diinspeksi ulang. Lihat [SOURCE_TRANSFORMATION_V4_1.md](SOURCE_TRANSFORMATION_V4_1.md) dan evidence JSON terkait. Catatan belum diinspeksi ulang berikut adalah riwayat sesi kajian sebelum rebuild.
+**Delta audit completed during rebuild:** the entire Markdown source was read and all 15 PDF pages were freshly rendered and reinspected. See [SOURCE_TRANSFORMATION_V4_1.md](SOURCE_TRANSFORMATION_V4_1.md) and its related JSON evidence. The following note that reinspection had not occurred is historical context from the pre-rebuild concept review.
 
-**Catatan cakupan V4.1:** audit ini merupakan evidence baseline 3.1. Prompt konsep baru disimpan byte-identik di [evidence/master-implementation-prompt-v4.1.txt](evidence/master-implementation-prompt-v4.1.txt). [Kajian V4.1](CONCEPT_V4_1.md) memetakan perubahan dan seluruh kelompok kapabilitas; audit delta dokumen A/B termasuk inspeksi ulang 15 halaman PDF dijadwalkan sebagai Phase 0. Pernyataan inspeksi berikut adalah catatan audit sebelumnya, bukan inspeksi ulang dalam kajian konsep terbaru.
+**V4.1 scope note:** this audit is baseline 3.1 evidence. The new concept prompt is preserved byte-for-byte at [evidence/master-implementation-prompt-v4.1.txt](evidence/master-implementation-prompt-v4.1.txt). The [V4.1 review](CONCEPT_V4_1.md) maps changes and all capability groups; the A/B document delta audit, including reinspection of all 15 PDF pages, was scheduled for Phase 0. The following inspection statements belong to the earlier audit and were not claims of reinspection during that concept review.
 
 Both supplied source files remain byte-identical. See evidence/sources.json for SHA-256 and byte counts. All eight blueprint sections were read. All 15 image-only PDF pages were rendered and visually inspected; text extraction returns no text. See evidence/pdf/page-01.png through page-15.png and contact sheets. Small decorative diagram labels on page 1 are not treated as missing technical specifications.
 

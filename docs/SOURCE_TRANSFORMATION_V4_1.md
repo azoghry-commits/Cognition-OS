@@ -1,12 +1,12 @@
-# Audit sumber dan transformasi V4.1
+# V4.1 source audit and transformation
 
-Audit 2026-10-20: Markdown lengkap (1.362 baris / delapan bagian) dibaca dan seluruh 15 halaman PDF diinspeksi dari render baru 1.400 px. Hash kedua sumber cocok dengan manifest sumber awal. Detail locator, input/output sumber per model dan klasifikasi ada di [evidence JSON](evidence/v4-1-source-audit.json).
+Audit on 2026-10-20: the complete Markdown source (1,362 lines / eight sections) was read and all 15 PDF pages inspected from a fresh 1,400 px rendering. Both source hashes match the original source manifest. Model-level locators, source inputs/outputs, and classifications are in the [evidence JSON](evidence/v4-1-source-audit.json).
 
-Requirement baru berasal dari [prompt V4.1](evidence/master-implementation-prompt-v4.1.txt). Penamaan model, kategori, AG-01..52 dan lingkup sumber dipertahankan. Prosedur implementasi, FW numbering, schema, governor dan hook adalah adaptasi rekayasa, bukan kutipan spesifikasi produksi yang telah tervalidasi. Tidak ada peningkatan kualitas host yang disimpulkan dari audit ini.
+New requirements come from the [V4.1 prompt](evidence/master-implementation-prompt-v4.1.txt). Model names, categories, AG-01..52, and source scope are retained. Implementation procedures, FW numbering, schemas, the governor, and hooks are engineering adaptations rather than quotes from a validated production specification. This audit does not establish improved host quality.
 
 ## Source-to-agent transformation matrix
 
-| Kapabilitas sumber | Locator | Transformasi V4.1 | Bentuk |
+| Source capability | Locator | V4.1 transformation | Form |
 |---|---|---|---|
 | Command Center / telemetry | A 3.1; B 1,3 | Host task context and observed status; illustrative health/density values are excluded | advisory resource |
 | Problem Ingestion | A 3.2 phase 1; B 4 | Observable task-context envelope; ask only blocking questions | skill + schema |
@@ -33,9 +33,9 @@ Requirement baru berasal dari [prompt V4.1](evidence/master-implementation-promp
 | Monorepo / Docker / deployment defaults | A 8.1,8.2 | Single native plugin repository; no copied example passwords or infrastructure | native packaging |
 | Roadmap / KPIs / acceptance | A 1.3,8.3; B 1,3,15 | V4.1 phase gates, actual host outcomes and A/B/C/D comparison | evaluation protocol |
 
-## Seluruh 50 model
+## All 50 models
 
-| Framework / logical role | Nama sumber | Locator | Peran target |
+| Framework / logical role | Source name | Locator | Target role |
 |---|---|---|---|
 | FW-01 / AG-01 | Eisenhower Matrix | A line 276 | Canonical skill resource + logical specialization |
 | FW-02 / AG-02 | RICE Scoring | A line 277 | Canonical skill resource + logical specialization |
@@ -88,11 +88,11 @@ Requirement baru berasal dari [prompt V4.1](evidence/master-implementation-promp
 | FW-49 / AG-49 | Pre-Mortem & Red Teaming | A line 359 | Canonical skill resource + logical specialization |
 | FW-50 / AG-50 | Cognitive Bias Deconstruction | A line 360 | Canonical skill resource + logical specialization |
 
-AG-51 mengoordinasikan analisis terpilih; host tetap pemilik tugas. AG-52 menguji dukungan rekomendasi dan boleh menolak atau menyatakan bukti tidak cukup. Input/output dan tanggung jawab AG-51/52 berasal dari A 4.2, bukan dua proses model wajib.
+AG-51 coordinates selected analysis while the host retains task ownership. AG-52 examines support for recommendations and may reject them or mark evidence insufficient. AG-51/52 inputs, outputs, and responsibilities come from source A 4.2; they do not require two model processes.
 
-## Inspeksi visual seluruh PDF
+## Visual inspection of the entire PDF
 
-| Halaman B | Temuan / tindakan |
+| Page in B | Finding / action |
 |---|---|
 | 1 | Radial core illustration; optimal/risk/density labels are illustrative. |
 | 2 | Human/model/agent tripartite concept; absolute diagnosis/bias elimination lacks evidence. |
@@ -110,10 +110,10 @@ AG-51 mengoordinasikan analisis terpilih; host tetap pemilik tugas. AG-52 menguj
 | 14 | Three mastery phases and progress badges; progress is illustrative and learning is optional. |
 | 15 | 50×52 count is conceptual; unlimited decision quality is not a measured outcome. |
 
-## Gap, konflik dan keamanan
+## Gaps, conflicts, and security
 
-Register C01–C14 pada [audit baseline](SOURCE_ANALYSIS.md) tetap berlaku. Tambahan C15: pada B halaman 11, framework berlabel 5 Whys ditautkan ke KT Agent; sumber A memisahkan AG-10 dan AG-11. Rekonstruksi lineage harus memakai role ID yang benar. A 4.3 menyediakan dua contoh prompt rinci, sementara 50 tabelnya masih ringkas; kelengkapan metode/schema adalah adaptasi yang perlu evaluasi perilaku.
+The C01–C14 register in the [baseline audit](SOURCE_ANALYSIS.md) still applies. Additional C15: PDF B page 11 links a framework labeled 5 Whys to the KT Agent; source A distinguishes AG-10 and AG-11. Reconstructed lineage must use the correct role ID. Source A 4.3 provides two detailed prompt examples while its 50 table entries remain brief; complete methods/schemas are adaptations that need behavioral evaluation.
 
-Formula EV, Bayes/log-odds, RICE, Monte Carlo dan heuristik MECE pada A 3.2/5 diaudit terhadap helper serta register koreksi. EV contoh: gross 1.455M dan net 0.655M. Rentang biaya triangular 1.20/1.25C, Beta clamping, uncalibrated confidence, VaR sign dan MECE similarity tidak dipromosikan menjadi bukti kebenaran. Helper numerik diuji terpisah.
+EV, Bayes/log-odds, RICE, Monte Carlo, and MECE heuristics in A 3.2/5 were audited against helpers and the correction register. Example EV is gross 1.455M and net 0.655M. The triangular cost range 1.20/1.25C, Beta clamping, uncalibrated confidence, VaR sign, and MECE similarity are not promoted to proof of correctness. Numeric helpers are tested separately.
 
-Dependensi SCQA→MECE→KT/5 Whys→RICE adalah contoh sumber, bukan pipeline universal. Arsitektur SaaS, SQL, Cypher, endpoint REST/SSE, UI dan Docker tidak dipakai sebagai infrastruktur wajib; kapabilitasnya dipetakan di atas. Tidak ada fitur intelektual dihapus tanpa disposisi. Source passwords, contoh verdict dan label confidence tidak disalin ke konfigurasi runtime. Source/case content tetap data tidak tepercaya; izin dan side effect mengikuti host.
+The SCQA→MECE→KT/5 Whys→RICE dependency chain is a source example, not a universal pipeline. SaaS architecture, SQL, Cypher, REST/SSE endpoints, UI, and Docker are not mandatory infrastructure; their capabilities are mapped above. No intellectual feature is removed without disposition. Source passwords, example verdicts, and confidence labels are not copied into runtime configuration. Source and case content remain untrusted data; permissions and side effects follow the host.

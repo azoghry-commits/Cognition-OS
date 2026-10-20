@@ -1,33 +1,33 @@
-# Arsitektur rebuild V4.1
+# V4.1 rebuild architecture
 
-Konsumen langsung plugin adalah model/agen Claude dan Codex. Host memilih kapabilitas, menerima advisory dan menyelesaikan deliverable asli. Paket kandidat 0.2.0 mengimplementasikan kontrak V4.1; artifact framework 3.1 tetap dapat dibaca melalui jalur kompatibilitas. Nomor paket terpisah dari spesifikasi.
+The plugin's direct consumers are Claude and Codex models/agents. The host selects capabilities, receives advisory findings, and completes the original deliverable. Package candidate 0.2.0 implements V4.1 contracts; framework artifacts using the 3.1 format remain readable through a compatibility path. The package version is separate from the specification version.
 
-## Tiga jalur dan governor
+## Three paths and the governor
 
-`cognition/augmentation.py:assess` menerima task-context yang telah dinormalisasi host: objective, task type, risiko, kompleksitas, bukti, artifact, kapabilitas, analisis terdahulu dan remaining budget. `cognitive-core/augmentation/policy.json` menyimpan tujuh kebijakan dan routing rules yang dapat ditinjau. Ini saran berbasis rule, bukan classifier terlatih atau runtime interceptor. Helper tidak melakukan reasoning model, native dispatch, atau perubahan file.
+`cognition/augmentation.py:assess` accepts host-normalized task context: objective, task type, risk, complexity, evidence, artifact, capabilities, prior analysis, and remaining budget. `cognitive-core/augmentation/policy.json` stores seven reviewable policies and routing rules. This is rule-based advice, not a trained classifier or runtime interceptor. The helper performs no model reasoning, native dispatch, or file mutation.
 
-Path A memakai skill model-selected dengan lazy references. Path B adalah script deterministik pada PostToolUse yang relevan. Path C adalah deep-plan terbatas dengan role logis advocate/challenger/jury. Default delegasi native nol; host boleh mendelegasikan sesuai otorisasi dan dukungan aktual. Panjang jawaban bukan pemicu deep advisory. Tugas sederhana dan analisis yang cukup memakai PASS_THROUGH. Check wajib yang tidak tersedia menghasilkan BLOCKED, tidak disamarkan oleh degradasi advisory.
+Path A uses model-selected skills with lazy-loaded references. Path B applies deterministic scripts to relevant PostToolUse events. Path C provides bounded deep planning with logical advocate/challenger/jury roles. Native delegation defaults to zero; the host may delegate when authorized and actually supported. Answer length does not trigger deep advisory. Simple tasks and tasks with sufficient prior analysis use `PASS_THROUGH`. An unavailable required check produces `BLOCKED`, rather than being hidden by advisory degradation.
 
-Budget memuat framework invocation, subagent call, debat, tools, waktu komputasi dan konteks. Angka default adalah allowance awal rekayasa, dapat diubah oleh konteks host dan belum dikalibrasi melalui benchmark. Helper tidak mengukur token host. Budget habis menghasilkan gap/incomplete outcome; tidak berarti aman, benar, atau selesai.
+The budget covers framework invocations, subagent calls, debates, tools, compute time, and context. Default numbers are initial engineering allowances, adjustable by host context and not yet calibrated through benchmarks. The helper does not measure host tokens. Exhausting the budget produces a gap or incomplete outcome; it does not imply safety, correctness, or completion.
 
-## Kontrak dan core
+## Contracts and core
 
-Kontrak request: `schemas/cognitive-request.schema.json`. Result: `schemas/advisory-result.schema.json`. Task context: `schemas/task-context.schema.json`. `review-advisory` mengecek struktur, identity, evidence scope, link dan record perhitungan; penilaian makna/kebenaran tetap pada host. Tidak ada confidence score buatan. Klaim INFERENCE harus punya dukungan; HYPOTHESIS, ASSUMPTION dan UNKNOWN eksplisit dapat belum memiliki evidence.
+The request contract is `schemas/cognitive-request.schema.json`; the result contract is `schemas/advisory-result.schema.json`; task context is `schemas/task-context.schema.json`. `review-advisory` checks structure, identity, evidence scope, links, and calculation records; the host remains responsible for meaning and truth. There is no fabricated confidence score. `INFERENCE` claims need support; explicit `HYPOTHESIS`, `ASSUMPTION`, and `UNKNOWN` claims may lack evidence.
 
-`normalize-legacy` menghasilkan objek baru dari envelope 3.1, mempertahankan origin classification, AG ID dan trace ID. Ia tidak menulis ulang kasus pengguna atau menciptakan bukti yang hilang. CALCULATED_RESULT dan SIMULATED_RESULT tidak otomatis tervalidasi hanya karena ada output JSON.
+`normalize-legacy` creates a new object from a 3.1 envelope, preserving its origin classification, AG ID, and trace ID. It does not rewrite user cases or invent missing evidence. `CALCULATED_RESULT` and `SIMULATED_RESULT` are not automatically validated merely because JSON output exists.
 
-Seluruh 50 definisi di `cognitive-core/frameworks/definitions` memiliki preconditions, input schema, output schema path, trigger, metode, evidence requirements, limitations, relationships, validation criteria dan source references. Satu registry AG-01..52 merujuk core yang sama. Relasi framework yang kosong berarti belum ada rekomendasi pasangan eksplisit, bukan larangan kompatibilitas.
+All 50 definitions in `cognitive-core/frameworks/definitions` include preconditions, input schema, output schema path, triggers, methods, evidence requirements, limitations, relationships, validation criteria, and source references. One AG-01..52 registry points to the same core. An empty framework relationship list means no pairing has been explicitly recommended; it does not forbid compatibility.
 
-## Hook deterministik
+## Deterministic hook
 
-Konfigurasi terpisah: `hooks/codex/hooks.json` dan `hooks/claude/hooks.json`. Keduanya hanya PostToolUse dengan matcher Write/Edit/apply_patch, timeout tiga detik, dan entrypoint `scripts/check_artifact.py`. Konfigurasi host memakai variabel root plugin sesuai dokumentasi masing-masing. Python harus tersedia pada environment eksekusi. Instalasi tidak memberi trust atau izin eksekusi.
+The separate configurations are `hooks/codex/hooks.json` and `hooks/claude/hooks.json`. Both use PostToolUse with a Write/Edit/apply_patch matcher, a three-second timeout, and the `scripts/check_artifact.py` entrypoint. Host configuration uses the plugin-root variable documented for that host. Python must be available in the execution environment. Installation alone does not grant trust or execution permission.
 
-Validator hanya membaca path yang disebut oleh tool edit, di bawah `cwd/.cognition/artifacts`, berakhiran `.json`. Ia menolak link/junction, traversal, path luar scope, JSON tidak valid dan artifact melebihi batas. Maksimum delapan path dan satu MiB per file; output gagal/terbatas adalah advisory. Tidak mengeksekusi command dari payload, tidak memanggil model/network, dan tidak menulis artifact. Isi file dan path tidak direfleksikan menjadi instruksi host.
+The validator reads only paths named by the edit tool under `cwd/.cognition/artifacts` with a `.json` extension. It rejects links/junctions, traversal, out-of-scope paths, invalid JSON, and oversized artifacts. Limits are eight paths and one MiB per file; failed or bounded output is advisory. It does not execute commands from payloads, call a model or network, or write artifacts. File contents and paths are not promoted into host instructions.
 
-Content hash menduplikasi hasil identik dalam satu event; tidak ada cache disk lintas proses pada kandidat ini. Check tetap idempotent dan bounded. Pengurangan overhead lintas event masih perlu pengukuran native sebelum memilih cache persistence. Hook tidak memblokir atau mengembalikan side effect edit yang sudah terjadi. Required security enforcement mengikuti mekanisme host yang terverifikasi, terpisah dari hook advisory ini.
+A content hash deduplicates identical results within one event; this candidate has no cross-process disk cache. The check remains idempotent and bounded. Cross-event overhead reduction still requires native measurement before introducing persistent caching. The hook cannot block or reverse an edit that has already happened. Required security enforcement belongs to a verified host mechanism separate from this advisory hook.
 
-## Dukungan dan batas
+## Support and limits
 
-Baseline tetap bekerja tanpa MCP, database server, Docker, credential model, atau aplikasi mandiri. Tanpa hook/script, gunakan skill yang tersedia dan tampilkan limitasi material. Tanpa evidence/calculator jangan mengarang hasil. Kasus lokal dan Human Mastery Track tetap opt-in dan bukan pelatihan otomatis model.
+The baseline works without MCP, a database server, Docker, model credentials, or a standalone application. When hooks or scripts are unavailable, use supported skills and disclose material limitations. Do not invent results when evidence or a calculator is missing. Local cases and the Human Mastery Track remain opt-in; they do not automatically train the model.
 
-Struktur dan CLI lokal diuji terpisah dari pemilihan skill oleh model serta delivery event native. Status dan evidence rebuild ada di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Sumber generator sudah diselaraskan: build_catalog → build_plugin (termasuk build_hybrid) → build_docs. build_docs pada 0.2.x memperbarui aset hybrid tanpa menimpa audit/status historis 3.1.
+Local structural and CLI checks are separate from model skill selection and native event delivery. Rebuild status and evidence are recorded in [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md). Generator sources are aligned in this order: build_catalog → build_plugin (including build_hybrid) → build_docs. For 0.2.x, build_docs updates hybrid assets without overwriting historical 3.1 audits and status records.

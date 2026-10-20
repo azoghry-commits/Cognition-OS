@@ -1,10 +1,10 @@
 # Unified architecture
 
-**Implementasi terbaru:** [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md) mendeskripsikan rebuild V4.1 / kandidat 0.2.0 dan batas verifikasi native. Bagian berikut mempertahankan riwayat rancangan dan arsitektur baseline.
+**Current implementation:** [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md) describes the V4.1 rebuild / 0.2.0 candidate and native verification limits. The following section preserves the design history and baseline architecture.
 
-**Arah target V4.1:** satu Cognitive Core dengan adapter Claude/Codex, model-selected assistance, event-driven deterministic validation, dan deep advisory kondisional. Host memiliki eksekusi dan deliverable; governor dapat memilih `PASS_THROUGH`. Lihat [diagram dan kontrak target](CONCEPT_V4_1.md) serta [rencana migrasi](V4_1_MIGRATION_PLAN.md).
+**V4.1 target direction:** one Cognitive Core with Claude/Codex adapters, model-selected assistance, event-driven deterministic validation, and conditional deep advisory. The host owns execution and the deliverable; the governor may select `PASS_THROUGH`. See the [target diagram and contracts](CONCEPT_V4_1.md) and [migration plan](V4_1_MIGRATION_PLAN.md).
 
-Bagian berikut mendeskripsikan **implementasi baseline 3.1 / paket 0.1.0**. Belum ada governor hybrid atau hook terdaftar; diagram ini tidak menyatakan V4.1 sudah diimplementasikan.
+The following section describes the **3.1 baseline implementation / 0.1.0 package**. It had no hybrid governor or registered hook; this diagram does not represent V4.1 as implemented.
 
 ```mermaid
 flowchart TD

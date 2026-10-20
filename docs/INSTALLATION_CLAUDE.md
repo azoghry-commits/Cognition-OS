@@ -1,14 +1,14 @@
 # Claude installation and lifecycle
 
-## Kandidat rebuild V4.1 / paket 0.2.0
+## V4.1 rebuild candidate / package 0.2.0
 
-Runtime dan marketplace ZIP menggunakan versi 0.2.0. Root `.claude-plugin/plugin.json` memilih `hooks/claude/hooks.json`; semua skill memakai core yang sama dengan Codex. Python diperlukan hanya untuk helper/hook lokal. Hook PostToolUse adalah advisory, tidak memberi permission atau mengembalikan side effect yang sudah terjadi.
+The runtime and marketplace ZIPs use version 0.2.0. Root `.claude-plugin/plugin.json` selects `hooks/claude/hooks.json`; all skills share the same core as Codex. Python is needed only for local helpers/hooks. The PostToolUse hook is advisory; it grants no permission and cannot reverse completed side effects.
 
-Pada sesi rebuild hanya manifest dan launcher lokal diuji; tidak ada instalasi atau inference Claude pada akun ini. Ikuti [ACCOUNT_SCOPE.md](ACCOUNT_SCOPE.md). Petunjuk native berikut adalah prosedur untuk environment yang memang tersedia dan diotorisasi, bukan konfirmasi entitlement Claude Free. Jangan menyamakan Code dengan Chat/Desktop/Cowork.
+The rebuild session tested only the local manifest and launcher; no Claude installation or inference was run on this account. Follow [ACCOUNT_SCOPE.md](ACCOUNT_SCOPE.md). The native steps below apply only in an available and authorized environment; they do not confirm Claude Free entitlement. Code, Chat/Desktop, and Cowork have distinct capabilities.
 
-Update/rollback memakai package version yang ditinjau dan mempertahankan sumber/ZIP sebelumnya serta kasus project di luar cache. Verifikasi installed manifest dan uji task natural di surface target sebelum menyatakan invocation atau event delivery berhasil. [Verifikasi platform](PLATFORM_VERIFICATION_V4_1.md) dan [status rebuild](REBUILD_STATUS_V4_1.md).
+For update/rollback, use a reviewed package version and retain the previous source/ZIP and project cases outside the cache. Verify the installed manifest and test a natural task on the target surface before claiming invocation or event delivery. See [platform verification](PLATFORM_VERIFICATION_V4_1.md) and [rebuild status](REBUILD_STATUS_V4_1.md).
 
-## Mekanisme native dan catatan baseline
+## Native mechanisms and baseline notes
 
 Local runtime: baseline skill files; optional Python 3.10+ for calculations and project case helper. No API key, database, MCP server or privileged install is needed. Official format references are in PLATFORM_COMPATIBILITY.md.
 

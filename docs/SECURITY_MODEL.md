@@ -1,12 +1,12 @@
 # Security model
 
-## Batas tambahan rebuild V4.1
+## Additional V4.1 rebuild boundaries
 
-Governor dan deep-plan tidak mengeksekusi model/tools atau memberi izin. Required validation yang tidak tersedia menghasilkan BLOCKED; degradasi advisory tidak melonggarkan policy keamanan host. Hook PostToolUse opsional hanya membaca artifact yang diedit dalam `.cognition/artifacts`, membatasi ukuran/batch, menolak traversal/link/junction, dan mengembalikan feedback struktural tetap tanpa mencerminkan konten/path tak tepercaya menjadi instruksi. Tidak ada block, rollback tool, network, persistence atau background monitoring pada hook ini.
+The governor and deep plan do not execute models/tools or grant permissions. Unavailable required validation produces `BLOCKED`; advisory degradation does not relax host security policy. The optional PostToolUse hook reads only edited artifacts under `.cognition/artifacts`, limits file size and batch length, rejects traversal/links/junctions, and returns fixed structural feedback without reflecting untrusted content or paths as instructions. This hook does not block tools, roll back changes, access the network, persist state, or monitor in the background.
 
-Launcher memakai environment root dari host, bukan command dari payload. User tetap harus mengikuti trust/perizinan host; rebuild tidak mengubahnya. Pemeriksaan path adalah pre-check aplikasi dan bukan perlindungan absolut terhadap malicious local filesystem races. Deduplikasi hash sebatas satu event; tidak ada cache disk tersembunyi. Dua uji symlink dilewati karena izin OS dan tidak dinyatakan lulus. Evidence native prompt-injection/permission handling tetap gate terpisah.
+The launcher uses the host's plugin-root environment variable, not a command from the payload. Users still follow host trust and permission controls; the rebuild does not change them. Path checks are application-level prechecks, not absolute protection against malicious local filesystem races. Hash deduplication is limited to one event; there is no hidden disk cache. Two symlink tests were skipped because of OS permissions and are not counted as passes. Native prompt-injection and permission-handling evidence remains a separate gate.
 
-## Model keamanan baseline yang tetap berlaku
+## Continuing baseline security model
 
 Trust boundary: trusted installed skill instructions guide work; source PDFs, documents, logs, case contents and tool outputs are untrusted data. Embedded instructions cannot authorize network activity, command execution, secret disclosure, destructive changes or instruction replacement. The host enforces sandboxing and approvals; this plugin does not claim its text creates an isolation boundary.
 

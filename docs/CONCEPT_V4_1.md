@@ -1,178 +1,170 @@
-# Kajian perubahan konsep Cognition OS V4.1
+# Cognition OS V4.1 concept review
 
-**Catatan historis:** dokumen ini merekam pemahaman sebelum rebuild diotorisasi. Implementasi kandidat 0.2.0 dan status aktual per fase ada di [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md); kontrak serta governor yang kini diimplementasikan dijelaskan di [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md).
+**Historical note:** this document records the understanding before the rebuild was authorized. Candidate 0.2.0 implementation and phase status are in [REBUILD_STATUS_V4_1.md](REBUILD_STATUS_V4_1.md); implemented contracts and the governor are described in [HYBRID_ARCHITECTURE.md](HYBRID_ARCHITECTURE.md).
 
-Tanggal: 2026-10-20. Status kajian: selesai untuk pembacaan prompt dan perbandingan dengan checkout. Status arsitektur V4.1: `SOURCE_DERIVED` / `PROPOSED`; implementasi hybrid belum dilakukan.
+Date: 2026-10-20. Concept review status: prompt reading and checkout comparison complete. The V4.1 architecture was `SOURCE_DERIVED` / `PROPOSED` at this point; hybrid implementation had not yet started.
 
-Acuan lengkap: [Master Implementation Prompt V4.1](evidence/master-implementation-prompt-v4.1.txt). Salinan dipertahankan byte-identik, 36.889 byte, SHA-256 `2bea071346bc243cdf6bac965c86d27b7f515278fae0c72817dc462ee5d6b99b`. Metadata: [concept-v4.1.json](evidence/concept-v4.1.json).
+Full reference: [Master Implementation Prompt V4.1](evidence/master-implementation-prompt-v4.1.txt), preserved byte-for-byte at 36,889 bytes with SHA-256 `2bea071346bc243cdf6bac965c86d27b7f515278fae0c72817dc462ee5d6b99b`. Metadata: [concept-v4.1.json](evidence/concept-v4.1.json).
 
-Permintaan saat ini adalah mempelajari perubahan konsep dan melakukan proses Git. Kajian ini menetapkan arah pengembangan dan mencatat gap; paket runtime tetap 0.1.0 dengan kontrak 3.1. Nomor spesifikasi tidak menjadi nomor rilis paket secara otomatis.
+The original request was to understand the conceptual change and perform Git work. This review established a direction and recorded gaps while runtime package 0.1.0 retained 3.1 contracts. A specification number does not automatically become a package release number.
 
-## Makna perubahan mendasar
+## Fundamental change
 
-Cognition OS menjadi **Hybrid Agent Cognitive Augmentation Layer**. Konsumen utamanya adalah model dan agen yang sedang mengerjakan instruksi manusia. Pengguna tetap meminta hasil kepada Claude atau Codex; host memilih bantuan kognitif yang relevan, menerima temuan terstruktur, dan menyelesaikan deliverable asli.
+Cognition OS becomes a **Hybrid Agent Cognitive Augmentation Layer**. Its primary consumers are models and agents carrying out human instructions. The user still requests an outcome from Claude or Codex; the host selects relevant cognitive assistance, receives structured findings, and completes the original deliverable.
 
-Repositori ini sudah berupa plugin tanpa aplikasi terpisah. Karena itu perubahan dari 3.1 ke 4.1 terutama menyangkut pemilihan kapabilitas, governor, kontrak advisory, validasi berbasis event, dan evaluasi hasil tugas. Katalog dan helper yang ada dapat digunakan kembali setelah audit kesesuaian.
+The repository was already a plugin without a separate app. The 3.1→4.1 shift therefore concerns capability selection, governance, advisory contracts, event-driven validation, and task-outcome evaluation. Existing catalog and helper assets can be reused after a suitability audit.
 
-| Dimensi | Baseline 3.1 pada checkout | Arah V4.1 |
+| Dimension | Baseline 3.1 checkout | V4.1 direction |
 |---|---|---|
-| Pemilik tugas | Host sudah menyediakan reasoning dan permission; skill memandu sesi analisis | Host tetap memiliki seluruh eksekusi dan deliverable; plugin memasok bantuan internal |
-| Aktivasi | Panduan menonjolkan pemanggilan manual; orchestrator memakai STANDARD jika tanpa preferensi | Model-selected menjadi jalur utama; tugas sederhana dapat lewat tanpa augmentasi |
-| Routing | Planner keyword memilih rangkaian framework, termasuk rangkaian umum ketika tidak ada kecocokan | Nilai tambahan, risiko, kompleksitas, bukti, duplikasi, kapabilitas host, dan budget menentukan bantuan |
-| Kedalaman | AUTO/QUICK/STANDARD/DEEP/EXECUTIVE/CUSTOM/LEARN sebagai mode workflow | Tujuh kebijakan internal; pengguna tidak perlu memilih mode |
-| Validasi | Helper dipanggil secara eksplisit; tidak ada hook | Hook deterministik sempit, hanya pada event yang sudah diverifikasi |
-| Advisory mendalam | Orkestrasi dan review tersedia dalam workflow | Dormant, diaktifkan jika pertanyaan analitis dan konsekuensinya membenarkan overhead |
-| Output | Orchestrator meminta problem frame, artifact, ledger, verdict, rekomendasi | Temuan ringkas kembali ke host; format deliverable pengguna tetap menentukan |
-| Ukuran keberhasilan | Kontrak, hitungan katalog, helper lokal, rencana evaluasi mode | Perbaikan hasil tugas dibanding baseline dan overhead yang benar-benar diukur |
+| Task owner | Host already supplies reasoning and permissions; skills guide analysis sessions | Host owns execution and deliverables; plugin supplies internal assistance |
+| Activation | Guides emphasize manual invocation; orchestrator defaults to STANDARD | Model selection is primary; simple tasks may pass through |
+| Routing | Keyword planner selects a framework sequence, including a generic fallback | Added value, risk, complexity, evidence, duplication, host capability, and budget determine assistance |
+| Depth | AUTO/QUICK/STANDARD/DEEP/EXECUTIVE/CUSTOM/LEARN workflow modes | Seven internal policies; no user mode selection required |
+| Validation | Helpers run explicitly; no hook | Narrow deterministic hooks only on verified events |
+| Deep advisory | Orchestration and review are available in a workflow | Dormant until analytical stakes justify overhead |
+| Output | Orchestrator requests frame, artifact, ledger, verdict, and recommendation | Concise findings return to the host; the user's requested format governs delivery |
+| Success measure | Contracts, catalog counts, local helpers, and a mode-evaluation plan | Measured task outcomes against baseline and actual overhead |
 
-## Arsitektur target dan batas kendali
+## Target architecture and control boundaries
 
-Diagram berikut adalah rancangan dari prompt, bukan bukti implementasi atau interception runtime.
+This diagram is a prompt-derived design, not evidence of implementation or runtime interception.
 
 ```mermaid
 flowchart TD
-    U[Instruksi dan deliverable pengguna] --> H[Claude / Codex: host pemilik tugas]
-    H --> X[Eksekusi tugas dengan tools dan izin host]
-    H -. jika relevan .-> G[Hybrid Activation Governor]
+    U[User instruction and deliverable] --> H[Claude / Codex: host task owner]
+    H --> X[Task execution with host tools and permissions]
+    H -. when relevant .-> G[Hybrid Activation Governor]
     G --> A[A: Model-selected assistance]
-    G --> B[B: Deterministic validation pada event terverifikasi]
+    G --> B[B: Deterministic validation on verified events]
     G --> C[C: Conditional deep advisory]
-    A --> K[Satu Cognitive Core kanonis]
+    A --> K[One canonical Cognitive Core]
     B --> K
     C --> K
-    K --> R[Temuan, bukti, hasil hitung, keterbatasan]
+    K --> R[Findings, evidence, calculations, limitations]
     R --> H
-    X --> D[Deliverable asli]
+    X --> D[Original deliverable]
     H --> D
     G -. PASS_THROUGH .-> X
 ```
 
-Satu core digunakan oleh adapter Claude dan Codex. Lokasi kanonis saat ini tetap `cognitive-core/frameworks/` dan `cognitive-core/agents/`; nama folder contoh `mental-models/` dan `specialists/` dalam prompt tidak mewajibkan rename atau salinan kedua.
+One core serves the Claude and Codex adapters. Canonical locations remain `cognitive-core/frameworks/` and `cognitive-core/agents/`; example names `mental-models/` and `specialists/` in the prompt do not require a rename or duplicate copy. AG-51 coordinates selected core analysis without taking over the host. AG-52 evaluates findings and may reject support for a recommendation. An analytical verdict does not authorize the plugin to block host tools. Enforcement requires a supported, authorized host mechanism.
 
-AG-51 mengoordinasikan analisis yang dipilih di dalam core; peran ini tidak mengambil alih host. AG-52 mengevaluasi temuan dan dapat menolak dukungan atas rekomendasi. Verdict analitis tidak memberi plugin wewenang memblokir tool host. Enforcement hanya berlaku bila ada mekanisme host yang didukung dan sudah diotorisasi.
+## Three assistance paths
 
-## Tiga jalur bantuan
-
-| Jalur | Pemicu dan pekerjaan | Batas dan bukti penerimaan |
+| Path | Trigger and work | Limits and acceptance evidence |
 |---|---|---|
-| A — utama | Host memilih skill relevan dan memuat definisi yang diperlukan | Tidak memuat semua 50 definisi, tidak memaksa intake lengkap, tidak menduplikasi analisis host. Instalasi tidak menjamin invocation; evaluasi harus mengamati pemilihan aktual |
-| B — sekunder | Event native memicu script lokal untuk format/schema atau artifact tertentu | Verifikasi nama event, payload, izin, feedback, kemampuan block, timeout, dan kegagalan secara terpisah per host. Tidak memanggil LLM pada setiap event |
-| C — kondisional | Pertanyaan dengan kompleksitas, risiko, bukti bertentangan, atau kegagalan analisis sebelumnya | Framework komplementer, iterasi terbatas, kalkulasi aktual, temuan ringkas, berhenti saat manfaat tambahan kecil. Panjang jawaban bukan pemicu |
+| A — primary | Host selects relevant skills and loads necessary definitions | No loading all 50 definitions, forced full intake, or duplicated host analysis. Installation does not prove invocation; evaluate actual selection |
+| B — secondary | A native event invokes a local format/schema or artifact check | Verify event name, payload, permission, feedback, blocking capability, timeout, and failure separately by host. No LLM call on every event |
+| C — conditional | Complexity, risk, conflicting evidence, or failed earlier analysis | Complementary frameworks, bounded iterations, real calculations, concise findings, stop on low marginal value. Answer length is not a trigger |
 
-Jalur dapat digabungkan dengan alasan yang jelas untuk setiap tambahan. Tidak ada asumsi akses hidden chain-of-thought, penangkapan semua tahap kerja, event universal, atau kemampuan hook yang seragam pada Claude Code, Chat, Desktop, Cowork dan Codex CLI/Desktop.
-
-Native subagent adalah pilihan implementasi ketika tersedia, diizinkan, dan bermanfaat. Lima puluh dua spesialis berarti 52 spesialisasi analitis logis; tidak berarti 52 proses model, paralelisme otomatis, atau model yang sudah dilatih khusus.
+Paths may be combined with an explicit reason for each addition. Do not assume hidden chain-of-thought access, capture of every work stage, universal events, or uniform hooks across Claude Code, Chat, Desktop, Cowork, and Codex CLI/Desktop. Native subagents are an implementation choice when supported, authorized, and useful. Fifty-two specialists denote logical analytical specializations, not 52 model processes, automatic parallelism, or specially trained models.
 
 ## Hybrid Activation Governor
 
-Governor mempertimbangkan hanya konteks teramati: tujuan, jenis tugas, risiko, kompleksitas, kecukupan bukti, artifact, tools/kapabilitas host, izin, batas eksekusi, konteks tersisa, dan analisis yang sudah dilakukan. Kebijakan target:
+The governor considers only observable context: objective, task type, risk, complexity, evidence sufficiency, artifacts, available host tools/capabilities, permissions, execution limits, remaining context, and prior analysis.
 
-| Kebijakan | Perilaku yang dimaksud |
+| Policy | Intended behavior |
 |---|---|
-| `PASS_THROUGH` | Tidak menjalankan bantuan tambahan di luar overhead discovery yang tak terhindarkan |
-| `LIGHT_AUGMENTATION` | Satu kapabilitas yang sempit dan relevan |
-| `STANDARD_AUGMENTATION` | Urutan singkat framework yang saling melengkapi |
-| `DETERMINISTIC_VALIDATION` | Tool/hook dengan input dan lingkup terbatas |
-| `DEEP_ADVISORY` | Analisis lebih lengkap untuk pertanyaan yang membenarkan biaya |
-| `CRITICAL_REVIEW` | Pemeriksaan bukti dan artifact lebih ketat untuk tugas berkonsekuensi besar |
-| `DEGRADED` | Memakai kapabilitas yang tersedia saat komponen opsional tidak tersedia |
+| `PASS_THROUGH` | No extra assistance beyond unavoidable discovery overhead |
+| `LIGHT_AUGMENTATION` | One narrow, relevant capability |
+| `STANDARD_AUGMENTATION` | Short sequence of complementary frameworks |
+| `DETERMINISTIC_VALIDATION` | Tool/hook with bounded inputs and scope |
+| `DEEP_ADVISORY` | Fuller analysis where the question justifies cost |
+| `CRITICAL_REVIEW` | Stronger evidence/artifact review for consequential tasks |
+| `DEGRADED` | Use available capabilities when an optional component is missing |
 
-Ini adalah kebijakan internal, bukan menu wajib pengguna. Belum ada pemetaan satu-ke-satu dari mode lama. Governor harus dapat menjelaskan alasan pemilihan tanpa mengarang skor optimasi, probabilitas risiko, atau estimasi token sebagai pengukuran aktual.
+These are internal policies, not a required user menu. There is no one-to-one mapping from old modes. The governor must explain its choice without inventing optimization scores, risk probabilities, or token estimates as measured values. Budgets include framework invocations, subagents, debate rounds, tool calls, compute time, and context. On exhaustion, return partial results and material gaps; do not issue a safe verdict merely because calculations stopped. Security enforcement must never fail open through `DEGRADED`.
 
-Budget mencakup invocation framework, subagent, putaran debat, tool call, waktu komputasi dan konteks. Saat batas tercapai, kembalikan hasil parsial serta gap material; jangan memberi verdict aman hanya karena perhitungan berhenti. Security enforcement tidak boleh berubah menjadi fail-open melalui `DEGRADED`.
+## Transformation of source capabilities
 
-## Transformasi kapabilitas sumber
+This table maps every V4.1-required capability group to repository assets and target roles. A full repeat audit of source A/B, each formula, and every contract remained a Phase 0 gate at the time of this review. The [earlier audit](SOURCE_ANALYSIS.md) remains a 3.1 record; this concept review did not reinspect the 15-page PDF.
 
-Tabel ini memetakan seluruh kelompok kapabilitas yang diwajibkan V4.1 ke aset repo dan peran target. Audit lengkap ulang dokumen A/B, setiap formula, dan semua kontrak tetap menjadi gate Phase 0. [Audit sebelumnya](SOURCE_ANALYSIS.md) dipertahankan sebagai catatan 3.1; PDF 15 halaman tidak diinspeksi ulang dalam kajian ini.
-
-| Kapabilitas sumber | Aset baseline | Transformasi target V4.1 |
+| Source capability | Baseline assets | V4.1 target transformation |
 |---|---|---|
-| 50 mental models / delapan kategori | `cognitive-core/frameworks/registry.json`, `definitions/`, `schemas/framework-output/` | Knowledge resource dan skill lazy-loaded; audit precondition, trigger, input/output, metode, bukti, limitasi, kompatibilitas, referensi, validasi per model |
-| 52 logical specialists | `cognitive-core/agents/registry.json`, dua wrapper di `agents/` | Peran host, skill, helper deterministik, atau native subagent sesuai kebutuhan; AG-01..52 tetap stabil |
-| Framework Stack Builder | `skills/framework-composer/`, `cognition/engine.py` | Routing komplementer untuk celah tugas host; tidak otomatis membuat workflow panjang |
-| Problem Ingestion | `skills/cognition-orchestrator/` | Normalisasi konteks teramati; tanya hanya prasyarat yang benar-benar menghalangi |
-| Thinking Canvas | `templates/issue-tree.md`, output Markdown/Mermaid/JSON | Artifact pendukung opsional di dalam hasil host ketika membantu; tanpa aplikasi wajib |
-| Adversarial Debate | `skills/adversarial-review/`, `references/REVIEW.md`, AG-52 | Advocate, Challenger dan Jury dalam deep advisory terbatas; simpan ketidaksetujuan jika bukti kurang |
-| Scenario Simulation | `cognition/mathematics.py`, `references/CALCULATIONS.md` | Tool lokal dengan input/distribusi/seed eksplisit; hasil simulasi diberi kelas bukti tersendiri |
-| Logic Guardrails | `cognition/engine.py`, schema evidence, `references/REVIEW.md` | Validasi deterministik bila objektif, review kualitatif bila semantik; potensi hook sempit |
-| Mathematical Validation | `cognition/mathematics.py`, `tests/test_mathematics.py` | Kalkulasi aktual dan referensi independen, unit dan asumsi jelas |
-| Reasoning Knowledge Graph | `schemas/provenance.schema.json`, `docs/DECISION_PROVENANCE.md` | Graph lineage artifact/bukti/keputusan yang dapat diamati; tanpa akses pikiran tersembunyi |
-| Institutional Memory | `cognition/memory.py`, `references/MEMORY.md` | Reuse lokal/host-native yang diotorisasi, provenance dan versi; tanpa database server wajib |
-| Executive Synthesis | `skills/executive-synthesis/`, `templates/executive-brief.md` | Sintesis sesuai format host/pengguna; format eksekutif bila relevan |
-| Human Mastery Track | `skills/cognitive-mastery/`, `cognitive-core/mastery/` | Pembelajaran manusia opsional dan terpisah; tidak dianggap training otomatis model |
+| 50 mental models / eight categories | `cognitive-core/frameworks/registry.json`, `definitions/`, `schemas/framework-output/` | Lazy-loaded knowledge/skills; audit each model's preconditions, triggers, input/output, method, evidence, limitations, compatibility, references, and validation |
+| 52 logical specialists | `cognitive-core/agents/registry.json`, two `agents/` wrappers | Host roles, skills, deterministic helpers, or native subagents as needed; stable AG-01..52 |
+| Framework Stack Builder | `skills/framework-composer/`, `cognition/engine.py` | Complementary routing for host task gaps; no automatic long workflow |
+| Problem Ingestion | `skills/cognition-orchestrator/` | Normalize observed context; ask only for blocking prerequisites |
+| Thinking Canvas | `templates/issue-tree.md`, Markdown/Mermaid/JSON | Optional supporting artifact in host work when useful; no mandatory app |
+| Adversarial Debate | `skills/adversarial-review/`, `references/REVIEW.md`, AG-52 | Bounded advocate/challenger/jury advisory; retain disagreement when evidence is weak |
+| Scenario Simulation | `cognition/mathematics.py`, `references/CALCULATIONS.md` | Local tool with explicit inputs, distributions, and seed; separate simulation evidence class |
+| Logic Guardrails | `cognition/engine.py`, evidence schema, `references/REVIEW.md` | Deterministic checks for objective rules, qualitative review for semantics; possible narrow hook |
+| Mathematical Validation | `cognition/mathematics.py`, `tests/test_mathematics.py` | Actual calculations with independent references, units, and assumptions |
+| Reasoning Knowledge Graph | `schemas/provenance.schema.json`, `docs/DECISION_PROVENANCE.md` | Observable artifact/evidence/decision lineage without hidden thought access |
+| Institutional Memory | `cognition/memory.py`, `references/MEMORY.md` | Authorized local/host-native reuse with provenance and versions; no mandatory database server |
+| Executive Synthesis | `skills/executive-synthesis/`, `templates/executive-brief.md` | Match host/user format; executive form when relevant |
+| Human Mastery Track | `skills/cognitive-mastery/`, `cognitive-core/mastery/` | Separate opt-in human learning, never automatic model training |
 
-Framework orchestration, guardrails, dan mathematical validation muncul di beberapa kelompok karena dipakai bersama; tidak membuat katalog duplikat. Tidak ada kapabilitas dihapus pada tahap kajian.
+Shared orchestration, guardrails, and mathematics appear in several groups without creating duplicate catalogs. This review did not remove any capability.
 
-## Kontrak advisory dan klasifikasi bukti
+## Advisory contracts and evidence classification
 
-Request target memuat, bila tersedia: request ID, host ID, agent role, ringkasan tugas, kapabilitas diminta, referensi bukti, constraints, risiko, tools tersedia, budget, dan lingkup otorisasi. Response target memuat status, findings, supporting evidence, issues, computed results, recommendations, confidence limitations, unresolved questions, dan follow-up checks opsional.
+The target request includes, when available: request ID, host ID, agent role, task summary, requested capabilities, evidence references, constraints, risk, tools, budget, and authorization scope. The target response includes status, findings, supporting evidence, issues, computed results, recommendations, confidence limitations, unresolved questions, and optional follow-up checks.
 
-Field konseptual ini belum merupakan schema executable. `schemas/agent-envelope.schema.json` saat ini mewajibkan `envelope_version: "3.1"` dan berpusat pada artifact spesialis. Perlu kontrak request/result V4.1 serta aturan kompatibilitas sebelum perubahan versi schema. Jangan mengganti constant versi saja atau memberi label payload lama sebagai V4.1.
+At the time of this review these conceptual fields were not executable schemas. Existing `schemas/agent-envelope.schema.json` required `envelope_version: "3.1"` and centered on specialist artifacts. V4.1 request/result contracts and compatibility rules were required before changing schema versions; simply changing a constant or relabeling an old payload would not suffice.
 
-V4.1 menggunakan `VERIFIED_FACT`, `SOURCE_SUPPORTED`, `CALCULATED_RESULT`, `SIMULATED_RESULT`, `ASSUMPTION`, `INFERENCE`, `HYPOTHESIS`, `UNKNOWN`. Baseline memakai `USER_ASSUMPTION` dan `MODEL_INFERENCE`. Migrasi harus menyediakan pemetaan eksplisit dua kelas lama ke `ASSUMPTION` / `INFERENCE` sambil menyimpan asal dan aktor pada provenance; schema strict lama tidak menerima enum baru.
+V4.1 evidence classes are `VERIFIED_FACT`, `SOURCE_SUPPORTED`, `CALCULATED_RESULT`, `SIMULATED_RESULT`, `ASSUMPTION`, `INFERENCE`, `HYPOTHESIS`, and `UNKNOWN`. Baseline 3.1 used `USER_ASSUMPTION` and `MODEL_INFERENCE`. Migration must explicitly map the latter to `ASSUMPTION` / `INFERENCE` while retaining origin and actor in provenance; the old strict schema does not accept new enum values. No fabricated confidence score is allowed. Schema-valid, source-supported, calculated, hypothetical, and tested claims must remain distinguishable. Advisory output excludes long debate transcripts and hidden chain-of-thought.
 
-Tidak ada confidence score buatan. Perbedaan schema-valid, source-supported, hasil perhitungan, hipotesis, dan hasil uji harus tetap terlihat. Output advisory tidak memuat transkrip debat panjang atau hidden chain-of-thought.
+## Checkout gaps identified at the review
 
-## Gap yang ditemukan pada checkout
-
-| ID | Bukti repo saat kajian | Gap dan tindakan berikutnya |
+| ID | Repository evidence at review | Gap and next action |
 |---|---|---|
-| G01 | `skills/cognition-orchestrator/SKILL.md`: STANDARD default dan empat tahap intake | Tambahkan seleksi tanpa pemanggilan manual, `PASS_THROUGH`, dan intake proporsional |
-| G02 | `cognition/engine.py:plan`: fallback empat framework; `MODES` dan batas lama | Governor relevansi/risiko/duplikasi/budget diperlukan; pilihan eksplisit pengguna tetap dihormati |
-| G03 | Skill orchestrator menentukan laporan problem frame/artifact/ledger/verdict | Pisahkan advisory internal dari deliverable host; jangan mewajibkan laporan Cognition OS untuk edit kode sederhana |
-| G04 | `schemas/agent-envelope.schema.json`: versi 3.1 dan enum bukti lama | Tambahkan request/result target dan strategi kompatibilitas, bukan penggantian paksa semua data lama |
-| G05 | Tidak ada `hooks/` / `mcp.json`; `scripts/validate_package.py` mengassert keduanya tidak ada | Buat capability verification per host dan ubah invariant validator secara terarah bila hook dipilih; MCP tetap opsional |
-| G06 | `docs/PERFORMANCE_EVALUATION.md`: baseline vs QUICK/STANDARD/DEEP | Tambah eksperimen A/B/C/D, negative controls dan pengukuran deliverable asli |
-| G07 | `scripts/build_docs.py`, `build_plugin.py`, `build_catalog.py` menghasilkan baseline | Selaraskan sumber generator sebelum regenerasi; perubahan manual file generated dapat tertimpa |
-| G08 | `docs/PROJECT_STATUS.md`: desktop activation dan perilaku native belum terverifikasi | Discovery/install bukan bukti invocation; jalankan evaluasi host sesungguhnya dalam cakupan akun yang sudah diizinkan |
+| G01 | `skills/cognition-orchestrator/SKILL.md`: STANDARD default and four-stage intake | Add selection without manual invocation, `PASS_THROUGH`, and proportional intake |
+| G02 | `cognition/engine.py:plan`: four-framework fallback, old `MODES` and limits | Add relevance/risk/duplication/budget governor; honor explicit user choices |
+| G03 | Orchestrator skill requires frame/artifact/ledger/verdict report | Separate internal advice from host deliverable; do not require a Cognition OS report for a simple code edit |
+| G04 | `schemas/agent-envelope.schema.json`: 3.1 and old evidence enum | Add target request/result and compatibility strategy without forced replacement of old data |
+| G05 | No `hooks/` / `mcp.json`; `scripts/validate_package.py` asserts absence | Verify host capabilities and adjust validator for a selected hook; MCP stays optional |
+| G06 | `docs/PERFORMANCE_EVALUATION.md`: baseline vs QUICK/STANDARD/DEEP | Add A/B/C/D experiment, negative controls, and original-deliverable metrics |
+| G07 | `scripts/build_docs.py`, `build_plugin.py`, `build_catalog.py` generate baseline | Align generators before regeneration so manual edits to generated files survive |
+| G08 | `docs/PROJECT_STATUS.md`: desktop activation/native behavior unverified | Discovery/install does not prove invocation; run real host evaluations within authorized account scope |
 
-Ketersediaan host/API/hook tidak diverifikasi ulang melalui internet pada kajian konsep ini. [Matriks kompatibilitas sebelumnya](PLATFORM_COMPATIBILITY.md) adalah evidence baseline dengan ruang lingkupnya sendiri, bukan sertifikasi kemampuan V4.1 terkini. Nama `cognition_assess_task` dan tool MCP lain di prompt tetap usulan, bukan API yang sudah tersedia.
+This concept review did not reverify host/API/hook availability online. The [earlier compatibility matrix](PLATFORM_COMPATIBILITY.md) is baseline evidence with its own scope, not certification of current V4.1 capabilities. `cognition_assess_task` and other MCP tool names in the prompt remained proposals, not available APIs.
 
-## Ukuran keberhasilan dan fallback
+## Success measures and fallback
 
-| Eksperimen wajib | Konfigurasi |
+| Required experiment | Configuration |
 |---|---|
-| A | Host tanpa Cognition OS |
-| B | Host dengan model-selected skills |
-| C | B ditambah hook deterministik yang benar-benar didukung |
-| D | C ditambah deep advisory hanya ketika dibenarkan |
+| A | Host without Cognition OS |
+| B | Host with model-selected skills |
+| C | B plus genuinely supported deterministic hooks |
+| D | C plus deep advisory only when justified |
 
-Gunakan tugas coding sederhana, arsitektur kompleks, debugging, insiden database, review keamanan, keputusan strategis, implementasi multi-langkah, dokumentasi, dan matematika. Sertakan negative control tempat plugin seharusnya pasif. Jika hook tidak tersedia pada suatu host, laporkan C/D sebagai tidak tersedia atau parsial beserta sebab; jangan menyebut pemanggilan script manual sebagai hook native.
+Use simple coding, complex architecture, debugging, database incidents, security review, strategic decisions, multi-step implementation, documentation, and mathematics. Include negative controls where the plugin should stay passive. If a host lacks hooks, report C/D unavailable or partial with reasons; manual script calls are not native-hook evidence.
 
-Ukur correctness/task success, regression, requirement coverage, relevansi pemilihan framework, unnecessary activation, false-positive warning, tool/model calls, token overhead, latency, kualitas artifact/bukti, dan recovery. Instrumentasi tidak tersedia berarti `UNKNOWN`/belum terukur, bukan nol. Timing helper dan passing schema tidak membuktikan peningkatan hasil host.
+Measure correctness/task success, regressions, requirement coverage, framework-selection relevance, unnecessary activation, false-positive warnings, tool/model calls, token overhead, latency, artifact/evidence quality, and recovery. Missing instrumentation is `UNKNOWN`/unmeasured, not zero. Helper timing and passing schemas do not prove better host outcomes.
 
-Skill tidak tersedia: host melanjutkan reasoning native bila cukup. Hook advisory gagal: catat diagnostik dan degradasi sesuai kebijakan. Enforcement keamanan gagal: ikuti perilaku izin host yang terverifikasi. Deep advisory/MCP tidak tersedia: pakai jalur lokal yang didukung dan ungkap keterbatasan material; jangan mengarang hasil hitung.
+When a skill is unavailable, the host continues native reasoning if sufficient. Advisory hook failure is diagnosed and degraded according to policy. Failed security enforcement follows verified host permission behavior. When deep advisory or MCP is unavailable, use supported local paths and disclose material limitations; do not invent calculations.
 
-## Cakupan seluruh bagian prompt
+## Coverage of every prompt section
 
-| Bagian V4.1 | Hasil pemahaman / pekerjaan terpetakan |
+| V4.1 section | Interpretation / mapped work |
 |---|---|
-| 0 | Identitas, satu core, dual adapter, non-interference dan hasil tugas sebagai tujuan |
-| 1 | Audit A/B dan transformasi seluruh kapabilitas; audit lama dipertahankan, audit delta dijadwalkan |
-| 2 | Arsitektur host-owned dan diagram target dalam kajian ini |
-| 3 | Tiga jalur A/B/C dengan prioritas dan batas yang berbeda |
-| 4 | Tujuh kebijakan internal governor, relevansi dan pass-through |
-| 5 | Katalog 50/52 dipertahankan; eksekusi minimum efektif |
-| 6 | Request/result advisory baru dan kompatibilitas envelope 3.1 |
-| 7 | Bantuan pada tahap relevan melalui boundary teramati, tanpa interception universal |
-| 8 | Workflow software engineering adaptif; pemetaan contoh bukan urutan wajib |
-| 9 | Guardrails, kelas bukti dan migrasi enum |
-| 10 | Deep advisory terbatas dengan advocate/challenger/jury |
-| 11 | Adapter Claude dan matriks event/surface harus diverifikasi resmi |
-| 12 | Adapter Codex dan target desktop Windows harus diverifikasi sendiri |
-| 13 | MCP opsional, daftar nama tool adalah proposal |
-| 14 | Budget framework/delegasi/debat/tool/waktu/konteks dan early stop |
-| 15 | QA pada deliverable nyata; schema/score tidak membuktikan correctness |
-| 16 | Tujuan, izin, scope dan output pengguna tetap menjadi batas |
-| 17 | Fallback eksplisit, advisory versus security enforcement dibedakan |
-| 18 | Memory opt-in; Observe → Evaluate → Propose → Test → Approve → Version; mastery opsional |
-| 19 | Struktur direktori konseptual; satu core, file sesuai dukungan aktual |
-| 20 | Evaluasi A/B/C/D dengan negative control dan overhead terukur |
-| 21 | Roadmap Phase 0–8 di [rencana migrasi](V4_1_MIGRATION_PLAN.md) |
-| 22 | Delapan belas kriteria rilis menjadi gate bukti, belum dinyatakan lulus |
-| 23 | Status source/proposal/implementasi/verifikasi/testing/support/blocker tetap dibedakan |
-| 24 | Paket deliverable A–G dipetakan dalam rencana migrasi |
-| 25 | Kajian dan rencana baru memakai Bahasa Indonesia; identifier teknis dipertahankan |
-| 26 | Urutan implementasi dicatat sebagai pekerjaan berikutnya, sesuai cakupan permintaan kajian saat ini |
+| 0 | Identity, one core, dual adapters, noninterference, task outcomes |
+| 1 | Audit A/B and transform every capability; retain old audit and schedule delta audit |
+| 2 | Host-owned architecture and target diagram above |
+| 3 | Three paths A/B/C with distinct priority and boundaries |
+| 4 | Seven internal governor policies, relevance, pass-through |
+| 5 | Preserve 50/52 catalog; minimum effective execution |
+| 6 | New advisory request/result and 3.1 envelope compatibility |
+| 7 | Help at relevant stages through observable boundaries, without universal interception |
+| 8 | Adaptive software-engineering workflow; examples are not mandatory sequence |
+| 9 | Guardrails, evidence classes, enum migration |
+| 10 | Bounded advocate/challenger/jury deep advisory |
+| 11 | Officially verify Claude adapter events and surfaces |
+| 12 | Verify Codex adapter and Windows desktop separately |
+| 13 | Optional MCP; named tool list is a proposal |
+| 14 | Framework/delegation/debate/tool/time/context budgets and early stop |
+| 15 | QA of real deliverables; schema or scores do not prove correctness |
+| 16 | Preserve user objective, permissions, scope, and output format |
+| 17 | Explicit fallback; distinguish advisory from security enforcement |
+| 18 | Opt-in memory; Observe → Evaluate → Propose → Test → Approve → Version; optional mastery |
+| 19 | Conceptual directory structure; one core, actual host support governs files |
+| 20 | A/B/C/D evaluation with negative controls and measured overhead |
+| 21 | Phase 0–8 roadmap in the [migration plan](V4_1_MIGRATION_PLAN.md) |
+| 22 | Eighteen release criteria become evidence gates, not presumed passes |
+| 23 | Distinguish source/proposal/implementation/verification/test/support/blocker states |
+| 24 | Map deliverable packages A–G in the migration plan |
+| 25 | This review and plan now use English; technical identifiers remain stable |
+| 26 | Record implementation sequence as subsequent work within the original review scope |
 
-Langkah berikutnya adalah menyelesaikan audit delta sumber dan verifikasi kapabilitas host, kemudian membuat governor serta kontrak minimum. [Rencana migrasi](V4_1_MIGRATION_PLAN.md) memuat urutan dan gate yang dapat ditinjau sebelum perubahan runtime.
+The next steps at the time of this review were the source delta audit and host-capability verification, followed by a minimum governor and contracts. The [migration plan](V4_1_MIGRATION_PLAN.md) records reviewable order and gates before runtime changes; subsequent implementation status is tracked separately.

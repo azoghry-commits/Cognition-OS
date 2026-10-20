@@ -1,12 +1,12 @@
 # Data contracts
 
-## Kontrak utama V4.1
+## Core V4.1 contracts
 
-`task-context.schema.json` menerima hanya konteks yang tersedia bagi host. `cognitive-request.schema.json` menetapkan request/host/role, capability, evidence references, constraints dan authorization scope. `advisory-result.schema.json` membawa findings, evidence, issues, computed results, recommendations, limitations, unresolved questions dan provenance. Tidak ada field confidence score bebas atau wewenang eksekusi tersirat.
+`task-context.schema.json` accepts only context available to the host. `cognitive-request.schema.json` defines the request, host, role, capability, evidence references, constraints, and authorization scope. `advisory-result.schema.json` carries findings, evidence, issues, computed results, recommendations, limitations, unresolved questions, and provenance. No unconstrained confidence score or implicit execution authority is included.
 
-`review-advisory` mengecek identity, batas evidence, struktur, link dan kecocokan record kalkulasi; tidak menyatakan validitas semantik. `normalize-legacy` membuat objek baru dengan pemetaan USER_ASSUMPTION→ASSUMPTION dan MODEL_INFERENCE→INFERENCE serta origin actor/trace. Dokumen/record 3.1 tidak ditulis ulang. Detail: [arsitektur hybrid](HYBRID_ARCHITECTURE.md).
+`review-advisory` checks identity, evidence boundaries, structure, links, and calculation-record consistency; it does not establish semantic validity. `normalize-legacy` creates a new object, mapping USER_ASSUMPTION→ASSUMPTION and MODEL_INFERENCE→INFERENCE while retaining the origin actor and trace. Existing 3.1 documents and records are not rewritten. See [hybrid architecture](HYBRID_ARCHITECTURE.md).
 
-## Kontrak artifact framework dan compatibility
+## Framework artifact contracts and compatibility
 
 All contracts use JSON Schema 2020-12. schemas/framework.schema.json describes canonical method resources; agent.schema.json describes logical roles; agent-envelope.schema.json version 3.1 records observable inputs, payload, claims, gaps and real execution IDs. Legacy 2.0 sample metrics are intentionally excluded because no calibration exists.
 

@@ -1,16 +1,16 @@
 # Resumable engineering status
 
-## Arah aktif V4.1 — 2026-10-20
+## Active V4.1 direction — 2026-10-20
 
-**Update rebuild:** paket kandidat 0.2.0 kini mengimplementasikan governor, request/result V4.1, deep-plan terbatas, adapter hook dan 12 skill. Kontrak artifact framework 3.1 dipertahankan untuk kompatibilitas. Lihat [status rebuild dan gate](REBUILD_STATUS_V4_1.md), [arsitektur implementasi](HYBRID_ARCHITECTURE.md), [audit delta sumber](SOURCE_TRANSFORMATION_V4_1.md) dan [verifikasi platform](PLATFORM_VERIFICATION_V4_1.md). Catatan konsep awal di bawah adalah riwayat sebelum rebuild; bukan status implementasi terakhir.
+**Rebuild update:** candidate package 0.2.0 implements the governor, V4.1 request/result contracts, bounded deep planning, adapter hooks, and 12 skills. Framework artifact contract 3.1 is retained for compatibility. See [rebuild status and gates](REBUILD_STATUS_V4_1.md), [implementation architecture](HYBRID_ARCHITECTURE.md), [source delta audit](SOURCE_TRANSFORMATION_V4_1.md), and [platform verification](PLATFORM_VERIFICATION_V4_1.md). The initial concept notes below predate the rebuild and do not represent the latest implementation status.
 
-Konsep terbaru adalah **Hybrid Agent Cognitive Augmentation Layer**: model-selected assistance sebagai jalur utama, validasi deterministik melalui event yang didukung, dan deep advisory kondisional. Host tetap pemilik tugas dan deliverable. Kajian prompt serta gap checkout selesai dalam [CONCEPT_V4_1.md](CONCEPT_V4_1.md); rencana eksekusi Phase 0–8 ada di [V4_1_MIGRATION_PLAN.md](V4_1_MIGRATION_PLAN.md).
+The current concept is a **Hybrid Agent Cognitive Augmentation Layer**: model-selected assistance is primary, deterministic validation runs through supported events, and deep advisory is conditional. The host owns the task and deliverable. The prompt and checkout-gap review is in [CONCEPT_V4_1.md](CONCEPT_V4_1.md); the Phase 0–8 execution plan is in [V4_1_MIGRATION_PLAN.md](V4_1_MIGRATION_PLAN.md).
 
-Status target: `SOURCE_DERIVED` / `PROPOSED`. Runtime tetap paket 0.1.0, kontrak 3.1; governor hybrid, hook, kontrak advisory baru dan benchmark A/B/C/D belum diterapkan. Permintaan sesi ini mencakup pemahaman konsep, dokumentasi dan proses Git. Evidence pengujian lama di bawah tidak menjadi bukti V4.1.
+Historical target status before the rebuild: `SOURCE_DERIVED` / `PROPOSED`. At that point the runtime was still package 0.1.0 with 3.1 contracts; the hybrid governor, hooks, new advisory contracts, and A/B/C/D benchmarks had not been implemented. That session covered concept review, documentation, and Git work. Earlier test evidence below does not establish V4.1 behavior.
 
-Langkah pengembangan berikutnya: audit delta A/B terhadap V4.1 dan verifikasi kapabilitas resmi masing-masing host, kemudian governor/kontrak minimum. Perbarui generator sebelum meregenerasi file baseline. Cakupan akun pada ACCOUNT_SCOPE.md tetap berlaku; jangan beralih ke API berbayar untuk menutup gap evaluasi.
+The next development steps at that time were auditing source A/B against V4.1, verifying each host's official capabilities, then designing a minimum governor and contracts. Generator sources needed updating before regenerating baseline files. The account scope in ACCOUNT_SCOPE.md still applies; do not switch to paid APIs to close evaluation gaps.
 
-## Catatan baseline 3.1 / paket 0.1.0
+## Baseline 3.1 / package 0.1.0 notes
 
 Date: 2026-10-20. Specification 3.1; package 0.1.0. Overall: IMPLEMENTED / PARTIALLY_TESTED; not production-ready.
 

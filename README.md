@@ -274,6 +274,8 @@ cognition-os/
 | [Project status](docs/PROJECT_STATUS.md) | Review recorded progress, limitations, and next gates |
 | [Changelog](CHANGELOG.md) | Track versioned changes |
 
+Maintained documentation is in English. The original blueprint and files under `docs/evidence/` retain their source language and bytes so their recorded checksums and audit trail remain valid.
+
 ---
 
 <p align="center">

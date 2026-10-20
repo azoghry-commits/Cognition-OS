@@ -1,23 +1,23 @@
-# Verifikasi platform V4.1 — 2026-10-20
+# V4.1 platform verification — 2026-10-20
 
-Dokumentasi resmi dibuka ulang pada sesi rebuild. Observasi lokal: `codex-cli 0.153.0`, `Claude Code 2.1.201`. Validasi manifest lokal terpisah dari uji inference/native event. Cakupan akun: [ACCOUNT_SCOPE.md](ACCOUNT_SCOPE.md).
+Official documentation was reviewed again during the rebuild. Local observations: `codex-cli 0.153.0`, `Claude Code 2.1.201`. Local manifest validation is separate from inference and native-event tests. Account scope: [ACCOUNT_SCOPE.md](ACCOUNT_SCOPE.md).
 
-| Aspek | Codex | Claude Code | Status runtime kandidat |
+| Aspect | Codex | Claude Code | Candidate runtime status |
 |---|---|---|---|
-| Skill model-selected | Metadata name/description dan resource on demand | Auto/model invocation default; tidak memakai disable-model-invocation | Package/metadata diuji lokal; seleksi aktual belum terukur |
-| Manifest | Root portable + extensions.com.openai; fallback tidak di-merge | .claude-plugin/plugin.json dengan konfigurasi sendiri | Validasi struktur lokal |
-| PostToolUse | Tool input/output; apply_patch memakai tool_input.command | Write/Edit memakai tool_input.file_path | Fixture kedua payload diuji; delivery host belum diuji |
-| Feedback | hookSpecificOutput.additionalContext | hookSpecificOutput.additionalContext | Hanya advisory, tanpa block/override |
-| Root script | PLUGIN_ROOT | CLAUDE_PLUGIN_ROOT | Path dalam package; Python opsional perlu tersedia untuk hook |
-| Izin/trust | Plugin hook non-managed harus ditinjau dan dipercaya pengguna; install manual desktop | Hook/perizinan mengikuti runtime Claude Code | Tidak mengubah trust/perizinan host |
-| Native delegation | Gunakan hanya tools yang benar-benar tersedia | Agent wrappers read-only opsional | Tidak ada automatic dispatch |
+| Model-selected skills | Name/description metadata and on-demand resources | Auto/model invocation by default; no disable-model-invocation setting | Package/metadata tested locally; actual selection not measured |
+| Manifest | Portable root + extensions.com.openai; fallback is not merged | `.claude-plugin/plugin.json` with separate configuration | Local structural validation |
+| PostToolUse | Tool input/output; apply_patch uses `tool_input.command` | Write/Edit uses `tool_input.file_path` | Fixtures for both payloads tested; host delivery untested |
+| Feedback | `hookSpecificOutput.additionalContext` | `hookSpecificOutput.additionalContext` | Advisory only; no block/override |
+| Script root | `PLUGIN_ROOT` | `CLAUDE_PLUGIN_ROOT` | Packaged path; optional Python must be available for the hook |
+| Permission/trust | Non-managed plugin hooks require user review and trust; manual desktop install | Hooks and permissions follow Claude Code runtime | Does not change host trust/permissions |
+| Native delegation | Use only tools actually available | Optional read-only agent wrappers | No automatic dispatch |
 
-Referensi resmi dan keputusan:
+Official references and decisions:
 
-- [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins): portable root dan inline OpenAI settings, path komponen, hook lokal/manual desktop dan trust. Paket berhook tidak eligible untuk public directory. Kandidat ini hanya paket lokal, tidak dipublikasikan ke directory.
-- [OpenAI skills](https://developers.openai.com/plugins/build/skills): metadata dan resources untuk workflow model; [konsep skill](https://developers.openai.com/plugins/concepts/skills) menjelaskan pemilihan menurut kecocokan tugas. Instalasi tidak dijadikan bukti invocation.
-- [Codex hooks](https://learn.chatgpt.com/docs/hooks): PostToolUse mengamati output; apply_patch memuat command, additionalContext adalah feedback, dan post-event tidak mengembalikan side effect yang telah terjadi. Kandidat tidak memakai block atau output rewrite.
-- [Claude hooks](https://code.claude.com/docs/en/hooks): PostToolUse setelah tool sukses, path absolut pada file input dan feedback tambahan. Kandidat tidak mengasumsikan event file edit dari Bash tertangkap oleh matcher Write/Edit.
-- [Claude skills](https://code.claude.com/docs/en/skills): user-invocable:false tersedia khusus Claude. Shared skill mempertahankan frontmatter portabel name/description dan manual diagnosis; tidak menambah field lintas host yang belum diverifikasi dan tidak menonaktifkan model invocation.
+- [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins): portable root and inline OpenAI settings, component paths, local/manual desktop hooks, and trust. A package containing hooks is not eligible for the public directory. This candidate is a local package and is not published there.
+- [OpenAI skills](https://developers.openai.com/plugins/build/skills): metadata and resources for model workflows; [skill concepts](https://developers.openai.com/plugins/concepts/skills) describe task-fit selection. Installation is not used as proof of invocation.
+- [Codex hooks](https://learn.chatgpt.com/docs/hooks): PostToolUse observes output; apply_patch supplies a command; `additionalContext` is feedback; a post-event hook cannot reverse an existing side effect. The candidate does not block or rewrite output.
+- [Claude hooks](https://code.claude.com/docs/en/hooks): PostToolUse runs after successful tools, with absolute file paths in file-tool input and additional feedback. The candidate does not assume Bash edits are caught by the Write/Edit matcher.
+- [Claude skills](https://code.claude.com/docs/en/skills): `user-invocable:false` is Claude-specific. Shared skills retain portable name/description frontmatter and manual diagnosis; they add no unverified cross-host fields and do not disable model invocation.
 
-Claude Chat/Desktop Chat, Cowork, Codex CLI dan desktop tidak dianggap setara. Pembatasan Claude Free dan larangan penggunaan API key yang ditemukan sebelumnya tetap berlaku. Tidak ada native Claude inference/instalasi baru dalam rebuild. Dokumen ini memverifikasi kontrak dokumentasi, bukan entitlement atau tersedianya semua kemampuan pada akun pengguna.
+Claude Chat/Desktop Chat, Cowork, Codex CLI, and Codex desktop are assessed separately. Previously identified Claude Free limits and the prohibition on API-key use still apply. No new native Claude inference or installation occurred in this rebuild. This document verifies documentation contracts, not account entitlement or availability of every capability.
