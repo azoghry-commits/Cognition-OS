@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fixed advisory artifact checks when a Windows workspace uses a short path alias.
+
 - Added an offline advisory scaffolding selector with paired evidence and explicit critical-error checks; real host calibration remains pending.
 - Structured installation guides and documented development, CI and release workflows.
 
