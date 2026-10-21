@@ -1,0 +1,11 @@
+{
+  "id": "cognition-os",
+  "name": "Cognition OS",
+  "description": "Selective cognitive assistance, deterministic checks, and governed improvement.",
+  "skills": ["skills"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

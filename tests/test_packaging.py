@@ -23,6 +23,12 @@ class PackagingTests(unittest.TestCase):
                 input=json.dumps({'objective':'Rename a label','task_type':'simple_edit'}),cwd=target,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertEqual(json.loads(result.stdout)['policy'],'PASS_THROUGH')
+            capability=subprocess.run([sys.executable,str(installed/'scripts/cognition.py'),'capability-plan'],
+                input=json.dumps({'profile':{'capability_tier':'unknown','context_tokens':4096,'tools':{}},
+                                  'task':{'objective':'Review a change','task_type':'artifact_review','complexity':'medium','risk':'normal'}}),
+                cwd=target,capture_output=True,text=True)
+            self.assertEqual(capability.returncode,0,capability.stderr)
+            self.assertEqual(json.loads(capability.stdout)['resolved_tier'],'constrained')
             path=target/'.cognition/artifacts/one.json';path.parent.mkdir(parents=True);path.write_text('{bad')
             payload={'cwd':str(target),'hook_event_name':'PostToolUse','tool_name':'Write','tool_input':{'file_path':str(path)}}
             hook=subprocess.run([sys.executable,str(installed/'scripts/check_artifact.py')],
@@ -70,10 +76,22 @@ class PackagingTests(unittest.TestCase):
             definition=subprocess.run([sys.executable,str(installed/'scripts/cognition.py'),'framework'],cwd=target,input=json.dumps({'id':'Kepner-Tregoe'}),capture_output=True,text=True)
             self.assertEqual(definition.returncode,0,definition.stderr)
             self.assertEqual(json.loads(definition.stdout)['id'],'FW-11')
-    def test_supplied_source_hashes_preserved(self):
-        manifest=json.loads((ROOT/'docs/evidence/sources.json').read_text())
-        for filename,record in manifest.items():
-            with self.subTest(source=filename):self.assertEqual(hashlib.sha256((ROOT/filename).read_bytes()).hexdigest(),record['sha256'])
+
+    def test_cross_host_adapters_are_packaged(self):
+        names=[p.relative_to(ROOT).as_posix() for p in runtime_files()]
+        for platform in ['antigravity','github-copilot','vscode','generic','opencode','commandcode','openclaw','hermes']:
+            self.assertIn(f'adapters/{platform}/README.md',names)
+        self.assertIn('openclaw.plugin.json',names)
+        self.assertIn('docs/CROSS_HOST_COMPATIBILITY.md',names)
+        self.assertIn('docs/SELF_IMPROVEMENT.md',names)
+        self.assertIn('docs/CAPABILITY_AMPLIFICATION.md',names)
+        self.assertIn('cognition/capability.py',names)
+    def test_retired_sources_are_not_required_or_packaged(self):
+        names=[p.relative_to(ROOT).as_posix() for p in runtime_files()]
+        self.assertFalse((ROOT/'Cognition Os Master Blueprint.md').exists())
+        self.assertFalse((ROOT/'Cognition_OS_Strategic_Intelligence.pdf').exists())
+        self.assertNotIn('Cognition Os Master Blueprint.md',names)
+        self.assertNotIn('Cognition_OS_Strategic_Intelligence.pdf',names)
     def test_cli_failure_is_structured_nonzero(self):
         p=subprocess.run([sys.executable,str(ROOT/'scripts/cognition.py'),'compute'],input=json.dumps({'operation':'__import__','inputs':{}}),capture_output=True,text=True)
         self.assertEqual(p.returncode,2)

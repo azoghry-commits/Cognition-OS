@@ -1,4 +1,6 @@
-# Complete source intelligence audit
+# Retired source audit
+
+The original blueprint Markdown and strategic PDF were removed from the maintained repository in version 0.5.0 because the canonical 50-framework catalog, schemas, provenance fields, and audit findings are already generated and tested. The build now validates those retained canonical resources and no longer depends on the two source files. Historical references below describe the completed transformation and are retained as provenance, not as a runtime dependency.
 
 **Delta audit completed during rebuild:** the entire Markdown source was read and all 15 PDF pages were freshly rendered and reinspected. See [SOURCE_TRANSFORMATION_V4_1.md](SOURCE_TRANSFORMATION_V4_1.md) and its related JSON evidence. The following note that reinspection had not occurred is historical context from the pre-rebuild concept review.
 

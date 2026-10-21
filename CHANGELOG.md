@@ -1,6 +1,27 @@
 # Changelog
 
+## 0.5.0 - 2026-10-21
+
+- Added OpenCode, Command Code, OpenClaw, and Hermes adapters and installation tutorials.
+- Added progressive token profiles with deterministic quality-floor escalation and paired efficiency evaluation.
+- Added provider/model-family guidance and explicit automatic-versus-direct activation behavior.
+- Retired the source blueprint and strategic PDF from the build, package, and tracked repository.
+- Removed Windows symlink test skips by using verified junction fallback coverage.
+
 ## Unreleased
+
+## 0.4.0 — tier-adaptive capability amplification — 2026-10-21
+
+- Added observed-capability profiles and adaptive plans for constrained, balanced, advanced, and unknown hosts.
+- Added paired capability evaluation with minimum sample, effect-size, exact sign-test, and critical-regression gates.
+- Connected capability evidence to governed self-improvement without claiming model-weight changes or automatic retraining.
+
+## 0.3.0 — portable orchestration and governed improvement — 2026-10-21
+
+- Added cross-host packaging guidance and adapters for Antigravity, GitHub Copilot, VS Code, and generic Agent Skills consumers while preserving the shared Claude/Codex core.
+- Added dependency-aware sequential, parallel, and hybrid analysis planning with deterministic DAG validation and host-capability fallback.
+- Added a project-scoped self-improvement ledger with Observe, Propose, Evaluate, Approve, Version, Deploy gates and rollback records.
+- Added an Antigravity-specific runtime archive and regression tests for orchestration and improvement state transitions.
 
 - Translated maintained documentation and traceability labels into English while preserving original source/evidence files and their checksums.
 - Align generic evidence audits with V4.1 advisory validation: calculated claims require typed calculation records, and simulated claims require typed simulation records with explicit integer seeds.

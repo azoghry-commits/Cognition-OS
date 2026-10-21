@@ -10,8 +10,8 @@
     {
       "name": "cognition-os",
       "source": "./",
-      "description": "Selective cognitive assistance for host models and agents: 50 mental models, evidence checks and bounded advisory.",
-      "version": "0.2.0"
+      "description": "Portable cognitive assistance for agent hosts: 50 mental models, dependency-aware orchestration, evidence checks and governed improvement.",
+      "version": "0.5.0"
     }
   ]
 }

@@ -1,4 +1,6 @@
-# Platform compatibility, checked 2026-10-20
+# Platform compatibility, checked 2026-10-21
+
+Package 0.3.0 extends the portable baseline to Antigravity, GitHub Copilot, VS Code, and generic Agent Skills hosts. The detailed packaging routes and current verification boundary are in [CROSS_HOST_COMPATIBILITY.md](CROSS_HOST_COMPATIBILITY.md). Claude Desktop Chat can use uploaded plugins for skills and commands; hooks and subagents remain limited to Claude Code and Cowork. GitHub Copilot and VS Code can consume Agent Plugins 1.0, while Antigravity uses the dedicated minimal-manifest archive.
 
 **V4.1 rebuild:** the latest official documentation review and candidate adapter limits are recorded in [PLATFORM_VERIFICATION_V4_1.md](PLATFORM_VERIFICATION_V4_1.md). Package 0.2.0 includes optional advisory hooks; the baseline statement that the package has no hooks applies only to 0.1.0.
 

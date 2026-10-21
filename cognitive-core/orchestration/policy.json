@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "default_mode": "STANDARD",
+  "version": "0.5.0",
+  "default_mode": "AUTO",
   "modes": {
     "AUTO": {
       "frameworks": 4,
@@ -29,6 +29,23 @@
     "LEARN": {
       "frameworks": 1,
       "rebuttal_rounds": 0
+    }
+  },
+  "token_profiles": {
+    "LEAN": {
+      "frameworks": 1,
+      "references": 1,
+      "context_fraction": 0.12
+    },
+    "BALANCED": {
+      "frameworks": 4,
+      "references": 3,
+      "context_fraction": 0.25
+    },
+    "DEEP": {
+      "frameworks": 8,
+      "references": 6,
+      "context_fraction": 0.45
     }
   },
   "default_token_allowance": 8000,

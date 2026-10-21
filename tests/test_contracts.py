@@ -14,14 +14,10 @@ class ContractTests(unittest.TestCase):
                 self.assertTrue((e.ROOT/model['output_schema']).is_file())
                 self.assertIn('host',model['activation_conditions'][0].lower())
 
-    def test_catalog_exact_source_identities(self):
-        rows={}
-        for line in (e.ROOT/'Cognition Os Master Blueprint.md').read_text(encoding='utf-8').splitlines():
-            match=re.match(r'\| \*\*(AG-\d\d)\*\* \| \*\*(.*?)\*\* \|',line)
-            if match and int(match[1][3:])<=50:rows[match[1]]=match[2]
+    def test_catalog_retains_unique_canonical_identities(self):
+        rows={f['agent_id']:f['name'] for f in e.registry()}
         self.assertEqual(len(rows),50)
-        for f in e.registry():
-            with self.subTest(model=f['id']):self.assertEqual(f['name'],rows[f['agent_id']])
+        self.assertEqual(len(set(rows.values())),50)
     def test_category_counts(self):
         self.assertEqual(sorted(collections.Counter(f['category'] for f in e.registry()).values()),[2,5,6,6,7,8,8,8])
     def test_all_52_roles_and_single_catalog(self):

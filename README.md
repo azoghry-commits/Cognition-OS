@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.svg" width="100%" alt="Cognition OS — Think with structure. Build with evidence. A cognitive augmentation layer for Claude and Codex agents." />
+  <img src="assets/readme-banner.svg" width="100%" alt="Cognition OS — Think with structure. Build with evidence. A portable cognitive augmentation layer for agent hosts." />
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="docs/CONCEPT_V4_1.md"><img alt="Specification" src="https://img.shields.io/badge/spec-V4.1-7057ff?style=for-the-badge"></a>
-  <a href="plugin.json"><img alt="Package candidate" src="https://img.shields.io/badge/package_candidate-0.2.0-blue?style=for-the-badge"></a>
+  <a href="plugin.json"><img alt="Package candidate" src="https://img.shields.io/badge/package_candidate-0.5.0-blue?style=for-the-badge"></a>
   <a href="docs/REBUILD_STATUS_V4_1.md"><img alt="Native acceptance" src="https://img.shields.io/badge/native_acceptance-in_progress-orange?style=for-the-badge"></a>
   <a href="#capabilities"><img alt="Mental models" src="https://img.shields.io/badge/mental_models-50-00897b?style=for-the-badge"></a>
 </p>
@@ -26,7 +26,7 @@
 
 ## Intelligence for the agent, outcomes for the user
 
-Cognition OS equips the **models and agents inside Claude and Codex** with a shared library of analytical methods. Give your host an ordinary task—debug a failure, assess a decision, or review a release. When it helps, the host can draw on a focused skill, a deterministic check, or deeper advisory guidance, then return to the work you asked it to do.
+Cognition OS equips agents in **Codex, Claude, Antigravity, GitHub Copilot, VS Code, OpenCode, Command Code, OpenClaw, Hermes, and other Agent Skills hosts** with a shared library of analytical methods. Give your host an ordinary task—debug a failure, assess a decision, or review a release. When it helps, the host can draw on a focused skill, a deterministic check, or deeper advisory guidance, then return to the work you asked it to do.
 
 The host remains in charge of the task, tools, permissions, and final deliverable. Cognition OS does not require users to select frameworks or run a separate analysis application.
 
@@ -34,7 +34,7 @@ The host remains in charge of the task, tools, permissions, and final deliverabl
 
 ```mermaid
 flowchart LR
-    U["You give Claude or Codex a task"] --> H["Host model or agent"]
+    U["You give an agent host a task"] --> H["Host model or agent"]
     H --> D{"Would cognitive support help?"}
     D -->|No| W["Host does the work"]
     D -->|Yes| S["Selected skill or guidance"]
@@ -104,7 +104,7 @@ These are the V4.1 design paths, not a claim that every host integration has pas
 
 ## Try it
 
-Ask Claude or Codex for the work you need. For example:
+Ask the supported agent host for the work you need. For example:
 
 > Investigate this recurring service failure using the attached logs. Identify what the evidence supports, make the justified fix, and verify it.
 
@@ -114,11 +114,42 @@ Ask Claude or Codex for the work you need. For example:
 
 A simple request such as “Rename this heading and preserve the rest of the file” should remain simple. Cognition OS is intended to assist the host, not insert a workflow into every task.
 
-For installation or selection troubleshooting, use the [setup skill](skills/setup/SKILL.md) and follow the host-specific guides: [Codex](docs/INSTALLATION_CODEX.md) and [Claude](docs/INSTALLATION_CLAUDE.md). Each host needs its own acceptance evidence.
+For installation or selection troubleshooting, use the [setup skill](skills/setup/SKILL.md), the [cross-host guide](docs/CROSS_HOST_COMPATIBILITY.md), and the host-specific tutorials below. Each host needs its own acceptance evidence.
 
 ## Install
 
-Use the [Codex installation guide](docs/INSTALLATION_CODEX.md) or the [Claude installation guide](docs/INSTALLATION_CLAUDE.md) for the reviewed local package and host-specific steps. The [desktop quick start](docs/DESKTOP_QUICKSTART.md) explains how to check installation separately from skill selection and task behavior.
+Build the deterministic archives with `python scripts/package_release.py`, then follow the target guide:
+
+| Host | Installation tutorial | Native form |
+| --- | --- | --- |
+| ChatGPT/Codex Desktop and Codex CLI | [Codex](docs/INSTALLATION_CODEX.md) | Agent Plugin marketplace/local source |
+| Claude Desktop and Claude Code CLI | [Claude](docs/INSTALLATION_CLAUDE.md) | Claude plugin/account upload |
+| Antigravity IDE and CLI | [Antigravity adapter](adapters/antigravity/README.md) | dedicated plugin archive |
+| GitHub Copilot CLI and VS Code | [Cross-host guide](docs/CROSS_HOST_COMPATIBILITY.md) | plugin directory / VS Code plugin location |
+| OpenCode | [OpenCode](docs/INSTALLATION_OPENCODE.md) | on-demand Agent Skills |
+| Command Code | [Command Code](docs/INSTALLATION_COMMANDCODE.md) | external skills directory |
+| OpenClaw | [OpenClaw](docs/INSTALLATION_OPENCLAW.md) | native `openclaw.plugin.json` bundle |
+| Hermes Agent | [Hermes](docs/INSTALLATION_HERMES.md) | external on-demand skills directory |
+
+The [desktop quick start](docs/DESKTOP_QUICKSTART.md) explains how to check installation separately from discovery, selection, execution, and task quality.
+
+### Activation: automatic or explicit
+
+You do **not** need to write `Cognition OS` or `[@Cognition OS](plugin://cognition-os@cognition-os-local)` in every prompt. On hosts that expose model-selected skills, Cognition OS can activate automatically when a skill description matches the task. A direct mention or slash command is useful for first-run testing, ambiguous prompts, critical work that needs deterministic routing, or hosts with a crowded skill catalog.
+
+Automatic activation is host/model behavior, so installation alone cannot guarantee it. If a host omits skills because its discovery budget is full, disable unused plugins or invoke `cognition-orchestrator` explicitly.
+
+### Suitable models
+
+The plugin supports any tier when the host can discover skills and follow their contracts. Use current tool-capable instruct, reasoning, or coding families from OpenAI, Anthropic, Google, GitHub Copilot, xAI, DeepSeek, Mistral, Qwen/Alibaba, Meta Llama, MiniMax, Kimi, Z.AI, or a compatible local route such as Ollama/vLLM. Smaller models receive tighter sequential scaffolding; advanced models receive sparse guidance and independent challenge. See the complete [provider and model-family matrix](docs/MODEL_COMPATIBILITY.md).
+
+Dependency-aware analysis is available through `python scripts/cognition.py analysis-plan`. It produces sequential, parallel, or hybrid execution waves without pretending that a host dispatched work. The active host runs independent steps concurrently only when native delegation and the authorized concurrency allowance are available.
+
+Governed self-improvement is available through `python scripts/cognition.py improvement`. The project ledger records observation, proposal, baseline-versus-candidate evaluation, explicit approval, versioned deployment evidence, and rollback. See [SELF_IMPROVEMENT.md](docs/SELF_IMPROVEMENT.md).
+
+Tier-adaptive capability amplification is available through `capability-plan`. It uses observed context, tools, and delegation capacity to give constrained models tighter sequential scaffolding and advanced models sparse, challenge-oriented workflows. `capability-eval` permits a significant-improvement claim only after paired sample-size, effect-size, statistical, and critical-regression gates pass. See [CAPABILITY_AMPLIFICATION.md](docs/CAPABILITY_AMPLIFICATION.md).
+
+Token-aware progressive disclosure is available through `token-plan`. It selects LEAN, BALANCED, or DEEP context while enforcing a deterministic quality floor and escalation triggers. `token-eval` allows a retained-quality savings claim only when paired measured usage and rubric scores pass both gates. See [TOKEN_EFFICIENCY.md](docs/TOKEN_EFFICIENCY.md).
 
 This repository is an engineering candidate. Installation does not itself establish hook trust, native event delivery, skill selection, or improved task outcomes. Review the current [V4.1 rebuild report](docs/REBUILD_STATUS_V4_1.md) before evaluating it.
 
@@ -132,7 +163,7 @@ This repository is an engineering candidate. Installation does not itself establ
 | :--- | :--- |
 | Agent workflows | Refine a skill's inputs, procedure, or completion criteria |
 | Python & mathematics | Improve helper correctness, edge cases, or numerical validation |
-| Claude & Codex integration | Document reproducible discovery, activation, and permission behavior |
+| Host integration | Document reproducible discovery, activation, permission, and concurrency behavior across supported clients |
 | Evaluation & research | Design realistic tasks, negative controls, and fair comparisons |
 | Technical writing | Clarify a guide, improve an example, or fix a broken reference |
 
@@ -169,11 +200,11 @@ The **V4.1 package candidate is implemented and locally checked**. Native accept
 | --- | --- |
 | Shared core and package | Catalog, contracts, adapters, helpers, and package checks are recorded in the rebuild report |
 | Routing | Authored deterministic cases check the activation rules; they are not observed model choices |
-| Codex and Claude | Each host has separate installation and acceptance requirements; evidence on one does not certify the other |
+| Cross-host package | Codex, Claude, Antigravity, Copilot, VS Code, OpenCode, Command Code, OpenClaw, and Hermes have separate acceptance requirements; evidence on one does not certify another |
 | Comparative outcomes | A/B/C/D host evaluation and measured quality, overhead, and latency remain open |
 | Release | Licensing and distribution approval remain open gates |
 
-Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. Maintained documentation is in English. Original source materials and preserved evidence retain their original bytes and language for traceability.
+Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
 
 ## Development
 
@@ -194,7 +225,7 @@ These are local structural and deterministic checks. They do not certify native 
 
 ```text
 .agents/ .claude-plugin/ .codex-plugin/  Host and marketplace manifests
-adapters/ hooks/                         Claude and Codex integration
+adapters/ hooks/                         Host-specific packaging and integration
 cognition/ cognitive-core/               Runtime helpers and shared catalog
 skills/ references/ templates/           Agent guidance and reusable artifacts
 schemas/ tests/                           Contracts and verification

@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from tests.link_support import directory_link
 from cognition import augmentation as a
 
 
@@ -227,12 +228,14 @@ class ArtifactHookTests(unittest.TestCase):
             event={'cwd':tmp,'hook_event_name':'PostToolUse','tool_name':'apply_patch','tool_input':{'command':patch}}
             self.assertIn('hookSpecificOutput', handle_event(event))
 
-    def test_symlink_artifacts_are_never_followed(self):
+    def test_linked_artifacts_are_never_followed(self):
         from cognition.artifact_validation import handle_event
         with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as other:
-            outside = Path(other)/'data.json'; outside.write_text('{bad', encoding='utf-8')
-            link=Path(tmp)/'.cognition/artifacts/link.json'; link.parent.mkdir(parents=True)
-            try: link.symlink_to(outside)
-            except OSError: self.skipTest('OS does not permit test symlink')
-            event={'cwd':tmp,'hook_event_name':'PostToolUse','tool_name':'Write','tool_input':{'file_path':str(link)}}
-            self.assertEqual(handle_event(event), {})
+            outside = Path(other)/'artifacts'; outside.mkdir()
+            linked_file = outside/'link.json'; linked_file.write_text('{bad', encoding='utf-8')
+            cognition = Path(tmp)/'.cognition'; cognition.mkdir()
+            with directory_link(cognition/'artifacts', outside):
+                event={'cwd':tmp,'hook_event_name':'PostToolUse','tool_name':'Write','tool_input':{'file_path':str(cognition/'artifacts/link.json')}}
+                result = handle_event(event)
+                self.assertIn('hookSpecificOutput', result)
+                self.assertNotIn('{bad', str(result))

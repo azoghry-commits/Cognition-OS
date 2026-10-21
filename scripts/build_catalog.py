@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = "0.5.0"
 
 def write(path, value):
     p = ROOT / path
@@ -67,6 +67,20 @@ METHODS = '''
 '''
 
 def build():
+    if not (ROOT/'Cognition Os Master Blueprint.md').exists():
+        definitions = sorted((ROOT/'cognitive-core/frameworks/definitions').glob('FW-*.json'))
+        if len(definitions) != 50:
+            raise ValueError('The retired source is absent and the canonical generated catalog is incomplete')
+        for path in definitions:
+            record = json.loads(path.read_text(encoding='utf-8'))
+            record['version'] = VERSION
+            write(path.relative_to(ROOT), record)
+        for path in [ROOT/'cognitive-core/frameworks/registry.json', ROOT/'cognitive-core/agents/registry.json']:
+            record = json.loads(path.read_text(encoding='utf-8'))
+            record['version'] = VERSION
+            write(path.relative_to(ROOT), record)
+        print('Validated 50 retained canonical frameworks after source retirement.')
+        return
     methods = {int(a): (b.split(','), c.split(','), d.split(';')) for a,b,c,d in (line.split('|') for line in METHODS.strip().splitlines())}
     source = (ROOT/'Cognition Os Master Blueprint.md').read_text(encoding='utf-8').splitlines()
     index, agents, category = [], [], ''

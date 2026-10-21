@@ -8,6 +8,10 @@ from cognition import mathematics as m
 from cognition import engine as e
 from cognition import augmentation as a
 from cognition.memory import CaseStore
+from cognition.improvement import ImprovementStore
+from cognition.orchestration import plan_execution
+from cognition.capability import capability_plan, evaluate_capability
+from cognition.token_efficiency import token_plan, evaluate_efficiency
 
 CALCULATIONS={k:getattr(m,k) for k in ['ev','expected_value','scenario_compare','bayes','bayes_sequence','rice','decision_matrix','break_even','cost_benefit','sensitivity','simulate','pareto','critical_path','stock_flow']}
 
@@ -19,6 +23,11 @@ def dispatch(action,data):
     if action=='catalog':return e.registry()
     if action=='framework':return e.framework(data['id'])
     if action=='plan':return e.plan(**data)
+    if action=='analysis-plan':return plan_execution(**data)
+    if action=='capability-plan':return capability_plan(**data)
+    if action=='capability-eval':return evaluate_capability(**data)
+    if action=='token-plan':return token_plan(**data)
+    if action=='token-eval':return evaluate_efficiency(**data)
     if action=='compute':
         op=data['operation']
         if op not in CALCULATIONS:raise ValueError('Unknown calculation')
@@ -33,11 +42,15 @@ def dispatch(action,data):
         store=CaseStore(data['workspace']); op=data['operation']; args=data.get('args',{})
         if op not in ['save','get','list','delete']:raise ValueError('Unknown storage operation')
         return getattr(store,op)(**args)
+    if action=='improvement':
+        store=ImprovementStore(data['workspace']); op=data['operation']; args=data.get('args',{})
+        if op not in ['observe','propose','evaluate','approve','deploy','get','list']:raise ValueError('Unknown improvement operation')
+        return getattr(store,op)(**args)
     raise ValueError('Unknown action')
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=['assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory'])
+    parser.add_argument('action',choices=['assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','analysis-plan','capability-plan','capability-eval','token-plan','token-eval','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory','improvement'])
     parser.add_argument('--input',help='JSON input file. Omit to read JSON from stdin; catalog needs none.')
     args=parser.parse_args()
     try:

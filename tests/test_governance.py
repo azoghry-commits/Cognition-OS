@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from cognition import engine as e
 from cognition.memory import CaseStore
+from tests.link_support import directory_link
 
 class GovernanceTests(unittest.TestCase):
     def claim(self,kind='SOURCE_SUPPORTED',refs=None):return {'id':'c','text':'Claim','classification':kind,'evidence_ids':['e'] if refs is None else refs}
@@ -82,9 +83,8 @@ class GovernanceTests(unittest.TestCase):
     def test_linked_storage_rejected(self):
         with tempfile.TemporaryDirectory() as a,tempfile.TemporaryDirectory() as b:
             link=Path(a)/'.cognition'
-            try:link.symlink_to(b,target_is_directory=True)
-            except OSError:self.skipTest('OS does not permit test symlink')
-            with self.assertRaises(ValueError):CaseStore(a).path('one')
+            with directory_link(link,b):
+                with self.assertRaises(ValueError):CaseStore(a).path('one')
     def test_case_size_and_class(self):
         with tempfile.TemporaryDirectory() as a:
             store=CaseStore(a)

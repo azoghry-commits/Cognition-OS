@@ -3,7 +3,7 @@
   "agent_id": "AG-32",
   "name": "Jobs-to-be-Done (JTBD)",
   "category": "Innovation Models",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "provenance": "SOURCE_DERIVED",
   "id_mapping": "ENGINEERING_ADAPTATION: FW numeric correspondence to AG; source explicitly illustrates FW-11",
   "source": {

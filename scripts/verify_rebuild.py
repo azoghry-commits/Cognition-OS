@@ -37,11 +37,14 @@ def run():
     claude = subprocess.run([claude_path, 'plugin', 'validate', '.claude-plugin/plugin.json'],
                             cwd=ROOT, capture_output=True, text=True) if claude_path else None
     sources = json.loads((ROOT/'docs/evidence/sources.json').read_text())
-    source_hashes = {name: {'sha256': hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),
-                            'matches_original': hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == record['sha256']}
-                     for name, record in sources.items()}
+    retired_sources = {
+        record['path']: {'absent': not (ROOT/record['path']).exists(),
+                         'last_recorded_sha256': record['last_recorded_sha256']}
+        for record in sources['removed_files']
+    }
+    package_version = json.loads((ROOT/'plugin.json').read_text())['version']
     checks = {
-        'specification_version': '4.1', 'package_version': '0.2.0',
+        'specification_version': '4.1', 'package_version': package_version,
         'scope': 'Local structural, deterministic and extracted-package execution checks only.',
         'rebuild': {'exit_code': rebuild.returncode, 'runtime_files_unchanged_after_regeneration': reproducible,
                     'runtime_file_count': len(before)},
@@ -55,13 +58,13 @@ def run():
         'claude_manifest_validation': {'exit_code': claude.returncode if claude else None,
                                        'output': (claude.stdout+claude.stderr) if claude else 'Claude CLI unavailable',
                                        'scope': 'Local manifest validation; no installation or inference.'},
-        'original_sources': source_hashes,
+        'retired_sources': retired_sources,
         'native_host_acceptance': 'NOT_RUN', 'host_ABCD_benchmark': 'NOT_RUN',
         'host_installation_changed_by_verification': False,
     }
     passed = (rebuild.returncode == 0 and reproducible and activation.returncode == 0
               and result.wasSuccessful() and claude is not None and claude.returncode == 0
-              and all(record['matches_original'] for record in source_hashes.values()))
+              and all(record['absent'] for record in retired_sources.values()))
     checks['local_checks_passed'] = passed
     (ROOT/'docs/evidence/v4-1-checks.json').write_text(json.dumps(checks, indent=2)+'\n', encoding='utf-8')
     print(json.dumps({key: value for key, value in checks.items() if key not in ['unit_tests', 'claude_manifest_validation']}, indent=2))

@@ -48,8 +48,11 @@ def validate():
         assert handlers[0]['hooks'][0]['timeout']==3
     assert manifest['extensions']['com.openai']['hooks']=='./hooks/codex/hooks.json'
     assert (ROOT/'scripts/check_artifact.py').is_file()
-    required=['SOURCE_ANALYSIS','REQUIREMENTS_TRACEABILITY','PLATFORM_COMPATIBILITY','ARCHITECTURE','ARCHITECTURE_DECISIONS','MENTAL_MODEL_REGISTRY','AGENT_REGISTRY','SKILL_SPECIFICATIONS','ORCHESTRATION_DESIGN','DATA_CONTRACTS','MATHEMATICAL_VALIDATION','DECISION_PROVENANCE','MEMORY_ARCHITECTURE','MCP_DECISION','SECURITY_MODEL','PERFORMANCE_EVALUATION','TEST_PLAN','INSTALLATION_CLAUDE','INSTALLATION_CODEX','USER_GUIDE','TROUBLESHOOTING','RELEASE_CHECKLIST']
+    required=['SOURCE_ANALYSIS','REQUIREMENTS_TRACEABILITY','PLATFORM_COMPATIBILITY','CROSS_HOST_COMPATIBILITY','SELF_IMPROVEMENT','CAPABILITY_AMPLIFICATION','TOKEN_EFFICIENCY','MODEL_COMPATIBILITY','ARCHITECTURE','ARCHITECTURE_DECISIONS','MENTAL_MODEL_REGISTRY','AGENT_REGISTRY','SKILL_SPECIFICATIONS','ORCHESTRATION_DESIGN','DATA_CONTRACTS','MATHEMATICAL_VALIDATION','DECISION_PROVENANCE','MEMORY_ARCHITECTURE','MCP_DECISION','SECURITY_MODEL','PERFORMANCE_EVALUATION','TEST_PLAN','INSTALLATION_CLAUDE','INSTALLATION_CODEX','INSTALLATION_OPENCODE','INSTALLATION_COMMANDCODE','INSTALLATION_OPENCLAW','INSTALLATION_HERMES','USER_GUIDE','TROUBLESHOOTING','RELEASE_CHECKLIST']
     for n in required:assert (ROOT/f'docs/{n}.md').is_file(),n
+    for platform in ['antigravity','github-copilot','vscode','generic','opencode','commandcode','openclaw','hermes']:
+        assert (ROOT/f'adapters/{platform}/README.md').is_file(),platform
+    assert e.read_json(ROOT/'openclaw.plugin.json')['skills']==['skills']
     return {'status':'TESTED','full_schema_validator':importlib.metadata.version('jsonschema'),'frameworks':len(catalog),'logical_agents':52,'skills':len(skill_paths),'required_documents':len(required),'note':'Structural validation; native semantic behavior is a separate gate.'}
 
 if __name__=='__main__':print(json.dumps(validate(),indent=2))
