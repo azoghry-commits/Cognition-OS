@@ -32,6 +32,12 @@ Canonical generator version is `scripts/build_catalog.py:VERSION`; synchronize g
 
 Historical changelog entries do not prove that GitHub Releases existed. Do not retrospectively tag undocumented or untested historical builds as verified releases.
 
-Repository About description: Portable cognitive assistance for agent hosts: measured scaffolding, 50 mental models, evidence checks and governed improvement.
+Repository About description: Portable cognitive assistance for agent hosts: 50 mental models, adaptive scaffolding, evidence checks and governed improvement.
 
 References: [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases), [managing releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+
+## Current links
+
+- [0.5.0 engineering prerelease](https://github.com/azoghry-commits/Cognition-OS/releases/tag/v0.5.0)
+- [Measured scaffolding PR](https://github.com/azoghry-commits/Cognition-OS/pull/1)
+- [Real host evaluation backlog](https://github.com/azoghry-commits/Cognition-OS/issues/2)
