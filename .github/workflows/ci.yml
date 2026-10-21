@@ -1,0 +1,23 @@
+name: Tests and package
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install jsonschema==4.26.0
+      - run: python -m unittest discover -s tests -q
+      - run: python scripts/validate_package.py
+      - run: python scripts/package_release.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate-${{ matrix.os }}
+          path: dist/*

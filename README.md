@@ -241,3 +241,7 @@ scripts/ assets/                          Build tools and project identity
   <img src="assets/icon.svg" width="40" alt="Cognition OS mark" /><br /><br />
   <strong>One cognitive core. Native host execution. Evidence before confidence.</strong>
 </p>
+
+## Development and measured scaffolding
+
+See [development workflow](docs/DEVELOPMENT.md), [development log](docs/DEVELOPMENT_LOG.md), [installation index](docs/INSTALLATION.md), and [measured scaffolding analysis](docs/MEASURED_SCAFFOLDING_ANALYSIS.md). The offline `scaffolding-select` helper recommends a strategy from supplied paired scores. Real host calibration and automatic activation remain pending.

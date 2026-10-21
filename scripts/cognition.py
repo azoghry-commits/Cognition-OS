@@ -10,6 +10,7 @@ from cognition import augmentation as a
 from cognition.memory import CaseStore
 from cognition.improvement import ImprovementStore
 from cognition.orchestration import plan_execution
+from cognition.scaffolding import select_scaffolding
 from cognition.capability import capability_plan, evaluate_capability
 from cognition.token_efficiency import token_plan, evaluate_efficiency
 
@@ -24,6 +25,7 @@ def dispatch(action,data):
     if action=='framework':return e.framework(data['id'])
     if action=='plan':return e.plan(**data)
     if action=='analysis-plan':return plan_execution(**data)
+    if action=='scaffolding-select':return select_scaffolding(**data)
     if action=='capability-plan':return capability_plan(**data)
     if action=='capability-eval':return evaluate_capability(**data)
     if action=='token-plan':return token_plan(**data)
@@ -50,7 +52,7 @@ def dispatch(action,data):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=['assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','analysis-plan','capability-plan','capability-eval','token-plan','token-eval','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory','improvement'])
+    parser.add_argument('action',choices=['scaffolding-select','assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','analysis-plan','capability-plan','capability-eval','token-plan','token-eval','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory','improvement'])
     parser.add_argument('--input',help='JSON input file. Omit to read JSON from stdin; catalog needs none.')
     args=parser.parse_args()
     try:

@@ -1,22 +1,39 @@
-# Claude installation and lifecycle
+# Install on Claude
 
-## V4.1 rebuild candidate / package 0.2.0
+## 1. Prerequisites
 
-The runtime and marketplace ZIPs use version 0.2.0. Root `.claude-plugin/plugin.json` selects `hooks/claude/hooks.json`; all skills share the same core as Codex. Python is needed only for local helpers/hooks. The PostToolUse hook is advisory; it grants no permission and cannot reverse completed side effects.
+Use an available, authorized Claude surface. Code, Desktop/Chat and Cowork have different capabilities. Python 3.10+ is needed for local helpers/hooks. See [account scope](ACCOUNT_SCOPE.md); installation does not authorize paid inference.
 
-The rebuild session tested only the local manifest and launcher; no Claude installation or inference was run on this account. Follow [ACCOUNT_SCOPE.md](ACCOUNT_SCOPE.md). The native steps below apply only in an available and authorized environment; they do not confirm Claude Free entitlement. Code, Chat/Desktop, and Cowork have distinct capabilities.
+## 2. Prepare
 
-For update/rollback, use a reviewed package version and retain the previous source/ZIP and project cases outside the cache. Verify the installed manifest and test a natural task on the target surface before claiming invocation or event delivery. See [platform verification](PLATFORM_VERIFICATION_V4_1.md) and [rebuild status](REBUILD_STATUS_V4_1.md).
+Follow [package preparation](INSTALLATION.md) and retain the complete runtime tree.
 
-## Native mechanisms and baseline notes
+## 3. Install
 
-Local runtime: baseline skill files; optional Python 3.10+ for calculations and project case helper. No API key, database, MCP server or privileged install is needed. Official format references are in PLATFORM_COMPATIBILITY.md.
+Session-only Claude Code, from the extracted runtime root:
 
-Claude Code development: run `claude plugin validate .` from the plugin root, then start `claude --plugin-dir "D:/Bisnisan/CognitionOS-Plugin"`. Invoke `/cognition-os:setup` or select an installed skill. `--plugin-dir` loads this session without permanent personal installation. Confirm the skill list and read a selected canonical definition. On installed client 2.1.201, read-only inventory can be inspected using `claude --plugin-dir <root> plugin details cognition-os` when supported.
+```text
+claude plugin validate .
+claude --plugin-dir <absolute-runtime-root>
+```
 
-Marketplace installation: add the packaged local marketplace root using `/plugin marketplace add <absolute-marketplace-root>`, then `/plugin install cognition-os@cognition-os-local`. Native account-wide installation and organization provisioning may have different availability. Do not change organization settings or publish without authorization.
+Packaged local marketplace, inside Claude Code:
 
-Claude Chat/Desktop/Cowork: official current help documents custom plugin upload through Customize > Plugins. Upload the plugin ZIP, then invoke its setup/skills in the native conversation. Paid plan and organization policies apply. Skills/commands span these surfaces; subagents/hooks and local MCP do not run in plain Chat. File execution/calculator availability must be checked in the actual surface. No automatic plugin equivalence is assumed. Installed Code 2.1.201 is below the documented 2.1.273 account-sync threshold; use local load rather than promising sync.
+```text
+/plugin marketplace add <absolute-marketplace-root>
+/plugin install cognition-os@cognition-os-local
+```
 
-Update: preserve authorized cases outside plugin cache; replace/install reviewed version, reload/restart as required, run smoke and selected regression. Rollback: load prior versioned ZIP or local package; inspect schema versions before reusing data. Removal: use `/plugin uninstall cognition-os@cognition-os-local` or native Customize remove. Session-only loading ends when session ends. Do not delete project .cognition records unless explicitly requested.
+For Desktop/Chat/Cowork, use the supported Customize/Plugins upload flow when available to your account. Do not assume Code hooks, agents or local execution exist in plain Chat.
 
+## 4. Verify
+
+Start a new session. Invoke `/cognition-os:setup` on Code or select setup on the active surface, then run [shared verification](INSTALLATION.md). Native Claude inference remains unverified in this checkout; manifest validation does not close that gate.
+
+## 5. Update, rollback and remove
+
+Replace the reviewed package source, reinstall and start a new session. Roll back to the retained prior package. Use `/plugin uninstall cognition-os@cognition-os-local` on Code or native remove controls elsewhere. Preserve project cases.
+
+## 6. Troubleshoot
+
+Check discovery, resource paths, Python, account availability and optional hook trust/delivery. See [platform compatibility and official references](PLATFORM_COMPATIBILITY.md) and [observed verification](PLATFORM_VERIFICATION_V4_1.md).

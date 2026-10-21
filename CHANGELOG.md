@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Added an offline advisory scaffolding selector with paired evidence and explicit critical-error checks; real host calibration remains pending.
+- Structured installation guides and documented development, CI and release workflows.
+
 ## 0.5.0 - 2026-10-21
 
 - Added OpenCode, Command Code, OpenClaw, and Hermes adapters and installation tutorials.
@@ -7,8 +12,6 @@
 - Added provider/model-family guidance and explicit automatic-versus-direct activation behavior.
 - Retired the source blueprint and strategic PDF from the build, package, and tracked repository.
 - Removed Windows symlink test skips by using verified junction fallback coverage.
-
-## Unreleased
 
 ## 0.4.0 — tier-adaptive capability amplification — 2026-10-21
 
@@ -35,7 +38,7 @@
 - Re-audited eight Markdown sections and all 15 PDF pages; documented source transformation and official platform verification.
 - Separated local checks from native acceptance. Actual skill selection, hook trust/delivery, and host A/B/C/D benchmarks remain unverified; the candidate is not production-ready.
 
-## Unreleased — V4.1 concept review — 2026-10-20
+## Historical planning — V4.1 concept review — 2026-10-20
 
 - Preserved the Master Implementation Prompt V4.1 byte-for-byte with its SHA-256 and source metadata.
 - Documented the shift to a Hybrid Agent Cognitive Augmentation Layer: three paths, internal governor, host ownership, advisory contracts, capability mapping, checkout gaps, and A/B/C/D evaluation.

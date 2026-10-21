@@ -22,3 +22,9 @@ These defaults are experiment settings, not universal scientific constants. The 
 ## Improvement lifecycle
 
 A successful capability evaluation can become evidence for the governed improvement ledger. The workflow remains Observe, Propose, Evaluate, Approve, Version, Deploy. Deployment requires explicit approval and rollback information. The plugin does not silently rewrite its trusted instructions, alter host settings, fine-tune a model, or promote a capability tier from branding.
+
+## Offline strategy selection (Unreleased)
+
+`python scripts/cognition.py scaffolding-select --input <comparison.json>` accepts `baseline`, `candidate`, `strategy` (`bounded` or `sparse`) and `evidence_id`. Both lists contain exactly matched `case_id`, normalized `score`, and mandatory boolean `critical_error`. Baseline means conservative scaffolding. Missing critical results are rejected. Any candidate critical error retains conservative scaffolding even when it also occurred in baseline. The helper does not invoke providers, verify provenance, or change host configuration.
+
+Use development cases to select one challenger, then freeze it before held-out confirmation. Do not repeatedly compare candidates on the same held-out set. See [analysis and remaining gates](MEASURED_SCAFFOLDING_ANALYSIS.md).
