@@ -25,8 +25,8 @@ Canonical generator version is `scripts/build_catalog.py:VERSION`; synchronize g
 ## Release procedure
 
 1. Merge reviewed work; resolve version consistency, licensing and the release checklist. Record outstanding native behavioral gates explicitly.
-2. Run `python -m unittest discover -s tests -q` and `python scripts/validate_package.py` from a clean checkout of the selected commit.
-3. Run `python scripts/package_release.py`; retain all versioned ZIPs and `dist/SHA256SUMS.json`.
+2. Run the locked quality gate documented in `docs/TEST_PLAN.md` from a clean checkout of the selected commit, including Ruff, the 70% runtime coverage floor, tests, and package validation.
+3. Run `uv run --locked --extra dev python scripts/package_release.py`; retain all versioned ZIPs and `dist/SHA256SUMS.json`.
 4. Create an annotated `v<package-version>` tag at that exact reviewed commit. Push the tag, then create a GitHub Release with substantive notes and those verified artifacts. Mark engineering candidates as prerelease; this does not certify production readiness.
 5. Check the release target SHA, uploaded filenames/checksums and installation smoke. Retain the previous release for rollback.
 

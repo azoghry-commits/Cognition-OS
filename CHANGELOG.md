@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added a standard Python project manifest and reproducible `uv.lock` development environment.
+- Added cross-platform CI gates for locked installation, Ruff, measured coverage, package validation, and deterministic release archives.
+- Added weekly dependency updates for the uv environment and GitHub Actions.
+- Synchronized the Python package version with the 0.5.0 plugin candidate.
+
+## Unreleased
+
 - Fixed advisory artifact checks when a Windows workspace uses a short path alias.
 
 - Added an offline advisory scaffolding selector with paired evidence and explicit critical-error checks; real host calibration remains pending.
