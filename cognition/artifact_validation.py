@@ -23,7 +23,8 @@ def handle_event(event):
     cwd = event.get('cwd')
     if not isinstance(cwd, str) or not Path(cwd).is_absolute():
         return {}
-    root = Path(cwd).resolve(strict=True)
+    lexical_root = Path(cwd)
+    root = lexical_root.resolve(strict=True)
     args = event.get('tool_input', {})
     if not isinstance(args, dict):
         return {}
@@ -37,10 +38,14 @@ def handle_event(event):
         relative = None
         try:
             target = Path(name)
-            target = target if target.is_absolute() else root/target
-            relative = target.relative_to(root)
+            target = target if target.is_absolute() else lexical_root/target
+            # Windows TEMP may use an 8.3 alias while resolve() expands it.
+            # Derive the lexical boundary first, then inspect every canonical
+            # child for links before reading; never resolve away a child link.
+            relative = target.relative_to(lexical_root)
             if '..' in relative.parts or relative.parts[:2] != ('.cognition', 'artifacts') or target.suffix != '.json':
                 continue
+            target = root/relative
             if target in mentioned:
                 continue
             mentioned.add(target)

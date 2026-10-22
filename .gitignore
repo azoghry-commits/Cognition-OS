@@ -1,5 +1,12 @@
 __pycache__/
 *.pyc
+*.egg-info/
+build/
+.coverage
+.ruff_cache/
+.venv/
+coverage.xml
+htmlcov/
 .dev-deps/
 .cognition/
 dist/

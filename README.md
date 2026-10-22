@@ -211,11 +211,13 @@ Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](
 Python 3.10+ is used by the local helper and rebuild pipeline. From the repository root, common checks are:
 
 ```powershell
-python scripts/rebuild_plugin.py
-python scripts/verify_rebuild.py
-python -m unittest discover -s tests -v
-python scripts/evaluate_activation.py
-python scripts/validate_package.py
+uv sync --locked --extra dev
+uv run --locked --extra dev ruff check cognition scripts tests
+uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+uv run --locked --extra dev coverage report --fail-under=70
+uv run --locked --extra dev coverage xml
+uv run --locked --extra dev python scripts/validate_package.py
+uv run --locked --extra dev python scripts/package_release.py
 ```
 
 These are local structural and deterministic checks. They do not certify native host behavior or publish a release. See the [test plan](docs/TEST_PLAN.md) and [release checklist](docs/RELEASE_CHECKLIST.md).
@@ -241,3 +243,7 @@ scripts/ assets/                          Build tools and project identity
   <img src="assets/icon.svg" width="40" alt="Cognition OS mark" /><br /><br />
   <strong>One cognitive core. Native host execution. Evidence before confidence.</strong>
 </p>
+
+## Development and measured scaffolding
+
+See [development workflow](docs/DEVELOPMENT.md), [development log](docs/DEVELOPMENT_LOG.md), [installation index](docs/INSTALLATION.md), and [measured scaffolding analysis](docs/MEASURED_SCAFFOLDING_ANALYSIS.md). The offline `scaffolding-select` helper recommends a strategy from supplied paired scores. Real host calibration and automatic activation remain pending.

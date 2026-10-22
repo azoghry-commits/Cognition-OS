@@ -210,6 +210,18 @@ class ArtifactHookTests(unittest.TestCase):
             path.write_text(json.dumps(result()), encoding='utf-8')
             self.assertEqual(handle_event(event), {})
 
+    def test_workspace_alias_is_checked_without_following_child_links(self):
+        from cognition.artifact_validation import handle_event
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as other:
+            workspace = Path(tmp)/'workspace'; workspace.mkdir()
+            artifact = workspace/'.cognition/artifacts/bad.json'
+            artifact.parent.mkdir(parents=True); artifact.write_text('{invalid', encoding='utf-8')
+            alias = Path(other)/'workspace-alias'
+            with directory_link(alias, workspace):
+                event = {'cwd': str(alias), 'hook_event_name': 'PostToolUse', 'tool_name': 'Write',
+                         'tool_input': {'file_path': str(alias/'.cognition/artifacts/bad.json')}}
+                self.assertIn('hookSpecificOutput', handle_event(event))
+
     def test_outside_scope_secrets_and_unrelated_events_are_ignored(self):
         from cognition.artifact_validation import handle_event
         with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as other:

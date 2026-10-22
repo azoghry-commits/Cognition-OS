@@ -5,13 +5,23 @@ import shlex
 import subprocess
 import sys
 import tempfile
+import tomllib
 import unittest
 import zipfile
 from pathlib import Path
 from cognition.engine import ROOT
+from cognition import __version__
 from scripts.package_release import runtime_files,archive
 
 class PackagingTests(unittest.TestCase):
+    def test_project_metadata_versions_and_lockfile_are_synchronized(self):
+        project = tomllib.loads((ROOT / 'pyproject.toml').read_text(encoding='utf-8'))
+        plugin = json.loads((ROOT / 'plugin.json').read_text(encoding='utf-8'))
+        self.assertEqual(project['project']['version'], plugin['version'])
+        self.assertEqual(__version__, plugin['version'])
+        self.assertEqual(project['project']['requires-python'], '>=3.10')
+        self.assertTrue((ROOT / 'uv.lock').is_file())
+
     def test_hybrid_tools_and_hook_run_from_extracted_archive(self):
         files=runtime_files()
         with tempfile.TemporaryDirectory(prefix='cognition package ') as folder:

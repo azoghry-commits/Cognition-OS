@@ -1,0 +1,33 @@
+name: Tests and package
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  quality:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked --extra dev
+      - run: uv run --locked --extra dev ruff check cognition scripts tests
+      - run: uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+      - run: uv run --locked --extra dev coverage report --fail-under=70
+      - run: uv run --locked --extra dev coverage xml
+      - run: uv run --locked --extra dev python scripts/validate_package.py
+      - run: uv run --locked --extra dev python scripts/package_release.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate-${{ matrix.os }}
+          path: dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.os }}
+          path: coverage.xml
