@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added opt-in context validity checks for project cases, freshness, and evidence fingerprints without rewriting existing records.
+- Added bounded decision-impact analysis and workspace evidence snapshots, plus read-only CLI actions and extracted-package smoke coverage.
 - Added opt-in JSON routing diagnostics on stderr with an explicit metadata allowlist, no task-content logging, and no host root-logger mutation.
 - Bounded project-local case and improvement reads to 1 MB, rejected non-object and nonfinite stored JSON, and validated the full serialized case envelope before creation.
 - Added an active development roadmap with ordered repository, security, native-host, evaluation, and release gates for the 0.6.0 candidate.
