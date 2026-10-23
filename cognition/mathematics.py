@@ -212,7 +212,7 @@ def critical_path(tasks, time_unit):
     if not tasks: raise ValueError('Tasks required')
     by={t['id']:t for t in tasks}
     if len(by)!=len(tasks): raise ValueError('Duplicate task id')
-    done={}; order=[]; pending=dict(by)
+    done: dict[str, dict[str, float]]={}; order: list[str]=[]; pending=dict(by)
     for t in tasks:
         number(t['duration'],'duration',0)
         if not isinstance(t['predecessors'],list) or len(t['predecessors'])!=len(set(t['predecessors'])): raise ValueError('Unique predecessor list required')

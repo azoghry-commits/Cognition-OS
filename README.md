@@ -212,15 +212,19 @@ Python 3.10+ is used by the local helper and rebuild pipeline. From the reposito
 
 ```powershell
 uv sync --locked --extra dev
+uv run --locked --extra dev pip-audit --progress-spinner off
 uv run --locked --extra dev ruff check cognition scripts tests
+uv run --locked --extra dev mypy cognition
 uv run --locked --extra dev coverage run -m unittest discover -s tests -q
-uv run --locked --extra dev coverage report --fail-under=70
+uv run --locked --extra dev coverage report --fail-under=80
 uv run --locked --extra dev coverage xml
 uv run --locked --extra dev python scripts/validate_package.py
 uv run --locked --extra dev python scripts/package_release.py
 ```
 
 These are local structural and deterministic checks. They do not certify native host behavior or publish a release. See the [test plan](docs/TEST_PLAN.md) and [release checklist](docs/RELEASE_CHECKLIST.md).
+
+For a reproducible editor environment, open the repository in a Dev Container. It pins Python 3.13 and runs the locked development install automatically. Contributions should follow the focused change and paired-test workflow in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <details>
 <summary><strong>Repository map — where everything lives</strong></summary>

@@ -2,6 +2,7 @@
 import json
 import re
 from pathlib import Path
+from typing import Any
 
 ROOT=Path(__file__).resolve().parents[1]
 CLAIM_TYPES={'VERIFIED_FACT','SOURCE_SUPPORTED','CALCULATED_RESULT','SIMULATED_RESULT','ASSUMPTION','INFERENCE','USER_ASSUMPTION','MODEL_INFERENCE','HYPOTHESIS','UNKNOWN'}
@@ -31,7 +32,15 @@ def validate_schema(data,schema,path='$'):
     errors=[]
     if '$ref' in schema:
         raise ValueError('Runtime subset does not resolve refs; supply expanded schema')
-    types={'object':dict,'array':list,'string':str,'number':(int,float),'integer':int,'boolean':bool,'null':type(None)}
+    types: dict[str, type[Any] | tuple[type[Any], ...]] = {
+        'object': dict,
+        'array': list,
+        'string': str,
+        'number': (int, float),
+        'integer': int,
+        'boolean': bool,
+        'null': type(None),
+    }
     t=schema.get('type')
     choices=t if isinstance(t,list) else [t] if t else []
     if choices and not any(isinstance(data,types[c]) and not (c in ['integer','number'] and isinstance(data,bool)) for c in choices):
@@ -124,7 +133,7 @@ def check_framework(identifier,inputs,output):
 def check_workflow(workflow,artifacts):
     ids=[s['step_id'] for s in workflow['steps']]
     if len(ids)!=len(set(ids)): raise ValueError('Duplicate workflow step')
-    seen=set(); results=[]
+    seen=set(); results: list[dict[str, Any]]=[]
     for s in workflow['steps']:
         if any(d not in seen for d in s['depends_on']): raise ValueError('Unmet or cyclic workflow dependency')
         artifact=artifacts.get(s['step_id'])
@@ -162,7 +171,7 @@ def validate_provenance(nodes,edges):
     if len(kinds)!=len(nodes): raise ValueError('Duplicate provenance id')
     if any(k not in ['Entity','Activity','Agent'] for k in kinds.values()): raise ValueError('Invalid provenance kind')
     allowed={'used':('Activity','Entity'),'wasGeneratedBy':('Entity','Activity'),'wasDerivedFrom':('Entity','Entity'),'wasAssociatedWith':('Activity','Agent'),'wasAttributedTo':('Entity','Agent')}
-    graph={i:[] for i in kinds}
+    graph: dict[str, list[str]]={i:[] for i in kinds}
     for e in edges:
         s,t,r=e['source'],e['target'],e['relation']
         if s not in kinds or t not in kinds or r not in allowed: raise ValueError('Dangling edge or unknown PROV-inspired relation')

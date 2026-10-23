@@ -33,7 +33,7 @@ def _topological_waves(steps):
     identifiers = _validate_steps(steps)
     position = {identifier: index for index, identifier in enumerate(identifiers)}
     indegree = {identifier: 0 for identifier in identifiers}
-    children = {identifier: [] for identifier in identifiers}
+    children: dict[str, list[str]] = {identifier: [] for identifier in identifiers}
     for step in steps:
         for dependency in step.get("depends_on", []):
             indegree[step["step_id"]] += 1
@@ -42,7 +42,7 @@ def _topological_waves(steps):
     waves = []
     completed = 0
     while ready:
-        wave = sorted(list(ready), key=position.get)
+        wave = sorted(list(ready), key=lambda identifier: position[identifier])
         ready.clear()
         waves.append(wave)
         completed += len(wave)
@@ -52,7 +52,7 @@ def _topological_waves(steps):
                 indegree[child] -= 1
                 if indegree[child] == 0:
                     next_ready.append(child)
-        ready.extend(sorted(next_ready, key=position.get))
+        ready.extend(sorted(next_ready, key=lambda identifier: position[identifier]))
     if completed != len(identifiers):
         raise ValueError("Cyclic analysis dependency")
     return waves
