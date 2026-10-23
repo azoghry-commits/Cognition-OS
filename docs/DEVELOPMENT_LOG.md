@@ -1,5 +1,14 @@
 # Development log
 
+## 2026-10-23 — context validity MVP
+
+- Managed worktree `context-validity`, branch `feat/context-validity`, base `6d1edfa`. Original checkout and unrelated dirty files preserved. Bounded-storage dependency reviewed and committed separately as `d386dd8`.
+- Implemented P1–P3: applicability v1 metadata, typed/fresh observed facts, evidence fingerprints, read-only stored-case checks and optional retrieval filtering; bounded dependency impact and workspace evidence snapshots; CLI, schemas, example, skill/generator guidance and documentation.
+- Red/green evidence: reproduced old storage failures, absent validity/impact APIs and retrieval filter, then timestamp UTC overflow identified by a fresh reviewer. Added a failing regression and fixed the timestamp conversion. No other concrete defect was identified in that review.
+- Final local gate: 138 tests run, 1 skipped (Windows symlink creation unavailable), runtime coverage 85% against current 80% floor; Ruff and mypy passed; 50 framework/52 role/12 skill structural schema validation and all release archives passed. Extracted-package commands run with isolated Python in a path containing spaces.
+- Full rebuild/package succeeded in a disposable repository copy; authored skill and schemas survived generation with platform newlines normalized. pip-audit found no known dependency vulnerabilities; unpublished local cognition-os package could not be audited against PyPI. Cache-deserialization warnings were emitted by the audit client.
+- P4 native paired task evaluation is NOT_RUN; cross-host behavior, automatic selection, task improvement and production readiness are not established. Thresholds and collection protocol are predeclared in CONTEXT_VALIDITY.md. Package version remains 0.5.0 for local development; no release or installation performed. Future failure-regression, experiment-selection and sensitivity work remains separate backlog.
+
 ## 2026-10-22 — measured scaffolding and repository governance
 
 - Analyzed feasibility using the Cognition OS orchestrator and FW-49. Offline advisory selection is feasible; automatic deployment and real-model capability claims remain gated.

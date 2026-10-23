@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Context applicability metadata v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "conditions"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S"},
+    "age": {"type": "integer", "minimum": 0, "maximum": 31536000},
+    "scalar": {"type": ["string", "number", "boolean"]},
+    "condition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "fact", "operator", "expected"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "fact": {"$ref": "#/$defs/text"},
+        "operator": {"enum": ["equals", "in", "lt", "lte", "gt", "gte"]},
+        "expected": {}, "required": {"type": "boolean"},
+        "max_age_seconds": {"$ref": "#/$defs/age"}
+      },
+      "allOf": [
+        {"if": {"properties": {"operator": {"const": "in"}}},
+         "then": {"properties": {"expected": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/scalar"}}}}},
+        {"if": {"properties": {"operator": {"const": "equals"}}},
+         "then": {"properties": {"expected": {"type": ["string", "number", "boolean", "null"]}}}},
+        {"if": {"properties": {"operator": {"enum": ["lt", "lte", "gt", "gte"]}}},
+         "then": {"properties": {"expected": {"type": "number"}}}}
+      ]
+    }
+  },
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"project_id": {"$ref": "#/$defs/text"}, "component": {"$ref": "#/$defs/text"}, "task_type": {"$ref": "#/$defs/text"}}
+    },
+    "conditions": {"type": "array", "minItems": 1, "maxItems": 128, "items": {"$ref": "#/$defs/condition"}},
+    "evidence_refs": {
+      "type": "array", "maxItems": 128,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "fingerprint"],
+        "properties": {"id": {"$ref": "#/$defs/text"}, "fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "max_age_seconds": {"$ref": "#/$defs/age"}}
+      }
+    },
+    "review_after": {"type": "string", "format": "date-time"},
+    "supersedes": {"$ref": "#/$defs/text"},
+    "limitations": {"type": "array", "maxItems": 128, "items": {"$ref": "#/$defs/text"}}
+  }
+}

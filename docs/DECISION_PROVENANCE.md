@@ -1,5 +1,7 @@
 # Observable decision lineage
 
+Read-only decision impact uses a separate bounded dependency graph described in [CONTEXT_VALIDITY.md](CONTEXT_VALIDITY.md). Reuse explicit entity IDs to connect changed evidence/assumptions to decisions. The existing strict provenance schema is unchanged; impact does not infer missing semantic relationships or prove a changed decision false.
+
 Source: blueprint 6.2 and PDF 11. Nodes: Entity (source, assumption, finding, recommendation), Activity (framework or tool operation), Agent (logical specialist or actual host actor). Relationships: used(Activity,Entity), wasGeneratedBy(Entity,Activity), wasDerivedFrom(Entity,Entity), wasAssociatedWith(Activity,Agent), wasAttributedTo(Entity,Agent).
 
 The validator enforces unique IDs, valid endpoints/kinds and acyclic data derivation. It is PROV-inspired JSON; no RDF/OWL equivalence or W3C conformance certification is claimed. Keep concise rationale, actual calculation records and evidence links. Never request hidden chain-of-thought or store private internal reasoning.

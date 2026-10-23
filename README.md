@@ -145,6 +145,8 @@ The plugin supports any tier when the host can discover skills and follow their 
 
 Dependency-aware analysis is available through `python scripts/cognition.py analysis-plan`. It produces sequential, parallel, or hybrid execution waves without pretending that a host dispatched work. The active host runs independent steps concurrently only when native delegation and the authorized concurrency allowance are available.
 
+Optional context validity checks use `memory-check`, stored-case `memory` checks, `evidence-snapshot`, and `decision-impact` to identify stale facts or changed assumptions before reusing knowledge. Existing cases remain readable; checks are read-only and matched conditions do not certify truth. See [CONTEXT_VALIDITY.md](docs/CONTEXT_VALIDITY.md) for input contracts, limits and the separate native evaluation gate.
+
 Governed self-improvement is available through `python scripts/cognition.py improvement`. The project ledger records observation, proposal, baseline-versus-candidate evaluation, explicit approval, versioned deployment evidence, and rollback. See [SELF_IMPROVEMENT.md](docs/SELF_IMPROVEMENT.md).
 
 Tier-adaptive capability amplification is available through `capability-plan`. It uses observed context, tools, and delegation capacity to give constrained models tighter sequential scaffolding and advanced models sparse, challenge-oriented workflows. `capability-eval` permits a significant-improvement claim only after paired sample-size, effect-size, statistical, and critical-regression gates pass. See [CAPABILITY_AMPLIFICATION.md](docs/CAPABILITY_AMPLIFICATION.md).

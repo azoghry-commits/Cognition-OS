@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add opt-in context validity checks for project cases, freshness and evidence fingerprints, without rewriting existing records.
+- Add bounded decision impact and workspace evidence snapshots, plus read-only CLI actions and extracted-package smoke coverage.
+- Bound persisted JSON reads and serialized case envelopes; preserve explicit persistence authorization.
+- Native skill selection, task quality improvement and cross-host behavioral acceptance remain unverified for this candidate.
+
 - Added a standard Python project manifest and reproducible `uv.lock` development environment.
 - Added cross-platform CI gates for locked installation, Ruff, measured coverage, package validation, and deterministic release archives.
 - Added weekly dependency updates for the uv environment and GitHub Actions.

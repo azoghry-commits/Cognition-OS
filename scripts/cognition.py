@@ -13,10 +13,14 @@ from cognition.orchestration import plan_execution
 from cognition.scaffolding import select_scaffolding
 from cognition.capability import capability_plan, evaluate_capability
 from cognition.token_efficiency import token_plan, evaluate_efficiency
+from cognition.validity import check_memory, decision_impact, snapshot_evidence
 
 CALCULATIONS={k:getattr(m,k) for k in ['ev','expected_value','scenario_compare','bayes','bayes_sequence','rice','decision_matrix','break_even','cost_benefit','sensitivity','simulate','pareto','critical_path','stock_flow']}
 
 def dispatch(action,data):
+    if action=='memory-check':return check_memory(**data)
+    if action=='decision-impact':return decision_impact(**data)
+    if action=='evidence-snapshot':return snapshot_evidence(**data)
     if action=='assess':return a.assess(data)
     if action=='deep-plan':return a.deep_plan(data)
     if action=='review-advisory':return a.review_advisory(**data)
@@ -42,7 +46,7 @@ def dispatch(action,data):
     if action=='jury':return e.jury(**data)
     if action=='memory':
         store=CaseStore(data['workspace']); op=data['operation']; args=data.get('args',{})
-        if op not in ['save','get','list','delete']:raise ValueError('Unknown storage operation')
+        if op not in ['save','get','list','delete','check']:raise ValueError('Unknown storage operation')
         return getattr(store,op)(**args)
     if action=='improvement':
         store=ImprovementStore(data['workspace']); op=data['operation']; args=data.get('args',{})
@@ -52,7 +56,7 @@ def dispatch(action,data):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=['scaffolding-select','assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','analysis-plan','capability-plan','capability-eval','token-plan','token-eval','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory','improvement'])
+    parser.add_argument('action',choices=['memory-check','decision-impact','evidence-snapshot','scaffolding-select','assess','deep-plan','review-advisory','normalize-legacy','catalog','framework','plan','analysis-plan','capability-plan','capability-eval','token-plan','token-eval','compute','check-framework','check-workflow','audit','provenance','mece','jury','memory','improvement'])
     parser.add_argument('--input',help='JSON input file. Omit to read JSON from stdin; catalog needs none.')
     args=parser.parse_args()
     try:
