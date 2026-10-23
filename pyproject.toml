@@ -16,6 +16,8 @@ validation = ["jsonschema==4.26.0"]
 dev = [
   "coverage[toml]==7.11.0",
   "jsonschema==4.26.0",
+  "mypy==1.18.2",
+  "pip-audit==2.9.0",
   "ruff==0.14.2",
 ]
 
@@ -35,9 +37,16 @@ branch = true
 source = ["cognition"]
 
 [tool.coverage.report]
-fail_under = 70
+fail_under = 80
 show_missing = true
 skip_covered = true
 exclude_also = [
   "if __name__ == ['\"]__main__['\"]:",
 ]
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+exclude = ["^scripts/cognition\\.py$"]
