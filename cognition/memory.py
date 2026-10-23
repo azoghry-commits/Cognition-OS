@@ -4,6 +4,7 @@ import json
 import re
 from datetime import datetime,timezone
 from pathlib import Path
+from .storage import MAX_RECORD_BYTES, read_record
 
 class CaseStore:
     def __init__(self,workspace):
@@ -30,10 +31,13 @@ class CaseStore:
         p=self.path(case_id);p.parent.mkdir(parents=True,exist_ok=True)
         # Exclusive create prevents accidental overwrite. Versions receive new IDs.
         data={'schema_version':'1.0','version':1,'project_id':self.project_id,'created_at':datetime.now(timezone.utc).isoformat(),'sensitive':bool(sensitive),'record':record}
-        with p.open('x',encoding='utf-8') as stream: json.dump(data,stream,ensure_ascii=False,indent=2)
+        serialized=json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)
+        if len(serialized.encode('utf-8')) > MAX_RECORD_BYTES:
+            raise ValueError('Case envelope exceeds 1 MB limit')
+        with p.open('x',encoding='utf-8',newline='\n') as stream: stream.write(serialized)
         return {'id':case_id,'path':str(p),'project_id':self.project_id}
     def get(self,case_id):
-        data=json.loads(self.path(case_id).read_text(encoding='utf-8'))
+        data=read_record(self.path(case_id))
         if data.get('project_id')!=self.project_id: raise ValueError('Cross-project case rejected')
         return data
     def list(self,query=''):
