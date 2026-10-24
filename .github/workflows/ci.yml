@@ -20,7 +20,10 @@ jobs:
       - run: uv run --locked --extra dev pip-audit --progress-spinner off
       - run: uv run --locked --extra dev ruff check cognition scripts tests
       - run: uv run --locked --extra dev mypy cognition
-      - run: uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+      - name: Run unit tests
+        run: uv run --locked --extra dev python -m unittest discover -s tests -q
+      - name: Collect test coverage
+        run: uv run --locked --extra dev coverage run -m unittest discover -s tests -q
       - run: uv run --locked --extra dev coverage report --fail-under=80
       - run: uv run --locked --extra dev coverage xml
       - run: uv run --locked --extra dev python scripts/validate_package.py
