@@ -139,3 +139,7 @@ P0 completed on managed worktree `context-validity`, branch `feat/context-validi
 ## Execution update — 2026-10-24
 
 P4 native measurement completed: 20 efficient-model pairs. Correctness improved, but acceptance failed the latency limit and capability improvement was not significant. See [measured results](NATIVE_CONTEXT_VALIDITY_EVALUATION.md). Keep the engineering candidate on feat/context-validity; optimize with development cases before new held-out confirmation.
+
+## Optimization update — 2026-10-24
+
+Conditional case-store reference loading and a single-call candidate invocation are implemented and locally verified. Native latency/token gain is unmeasured; prior acceptance remains false. Preserve the historical snapshot and use development cases before collecting a new reviewed held-out set. Full local evidence is in DEVELOPMENT_LOG.md.
