@@ -1,6 +1,6 @@
 # Rencana pengembangan Cognition OS: validitas keputusan dan pembelajaran
 
-Tanggal: 2026-10-23. Status: MVP P0–P3 diimplementasikan lokal; P4 native host belum dijalankan. Lihat execution update di akhir dokumen.
+Tanggal: 2026-10-23. Status: MVP P0â€“P3 diimplementasikan lokal; P4 native host belum dijalankan. Lihat execution update di akhir dokumen.
 
 ## Tujuan dan cakupan
 
@@ -82,31 +82,31 @@ Nama dan parameter CLI dikonfirmasi setelah membaca dispatcher. Output JSON menj
 
 ## Tahapan dan kriteria selesai
 
-### P0 — baseline dan kontrak
+### P0 â€” baseline dan kontrak
 
 Pekerjaan: periksa instruksi repository, diff/dependensi hardening, CLI dispatcher, generator, serta pola test; buat branch sesuai strategi; sepakati schema dan contoh input/output.
 
 Selesai bila: baseline SHA tercatat, quality gate baseline memiliki hasil nyata, perubahan milik pekerjaan lain teridentifikasi, kontrak lama/baru dan semantik status terdokumentasi. Kegagalan baseline dipisahkan dari regresi fitur.
 
-### P1 — memori bersyarat
+### P1 â€” memori bersyarat
 
 Pekerjaan: implementasikan evaluator murni dalam usulan `cognition/validity.py`, schema, integrasi CaseStore yang kompatibel, dan unit test berbasis tabel kasus. Clock disuntikkan agar pengujian kedaluwarsa deterministik.
 
 Selesai bila: keempat status benar; missing fact, stale fact, tipe salah, boundary waktu, kondisi bertentangan, schema tak dikenal, dan case lama ditangani; pembacaan tidak menulis file; otorisasi dan batas storage tetap berlaku.
 
-### P2 — keputusan terdampak
+### P2 â€” keputusan terdampak
 
 Pekerjaan: pemetaan dependency dan fingerprint dengan akses file terbatas; implementasi decision-impact; contoh perubahan single-writer menjadi multi-writer.
 
 Selesai bila: perubahan memengaruhi hanya keputusan terkait, dependensi transitif ditemukan, input siklik ditolak atau dilaporkan, bukti hilang menjadi unknown, traversal/link keluar scope ditolak, dan batas pemrosesan dilaporkan tanpa sukses palsu.
 
-### P3 — CLI dan integrasi skill
+### P3 â€” CLI dan integrasi skill
 
 Pekerjaan: hubungkan evaluator ke dispatcher yang ditemukan; perbarui `skills/case-intelligence/SKILL.md` dan referensi terkait; tambahkan contoh retrieval; verifikasi generator tidak menghapus perubahan.
 
 Selesai bila: perintah dapat dijalankan dari paket hasil ekstraksi, output sesuai schema, tidak ada penulisan default, task sederhana tidak dipaksa memanggil fitur, dan host menerima status beserta bukti/limitasi.
 
-### P4 — evaluasi perilaku dan rilis kandidat
+### P4 â€” evaluasi perilaku dan rilis kandidat
 
 Pekerjaan: gunakan satu host awal yang tersedia dan diotorisasi, dengan baseline dan kandidat pada kasus sama. Sertakan kasus unchanged, perubahan relevan/tidak relevan, metadata lama, bukti hilang, instruksi berbahaya dalam bukti, dan keputusan yang memang tetap benar meski file berubah.
 
@@ -128,10 +128,14 @@ Target versi mengikuti `docs/DEVELOPMENT.md` (saat ini usulan 0.6.0), dikonfirma
 
 Untuk perubahan runtime jalankan gate terkunci dalam `docs/TEST_PLAN.md`: Ruff, unittest dengan coverage runtime minimal 80%, validasi paket, dan packaging. Tambahkan pengujian kontrak/schema baru serta smoke dari paket ekstraksi; periksa allowlist packaging agar modul/schema baru benar-benar disertakan. Uji lintas Windows/Linux melalui CI bila tersedia. Kelulusan lokal tidak mewakili CI atau native host.
 
-Pembagian PR yang disarankan: (1) kontrak dan evaluator memori, (2) propagasi dampak, (3) CLI/skill/paket dan dokumentasi, (4) bukti evaluasi host serta penyesuaian. Masing-masing harus tetap kompatibel dan memiliki tes yang relevan. Ukuran awal MVP sekitar 8–12 sesi kerja fokus setelah baseline siap; ini perkiraan lingkup, bukan komitmen waktu. Jadwal aktual bergantung pada hardening, host, dan hasil evaluasi.
+Pembagian PR yang disarankan: (1) kontrak dan evaluator memori, (2) propagasi dampak, (3) CLI/skill/paket dan dokumentasi, (4) bukti evaluasi host serta penyesuaian. Masing-masing harus tetap kompatibel dan memiliki tes yang relevan. Ukuran awal MVP sekitar 8â€“12 sesi kerja fokus setelah baseline siap; ini perkiraan lingkup, bukan komitmen waktu. Jadwal aktual bergantung pada hardening, host, dan hasil evaluasi.
 
 Langkah implementasi pertama: tuntaskan baseline storage yang sudah berubah, lalu mulai P0/P1 pada branch fitur baru. Tidak perlu membangun dashboard terlebih dahulu.
 
-## Execution update — 2026-10-23
+## Execution update â€” 2026-10-23
 
-P0 completed on managed worktree `context-validity`, branch `feat/context-validity`, base `6d1edfa`. Bounded-storage dependency was reviewed and committed separately as `d386dd8`; original dirty checkout remains intact. P1–P3 locally implemented. P4 local checks and package smoke executed; native paired task evaluation remains NOT_RUN. Acceptance thresholds were declared in CONTEXT_VALIDITY.md before host measurement. Post-MVP enhancements remain backlog. Final local evidence is recorded in DEVELOPMENT_LOG.md.
+P0 completed on managed worktree `context-validity`, branch `feat/context-validity`, base `6d1edfa`. Bounded-storage dependency was reviewed and committed separately as `d386dd8`; original dirty checkout remains intact. P1â€“P3 locally implemented. P4 local checks and package smoke executed; native paired task evaluation remains NOT_RUN. Acceptance thresholds were declared in CONTEXT_VALIDITY.md before host measurement. Post-MVP enhancements remain backlog. Final local evidence is recorded in DEVELOPMENT_LOG.md.
+
+## Execution update — 2026-10-24
+
+P4 native measurement completed: 20 efficient-model pairs. Correctness improved, but acceptance failed the latency limit and capability improvement was not significant. See [measured results](NATIVE_CONTEXT_VALIDITY_EVALUATION.md). Keep the engineering candidate on feat/context-validity; optimize with development cases before new held-out confirmation.

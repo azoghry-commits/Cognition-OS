@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added efficient-host paired evaluation harness and frozen evidence; native acceptance remains unmet due latency.
 - Added opt-in context validity checks for project cases, freshness, and evidence fingerprints without rewriting existing records.
 - Added bounded decision-impact analysis and workspace evidence snapshots, plus read-only CLI actions and extracted-package smoke coverage.
 - Added opt-in JSON routing diagnostics on stderr with an explicit metadata allowlist, no task-content logging, and no host root-logger mutation.
@@ -28,13 +29,13 @@
 - Retired the source blueprint and strategic PDF from the build, package, and tracked repository.
 - Removed Windows symlink test skips by using verified junction fallback coverage.
 
-## 0.4.0 — tier-adaptive capability amplification — 2026-10-21
+## 0.4.0 â€” tier-adaptive capability amplification â€” 2026-10-21
 
 - Added observed-capability profiles and adaptive plans for constrained, balanced, advanced, and unknown hosts.
 - Added paired capability evaluation with minimum sample, effect-size, exact sign-test, and critical-regression gates.
 - Connected capability evidence to governed self-improvement without claiming model-weight changes or automatic retraining.
 
-## 0.3.0 — portable orchestration and governed improvement — 2026-10-21
+## 0.3.0 â€” portable orchestration and governed improvement â€” 2026-10-21
 
 - Added cross-host packaging guidance and adapters for Antigravity, GitHub Copilot, VS Code, and generic Agent Skills consumers while preserving the shared Claude/Codex core.
 - Added dependency-aware sequential, parallel, and hybrid analysis planning with deterministic DAG validation and host-capability fallback.
@@ -44,7 +45,7 @@
 - Translated maintained documentation and traceability labels into English while preserving original source/evidence files and their checksums.
 - Align generic evidence audits with V4.1 advisory validation: calculated claims require typed calculation records, and simulated claims require typed simulation records with explicit integer seeds.
 
-## 0.2.0 — V4.1 rebuild candidate — 2026-10-20
+## 0.2.0 â€” V4.1 rebuild candidate â€” 2026-10-20
 
 - Rebuilt the plugin as an internal capability for host models and agents, with a seven-policy governor, pass-through behavior, budgets, and explicit degradation.
 - Added V4.1 request/result contracts and provenance-preserving conversion of 3.1 artifacts; retained all 50 source models and 52 logical roles.
@@ -53,11 +54,11 @@
 - Re-audited eight Markdown sections and all 15 PDF pages; documented source transformation and official platform verification.
 - Separated local checks from native acceptance. Actual skill selection, hook trust/delivery, and host A/B/C/D benchmarks remain unverified; the candidate is not production-ready.
 
-## Historical planning — V4.1 concept review — 2026-10-20
+## Historical planning â€” V4.1 concept review â€” 2026-10-20
 
 - Preserved the Master Implementation Prompt V4.1 byte-for-byte with its SHA-256 and source metadata.
 - Documented the shift to a Hybrid Agent Cognitive Augmentation Layer: three paths, internal governor, host ownership, advisory contracts, capability mapping, checkout gaps, and A/B/C/D evaluation.
-- Added a Phase 0–8 migration plan and linked the new direction from the README, status, architecture, orchestration, decisions, traceability, source audit, and evaluation plan.
+- Added a Phase 0â€“8 migration plan and linked the new direction from the README, status, architecture, orchestration, decisions, traceability, source audit, and evaluation plan.
 - The package runtime/manifest remained at 0.1.0 with 3.1 contracts at that stage; hybrid features and V4.1 benchmark results had not yet been implemented.
 
 ## 0.1.0 - 2026-10-20
