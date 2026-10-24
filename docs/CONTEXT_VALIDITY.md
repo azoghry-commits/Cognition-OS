@@ -76,3 +76,7 @@ The [20-pair efficient-model evaluation](NATIVE_CONTEXT_VALIDITY_EVALUATION.md) 
 ## Qualified v2 confirmation — 2026-10-24
 
 The [corrected v2 cohort](NATIVE_CONTEXT_VALIDITY_EVALUATION_V2.md) met product screening thresholds at 8.79% paired overhead. Both arms scored20/20; no measurable capability gain or token saving. Three cases were partially exposed before a condition-ID fixture correction; the report preserves this limitation and excludes the incomplete attempt.
+
+## Bound approval and reproducible replay
+
+New nonpilot host runs require the reviewed case/label canonical SHA-256 fingerprints in human-review.json. A changed suite or legacy unbound certificate cannot authorize collection. Historical results retain their original approval policy; [offline auditing](OFFLINE_EVALUATION_AUDIT.md) verifies complete frozen bundles without executing models or archived code.

@@ -35,3 +35,5 @@ uv run --locked --extra dev coverage report --data-file=.coverage.generators --i
 ```
 
 This informational generator report has no 80% claim; the ordinary runtime report still enforces 80%. The container-smoke CI job uses the Dev Container Dockerfile, a fresh checkout and the README locked install/test sequence.
+
+Evaluation integrity tests are in test_native_eval.py and test_offline_eval.py. They do not call a native solver. See [offline auditing](OFFLINE_EVALUATION_AUDIT.md) for a reproducible regrade of the complete v2 archive and the distinction between historical approval and new collection authorization.

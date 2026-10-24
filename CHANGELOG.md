@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Bind new native-evaluation approval to reviewed case/label content and add bounded offline evidence replay, preserving historical approval limitations.
 - Add opt-in JSON routing diagnostics, strict finite catalog generation, dedicated generator tests, explicit verified CI enforcement, full Pyflakes checks and fresh-container onboarding smoke.
 - Add reviewed v2 native evidence and fixture preflight/approval guards; corrected cohort passes overhead screening but shows no capability or token gain.
 - Load case-store guidance on demand for supplied-record checks and batch native candidate skill/helper invocation; efficiency gain awaits measurement.

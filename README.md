@@ -222,6 +222,8 @@ uv run --locked --extra dev coverage report --fail-under=80
 
 Expected: unittest prints `Ran ... tests` and `OK` (an unavailable Windows symlink test may skip), both commands exit 0, and runtime coverage is at least 80%. A failed assertion exits nonzero and fails CI. The uv.lock file covers the project's Python dependency workflow; no Node package manager is required. CI runs the named **Run unit tests** step separately from coverage on every push and pull request, on Windows and Linux. A separate clean-container smoke uses the same Dockerfile as the Dev Container and runs the locked README sequence.
 
+Native evaluation evidence can be [audited offline](docs/OFFLINE_EVALUATION_AUDIT.md) without model calls. New live evaluation requires approval bound to the reviewed case/label fingerprints; historical unbound certificates do not authorize collection.
+
 Optional diagnostics: set `COGNITION_LOG_LEVEL=DEBUG` in the calling process to emit JSON routing events on stderr. Logging is silent by default; stdout stays machine-readable. Only policy and resolved capability tier are recorded, not objectives or evidence content. The host root logger is left alone. [.env.example](.env.example) documents the variable; the helper does not load .env files automatically. This is local operational logging, not an error-tracking service.
 
 ## Development

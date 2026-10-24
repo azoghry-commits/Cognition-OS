@@ -1,5 +1,12 @@
 # Development log
 
+## 2026-10-24 — bound approval and offline evidence audit
+
+- Bound new nonpilot native collection to canonical finite-JSON case and label hashes. Old unbound certificates remain historical and cannot authorize a new run. Formatting/line endings are stable; content/type/order changes invalidate approval. No historical approval or archive was modified.
+- Added offline audit command with external checksum, bounded ZIP/CRC/path checks, frozen file hashes, complete unique run pairs, input/response/raw-event consistency and fixture-bound tool evidence. Archived Python is never executed. Full v2 replay reproduced the original summary, explicitly LEGACY_UNBOUND with new_collection_approved=false. Complete evidence requirements intentionally reject older incomplete layouts.
+- RED/GREEN: new integrity and auditor APIs were first absent; regression tests then passed, including an actual run guard proving no host invocation or output creation after an approved case changes. Additional tests cover corrupt/missing/duplicated evidence and no external subprocess use in replay. CLI fingerprint printing does not change historical certificates.
+- Local gate:171 tests run/1 Windows symlink skip; runtime coverage85%; Ruff, mypy, schema validation and all four packages passed. Focused efficient-model review found no actionable false-VERIFIED or unauthorized-collection path. No native model evaluation or API inference was rerun. See OFFLINE_EVALUATION_AUDIT.md and evidence/context-validity-offline-replay-2026-10-24.json.
+
 ## 2026-10-24 — DataFactor gap remediation
 
 - Integrated origin/main merge history into feat/context-validity and pushed the branch. User supplied 65.3 DataFactor baseline; no rescoring or point guarantee.
