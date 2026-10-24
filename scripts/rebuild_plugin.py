@@ -1,8 +1,6 @@
 """Rebuild the native V4.1 package locally; no installation or publication side effects."""
 import argparse
-import hashlib
 import json
-from pathlib import Path
 from build_catalog import build as catalog
 from build_plugin import build as plugin
 from validate_package import validate
@@ -13,7 +11,6 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--package',action='store_true',help='Also create local deterministic ZIP archives')
     args=parser.parse_args()
-    root=Path(__file__).resolve().parents[1]
     catalog(); plugin()
     print(json.dumps(validate(),indent=2))
     if args.package:package()

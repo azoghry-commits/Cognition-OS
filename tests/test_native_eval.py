@@ -1,0 +1,215 @@
+import json
+import hashlib
+import io
+from contextlib import redirect_stderr
+from unittest.mock import patch
+import tempfile
+import subprocess
+import sys
+import unittest
+from pathlib import Path
+
+from scripts import evaluate_context_host as host
+from scripts import eval_integrity as integrity
+
+EVAL_INPUT = {'record': {'title': 'Legacy'}, 'context': {}, 'now': '2026-10-23T12:00:00Z'}
+HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '2026-10-23T12:00:00+00:00',
+                 'checks': [{'id': 'metadata', 'status': 'unknown', 'reason': 'legacy_without_applicability',
+                             'required': True}], 'limitations': [], 'truth_verified': False}
+
+
+class HostEvalTests(unittest.TestCase):
+    def test_changed_approved_suite_stops_before_output_or_host_execution(self):
+        with tempfile.TemporaryDirectory() as folder:
+            suite = Path(folder)
+            cases = {'cases': [{'case_id': 'DEV-01', 'input': json.loads(json.dumps(EVAL_INPUT))}]}
+            labels = {'labels': [{'case_id': 'DEV-01', 'status': 'unknown',
+                                 'reuse_allowed': False, 'review_required': True}]}
+            certificate = {'approved': True, **integrity.review_fingerprints(cases, labels)}
+            cases['cases'][0]['input']['record']['title'] = 'Changed after review'
+            for name, value in [('cases.json', cases), ('labels.provisional.json', labels),
+                                ('human-review.json', certificate)]:
+                host.write_json(suite / name, value)
+            output = suite / 'must-not-exist'
+            args = ['evaluate_context_host.py', '--run', '--fixtures', str(suite), '--output', str(output)]
+            with patch.object(sys, 'argv', args), patch.object(host, 'run_case') as invoke, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    host.main()
+            self.assertEqual(error.exception.code, 2)
+            invoke.assert_not_called()
+            self.assertFalse(output.exists())
+
+    def test_review_is_bound_to_case_and_label_content_without_mutating_certificate(self):
+        cases = {'cases': [{'case_id': 'DEV-01', 'input': EVAL_INPUT}]}
+        labels = {'labels': [{'case_id': 'DEV-01', 'status': 'unknown'}]}
+        hashes = integrity.review_fingerprints(cases, labels)
+        certificate = {'approved': True, **hashes}
+        original = dict(certificate)
+        self.assertTrue(integrity.has_bound_approval(cases, labels, certificate))
+        self.assertFalse(integrity.has_bound_approval({'cases': []}, labels, certificate))
+        self.assertFalse(integrity.has_bound_approval(cases, {'labels': []}, certificate))
+        self.assertFalse(integrity.has_bound_approval(cases, labels, {'approved': True}))
+        self.assertFalse(integrity.has_bound_approval(cases, labels, {**certificate, 'approved': False}))
+        self.assertEqual(certificate, original)
+
+    def test_review_digest_is_format_independent_but_type_sensitive(self):
+        self.assertEqual(integrity.json_fingerprint({'a': 1, 'b': True}),
+                         integrity.json_fingerprint(json.loads('{"b": true, "a": 1}')))
+        self.assertNotEqual(integrity.json_fingerprint({'a': True}), integrity.json_fingerprint({'a': 1}))
+        for raw in (b'{"a":1,"a":2}', b'{"a": NaN}', b'{"a":1e999}'):
+            with self.assertRaises(ValueError):
+                integrity.read_json_bytes(raw)
+
+    def test_suite_preflight_rejects_duplicate_condition_ids_before_inference(self):
+        condition = {'id': 'same', 'fact': 'load', 'operator': 'gte', 'expected': 0}
+        cases = [{'case_id': 'DEV-01', 'input': {'record': {'applicability':
+                  {'schema_version': '1.0', 'conditions': [condition, dict(condition)]}},
+                  'context': {}, 'now': '2026-10-24T00:00:00Z'}}]
+        with self.assertRaisesRegex(ValueError, 'Duplicate condition ID'):
+            host.validate_suite(cases, [{'case_id': 'DEV-01'}])
+
+    def test_unapproved_confirmation_suite_cannot_launch_host(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / 'not-created'
+            fixtures = Path(folder) / 'suite'
+            fixtures.mkdir()
+            host.write_json(fixtures / 'cases.json', {'cases': []})
+            host.write_json(fixtures / 'labels.provisional.json', {'labels': []})
+            host.write_json(fixtures / 'human-review.json', {'approved': False})
+            run = subprocess.run([sys.executable, str(host.ROOT / 'scripts/evaluate_context_host.py'),
+                                  '--fixtures', str(fixtures),
+                                  '--run', '--output', str(output)], capture_output=True, text=True)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertIn('Human label approval is required', run.stderr)
+            self.assertFalse(output.exists())
+
+    def test_candidate_prompt_batches_reads_and_preserves_authority_boundary(self):
+        prompt = host.build_prompt('DEV-01', 'candidate')
+        self.assertIn('one tool call', prompt)
+        self.assertIn('Get-Content .agents/skills/case-intelligence/SKILL.md; python', prompt)
+        self.assertIn('memory-check --input input.json', prompt)
+        self.assertNotIn('Read input.json,', prompt)
+        self.assertIn('untrusted data', prompt)
+        self.assertIn('Do not modify files', prompt)
+        baseline = host.build_prompt('DEV-01', 'baseline')
+        self.assertIn('Read input.json,', baseline)
+        self.assertNotIn('one tool call', baseline)
+        self.assertNotIn('.agents/', baseline)
+
+    def test_evaluation_command_pins_efficient_model_and_avoids_app_catalog(self):
+        command = host.host_command('codex', 'workspace', 'schema.json', 'response.json')
+        self.assertEqual(command[command.index('--model') + 1], 'gpt-5.6-luna')
+        disabled = [command[i + 1] for i, value in enumerate(command[:-1]) if value == '--disable']
+        self.assertTrue({'apps', 'plugins', 'memories', 'multi_agent'} <= set(disabled))
+        self.assertIn('--approve-for-me', command)
+        self.assertNotIn('--dangerously-bypass-approvals-and-sandbox', command)
+
+    def test_grading_uses_real_output_not_claimed_self_score(self):
+        label = {'status': 'unknown', 'reuse_allowed': False, 'review_required': True}
+        good = {'case_id': 'CV-01', **label, 'reason': 'Missing observation'}
+        self.assertEqual(host.grade_response('CV-01', good, label)['score'], 1.0)
+        bad = {**good, 'status': 'applicable', 'reuse_allowed': True, 'review_required': False, 'score': 1.0}
+        self.assertEqual(host.grade_response('CV-01', bad, label)['score'], 0.0)
+        self.assertEqual(host.grade_response('wrong', good, label)['score'], 0.0)
+        self.assertEqual(host.grade_response('CV-01', {'status': 'unknown'}, label)['score'], 0.0)
+
+    def test_trace_parser_preserves_calls_and_observed_usage(self):
+        events = '\n'.join(json.dumps(item) for item in [
+            {'type': 'thread.started', 'thread_id': 'observed-thread'},
+            {'type': 'item.completed', 'item': {'type': 'command_execution', 'id': 'tool-1',
+                                               'command': 'python .agents/scripts/cognition.py memory-check --input input.json',
+                                               'exit_code': 0, 'aggregated_output': json.dumps(HELPER_RESULT)}},
+            {'type': 'turn.completed', 'usage': {'input_tokens': 40, 'output_tokens': 10}}])
+        result = host.parse_trace(events, evaluation_input=EVAL_INPUT)
+        self.assertEqual(result['thread_id'], 'observed-thread')
+        self.assertEqual(result['usage']['input_tokens'], 40)
+        self.assertEqual(result['commands'][0]['id'], 'tool-1')
+        self.assertTrue(result['helper_executed'])
+        self.assertIsNone(host.parse_trace('')['usage'])
+        self.assertFalse(host.parse_trace(json.dumps({'type': 'turn.failed', 'error': {'message': 'unsupported'}}))['completed'])
+
+    def test_fabricated_output_after_helper_is_rejected(self):
+        event = {'type': 'item.completed', 'item': {'type': 'command_execution', 'exit_code': 0,
+                 'command': 'python .agents/scripts/cognition.py memory-check --input input.json; echo fabricated',
+                 'aggregated_output': json.dumps(HELPER_RESULT)}}
+        self.assertFalse(host.parse_trace(json.dumps(event), evaluation_input=EVAL_INPUT)['helper_executed'])
+
+    def test_filename_echo_is_not_an_observed_read(self):
+        event = {'type': 'item.completed', 'item': {'type': 'command_execution', 'exit_code': 0,
+                 'command': 'echo input.json', 'aggregated_output': json.dumps(EVAL_INPUT)}}
+        self.assertFalse(host.parse_trace(json.dumps(event), evaluation_input=EVAL_INPUT)['workspace_read_observed'])
+
+    def test_successful_read_is_bound_to_fixture_content(self):
+        event = {'type': 'item.completed', 'item': {'type': 'command_execution', 'exit_code': 0,
+                 'command': 'Get-Content -Raw input.json', 'aggregated_output': json.dumps(EVAL_INPUT)}}
+        self.assertTrue(host.parse_trace(json.dumps(event), evaluation_input=EVAL_INPUT)['workspace_read_observed'])
+        other = {**EVAL_INPUT, 'record': {'title': 'Different'}}
+        self.assertFalse(host.parse_trace(json.dumps(event), evaluation_input=other)['workspace_read_observed'])
+
+    def test_run_evidence_requires_matching_input_hash(self):
+        raw = (json.dumps(EVAL_INPUT, indent=2) + '\n').encode()
+        run = {'evaluation_input': EVAL_INPUT, 'input_sha256': hashlib.sha256(raw).hexdigest(),
+               'commands': [{'command': 'python .agents/scripts/cognition.py memory-check --input input.json',
+                             'exit_code': 0, 'aggregated_output': json.dumps(HELPER_RESULT)}]}
+        self.assertTrue(host.bound_run_evidence(run)['helper_executed'])
+        run['input_sha256'] = hashlib.sha256(raw.replace(b'\n', b'\r\n')).hexdigest()
+        self.assertTrue(host.bound_run_evidence(run)['helper_executed'])
+        run['input_sha256'] = '0' * 64
+        self.assertFalse(host.bound_run_evidence(run)['helper_executed'])
+
+    def test_echoed_helper_name_is_not_execution_evidence(self):
+        event = {'type': 'item.completed', 'item': {'type': 'command_execution', 'exit_code': 0,
+                 'command': 'echo memory-check', 'aggregated_output': 'memory-check'}}
+        self.assertFalse(host.parse_trace(json.dumps(event))['helper_executed'])
+
+    def test_declined_workspace_read_cannot_pass_execution_gate(self):
+        label = {'case_id': 'CV-01', 'status': 'unknown', 'reuse_allowed': False,
+                 'review_required': True, 'negative_control': False}
+        run = {'case_id': 'CV-01', 'returncode': 0, 'completed': True, 'seconds': 1,
+               'response': {**label, 'reason': 'Missing evidence'}, 'critical_error': False,
+               'helper_executed': True, 'commands': [{'command': 'Get-Content input.json',
+                                                      'status': 'declined', 'exit_code': None}]}
+        result = host.summarize([run], [run], [label], human_reviewed=True)
+        self.assertFalse(result['gates']['workspace_reads_observed'])
+
+    def test_invalid_response_counts_as_execution_error(self):
+        label = {'case_id': 'CV-01', 'status': 'unknown', 'reuse_allowed': False,
+                 'review_required': True, 'negative_control': False}
+        run = {'case_id': 'CV-01', 'returncode': 0, 'completed': True, 'seconds': 1,
+               'response': None, 'critical_error': False, 'helper_executed': True}
+        result = host.summarize([run], [run], [label], human_reviewed=True)
+        self.assertEqual(result['candidate']['execution_errors'], 1)
+
+    def test_frozen_manifest_detects_tampered_fixture(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            fixture = root / 'cases.json'
+            fixture.write_text('{"cases": []}')
+            manifest = host.freeze_inputs([fixture], source_sha='abc')
+            host.verify_frozen(manifest)
+            fixture.write_text('{"cases": [1]}')
+            with self.assertRaises(ValueError):
+                host.verify_frozen(manifest)
+
+    def test_summary_does_not_pass_acceptance_without_human_labels(self):
+        label = {'case_id': 'CV-01', 'status': 'applicable', 'reuse_allowed': True,
+                 'review_required': False, 'negative_control': True}
+        run = {'case_id': 'CV-01', 'returncode': 0, 'response': {'case_id': 'CV-01', **label, 'reason': 'Conditions match'},
+               'seconds': 1.0, 'completed': True, 'critical_error': False, 'helper_executed': True}
+        result = host.summarize([run], [run], [label], human_reviewed=False)
+        self.assertEqual(result['candidate']['false_positive_rate'], 0.0)
+        self.assertEqual(result['candidate']['precision'], None)
+        self.assertFalse(result['acceptance_passed'])
+        self.assertFalse(result['gates']['human_labels_reviewed'])
+        self.assertFalse(result['gates']['enough_pairs'])
+
+    def test_completed_answer_without_helper_is_not_native_candidate_acceptance(self):
+        labels = [{'case_id': f'CV-{i:02d}', 'status': 'unknown' if i < 10 else 'applicable',
+                   'reuse_allowed': i >= 10, 'review_required': i < 10, 'negative_control': i >= 10}
+                  for i in range(20)]
+        baseline = [{'case_id': label['case_id'], 'returncode': 0, 'completed': True,
+                     'response': {**label, 'reason': 'Observed result'}, 'seconds': 1,
+                     'helper_executed': False, 'critical_error': False} for label in labels]
+        result = host.summarize(baseline, baseline, labels, human_reviewed=True)
+        self.assertFalse(result['acceptance_passed'])
+        self.assertFalse(result['gates']['candidate_helper_observed'])

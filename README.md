@@ -145,6 +145,8 @@ The plugin supports any tier when the host can discover skills and follow their 
 
 Dependency-aware analysis is available through `python scripts/cognition.py analysis-plan`. It produces sequential, parallel, or hybrid execution waves without pretending that a host dispatched work. The active host runs independent steps concurrently only when native delegation and the authorized concurrency allowance are available.
 
+Optional context validity checks use `memory-check`, stored-case `memory` checks, `evidence-snapshot`, and `decision-impact` to identify stale facts or changed assumptions before reusing knowledge. Existing cases remain readable; checks are read-only and matched conditions do not certify truth. See [CONTEXT_VALIDITY.md](docs/CONTEXT_VALIDITY.md) for input contracts, limits and the separate native evaluation gate.
+
 Governed self-improvement is available through `python scripts/cognition.py improvement`. The project ledger records observation, proposal, baseline-versus-candidate evaluation, explicit approval, versioned deployment evidence, and rollback. See [SELF_IMPROVEMENT.md](docs/SELF_IMPROVEMENT.md).
 
 Tier-adaptive capability amplification is available through `capability-plan`. It uses observed context, tools, and delegation capacity to give constrained models tighter sequential scaffolding and advanced models sparse, challenge-oriented workflows. `capability-eval` permits a significant-improvement claim only after paired sample-size, effect-size, statistical, and critical-regression gates pass. See [CAPABILITY_AMPLIFICATION.md](docs/CAPABILITY_AMPLIFICATION.md).
@@ -205,6 +207,24 @@ The **V4.1 package candidate is implemented and locally checked**. Native accept
 | Release | Licensing and distribution approval remain open gates |
 
 Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
+
+## Running from a fresh clone
+
+Prerequisites: Git, Python 3.13 (runtime supports 3.10+) and uv. If uv is absent, install the reproducible bootstrap with `python -m pip install uv==0.12.17`.
+
+```powershell
+git clone https://github.com/azoghry-commits/Cognition-OS.git
+cd Cognition-OS
+uv sync --locked --extra dev
+uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+uv run --locked --extra dev coverage report --fail-under=80
+```
+
+Expected: unittest prints `Ran ... tests` and `OK` (an unavailable Windows symlink test may skip), both commands exit 0, and runtime coverage is at least 80%. A failed assertion exits nonzero and fails CI. The uv.lock file covers the project's Python dependency workflow; no Node package manager is required. CI runs the named **Run unit tests** step separately from coverage on every push and pull request, on Windows and Linux. A separate clean-container smoke uses the same Dockerfile as the Dev Container and runs the locked README sequence.
+
+Native evaluation evidence can be [audited offline](docs/OFFLINE_EVALUATION_AUDIT.md) without model calls. New live evaluation requires approval bound to the reviewed case/label fingerprints; historical unbound certificates do not authorize collection.
+
+Optional diagnostics: set `COGNITION_LOG_LEVEL=DEBUG` in the calling process to emit JSON routing events on stderr. Logging is silent by default; stdout stays machine-readable. Only policy and resolved capability tier are recorded, not objectives or evidence content. The host root logger is left alone. [.env.example](.env.example) documents the variable; the helper does not load .env files automatically. This is local operational logging, not an error-tracking service.
 
 ## Development
 

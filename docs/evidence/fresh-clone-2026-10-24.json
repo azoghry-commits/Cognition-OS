@@ -1,0 +1,74 @@
+{
+  "source_sha": "c297ab441f2087f2b7c0a7c7f45884e115aab3a7",
+  "source_branch": "feat/context-validity",
+  "cache": "fresh temporary UV_CACHE_DIR; no existing .venv",
+  "scope": "fresh clone on existing Windows host, not a clean OS",
+  "results": [
+    {
+      "command": [
+        "git",
+        "clone",
+        "--branch",
+        "feat/context-validity",
+        "--single-branch",
+        "https://github.com/azoghry-commits/Cognition-OS.git",
+        "repo"
+      ],
+      "returncode": 0,
+      "seconds": 2.758,
+      "stdout": "",
+      "stderr": "Cloning into 'repo'...\n"
+    },
+    {
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--extra",
+        "dev"
+      ],
+      "returncode": 0,
+      "seconds": 10.357,
+      "stdout": "",
+      "stderr": "Using CPython 3.14.4\nCreating virtual environment at: .venv\nResolved 43 packages in 1ms\n   Building cognition-os @ file:///C:/Users/rizky/AppData/Local/Temp/cognition%20clean%20clone%203myyf3kc/repo\nDownloading pygments (1.2MiB)\nDownloading pip (1.7MiB)\nDownloading ruff (12.9MiB)\nDownloading mypy (9.5MiB)\n Downloaded pygments\n Downloaded ruff\n Downloaded pip\n Downloaded mypy\n      Built cognition-os @ file:///C:/Users/rizky/AppData/Local/Temp/cognition%20clean%20clone%203myyf3kc/repo\nPrepared 39 packages in 7.96s\nInstalled 39 packages in 1.68s\n + attrs==26.1.0\n + boolean-py==5.0\n + cachecontrol==0.14.4\n + certifi==2026.10.19\n + charset-normalizer==3.5.2\n + cognition-os==0.5.0 (from file:///C:/Users/rizky/AppData/Local/Temp/cognition%20clean%20clone%203myyf3kc/repo)\n + coverage==7.11.0\n + cyclonedx-python-lib==9.1.0\n + defusedxml==0.7.1\n + filelock==4.2.4\n + idna==3.20\n + jsonschema==4.26.0\n + jsonschema-specifications==2025.9.1\n + license-expression==30.4.4\n + markdown-it-py==4.2.0\n + mdurl==0.1.2\n + msgpack==1.2.3\n + mypy==1.18.2\n + mypy-extensions==1.1.0\n + packageurl-python==0.17.6\n + packaging==26.3\n + pathspec==1.1.1\n + pip==26.2.2\n + pip-api==0.0.35\n + pip-audit==2.9.0\n + pip-requirements-parser==32.0.1\n + platformdirs==4.13.5\n + py-serializable==2.1.0\n + pygments==2.21.0\n + pyparsing==3.3.3\n + referencing==0.37.0\n + requests==2.34.2\n + rich==15.0.0\n + rpds-py==2026.9.1\n + ruff==0.14.2\n + sortedcontainers==2.4.0\n + toml==0.10.2\n + typing-extensions==4.16.0\n + urllib3==2.8.0\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "--extra",
+        "dev",
+        "coverage",
+        "run",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "returncode": 0,
+      "seconds": 19.336,
+      "stdout": "Generated V4.1 advisory contracts and separate Codex/Claude hook configurations.\n",
+      "stderr": "----------------------------------------------------------------------\nRan 159 tests in 15.820s\n\nOK (skipped=1)\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "--extra",
+        "dev",
+        "coverage",
+        "report",
+        "--fail-under=80"
+      ],
+      "returncode": 0,
+      "seconds": 0.899,
+      "stdout": "Name                               Stmts   Miss Branch BrPart  Cover   Missing\n------------------------------------------------------------------------------\ncognition\\artifact_validation.py      71      7     34      7    87%   22, 25, 30, 50, 63, 68, 71\ncognition\\augmentation.py            141      5     70      6    95%   126, 134, 169, 176->173, 182, 201\ncognition\\capability.py              119     20     58     18    79%   22, 28, 31, 34, 38, 41, 48, 50, 52, 72-81, 120, 124, 126, 129, 132, 149, 152, 154\ncognition\\engine.py                  176      3    132     32    88%   15->17, 18->exit, 22->exit, 26->exit, 34, 72->exit, 73->exit, 74->exit, 75->exit, 78-79, 83->exit, 84->exit, 86->exit, 100->exit, 104->exit, 107->exit, 127->exit, 135->exit, 138->exit, 148->exit, 150->exit, 153->exit, 154->exit, 155->152, 171->exit, 172->exit, 177->exit, 178->exit, 182->exit, 191->exit, 193->exit, 205->exit\ncognition\\improvement.py             115     25     44     14    70%   22, 27, 33, 36, 42, 52, 58, 63, 74, 92, 99, 102, 112, 120, 135-145\ncognition\\log.py                      24     11      4      1    50%   14-15, 25-33\ncognition\\mathematics.py             196      3    138     43    86%   42->exit, 48->exit, 50->exit, 56->exit, 58->exit, 59->exit, 67->exit, 72->exit, 81->exit, 82->87, 83->87, 86, 92->exit, 93->exit, 97->exit, 99->exit, 101->exit, 107->exit, 109->exit, 111->exit, 114->exit, 117->exit, 119->exit, 137->exit, 147->exit, 148->exit, 158->exit, 161-162, 165->exit, 176->exit, 177->exit, 179->exit, 182->exit, 183->exit, 199->exit, 202->exit, 212->exit, 214->exit, 218->exit, 219->exit, 222->exit, 237->exit, 241->exit\ncognition\\memory.py                   63      0     40     16    84%   13->exit, 16->exit, 17->exit, 20->exit, 23->exit, 26->exit, 27->exit, 28->exit, 29->exit, 32->exit, 43->exit, 49->exit, 53->51, 59->exit, 61->exit, 65->exit\ncognition\\orchestration.py            73      9     44      9    85%   11, 13, 17, 19, 22, 26, 28, 64, 66\ncognition\\scaffolding.py              17      2     10      2    85%   14, 17\ncognition\\token_efficiency.py         53     10     32     10    76%   13, 15, 17, 24, 26, 28, 30, 49, 84, 87\ncognition\\validity.py                309     37    166     29    85%   19, 48, 57-58, 98, 100, 102, 104, 110, 117, 119, 125, 127-131, 155, 160-161, 163, 169, 217, 235, 237, 247, 251, 254, 282->278, 301, 306, 319->324, 323, 325, 340-342, 344, 351\n------------------------------------------------------------------------------\nTOTAL                               1371    132    776    187    84%\n\n2 files skipped due to complete coverage.\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

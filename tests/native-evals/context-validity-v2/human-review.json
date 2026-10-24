@@ -1,0 +1,8 @@
+{
+  "approved": true,
+  "reviewer": "user in current Codex conversation",
+  "reviewed_at": "2026-10-24T03:10:26.840272+00:00",
+  "statement": "Label baru sudah saya review dan saya setujui",
+  "scope": "context-validity-v2/cases.json and labels.provisional.json prepared before candidate execution",
+  "scoring": "Three equally weighted decision fields; reason prose is inspectable but not semantically scored"
+}

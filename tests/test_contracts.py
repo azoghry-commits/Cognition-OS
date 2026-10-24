@@ -1,6 +1,4 @@
 import collections
-import json
-import re
 import unittest
 from cognition import engine as e
 

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "status", "checked_at", "checks", "limitations", "truth_verified"],
+  "$defs": {"status": {"enum": ["applicable", "unknown", "needs_review", "contradicted"]}},
+  "properties": {
+    "schema_version": {"const": "1.0"}, "status": {"$ref": "#/$defs/status"},
+    "checked_at": {"type": "string", "format": "date-time"}, "truth_verified": {"const": false},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "checks": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false, "required": ["id", "status", "reason", "required"],
+      "properties": {"id": {"type": "string"}, "status": {"$ref": "#/$defs/status"}, "reason": {"type": "string"}, "required": {"type": "boolean"}}
+    }}
+  }
+}
