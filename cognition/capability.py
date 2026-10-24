@@ -4,6 +4,7 @@ import json
 import math
 
 from .orchestration import plan_execution
+from .log import debug
 
 
 TIERS = {"constrained", "balanced", "advanced", "unknown"}
@@ -100,6 +101,7 @@ def capability_plan(profile, task):
         limitations.append("Deterministic validation is unavailable; self-checks do not prove correctness.")
     if task.get("risk") in {"high", "critical"} and verification != "DETERMINISTIC":
         limitations.append("High-risk output requires an external or host-supported verification gate.")
+    debug("capability.plan", resolved_tier=resolved_tier)
     return {
         "status": "PLANNED",
         "capability_tier": tier,
