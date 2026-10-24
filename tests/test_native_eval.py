@@ -7,6 +7,7 @@ import unittest
 from pathlib import Path
 
 from scripts import evaluate_context_host as host
+from scripts import eval_integrity as integrity
 
 EVAL_INPUT = {'record': {'title': 'Legacy'}, 'context': {}, 'now': '2026-10-23T12:00:00Z'}
 HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '2026-10-23T12:00:00+00:00',
@@ -15,6 +16,27 @@ HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '20
 
 
 class HostEvalTests(unittest.TestCase):
+    def test_review_is_bound_to_case_and_label_content_without_mutating_certificate(self):
+        cases = {'cases': [{'case_id': 'DEV-01', 'input': EVAL_INPUT}]}
+        labels = {'labels': [{'case_id': 'DEV-01', 'status': 'unknown'}]}
+        hashes = integrity.review_fingerprints(cases, labels)
+        certificate = {'approved': True, **hashes}
+        original = dict(certificate)
+        self.assertTrue(integrity.has_bound_approval(cases, labels, certificate))
+        self.assertFalse(integrity.has_bound_approval({'cases': []}, labels, certificate))
+        self.assertFalse(integrity.has_bound_approval(cases, {'labels': []}, certificate))
+        self.assertFalse(integrity.has_bound_approval(cases, labels, {'approved': True}))
+        self.assertFalse(integrity.has_bound_approval(cases, labels, {**certificate, 'approved': False}))
+        self.assertEqual(certificate, original)
+
+    def test_review_digest_is_format_independent_but_type_sensitive(self):
+        self.assertEqual(integrity.json_fingerprint({'a': 1, 'b': True}),
+                         integrity.json_fingerprint(json.loads('{"b": true, "a": 1}')))
+        self.assertNotEqual(integrity.json_fingerprint({'a': True}), integrity.json_fingerprint({'a': 1}))
+        for raw in (b'{"a":1,"a":2}', b'{"a": NaN}'):
+            with self.assertRaises(ValueError):
+                integrity.read_json_bytes(raw)
+
     def test_suite_preflight_rejects_duplicate_condition_ids_before_inference(self):
         condition = {'id': 'same', 'fact': 'load', 'operator': 'gte', 'expected': 0}
         cases = [{'case_id': 'DEV-01', 'input': {'record': {'applicability':
