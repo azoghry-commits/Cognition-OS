@@ -1,0 +1,8 @@
+{
+  "approved": true,
+  "reviewer": "user in current Codex conversation",
+  "reviewed_at": "2026-10-23T14:26:38.412797+00:00",
+  "statement": "Label sudah saya review dan saya setujui",
+  "scope": "cases.json and labels.provisional.json prepared before any candidate task execution",
+  "scoring": "Three equal components: status, reuse_allowed, review_required; explanatory prose is separately reviewable"
+}

@@ -1,0 +1,677 @@
+{
+  "baseline": {
+    "cases": 20,
+    "execution_errors": 0,
+    "mean_score": 0.9333333333333333,
+    "true_positives": 10,
+    "false_positives": 1,
+    "false_negatives": 0,
+    "true_negatives": 9,
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "false_positive_rate": 0.1,
+    "helper_executions": 0,
+    "observed_token_totals": {
+      "input_tokens": 4840909,
+      "cached_input_tokens": 3043200,
+      "output_tokens": 4632
+    }
+  },
+  "candidate": {
+    "cases": 20,
+    "execution_errors": 0,
+    "mean_score": 1.0,
+    "true_positives": 10,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_negatives": 10,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "helper_executions": 20,
+    "observed_token_totals": {
+      "input_tokens": 6650413,
+      "cached_input_tokens": 4253184,
+      "output_tokens": 8428
+    }
+  },
+  "paired_cases": 20,
+  "median_paired_latency_overhead": 0.5912893513267755,
+  "gates": {
+    "human_labels_reviewed": true,
+    "enough_pairs": true,
+    "negative_controls": true,
+    "execution_complete": true,
+    "candidate_helper_observed": true,
+    "workspace_reads_observed": true,
+    "precision": true,
+    "recall": true,
+    "false_positive_rate": true,
+    "latency": false,
+    "no_observed_critical_error": true
+  },
+  "acceptance_passed": false,
+  "capability": {
+    "status": "EVALUATED",
+    "verdict": "IMPROVED_NOT_SIGNIFICANT",
+    "paired_cases": 20,
+    "mean_score_delta": 0.06666666666666668,
+    "wins": 2,
+    "losses": 0,
+    "ties": 18,
+    "sign_test_p_value": 0.5,
+    "critical_regressions": [],
+    "thresholds": {
+      "minimum_pairs": 20,
+      "minimum_effect": 0.1,
+      "alpha": 0.05
+    },
+    "gates": {
+      "enough_pairs": true,
+      "minimum_effect_met": false,
+      "statistical_gate_met": false,
+      "no_new_critical_errors": true
+    },
+    "limitations": [
+      "This evaluates the supplied paired cases only; representativeness, judge quality, latency, and cost need separate evidence."
+    ]
+  },
+  "scored_cases": {
+    "baseline": [
+      {
+        "case_id": "CV-06",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-08",
+        "score": 0.6666666666666666,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": false,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 0.6666666666666666
+        }
+      },
+      {
+        "case_id": "CV-11",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-20",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-19",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-16",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-03",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-01",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-15",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-17",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-13",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-05",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-10",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-04",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-02",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-14",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-12",
+        "score": 0.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": false,
+            "reuse_allowed": false,
+            "review_required": false
+          },
+          "score": 0.0
+        }
+      },
+      {
+        "case_id": "CV-18",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-07",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-09",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      }
+    ],
+    "candidate": [
+      {
+        "case_id": "CV-11",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-03",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-10",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-02",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-09",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-16",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-17",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-07",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-04",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-18",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-15",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-06",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-05",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-13",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-19",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-14",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-01",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-12",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-08",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      },
+      {
+        "case_id": "CV-20",
+        "score": 1.0,
+        "critical_error": false,
+        "grading": {
+          "valid_response": true,
+          "matches": {
+            "status": true,
+            "reuse_allowed": true,
+            "review_required": true
+          },
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Synthetic held-out screening tasks; not production workloads.",
+    "Scoring checks structured decisions, not free-text semantic entailment.",
+    "Critical-error checks cover observed workspace changes and prohibited tool attempts only.",
+    "Explicit candidate skill invocation does not establish automatic activation.",
+    "CLI wall time includes startup and tool overhead; cost is not estimated."
+  ],
+  "regrading_note": "Same frozen labels and scoring rubric; post-collection trace-validation hardening. No model rerun or runtime tuning.",
+  "host": {
+    "solver_model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "cli_version": "0.153.0",
+    "auth": "ChatGPT subscription path",
+    "approval_model": "host-managed automatic review, not overridden",
+    "candidate_runtime_commit": "1eda434",
+    "invocation": "explicit project-local skill file plus actual helper execution; plugin discovery/automatic selection not tested",
+    "global_instructions_bytes_observed": 479812,
+    "context_limit_probe": "project_doc_max_bytes=0 did not remove global instruction context; not applied to cohort",
+    "completed_at": "2026-10-24T02:38:56.849416+00:00"
+  },
+  "historical_preflights": {
+    "configured_model": "gpt-6.1-sol rejected on ChatGPT CLI",
+    "initial_read_only_mode": "commands denied; not counted as passes",
+    "frontier_default": "gpt-6-astra pilot worked; initial cohort incomplete due quota, excluded from efficient-model comparison",
+    "human_label_approval": "recorded before held-out candidate execution"
+  },
+  "raw_evidence": {
+    "path": "context-validity-native-2026-10-24.zip",
+    "sha256": "d301374e6ac1e564c9b49d319864bb95b884b9b897904b33f8324596d53e220d",
+    "files": 254,
+    "bytes": 354670
+  }
+}
