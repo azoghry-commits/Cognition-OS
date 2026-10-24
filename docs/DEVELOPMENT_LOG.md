@@ -1,5 +1,13 @@
 # Development log
 
+## 2026-10-24 — measured batched invocation v2
+
+- User approved the new 20-case/10-negative-control labels before execution. gpt-5.6-luna low pilot succeeded. Initial confirmation attempt stopped after three candidate runs because two fixtures reused condition IDs; preserved and excluded. Corrected IDs only, verified predicates/observations/labels unchanged, froze a new snapshot and collected all 40 runs.
+- Corrected cohort: baseline and candidate both 20/20 exact; median paired overhead 8.79% versus 20% limit; product screening gates passed. Capability NO_MEASURABLE_GAIN, input tokens +1.38%, output +9.31%. Three cases were partially exposed before the administrative correction; confirmation is qualified. Different task sets prevent causal comparison with the old 59.1% overhead.
+- Added --fixtures selection, mandatory human approval guard and structural suite preflight. Both guard regressions observed RED then GREEN; 154 tests run/1 skipped, coverage85%, Ruff/mypy/validation/package passed. Raw-log audit reproduced the summary; archive includes pilot, excluded attempt, corrected cohort, frozen runtime/runner and provenance. No frontier solver, release or installation.
+- Focused lightweight review found no actionable harness/test/report defect. Archive CRC/SHA-256 and every frozen source/input hash were independently checked against archived bytes.
+- See [v2 measured report](NATIVE_CONTEXT_VALIDITY_EVALUATION_V2.md). Keep opt-in; representative distinguishing tasks and clean unseen confirmation remain future gates.
+
 ## 2026-10-24 — context routing optimization
 
 - Continue on feat/context-validity. Supplied-record validity checks now call the helper directly; MEMORY.md loads only for case-store access or persistence changes. Storage consent and evidence limitations remain explicit. Updated generator source and authored skill together.

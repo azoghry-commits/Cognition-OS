@@ -1,6 +1,8 @@
 import json
 import hashlib
 import tempfile
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -13,6 +15,29 @@ HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '20
 
 
 class HostEvalTests(unittest.TestCase):
+    def test_suite_preflight_rejects_duplicate_condition_ids_before_inference(self):
+        condition = {'id': 'same', 'fact': 'load', 'operator': 'gte', 'expected': 0}
+        cases = [{'case_id': 'DEV-01', 'input': {'record': {'applicability':
+                  {'schema_version': '1.0', 'conditions': [condition, dict(condition)]}},
+                  'context': {}, 'now': '2026-10-24T00:00:00Z'}}]
+        with self.assertRaisesRegex(ValueError, 'Duplicate condition ID'):
+            host.validate_suite(cases, [{'case_id': 'DEV-01'}])
+
+    def test_unapproved_confirmation_suite_cannot_launch_host(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / 'not-created'
+            fixtures = Path(folder) / 'suite'
+            fixtures.mkdir()
+            host.write_json(fixtures / 'cases.json', {'cases': []})
+            host.write_json(fixtures / 'labels.provisional.json', {'labels': []})
+            host.write_json(fixtures / 'human-review.json', {'approved': False})
+            run = subprocess.run([sys.executable, str(host.ROOT / 'scripts/evaluate_context_host.py'),
+                                  '--fixtures', str(fixtures),
+                                  '--run', '--output', str(output)], capture_output=True, text=True)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertIn('Human label approval is required', run.stderr)
+            self.assertFalse(output.exists())
+
     def test_candidate_prompt_batches_reads_and_preserves_authority_boundary(self):
         prompt = host.build_prompt('DEV-01', 'candidate')
         self.assertIn('one tool call', prompt)

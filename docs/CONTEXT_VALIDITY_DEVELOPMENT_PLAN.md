@@ -143,3 +143,7 @@ P4 native measurement completed: 20 efficient-model pairs. Correctness improved,
 ## Optimization update — 2026-10-24
 
 Conditional case-store reference loading and a single-call candidate invocation are implemented and locally verified. Native latency/token gain is unmeasured; prior acceptance remains false. Preserve the historical snapshot and use development cases before collecting a new reviewed held-out set. Full local evidence is in DEVELOPMENT_LOG.md.
+
+## V2 measurement update — 2026-10-24
+
+Completed 20 corrected confirmation pairs using the efficient model after explicit human label approval: product screening passes, median paired overhead8.79%, both arms20/20. Capability NO_MEASURABLE_GAIN and tokens increased. An excluded malformed-fixture attempt exposed three cases before administrative ID correction; no untouched-held-out claim. See NATIVE_CONTEXT_VALIDITY_EVALUATION_V2.md. No automatic release promotion.
