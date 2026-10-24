@@ -1,11 +1,33 @@
 import json
+import io
+import logging
 import os
 import subprocess
 import sys
 import unittest
+from unittest.mock import patch
+
+from cognition import log
 
 
 class LoggingTests(unittest.TestCase):
+    def test_handler_reused_metadata_allowlisted_and_unset_stops_logging(self):
+        stream = io.StringIO()
+        logger = logging.Logger('isolated-test')
+        before = list(logging.getLogger().handlers)
+        with patch.object(log, '_LOGGER', logger), patch.object(log, '_HANDLER', None), \
+                patch('sys.stderr', stream), patch.dict(os.environ, {'COGNITION_LOG_LEVEL': 'DEBUG'}):
+            log.debug('first', policy='PASS_THROUGH', secret='do-not-record')
+            log.debug('second', resolved_tier='balanced')
+            self.assertEqual(len(logger.handlers), 1)
+            with patch.dict(os.environ, {'COGNITION_LOG_LEVEL': ''}):
+                log.debug('disabled')
+        events = [json.loads(line) for line in stream.getvalue().splitlines()]
+        self.assertEqual(len(events), 2)
+        self.assertEqual(events[0], {'event':'first', 'level':'DEBUG', 'policy':'PASS_THROUGH'})
+        self.assertEqual(events[1]['resolved_tier'], 'balanced')
+        self.assertEqual(logging.getLogger().handlers, before)
+
     def run_plan(self, level):
         env = {key: value for key, value in os.environ.items() if key != 'COGNITION_LOG_LEVEL'}
         if level is not None:
