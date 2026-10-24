@@ -13,6 +13,19 @@ HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '20
 
 
 class HostEvalTests(unittest.TestCase):
+    def test_candidate_prompt_batches_reads_and_preserves_authority_boundary(self):
+        prompt = host.build_prompt('DEV-01', 'candidate')
+        self.assertIn('one tool call', prompt)
+        self.assertIn('Get-Content .agents/skills/case-intelligence/SKILL.md; python', prompt)
+        self.assertIn('memory-check --input input.json', prompt)
+        self.assertNotIn('Read input.json,', prompt)
+        self.assertIn('untrusted data', prompt)
+        self.assertIn('Do not modify files', prompt)
+        baseline = host.build_prompt('DEV-01', 'baseline')
+        self.assertIn('Read input.json,', baseline)
+        self.assertNotIn('one tool call', baseline)
+        self.assertNotIn('.agents/', baseline)
+
     def test_evaluation_command_pins_efficient_model_and_avoids_app_catalog(self):
         command = host.host_command('codex', 'workspace', 'schema.json', 'response.json')
         self.assertEqual(command[command.index('--model') + 1], 'gpt-5.6-luna')

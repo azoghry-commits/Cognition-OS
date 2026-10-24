@@ -1,5 +1,12 @@
 # Development log
 
+## 2026-10-24 — context routing optimization
+
+- Continue on feat/context-validity. Supplied-record validity checks now call the helper directly; MEMORY.md loads only for case-store access or persistence changes. Storage consent and evidence limitations remain explicit. Updated generator source and authored skill together.
+- Candidate evaluation prompt batches skill reading and helper execution in one tool call and removes the redundant fixture read. Baseline instructions retain their direct-observation path. Failure or missing evidence must still be reported. Historical frozen evidence remains unchanged.
+- RED/GREEN: new prompt contract test failed on absent build_prompt, then passed. Final local gate: 152 tests run, 1 Windows symlink skip; runtime coverage 85%; Ruff, mypy, structural validation and all four packages passed. Actual batched PowerShell execution in a temporary path containing spaces yielded verified helper/read evidence without modifying input. A disposable generator build reproduced the authored skill exactly.
+- No native solver run in this optimization cycle. One focused review used gpt-6-luna low reasoning and found no actionable defect. Latency/token improvement remains unmeasured; previous native acceptance is still false. Global host instruction size is outside this repository change. Next confirm the revised invocation using development cases, then a new independently reviewed held-out suite with both arms on the same efficient model and host configuration. Do not reuse the consumed suite as fresh confirmation.
+
 ## 2026-10-24 — native context validity evaluation
 
 - Completed 20 pairs with gpt-5.6-luna, low reasoning, after human label approval. Candidate exact decisions 20/20 versus baseline 18/20; all 20 helper executions verified from fixture-bound command/output evidence.

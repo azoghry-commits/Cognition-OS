@@ -20,3 +20,5 @@ Any native acceptance result is limited to this host, protocol, task set, skill 
 ## Consumed evaluation set
 
 This set was consumed on 2026-10-24. See [results](../../../docs/NATIVE_CONTEXT_VALIDITY_EVALUATION.md). Re-execution is diagnostic, not fresh held-out confirmation. Use a new independently reviewed set for a revised candidate. Raw original and hardened audited records are preserved in the report archive.
+
+The current development runner requests a single candidate tool call that reads the skill and runs the helper, without a redundant input read. The archived 2026-10-24 runner preserves the earlier invocation; its measured result does not measure this revision. Run development pilots before preparing a new held-out suite.

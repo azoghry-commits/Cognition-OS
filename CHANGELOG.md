@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Load case-store guidance on demand for supplied-record checks and batch native candidate skill/helper invocation; efficiency gain awaits measurement.
 - Add efficient-host paired evaluation harness and frozen evidence; native acceptance remains unmet due latency.
 - Add opt-in context validity checks for project cases, freshness and evidence fingerprints, without rewriting existing records.
 - Add bounded decision impact and workspace evidence snapshots, plus read-only CLI actions and extracted-package smoke coverage.
