@@ -1,5 +1,8 @@
 import json
 import hashlib
+import io
+from contextlib import redirect_stderr
+from unittest.mock import patch
 import tempfile
 import subprocess
 import sys
@@ -16,6 +19,26 @@ HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '20
 
 
 class HostEvalTests(unittest.TestCase):
+    def test_changed_approved_suite_stops_before_output_or_host_execution(self):
+        with tempfile.TemporaryDirectory() as folder:
+            suite = Path(folder)
+            cases = {'cases': [{'case_id': 'DEV-01', 'input': json.loads(json.dumps(EVAL_INPUT))}]}
+            labels = {'labels': [{'case_id': 'DEV-01', 'status': 'unknown',
+                                 'reuse_allowed': False, 'review_required': True}]}
+            certificate = {'approved': True, **integrity.review_fingerprints(cases, labels)}
+            cases['cases'][0]['input']['record']['title'] = 'Changed after review'
+            for name, value in [('cases.json', cases), ('labels.provisional.json', labels),
+                                ('human-review.json', certificate)]:
+                host.write_json(suite / name, value)
+            output = suite / 'must-not-exist'
+            args = ['evaluate_context_host.py', '--run', '--fixtures', str(suite), '--output', str(output)]
+            with patch.object(sys, 'argv', args), patch.object(host, 'run_case') as invoke, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    host.main()
+            self.assertEqual(error.exception.code, 2)
+            invoke.assert_not_called()
+            self.assertFalse(output.exists())
+
     def test_review_is_bound_to_case_and_label_content_without_mutating_certificate(self):
         cases = {'cases': [{'case_id': 'DEV-01', 'input': EVAL_INPUT}]}
         labels = {'labels': [{'case_id': 'DEV-01', 'status': 'unknown'}]}
@@ -33,7 +56,7 @@ class HostEvalTests(unittest.TestCase):
         self.assertEqual(integrity.json_fingerprint({'a': 1, 'b': True}),
                          integrity.json_fingerprint(json.loads('{"b": true, "a": 1}')))
         self.assertNotEqual(integrity.json_fingerprint({'a': True}), integrity.json_fingerprint({'a': 1}))
-        for raw in (b'{"a":1,"a":2}', b'{"a": NaN}'):
+        for raw in (b'{"a":1,"a":2}', b'{"a": NaN}', b'{"a":1e999}'):
             with self.assertRaises(ValueError):
                 integrity.read_json_bytes(raw)
 
