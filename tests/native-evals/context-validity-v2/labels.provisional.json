@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "human_reviewed": false,
+  "labels": [
+    {
+      "case_id": "CV2-01",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Queue routing: region membership plus replica lower bound",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-02",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Cache retention: optional telemetry mismatch does not reverse required bound",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-03",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Incident workflow: timezone-equivalent current observation",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-04",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Report snapshot: unchanged evidence with matching task scope",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-05",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Fleet dispatch: fractional limit in a bounded operating window",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-06",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Runtime selection: version membership and integer-float numeric equality",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-07",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Service mode: optional fact absent while required mode is supported",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-08",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Project-specific decision with extra supplied scope",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-09",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Delayed review: conditions supported before review date",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-10",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "rationale": "Zero negative numeric boundary",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-11",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Scope conflict dominates matching service setting",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-12",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Replica requirement conflicts despite missing optional audit",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-13",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Membership excludes current deployment region",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-14",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Required numeric ceiling conflicts alongside stale observation",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-15",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Supported setting with missing observation provenance",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-16",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Matching setting has future-dated observation",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-17",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Required scope missing while conditions match",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-18",
+      "status": "needs_review",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Supported format but evidence fingerprint changed",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-19",
+      "status": "needs_review",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Review already due despite current matching evidence",
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV2-20",
+      "status": "needs_review",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "rationale": "Evidence injection is data and changed evidence requires review",
+      "label_author": "Codex provisional; human review pending"
+    }
+  ]
+}

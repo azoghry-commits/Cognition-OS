@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added reviewed v2 native evidence and fixture preflight/approval guards; the corrected cohort passes overhead screening but shows no capability or token gain.
 - Added on-demand case-store guidance and batched native candidate helper invocation; efficiency gain awaits measurement.
 - Added efficient-host paired evaluation harness and frozen evidence; native acceptance remains unmet due latency.
 - Added opt-in context validity checks for project cases, freshness, and evidence fingerprints without rewriting existing records.

@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from cognition.capability import evaluate_capability
-from cognition.validity import check_memory
+from cognition.validity import check_memory, validate_applicability
 
 OUTPUT_SCHEMA = {
     'type': 'object', 'additionalProperties': False,
@@ -323,20 +323,40 @@ def run_case(cli, case, arm, output, plugin_source, timeout):
         return run
 
 
+def validate_suite(cases, labels):
+    case_ids = [row['case_id'] for row in cases]
+    label_ids = [row['case_id'] for row in labels]
+    if not cases or len(case_ids) != len(set(case_ids)) or len(label_ids) != len(set(label_ids)):
+        raise ValueError('Expected nonempty cases and unique case/label IDs')
+    if set(case_ids) != set(label_ids):
+        raise ValueError('Case and label IDs must match')
+    for case in cases:
+        payload = case['input']
+        if not isinstance(payload.get('record'), dict) or not isinstance(payload.get('context'), dict):
+            raise ValueError('Expected record and context objects')
+        if 'applicability' in payload['record']:
+            validate_applicability(payload['record']['applicability'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', action='store_true', help='Actually invoke authenticated Codex CLI')
     parser.add_argument('--output', required=True)
+    parser.add_argument('--fixtures', type=Path, default=ROOT / 'tests/native-evals/context-validity',
+                        help='Suite directory; fresh confirmation needs independently reviewed labels')
     parser.add_argument('--limit', type=int, default=20)
     parser.add_argument('--timeout', type=int, default=120)
     parser.add_argument('--pilot', action='store_true', help='Use a separate development case, not held-out cases')
     args = parser.parse_args()
-    fixtures = ROOT / 'tests/native-evals/context-validity'
+    fixtures = args.fixtures.resolve()
     paths = [fixtures / 'cases.json', fixtures / 'labels.provisional.json', fixtures / 'human-review.json',
              ROOT / 'scripts/evaluate_context_host.py', ROOT / 'docs/CONTEXT_VALIDITY.md']
-    cases = json.loads(paths[0].read_text())['cases']
-    labels = json.loads(paths[1].read_text())['labels']
-    reviewed = json.loads(paths[2].read_text())['approved'] is True
+    cases = json.loads(paths[0].read_text(encoding='utf-8'))['cases']
+    labels = json.loads(paths[1].read_text(encoding='utf-8'))['labels']
+    reviewed = json.loads(paths[2].read_text(encoding='utf-8'))['approved'] is True
+    if args.run and not args.pilot and not reviewed:
+        parser.error('Human label approval is required before candidate execution')
+    validate_suite(cases, labels)
     if not 1 <= args.limit <= 20 or not 15 <= args.timeout <= 300:
         parser.error('limit must be 1..20 and timeout 15..300')
     sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
