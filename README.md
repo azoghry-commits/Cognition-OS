@@ -208,6 +208,22 @@ The **V4.1 package candidate is implemented and locally checked**. Native accept
 
 Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
 
+## Running from a fresh clone
+
+Prerequisites: Git, Python 3.13 (runtime supports 3.10+) and uv. If uv is absent, install the reproducible bootstrap with `python -m pip install uv==0.12.17`.
+
+```powershell
+git clone https://github.com/azoghry-commits/Cognition-OS.git
+cd Cognition-OS
+uv sync --locked --extra dev
+uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+uv run --locked --extra dev coverage report --fail-under=80
+```
+
+Expected: unittest prints `Ran ... tests` and `OK` (an unavailable Windows symlink test may skip), both commands exit 0, and runtime coverage is at least 80%. A failed assertion exits nonzero and fails CI. The uv.lock file covers the project's Python dependency workflow; no Node package manager is required. CI runs the named **Run unit tests** step separately from coverage on every push and pull request, on Windows and Linux. A separate clean-container smoke uses the same Dockerfile as the Dev Container and runs the locked README sequence.
+
+Optional diagnostics: set `COGNITION_LOG_LEVEL=DEBUG` in the calling process to emit JSON routing events on stderr. Logging is silent by default; stdout stays machine-readable. Only policy and resolved capability tier are recorded, not objectives or evidence content. The host root logger is left alone. [.env.example](.env.example) documents the variable; the helper does not load .env files automatically. This is local operational logging, not an error-tracking service.
+
 ## Development
 
 Python 3.10+ is used by the local helper and rebuild pipeline. From the repository root, common checks are:
