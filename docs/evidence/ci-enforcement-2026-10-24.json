@@ -1,0 +1,130 @@
+{
+  "red": {
+    "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072814783",
+    "sha": "6a9cadd0229f4df01ee7439683a8c8475487274b",
+    "conclusion": "failure",
+    "jobs": [
+      {
+        "name": "quality (ubuntu-latest)",
+        "conclusion": "failure",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072814783/job/120809725880",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "failure"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "skipped"
+          }
+        ]
+      },
+      {
+        "name": "quality (windows-latest)",
+        "conclusion": "cancelled",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072814783/job/120809726074",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "skipped"
+          }
+        ]
+      }
+    ]
+  },
+  "restored_green": {
+    "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072918863",
+    "sha": "a16914cc47499b2f2ea57b6d7dcc9c09b3937de9",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "quality (ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072918863/job/120810042752",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "quality (windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40072918863/job/120810042957",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "fresh_host_and_container": {
+    "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40073282588",
+    "sha": "c297ab441f2087f2b7c0a7c7f45884e115aab3a7",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "quality (windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40073282588/job/120811144610",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "container-smoke",
+        "conclusion": "success",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40073282588/job/120811144765",
+        "steps": [
+          {
+            "name": "Run README smoke in a clean container",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "quality (ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/azoghry-commits/Cognition-OS/actions/runs/40073282588/job/120811144808",
+        "steps": [
+          {
+            "name": "Run unit tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect test coverage",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "local_coverage_wrapper_failure": {
+    "command": "uv run --locked --extra dev coverage run --data-file <temporary> -m unittest discover -s <temporary-failing-test> -q",
+    "returncode": 1,
+    "stderr": "======================================================================\nFAIL: test_failure (test_failure.Probe.test_failure)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\rizky\\AppData\\Local\\Temp\\coverage failure probe 4ex65nsj\\test_failure.py\", line 4, in test_failure\n    self.fail(\"Intentional coverage exit-code verification\")\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Intentional coverage exit-code verification\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (failures=1)\nC:\\Users\\rizky\\.codex\\worktrees\\context-validity\\CognitionOS-Plugin\\.venv\\Lib\\site-packages\\coverage\\control.py:946: CoverageWarning: No data was collected. (no-data-collected); see https://coverage.readthedocs.io/en/7.11.0/messages.html#warning-no-data-collected\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+    "temporary_test_removed": true
+  }
+}

@@ -22,3 +22,16 @@ tests/cognitive-evals/cases.json contains 50 framework behavioral test prompts a
 
 Use Claude's native validator for manifest and local discovery inventory where available. Use a repo-scoped Codex marketplace and inspect its installed plugin skills in a fresh chat. Never report current conversation capability as proof of a newly installed package. Record unsupported/unavailable tooling without fabricating a pass.
 
+
+## Explicit enforcement and generator scope
+
+CI runs `uv run --locked --extra dev python -m unittest discover -s tests -q` in its named Run unit tests step, then collects coverage separately. A temporary failing-test branch was pushed and reverted; [enforcement evidence](DATAFACTOR_REASSESSMENT_2026-10-24.md) records actual red and green runs, plus a local coverage-wrapper exit1 probe.
+
+Logging tests cover opt-in JSON stderr, root logger isolation, routing metadata, no task-content leakage and handler lifecycle. Generator tests use temporary projects rather than rewriting repository resources. Measure generators separately:
+
+```powershell
+uv run --locked --extra dev coverage run --data-file=.coverage.generators --source=scripts -m unittest discover -s tests -p "test_build*.py" -q
+uv run --locked --extra dev coverage report --data-file=.coverage.generators --include="*/scripts/build_catalog.py,*/scripts/build_docs.py,*/scripts/build_hybrid.py" --fail-under=0
+```
+
+This informational generator report has no 80% claim; the ordinary runtime report still enforces 80%. The container-smoke CI job uses the Dev Container Dockerfile, a fresh checkout and the README locked install/test sequence.

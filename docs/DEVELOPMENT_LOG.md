@@ -1,5 +1,12 @@
 # Development log
 
+## 2026-10-24 — DataFactor gap remediation
+
+- Integrated origin/main merge history into feat/context-validity and pushed the branch. User supplied 65.3 DataFactor baseline; no rescoring or point guarantee.
+- Explicit unittest CI step verified red with intentional failure on isolated test/ci-failure-probe, then reverted and verified green. Local coverage wrapper independently returned1 for an ephemeral failing test. Remote evidence links are in DATAFACTOR_REASSESSMENT_2026-10-24.md.
+- Added opt-in JSON operational logging and paired subprocess/in-process tests, strict finite catalog generation with RED/GREEN regression, actual temporary-project docs generation tests, full Pyflakes lint gate, .env.example and pinned-uv Dev Container Dockerfile. Clean public clone with empty cache passed README commands. Windows/Linux and clean-container CI passed at c297ab4.
+- Final local suite 160 run/1 skip, runtime 85%; generator coverage16%/14%/100% for catalog/docs/hybrid (29% aggregate), reported separately. Existing80% runtime floor retained. Locked audit/type/lint/package gates executed. No synthetic maintenance dates/contributors, new release or service scaffolding.
+
 ## 2026-10-24 — measured batched invocation v2
 
 - User approved the new 20-case/10-negative-control labels before execution. gpt-5.6-luna low pilot succeeded. Initial confirmation attempt stopped after three candidate runs because two fixtures reused condition IDs; preserved and excluded. Corrected IDs only, verified predicates/observations/labels unchanged, froze a new snapshot and collected all 40 runs.
