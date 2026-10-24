@@ -9,7 +9,7 @@ VERSION = "0.5.0"
 def write(path, value):
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n" if not isinstance(value, str) else value, encoding="utf-8")
+    p.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n" if not isinstance(value, str) else value, encoding="utf-8")
 
 # Curated engineering procedures augment the preserved source table. Semicolons delimit steps.
 # id | required inputs | output fields | method
