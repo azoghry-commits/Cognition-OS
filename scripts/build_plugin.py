@@ -1,6 +1,5 @@
 """Generate host wrappers and supporting contracts from the shared core."""
 import json
-from pathlib import Path
 from build_catalog import ROOT, VERSION, write
 
 COMMON='''

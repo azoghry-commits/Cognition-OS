@@ -1,7 +1,6 @@
 import json
 import tempfile
 import unittest
-from pathlib import Path
 
 from cognition.memory import CaseStore
 from cognition.improvement import ImprovementStore

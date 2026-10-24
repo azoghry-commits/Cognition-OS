@@ -1,7 +1,6 @@
 """Deterministic local artifacts; no publication, install or personal config writes."""
 import hashlib
 import json
-import sys
 import zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
