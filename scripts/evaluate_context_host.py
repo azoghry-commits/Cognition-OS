@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from cognition.capability import evaluate_capability
 from cognition.validity import check_memory, validate_applicability
+from scripts.eval_integrity import read_json_bytes, has_bound_approval
 
 OUTPUT_SCHEMA = {
     'type': 'object', 'additionalProperties': False,
@@ -351,11 +352,13 @@ def main():
     fixtures = args.fixtures.resolve()
     paths = [fixtures / 'cases.json', fixtures / 'labels.provisional.json', fixtures / 'human-review.json',
              ROOT / 'scripts/evaluate_context_host.py', ROOT / 'docs/CONTEXT_VALIDITY.md']
-    cases = json.loads(paths[0].read_text(encoding='utf-8'))['cases']
-    labels = json.loads(paths[1].read_text(encoding='utf-8'))['labels']
-    reviewed = json.loads(paths[2].read_text(encoding='utf-8'))['approved'] is True
+    cases_document = read_json_bytes(paths[0].read_bytes())
+    labels_document = read_json_bytes(paths[1].read_bytes())
+    cases = cases_document['cases']
+    labels = labels_document['labels']
+    reviewed = has_bound_approval(cases_document, labels_document, read_json_bytes(paths[2].read_bytes()))
     if args.run and not args.pilot and not reviewed:
-        parser.error('Human label approval is required before candidate execution')
+        parser.error('Human label approval is required and must match current case/label fingerprints')
     validate_suite(cases, labels)
     if not 1 <= args.limit <= 20 or not 15 <= args.timeout <= 300:
         parser.error('limit must be 1..20 and timeout 15..300')
