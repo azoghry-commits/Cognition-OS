@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Bound new native-evaluation approval to reviewed case and label fingerprints and added bounded offline evidence replay while preserving historical approval limitations.
 - Added reviewed v2 native evidence and fixture preflight/approval guards; the corrected cohort passes overhead screening but shows no capability or token gain.
 - Added on-demand case-store guidance and batched native candidate helper invocation; efficiency gain awaits measurement.
 - Added efficient-host paired evaluation harness and frozen evidence; native acceptance remains unmet due latency.

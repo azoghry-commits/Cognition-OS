@@ -1,5 +1,12 @@
 # Development log
 
+## 2026-10-24 — bound approval and offline evidence audit
+
+- Bound new nonpilot native collection to canonical finite-JSON case and label hashes. Old unbound certificates remain historical and cannot authorize a new run. Formatting and line endings are stable; content, type, or order changes invalidate approval. No historical approval or archive was modified.
+- Added an offline audit command with external checksum, bounded ZIP, CRC, and path checks, frozen file hashes, complete unique run pairs, input, response, and raw-event consistency, plus fixture-bound tool evidence. Archived Python is never executed. Full v2 replay reproduced the original summary as `LEGACY_UNBOUND` with `new_collection_approved=false`.
+- Integrity and auditor regressions cover changed approved cases, corrupt, missing, and duplicated evidence, absence of external subprocess use during replay, and fingerprint reporting without certificate mutation. No native model evaluation or API inference was rerun.
+- Historical local evidence recorded 171 tests with one Windows symlink skip, 85% runtime coverage, and successful Ruff, mypy, schema, and package gates. Current branch and CI results supersede those counts for repository health. See [offline evaluation audit](OFFLINE_EVALUATION_AUDIT.md).
+
 ## 2026-10-24 — measured batched invocation v2
 
 - User approved the new 20-case/10-negative-control labels before execution. gpt-5.6-luna low pilot succeeded. Initial confirmation attempt stopped after three candidate runs because two fixtures reused condition IDs; preserved and excluded. Corrected IDs only, verified predicates/observations/labels unchanged, froze a new snapshot and collected all 40 runs.

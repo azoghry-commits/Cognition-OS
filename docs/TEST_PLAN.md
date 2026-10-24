@@ -22,3 +22,5 @@ tests/cognitive-evals/cases.json contains 50 framework behavioral test prompts a
 
 Use Claude's native validator for manifest and local discovery inventory where available. Use a repo-scoped Codex marketplace and inspect its installed plugin skills in a fresh chat. Never report current conversation capability as proof of a newly installed package. Record unsupported/unavailable tooling without fabricating a pass.
 
+Evaluation-integrity tests are in `test_native_eval.py` and `test_offline_eval.py`. They do not call a native solver. See [offline auditing](OFFLINE_EVALUATION_AUDIT.md) for a reproducible regrade of the complete v2 archive and the distinction between historical approval and authorization for new collection.
+

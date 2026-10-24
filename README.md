@@ -156,6 +156,8 @@ Remove the variable after troubleshooting with `Remove-Item Env:COGNITION_LOG_LE
 
 The verifier runs the dependency audit, lint and type checks, the pytest suite with the coverage threshold, package validation, and deterministic archive construction. These checks establish repository health; native host behavior remains a separate acceptance gate.
 
+Native context-validity evidence can be [audited offline](docs/OFFLINE_EVALUATION_AUDIT.md) without model calls. New live evaluation requires approval bound to the reviewed case and label fingerprints; historical unbound certificates do not authorize collection.
+
 ### Activation: automatic or explicit
 
 You do **not** need to write `Cognition OS` or `[@Cognition OS](plugin://cognition-os@cognition-os-local)` in every prompt. On hosts that expose model-selected skills, Cognition OS can activate automatically when a skill description matches the task. A direct mention or slash command is useful for first-run testing, ambiguous prompts, critical work that needs deterministic routing, or hosts with a crowded skill catalog.
