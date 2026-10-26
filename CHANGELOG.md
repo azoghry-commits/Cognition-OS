@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added conventional pytest discovery, CLI end-to-end coverage, and a single fresh-clone verification command.
 - Added a standard Python project manifest and reproducible `uv.lock` development environment.
 - Added cross-platform CI gates for locked installation, Ruff, measured coverage, package validation, and deterministic release archives.
 - Added weekly dependency updates for the uv environment and GitHub Actions.

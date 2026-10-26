@@ -14,7 +14,7 @@ Keep each contribution focused enough that a reviewer can understand the behavio
    uv run --locked --extra dev pip-audit --progress-spinner off
    uv run --locked --extra dev ruff check cognition scripts tests
    uv run --locked --extra dev mypy cognition
-   uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+   uv run --locked --extra dev coverage run -m pytest
    uv run --locked --extra dev coverage report --fail-under=80
    uv run --locked --extra dev python scripts/validate_package.py
    ```
