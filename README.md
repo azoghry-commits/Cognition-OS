@@ -133,6 +133,17 @@ Build the deterministic archives with `python scripts/package_release.py`, then 
 
 The [desktop quick start](docs/DESKTOP_QUICKSTART.md) explains how to check installation separately from discovery, selection, execution, and task quality.
 
+### Verify a fresh clone
+
+From the repository root, install the locked development environment and run every repository quality gate with two commands:
+
+```powershell
+uv sync --locked --extra dev
+uv run --locked --extra dev python scripts/verify.py
+```
+
+The verifier runs the dependency audit, lint and type checks, the pytest suite with the coverage threshold, package validation, and deterministic archive construction. These checks establish repository health; native host behavior remains a separate acceptance gate.
+
 ### Activation: automatic or explicit
 
 You do **not** need to write `Cognition OS` or `[@Cognition OS](plugin://cognition-os@cognition-os-local)` in every prompt. On hosts that expose model-selected skills, Cognition OS can activate automatically when a skill description matches the task. A direct mention or slash command is useful for first-run testing, ambiguous prompts, critical work that needs deterministic routing, or hosts with a crowded skill catalog.
@@ -215,7 +226,7 @@ uv sync --locked --extra dev
 uv run --locked --extra dev pip-audit --progress-spinner off
 uv run --locked --extra dev ruff check cognition scripts tests
 uv run --locked --extra dev mypy cognition
-uv run --locked --extra dev coverage run -m unittest discover -s tests -q
+uv run --locked --extra dev coverage run -m pytest
 uv run --locked --extra dev coverage report --fail-under=80
 uv run --locked --extra dev coverage xml
 uv run --locked --extra dev python scripts/validate_package.py
