@@ -14,7 +14,7 @@ dependencies = []
 [project.optional-dependencies]
 validation = ["jsonschema==4.26.0"]
 dev = [
-  "coverage[toml]==7.11.0",
+  "coverage[toml]==7.16.2",
   "jsonschema==4.26.0",
   "mypy==1.18.2",
   "pip-audit==2.9.0",
