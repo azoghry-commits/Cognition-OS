@@ -17,7 +17,7 @@ OpenCode loads skill IDs, names and descriptions for discovery, then loads the f
 
 ## 3. Verify behavior
 
-Run the shared smoke test in the [installation index](INSTALLATION.md). Record host version, package version, loaded resource and actual helper output. Discovery is only the first check. For a bounded native test, use a clean project with one skill, one reference file, one prompt that should select it and one prompt that should not. `metadata.opencode/autoinvoke: false` or a denied `skill` permission can provide an explicit negative control.
+Run the shared smoke test in the [installation index](INSTALLATION.md). Record host version, package version, loaded resource and actual helper output. Discovery is only the first check. For a bounded native test, use a clean project with one skill, one reference file, one prompt that should select it and one prompt that should not. A denied `skill` permission provides an explicit negative control on OpenCode 1.
 
 ## 4. Update, rollback and remove
 
