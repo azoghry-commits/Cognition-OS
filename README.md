@@ -215,7 +215,7 @@ The **V4.1 package candidate is implemented and locally checked**. Native accept
 | Comparative outcomes | A/B/C/D host evaluation and measured quality, overhead, and latency remain open |
 | Release | Licensing and distribution approval remain open gates |
 
-Read the [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
+Read the active [development roadmap](docs/DEVELOPMENT_ROADMAP.md), [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
 
 ## Development
 
