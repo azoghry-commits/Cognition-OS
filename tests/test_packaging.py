@@ -51,6 +51,7 @@ class PackagingTests(unittest.TestCase):
         self.assertEqual(project['project']['version'], plugin['version'])
         self.assertEqual(__version__, plugin['version'])
         self.assertEqual(project['project']['requires-python'], '>=3.10')
+        self.assertEqual(project['tool']['setuptools']['packages'], ['cognition'])
         self.assertTrue((ROOT / 'uv.lock').is_file())
 
     def test_hybrid_tools_and_hook_run_from_extracted_archive(self):

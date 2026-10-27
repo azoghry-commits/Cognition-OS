@@ -2,13 +2,14 @@
 
 ## Unreleased
 
+- Added an active development roadmap with ordered repository, security, native-host, evaluation, and release gates for the 0.6.0 candidate.
+- Fixed direct pytest collection by limiting the installed setuptools package to `cognition` and making repository tests importable as a package.
+- Added direct pytest collection to local verification and cross-platform CI so console-runner regressions fail before the coverage suite.
 - Added conventional pytest discovery, CLI end-to-end coverage, and a single fresh-clone verification command.
 - Added a standard Python project manifest and reproducible `uv.lock` development environment.
 - Added cross-platform CI gates for locked installation, Ruff, measured coverage, package validation, and deterministic release archives.
 - Added weekly dependency updates for the uv environment and GitHub Actions.
 - Synchronized the Python package version with the 0.5.0 plugin candidate.
-
-## Unreleased
 
 - Fixed advisory artifact checks when a Windows workspace uses a short path alias.
 

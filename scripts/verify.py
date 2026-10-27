@@ -18,6 +18,7 @@ def main() -> int:
     run("-m", "pip_audit", "--progress-spinner", "off")
     run("-m", "ruff", "check", "cognition", "scripts", "tests")
     run("-m", "mypy", "cognition")
+    run("-m", "pytest", "--collect-only", "-q")
     run("-m", "coverage", "run", "-m", "pytest")
     run("-m", "coverage", "report", "--fail-under=80")
     run("scripts/validate_package.py")
