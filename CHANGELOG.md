@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Bounded project-local case and improvement reads to 1 MB, rejected non-object and nonfinite stored JSON, and validated the full serialized case envelope before creation.
 - Added an active development roadmap with ordered repository, security, native-host, evaluation, and release gates for the 0.6.0 candidate.
 - Fixed direct pytest collection by limiting the installed setuptools package to `cognition` and making repository tests importable as a package.
 - Added direct pytest collection to local verification and cross-platform CI so console-runner regressions fail before the coverage suite.

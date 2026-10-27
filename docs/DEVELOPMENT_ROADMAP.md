@@ -1,8 +1,8 @@
 # Cognition OS development roadmap
 
-Status date: 2026-10-27  
-Current package: 0.5.0 engineering candidate  
-Target milestone: 0.6.0 evidence-ready candidate
+- Status date: 2026-10-28
+- Current package: 0.5.0 engineering candidate
+- Target milestone: 0.6.0 evidence-ready candidate
 
 This document is the active development plan after the V4.1 implementation. It converts the remaining repository, host, security, and release gaps into reviewable work. Historical implementation plans remain useful design records, but they do not define the current execution order.
 
@@ -32,6 +32,14 @@ Cognition OS should provide portable cognitive assistance that agent hosts can d
 | P1.4 | Documentation and release hygiene | Current status, test report, checklist, changelog, version inventory, and license decision | No active guide reports obsolete package/test/skill counts; release gates agree with observed evidence |
 | P2.1 | Dependency maintenance | One dependency family per focused PR with full CI | Supported upgrades merge without weakening locked reproducibility |
 | Continuous | Mineable maintenance history | Small source-plus-test commits over sustained time | Each behavior change has the proof needed to understand and replay it; history is never fabricated for scoring |
+
+## Current progress
+
+| Work package | Status | Evidence boundary |
+| --- | --- | --- |
+| P0.1 Reliable direct test discovery | Complete | Merged in PR 14; direct collection and the post-merge Windows/Ubuntu workflow passed |
+| P0.2 Credential remediation | Complete for the audited local OpenCode/9Remote instance | The credential was replaced atomically, active JSON and state matched, inherited file access was removed, the new credential returned HTTP 200 from the MCP endpoint, a non-current credential returned HTTP 401, and OpenCode reported the server connected. No credential value is stored in repository evidence |
+| P0.3 Context-validity change review | In progress | The original PR 11 is being decomposed into focused source-plus-test changes; bounded persistence is the first independent slice |
 
 ## Planned pull requests
 
