@@ -5,6 +5,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from .storage import MAX_RECORD_BYTES, read_record
 
 
 class ImprovementStore:
@@ -46,21 +47,21 @@ class ImprovementStore:
             raise ValueError("Explicit improvement persistence authorization required")
 
     def _read(self, improvement_id):
-        record = json.loads(self.path(improvement_id).read_text(encoding="utf-8"))
+        record = read_record(self.path(improvement_id))
         if record.get("project_id") != self.project_id or record.get("state") not in self.STATES:
             raise ValueError("Invalid or cross-project improvement record")
         return record
 
     def _write(self, improvement_id, record):
         encoded = json.dumps(record, ensure_ascii=False, allow_nan=False, indent=2) + "\n"
-        if len(encoded.encode("utf-8")) > 1000000:
+        if len(encoded.encode("utf-8")) > MAX_RECORD_BYTES:
             raise ValueError("Improvement record exceeds 1 MB")
         path = self.path(improvement_id)
         path.parent.mkdir(parents=True, exist_ok=True)
         temporary = path.with_suffix(".json.tmp")
         if temporary.is_symlink() or (hasattr(temporary, "is_junction") and temporary.is_junction()):
             raise ValueError("Linked temporary improvement paths are forbidden")
-        with temporary.open("x", encoding="utf-8") as handle:
+        with temporary.open("x", encoding="utf-8", newline="\n") as handle:
             handle.write(encoded)
         temporary.replace(path)
         return {"id": improvement_id, "state": record["state"], "path": str(path), "project_id": self.project_id}
