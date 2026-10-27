@@ -142,6 +142,18 @@ uv sync --locked --extra dev
 uv run --locked --extra dev python scripts/verify.py
 ```
 
+### Optional routing diagnostics
+
+Set `COGNITION_LOG_LEVEL=DEBUG` when a host integration needs routing diagnostics. Cognition OS then emits one JSON object per supported routing event to stderr. The records contain only allowlisted operational fields such as the selected policy or resolved capability tier; task content is excluded. Any other value, including an unset variable or `INFO`, keeps these diagnostics disabled.
+
+```powershell
+$env:COGNITION_LOG_LEVEL = "DEBUG"
+$input = '{"profile":{"capability_tier":"unknown","context_tokens":2048},"task":{"objective":"Check routing","complexity":"low","risk":"normal"}}'
+$input | uv run --locked --extra dev python scripts/cognition.py capability-plan
+```
+
+Remove the variable after troubleshooting with `Remove-Item Env:COGNITION_LOG_LEVEL`.
+
 The verifier runs the dependency audit, lint and type checks, the pytest suite with the coverage threshold, package validation, and deterministic archive construction. These checks establish repository health; native host behavior remains a separate acceptance gate.
 
 ### Activation: automatic or explicit

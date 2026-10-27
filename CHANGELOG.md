@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added opt-in JSON routing diagnostics on stderr with an explicit metadata allowlist, no task-content logging, and no host root-logger mutation.
 - Bounded project-local case and improvement reads to 1 MB, rejected non-object and nonfinite stored JSON, and validated the full serialized case envelope before creation.
 - Added an active development roadmap with ordered repository, security, native-host, evaluation, and release gates for the 0.6.0 candidate.
 - Fixed direct pytest collection by limiting the installed setuptools package to `cognition` and making repository tests importable as a package.

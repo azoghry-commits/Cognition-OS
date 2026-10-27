@@ -2,6 +2,7 @@
 import copy
 import json
 from . import engine as e
+from .log import debug
 
 
 def object_schema(required, properties):
@@ -63,6 +64,13 @@ def check(value, schema):
 
 
 def assess(context):
+    """Return a routing plan with optional non-sensitive operational diagnostics."""
+    result = _assess(context)
+    debug('augmentation.assess', policy=result['policy'])
+    return result
+
+
+def _assess(context):
     """A disclosed policy suggestion from host-supplied context, never executed reasoning."""
     check(context, CONTEXT)
     policy = e.read_json(e.ROOT/'cognitive-core/augmentation/policy.json')
