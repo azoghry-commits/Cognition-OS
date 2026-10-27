@@ -79,11 +79,11 @@ Output: concise findings, observed verification, unresolved material gaps and an
 def build():
     metadata={'name':'cognition-os','version':VERSION,'description':'Portable cognitive assistance for agent hosts: 50 mental models, dependency-aware orchestration, evidence checks and governed improvement.','author':{'name':'Cognition OS project'}}
     interface={'displayName':'Cognition OS','shortDescription':'Structured analysis with evidence and validated calculations','longDescription':'Native skills share one catalog of 50 mental models and 52 logical specialist roles. Optional local Python helpers validate calculations and project cases.','developerName':'Cognition OS project','category':'Productivity','defaultPrompt':['Analyze this problem with Cognition OS.','Use Kepner-Tregoe to diagnose this deviation.','Teach me MECE with an infrastructure example.'],'composerIcon':'./assets/icon.svg','logo':'./assets/icon.svg'}
-    extension={'interface':interface,'onboardingSkill':'./skills/setup/SKILL.md'}
+    extension={'interface':interface,'onboardingSkill':'./skills/setup/SKILL.md','hooks':'./hooks/codex/hooks.json'}
     write('plugin.json',{'$schema':'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json',**metadata,'extensions':{'com.openai':extension}})
     write('.claude-plugin/plugin.json',metadata)
     # Compatibility fallback only; inline root extension is authoritative on modern OpenAI hosts.
-    write('.codex-plugin/plugin.json',{**metadata,'skills':'./skills/','interface':interface,'extensions':{'com.openai':{'onboardingSkill':'./skills/setup/SKILL.md'}}})
+    write('.codex-plugin/plugin.json',{**metadata,'skills':'./skills/','interface':interface,'extensions':{'com.openai':{'onboardingSkill':'./skills/setup/SKILL.md'}},'hooks':'./hooks/codex/hooks.json'})
     write('assets/icon.svg','<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><rect width="128" height="128" rx="26" fill="#142B37"/><g fill="none" stroke="#81D6C4" stroke-width="3"><path d="M64 20 104 44v40l-40 24-40-24V44Z M64 20v88 M24 44l80 40 M104 44 24 84 M24 44h80 M24 84h80"/></g></svg>\n')
     for name,(description,body) in SKILLS.items():
         write(f'skills/{name}/SKILL.md',f'---\nname: {name}\ndescription: {json.dumps(description)}\n---\n\n# {name.replace("-"," ").title()}\n\n{body}\n\nNonactivation: do not apply this skill to unrelated tasks merely because a framework term appears incidentally.\n{COMMON}')

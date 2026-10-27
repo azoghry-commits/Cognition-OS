@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import shlex
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -14,6 +15,36 @@ from cognition import __version__
 from scripts.package_release import runtime_files,archive
 
 class PackagingTests(unittest.TestCase):
+    def test_generator_preserves_codex_hook_metadata(self):
+        with tempfile.TemporaryDirectory(prefix='cognition generator ') as folder:
+            candidate = Path(folder) / 'repo'
+            shutil.copytree(
+                ROOT,
+                candidate,
+                ignore=shutil.ignore_patterns(
+                    '.git',
+                    '.venv',
+                    '.dev-deps',
+                    '.mypy_cache',
+                    '.pytest_cache',
+                    '.ruff_cache',
+                    '.runtime-*',
+                    'dist',
+                    '__pycache__',
+                ),
+            )
+            result = subprocess.run(
+                [sys.executable, str(candidate / 'scripts/build_plugin.py')],
+                cwd=candidate,
+                capture_output=True,
+                text=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            portable = json.loads((candidate / 'plugin.json').read_text(encoding='utf-8'))
+            fallback = json.loads((candidate / '.codex-plugin/plugin.json').read_text(encoding='utf-8'))
+            self.assertEqual(portable['extensions']['com.openai']['hooks'], './hooks/codex/hooks.json')
+            self.assertEqual(fallback['hooks'], './hooks/codex/hooks.json')
+
     def test_project_metadata_versions_and_lockfile_are_synchronized(self):
         project = tomllib.loads((ROOT / 'pyproject.toml').read_text(encoding='utf-8'))
         plugin = json.loads((ROOT / 'plugin.json').read_text(encoding='utf-8'))
