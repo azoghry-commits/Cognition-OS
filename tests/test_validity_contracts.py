@@ -11,7 +11,7 @@ from pathlib import Path
 import jsonschema
 from cognition.validity import check_memory
 from scripts import package_release
-from test_validity import record, context, NOW
+from tests.test_validity import NOW, context, record
 
 ROOT = Path(__file__).resolve().parents[1]
 
