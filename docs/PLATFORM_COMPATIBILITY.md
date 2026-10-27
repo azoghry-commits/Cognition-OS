@@ -1,4 +1,4 @@
-# Platform compatibility, checked 2026-10-21
+# Platform compatibility, checked 2026-10-26
 
 Package 0.3.0 extends the portable baseline to Antigravity, GitHub Copilot, VS Code, and generic Agent Skills hosts. The detailed packaging routes and current verification boundary are in [CROSS_HOST_COMPATIBILITY.md](CROSS_HOST_COMPATIBILITY.md). Claude Desktop Chat can use uploaded plugins for skills and commands; hooks and subagents remain limited to Claude Code and Cowork. GitHub Copilot and VS Code can consume Agent Plugins 1.0, while Antigravity uses the dedicated minimal-manifest archive.
 
@@ -7,6 +7,8 @@ Package 0.3.0 extends the portable baseline to Antigravity, GitHub Copilot, VS C
 Documentation establishes the advertised integration path; local observation establishes only what was tested. Installed clients observed: Claude Code 2.1.201 and codex-cli 0.153.0. Desktop product branding is not proof that every documented feature is active on this account.
 
 Status vocabulary: SUPPORTED, SUPPORTED_WITH_LIMITATIONS, UNSUPPORTED, NOT_VERIFIED, REQUIRES_OPTIONAL_DEPENDENCY. None of the documented support labels means this package passed all native behavior tests.
+
+Bounded Windows results for Codex Desktop and OpenCode are recorded in [NATIVE_HOST_EVIDENCE_2026-10-27.md](NATIVE_HOST_EVIDENCE_2026-10-27.md).
 
 ## Official evidence index
 
@@ -33,14 +35,14 @@ Status vocabulary: SUPPORTED, SUPPORTED_WITH_LIMITATIONS, UNSUPPORTED, NOT_VERIF
 | Specialized agents | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | UNSUPPORTED | SUPPORTED_WITH_LIMITATIONS | C2/C5/C6; Code inventory found two; Codex uses only tools actually present in the runtime, no agent manifest extension invented |
 | Parallel execution | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | UNSUPPORTED | SUPPORTED_WITH_LIMITATIONS | C6; desktop runtime can expose delegation but per-account capacity/authorization must be observed; no guaranteed 52 concurrency |
 | MCP | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | O1/O3, C2/C5; local stdio unavailable in Chat; Cowork cloud connector reachability differs |
-| Hooks | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | UNSUPPORTED | SUPPORTED_WITH_LIMITATIONS | O1 manually installed desktop plugins only; C2/C5; package intentionally has none |
+| Hooks | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | UNSUPPORTED | SUPPORTED_WITH_LIMITATIONS | O1 manually installed desktop plugins only; C2/C5; package 0.5.0 includes an optional PostToolUse artifact-check hook, but native event delivery remains unverified |
 | Script execution | REQUIRES_OPTIONAL_DEPENDENCY | REQUIRES_OPTIONAL_DEPENDENCY | REQUIRES_OPTIONAL_DEPENDENCY | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | Optional Python or permitted native calculator; shell/code permission and actual runtime govern availability |
 | Local files | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | Host-selected workspace/tools/permissions; no unrestricted filesystem promise |
 | Memory | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | Plugin's explicit case files only when file tools exist; no host memory promise |
 | Persistent state | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | NOT_VERIFIED | SUPPORTED_WITH_LIMITATIONS | Project JSON helper tested; host cache/state availability is separate |
 | Network | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | Host policies/connectors govern; no runtime helper network code |
 | Permissions | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | Existing host controls remain authoritative; manifest grants no permission |
-| Onboarding | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | O1 onboardingSkill; Claude setup is an ordinary packaged skill; actual auto-onboarding unverified |
+| Onboarding | NOT_VERIFIED | NOT_VERIFIED | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | The OpenAI-specific onboardingSkill field is retained as an experimental extension but is not established by the cited public documentation; Claude setup is an ordinary packaged skill |
 | Updates | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | O1, C3/C5; local cache refresh versus account-managed version differs |
 | Removal | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | SUPPORTED | SUPPORTED | Local CLI help and C5; removal must preserve separately stored user cases |
 | Native commands | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | SUPPORTED | SUPPORTED_WITH_LIMITATIONS | SUPPORTED_WITH_LIMITATIONS | Host picker/mentions or namespaced skill invocation; do not assume identical slash syntax across brands |
@@ -48,7 +50,7 @@ Status vocabulary: SUPPORTED, SUPPORTED_WITH_LIMITATIONS, UNSUPPORTED, NOT_VERIF
 
 ## Packaging and distribution decisions
 
-Portable root plugin.json declares Agent Plugins 1.0.0. No unsupported portable fields are used. OpenAI-specific interface/onboarding fields live under extensions.com.openai. The fallback .codex-plugin manifest is optional and uses documented skills/interface metadata. When inline com.openai exists, it wholly replaces fallback OpenAI settings. Claude uses its own manifest and scans the same skills; no duplicate intellectual catalog is maintained.
+Portable root plugin.json declares Agent Plugins 1.0.0. No unsupported portable fields are used. OpenAI-specific interface, experimental onboarding and hook fields live under extensions.com.openai. The fallback .codex-plugin manifest is optional and uses documented skills/interface metadata. `onboardingSkill` is retained for empirical testing and does not establish native onboarding support. When inline com.openai exists, it wholly replaces fallback OpenAI settings. Claude uses its own manifest and scans the same skills; no duplicate intellectual catalog is maintained.
 
 Repo .agents/plugins/marketplace.json and separate .claude-plugin/marketplace.json support private local development. A generated marketplace archive places the same runtime under plugins/cognition-os and points each platform's catalog at it. No public or organization publication is attempted. Personal marketplace modification and host installations outside this workspace are left to explicit user-authorized installation. No license, owner email, repository URL or privacy policy is fabricated.
 

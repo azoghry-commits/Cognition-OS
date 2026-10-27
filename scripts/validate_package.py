@@ -16,8 +16,11 @@ def validate():
     manifest=e.read_json(ROOT/'plugin.json')
     jsonschema.validate(manifest,e.read_json(ROOT/'schemas/vendor/plugin.schema.json'))
     assert e.read_json(ROOT/'.claude-plugin/plugin.json')['name']==manifest['name']
-    assert e.read_json(ROOT/'.codex-plugin/plugin.json')['version']==manifest['version']
-    for path in ['onboardingSkill']:
+    codex_manifest=e.read_json(ROOT/'.codex-plugin/plugin.json')
+    assert codex_manifest['version']==manifest['version']
+    assert codex_manifest['hooks']=='./hooks/codex/hooks.json'
+    assert codex_manifest['extensions']['com.openai']['onboardingSkill']=='./skills/setup/SKILL.md'
+    for path in ['onboardingSkill','hooks']:
         value=manifest['extensions']['com.openai'][path];assert value.startswith('./') and (ROOT/value).is_file()
     for path in ['logo','composerIcon']:
         assert (ROOT/manifest['extensions']['com.openai']['interface'][path]).is_file()
