@@ -23,7 +23,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["cognition", "scripts"]
+packages = ["cognition"]
 
 [tool.ruff]
 target-version = "py310"
