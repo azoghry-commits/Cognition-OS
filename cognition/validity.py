@@ -31,7 +31,7 @@ def _timestamp(value):
 
 def _bounded(value):
     try:
-        encoded = json.dumps(value, allow_nan=False)
+        encoded = json.dumps(value, ensure_ascii=False, allow_nan=False)
     except (TypeError, ValueError, RecursionError) as error:
         raise ValueError('Expected bounded finite JSON') from error
     if len(encoded.encode('utf-8')) > MAX_INPUT_BYTES:

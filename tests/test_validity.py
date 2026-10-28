@@ -132,6 +132,11 @@ class ValidityTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validity.check_memory({'title': 'x' * 1000001}, {}, now=NOW)
 
+    def test_unicode_record_uses_the_store_utf8_size_boundary(self):
+        saved = {'title': 'Legacy', 'body': '知' * 180000}
+        result = validity.check_memory(saved, {}, now=NOW)
+        self.assertEqual(result['status'], 'unknown')
+
     def test_store_check_enforces_project_scope_and_preserves_legacy(self):
         with tempfile.TemporaryDirectory() as folder:
             store = CaseStore(folder)
