@@ -1,5 +1,7 @@
 # Memory and state
 
+Optional context validity metadata and read-only checks are described in [CONTEXT_VALIDITY.md](CONTEXT_VALIDITY.md). Stored-case checks bind project identity, preserve old records as unknown, and expose required conditions, stale facts, evidence changes and limitations. Applicable is not verified truth. Storage remains explicitly authorized and bounded; no implicit migration or background monitor is introduced.
+
 Use current session context first, then authorized existing host project resources, then optional project JSON. SQLite and external stores are deferred because there is no demonstrated scale need. Default runtime never writes memory. See references/MEMORY.md for the concrete consent and review/delete interface.
 
 Case files contain schema version, version, project fingerprint, UTC timestamp, sensitivity flag and classified record. Existing IDs cannot be overwritten. New versions receive new IDs with predecessor in record. Project fingerprint prevents accidental copied-case reuse across project roots. It does not anonymize content or provide access control against another local process.
