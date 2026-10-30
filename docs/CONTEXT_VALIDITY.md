@@ -27,7 +27,7 @@ Its historical `now` makes the example reproducible. In live use omit now to use
 `schemas/applicability.schema.json` describes optional `record.applicability`. It has its own schema_version `1.0`; the existing case envelope remains `1.0`. No migration or rewrite is required for old cases. Cases without applicability return unknown. Unsupported metadata versions fail explicitly. Runtime validation additionally rejects duplicate condition/evidence IDs and nonfinite numbers.
 
 - Scope may constrain project_id, component and task_type. Missing scope context yields unknown; a known mismatch yields contradicted. Use the stored-case check for binding to the real project identity. The pure memory-check trusts its input.
-- Supply 1–128 conditions with unique IDs, fact keys, an operator, expected value, optional required boolean (default true) and max_age_seconds (default 86400, range 0–31536000).
+- Supply 1â€“128 conditions with unique IDs, fact keys, an operator, expected value, optional required boolean (default true) and max_age_seconds (default 86400, range 0â€“31536000).
 - Operators: equals, in, lt, lte, gt, gte. Numeric ordering accepts finite numbers only. Boolean and numeric equality are distinct. Null or wrong-type observations yield unknown. Version strings support equality/membership only, not numeric ordering.
 - Every fact observation has value, nonempty source and timezone-aware observed_at. Future timestamps, stale observations and missing fields yield unknown. Age exactly equal to the freshness limit is still current.
 - Optional evidence_refs hold unique IDs, lowercase SHA-256 fingerprints and the same freshness limit. Evidence observations require fingerprint, source and observed_at. Changed fingerprints yield needs_review; absent/unusable observations yield unknown.
@@ -54,7 +54,7 @@ Impact nodes have unique id, kind (evidence/assumption/decision), and depends_on
 }
 ```
 
-The JSON storage decision becomes needs_review. Unchanged, disconnected decisions are not returned. Missing dependencies propagate unknown unless an explicit relevant change already requires review. Cycles, duplicate IDs/dependencies, more than 1000 nodes, more than 4096 edges, and malformed input fail explicitly. max_results is 1–1000 (default 1000); truncation reports omitted_decisions and complete false. Unknown change IDs report unmapped_changes. A complete graph check is relative only to the supplied graph; it does not establish that every real dependency was recorded.
+The JSON storage decision becomes needs_review. Unchanged, disconnected decisions are not returned. Missing dependencies propagate unknown unless an explicit relevant change already requires review. Cycles, duplicate IDs/dependencies, more than 1000 nodes, more than 4096 edges, and malformed input fail explicitly. max_results is 1â€“1000 (default 1000); truncation reports omitted_decisions and complete false. Unknown change IDs report unmapped_changes. A complete graph check is relative only to the supplied graph; it does not establish that every real dependency was recorded.
 
 ## Verification and native acceptance
 
@@ -68,3 +68,15 @@ Native evaluation protocol (not executed by these tests):
 4. Any significant capability-gain claim must additionally pass the existing capability-eval paired gates. Keep latency, cost, task quality, and host support separate. Do not infer native acceptance from deterministic fixtures or package smoke.
 
 The future failure-to-regression, experiment-selection and sensitivity features remain separate backlog items in CONTEXT_VALIDITY_DEVELOPMENT_PLAN.md. No package version bump or publication follows automatically from local implementation.
+
+## Observed native evaluation — 2026-10-24
+
+The [20-pair efficient-model evaluation](NATIVE_CONTEXT_VALIDITY_EVALUATION.md) completed. Acceptance failed the latency threshold; capability verdict IMPROVED_NOT_SIGNIFICANT. The evidence archive preserves the premeasurement protocol snapshot.
+
+## Qualified v2 confirmation — 2026-10-24
+
+The [corrected v2 cohort](NATIVE_CONTEXT_VALIDITY_EVALUATION_V2.md) met product screening thresholds at 8.79% paired overhead. Both arms scored20/20; no measurable capability gain or token saving. Three cases were partially exposed before a condition-ID fixture correction; the report preserves this limitation and excludes the incomplete attempt.
+
+## Bound approval and reproducible replay
+
+New nonpilot host runs require the reviewed case/label canonical SHA-256 fingerprints in human-review.json. A changed suite or legacy unbound certificate cannot authorize collection. Historical results retain their original approval policy; [offline auditing](OFFLINE_EVALUATION_AUDIT.md) verifies complete frozen bundles without executing models or archived code.

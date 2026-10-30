@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "human_reviewed": false,
+  "labels": [
+    {
+      "case_id": "CV-01",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-02",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-03",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-04",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-05",
+      "status": "needs_review",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-06",
+      "status": "needs_review",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-07",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-08",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-09",
+      "status": "unknown",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-10",
+      "status": "contradicted",
+      "reuse_allowed": false,
+      "review_required": true,
+      "negative_control": false,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-11",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-12",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-13",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-14",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-15",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-16",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-17",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-18",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-19",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    },
+    {
+      "case_id": "CV-20",
+      "status": "applicable",
+      "reuse_allowed": true,
+      "review_required": false,
+      "negative_control": true,
+      "label_author": "Codex provisional; human review pending"
+    }
+  ]
+}
