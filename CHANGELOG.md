@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Aligned the active release checklist and test plan with package 0.5.0 and the canonical pytest verifier, with validation that rejects future version or command drift.
 - Bound new native-evaluation approval to reviewed case and label fingerprints and added bounded offline evidence replay while preserving historical approval limitations.
 - Added reviewed v2 native evidence and fixture preflight/approval guards; the corrected cohort passes overhead screening but shows no capability or token gain.
 - Added on-demand case-store guidance and batched native candidate helper invocation; efficiency gain awaits measurement.

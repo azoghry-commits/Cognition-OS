@@ -8,11 +8,40 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'.dev-deps'))
 from cognition import engine as e
 
+
+def validate_release_metadata():
+    """Keep active package metadata and release instructions on one version/command contract."""
+    manifest = e.read_json(ROOT/'plugin.json')
+    version = manifest['version']
+    pyproject = (ROOT/'pyproject.toml').read_text(encoding='utf-8')
+    project = re.search(r'^\[project\]\s*(.*?)(?=^\[|\Z)', pyproject, re.M | re.S)
+    project_version = re.search(r'^version\s*=\s*["\']([^"\']+)["\']', project[1], re.M) if project else None
+    assert project_version and project_version[1] == version, 'pyproject version differs from plugin.json'
+    for path in (ROOT/'.codex-plugin/plugin.json', ROOT/'.claude-plugin/plugin.json'):
+        assert e.read_json(path)['version'] == version, f'{path} version differs from plugin.json'
+
+    release_checklist = (ROOT/'docs/RELEASE_CHECKLIST.md').read_text(encoding='utf-8')
+    assert f'**Active candidate:** package {version}' in release_checklist, 'release checklist candidate is stale'
+
+    test_plan = (ROOT/'docs/TEST_PLAN.md').read_text(encoding='utf-8')
+    required_commands = (
+        'uv sync --locked --extra dev',
+        'uv run --locked --extra dev python scripts/verify.py',
+        'pytest --collect-only',
+        'coverage run -m pytest',
+        'coverage report --fail-under=80',
+    )
+    for command in required_commands:
+        assert command in test_plan, f'test plan is missing canonical command: {command}'
+    assert 'coverage run -m unittest' not in test_plan, 'test plan still uses the superseded coverage runner'
+    return version
+
 def validate():
     import jsonschema
     schemas={p.stem:json.loads(p.read_text(encoding='utf-8')) for p in (ROOT/'schemas').glob('*.json')}
     for schema in schemas.values():jsonschema.Draft202012Validator.check_schema(schema)
     for p in (ROOT/'schemas/framework-output').glob('*.json'):jsonschema.Draft202012Validator.check_schema(json.loads(p.read_text()))
+    package_version=validate_release_metadata()
     manifest=e.read_json(ROOT/'plugin.json')
     jsonschema.validate(manifest,e.read_json(ROOT/'schemas/vendor/plugin.schema.json'))
     assert e.read_json(ROOT/'.claude-plugin/plugin.json')['name']==manifest['name']
@@ -56,6 +85,6 @@ def validate():
     for platform in ['antigravity','github-copilot','vscode','generic','opencode','commandcode','openclaw','hermes']:
         assert (ROOT/f'adapters/{platform}/README.md').is_file(),platform
     assert e.read_json(ROOT/'openclaw.plugin.json')['skills']==['skills']
-    return {'status':'TESTED','full_schema_validator':importlib.metadata.version('jsonschema'),'frameworks':len(catalog),'logical_agents':52,'skills':len(skill_paths),'required_documents':len(required),'note':'Structural validation; native semantic behavior is a separate gate.'}
+    return {'status':'TESTED','package_version':package_version,'full_schema_validator':importlib.metadata.version('jsonschema'),'frameworks':len(catalog),'logical_agents':52,'skills':len(skill_paths),'required_documents':len(required),'note':'Structural validation; native semantic behavior is a separate gate.'}
 
 if __name__=='__main__':print(json.dumps(validate(),indent=2))

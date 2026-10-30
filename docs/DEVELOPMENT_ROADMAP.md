@@ -1,6 +1,6 @@
 # Cognition OS development roadmap
 
-- Status date: 2026-10-28
+- Status date: 2026-10-31
 - Current package: 0.5.0 engineering candidate
 - Target milestone: 0.6.0 evidence-ready candidate
 
@@ -40,6 +40,7 @@ Cognition OS should provide portable cognitive assistance that agent hosts can d
 | P0.1 Reliable direct test discovery | Complete | Merged in PR 14; direct collection and the post-merge Windows/Ubuntu workflow passed |
 | P0.2 Credential remediation | Complete for the audited local OpenCode/9Remote instance | The credential was replaced atomically, active JSON and state matched, inherited file access was removed, the new credential returned HTTP 200 from the MCP endpoint, a non-current credential returned HTTP 401, and OpenCode reported the server connected. No credential value is stored in repository evidence |
 | P0.3 Context-validity change review | Complete | Focused slices merged bounded persistence in PR 15, opt-in structured routing diagnostics in PR 16, read-only validity and decision impact in PR 17, generator hardening in PRs 18–19, and Dev Container reproducibility in PR 24. The final offline evaluator and evidence-integrity slice is prepared with frozen native evidence and current replay verification. |
+| P1.4 Documentation and release hygiene | Partial | The active checklist and canonical test plan now agree on package 0.5.0 and the pytest verifier, and package validation rejects drift. Native acceptance, OpenClaw disposition, current test-report refresh, and the owner's license/distribution decision remain open. |
 
 ## Planned pull requests
 
