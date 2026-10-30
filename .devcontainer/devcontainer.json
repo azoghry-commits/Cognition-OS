@@ -1,9 +1,6 @@
 {
   "name": "Cognition OS",
-  "image": "mcr.microsoft.com/devcontainers/python:1-3.13-bookworm",
-  "features": {
-    "ghcr.io/devcontainers-extra/features/uv:1": {}
-  },
+  "build": { "dockerfile": "Dockerfile" },
   "postCreateCommand": "uv sync --locked --extra dev",
   "customizations": {
     "vscode": {
