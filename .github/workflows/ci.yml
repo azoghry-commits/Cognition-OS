@@ -26,11 +26,11 @@ jobs:
       - run: uv run --locked --extra dev coverage xml
       - run: uv run --locked --extra dev python scripts/validate_package.py
       - run: uv run --locked --extra dev python scripts/package_release.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: candidate-${{ matrix.os }}
           path: dist/*
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: coverage-${{ matrix.os }}
           path: coverage.xml
