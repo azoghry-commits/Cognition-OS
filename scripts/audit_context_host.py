@@ -75,6 +75,32 @@ def _captured_evidence(run):
     return evidence
 
 
+def _final_agent_response(events):
+    """Return the final structured agent message captured in raw host events."""
+    final_text = None
+    for line in events.splitlines():
+        if not line.strip():
+            continue
+        event = read_json_bytes(line.encode('utf-8'))
+        if not isinstance(event, dict):
+            raise ValueError('Expected JSON event objects')
+        item = event.get('item', {})
+        if event.get('type') == 'item.completed' and item.get('type') == 'agent_message':
+            text = item.get('text')
+            if not isinstance(text, str):
+                raise ValueError('Agent message must contain structured text')
+            final_text = text
+    if final_text is None:
+        raise ValueError('Missing final agent response in raw events')
+    try:
+        response = read_json_bytes(final_text.encode('utf-8'))
+    except (UnicodeDecodeError, ValueError) as error:
+        raise ValueError('Final agent response is not valid structured JSON') from error
+    if not isinstance(response, dict):
+        raise ValueError('Final agent response must contain a JSON object')
+    return response
+
+
 def audit_archive(path, expected_sha256, cohort):
     path = Path(path)
     if path.stat().st_size > MAX_ARCHIVE_BYTES:
@@ -151,9 +177,8 @@ def audit_archive(path, expected_sha256, cohort):
                 if not host._same_json(response, run['response']):
                     raise ValueError('Response differs from collected record')
                 events = raw(folder + 'events.jsonl').decode('utf-8-sig')
-                for line in events.splitlines():
-                    if line.strip() and not isinstance(read_json_bytes(line.encode('utf-8')), dict):
-                        raise ValueError('Expected JSON event objects')
+                if not host._same_json(_final_agent_response(events), response):
+                    raise ValueError('Final agent response differs from scored response')
                 trace = host.parse_trace(events)
                 for key in ('commands', 'usage', 'completed', 'errors', 'thread_id'):
                     if not host._same_json(trace[key], run[key]):

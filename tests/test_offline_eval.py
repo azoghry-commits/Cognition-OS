@@ -88,6 +88,20 @@ class OfflineAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Response'):
             self.verify(path)
 
+    def test_scored_response_must_match_final_raw_agent_message(self):
+        name = COHORT + '/CV2-11-candidate/events.jsonl'
+        def forge_final_message(entries):
+            events = [json.loads(line) for line in entries[name].splitlines() if line.strip()]
+            messages = [event for event in events
+                        if event.get('type') == 'item.completed'
+                        and event.get('item', {}).get('type') == 'agent_message']
+            forged = json.loads(messages[-1]['item']['text'])
+            forged.update(status='applicable', reuse_allowed=True, review_required=False)
+            messages[-1]['item']['text'] = json.dumps(forged)
+            entries[name] = ('\n'.join(json.dumps(event) for event in events) + '\n').encode()
+        with self.assertRaisesRegex(ValueError, 'Final agent response'):
+            self.verify(self.variant(forge_final_message))
+
     def test_duplicate_runs_and_incomplete_events_are_rejected(self):
         def duplicate(entries):
             name = COHORT + '/collected-runs.json'
