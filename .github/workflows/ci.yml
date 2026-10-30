@@ -34,3 +34,13 @@ jobs:
         with:
           name: coverage-${{ matrix.os }}
           path: coverage.xml
+  container-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build development image
+        run: docker build -t cognition-os-smoke -f .devcontainer/Dockerfile .
+      - name: Install and test in a fresh container
+        run: >-
+          docker run --rm --volume "$PWD:/workspace" --workdir /workspace cognition-os-smoke
+          sh -c 'uv sync --locked --extra dev && uv run --locked --extra dev coverage run -m pytest && uv run --locked --extra dev coverage report --fail-under=80'
