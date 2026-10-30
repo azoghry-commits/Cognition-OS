@@ -16,6 +16,17 @@ COHORT = 'heldout-batched-v2-corrected-20261024'
 
 
 class OfflineAuditTests(unittest.TestCase):
+    def test_printed_helper_text_is_not_execution_evidence(self):
+        payload = {'record': {'title': 'Legacy'}, 'context': {}, 'now': '2026-10-23T12:00:00Z'}
+        encoded = (json.dumps(payload, indent=2, allow_nan=False) + '\n').encode()
+        fake = {'evaluation_input': payload, 'input_sha256': hashlib.sha256(encoded).hexdigest(),
+                'commands': [{'exit_code': 0,
+                              'command': 'Write-Output "; python .agents/scripts/cognition.py memory-check --input input.json"',
+                              'aggregated_output': '{"schema_version":"1.0","status":"unknown",'
+                                                   '"checks":[],"truth_verified":false}'}]}
+        self.assertEqual(audit._captured_evidence(fake),
+                         {'helper_executed': False, 'workspace_read_observed': False})
+
     def test_cli_fingerprints_do_not_grant_or_rewrite_historical_approval(self):
         suite = ROOT / 'tests/native-evals/context-validity-v2'
         before = (suite / 'human-review.json').read_bytes()

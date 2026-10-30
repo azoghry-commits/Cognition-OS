@@ -58,25 +58,19 @@ def _captured_evidence(run):
         return {'helper_executed': False, 'workspace_read_observed': False}
     evidence = {'helper_executed': False, 'workspace_read_observed': False}
     for item in run.get('commands', []):
-        if item.get('exit_code') != 0:
+        kinds, observed = host.captured_command(item)
+        if not kinds:
             continue
-        command = item.get('command', '')
-        helper = re.search(r'(?:^|[;&]\s*)python\s+\.agents/scripts/cognition\.py\s+'
-                           r'''memory-check\s+--input\s+input\.json(?:\s|['"]|$)''', command,
-                           flags=re.IGNORECASE) is not None
-        fixture_read = re.search(r'''(?:Get-Content(?:\s+-Raw)?|type)\s+'''
-                                 r'''(?:\.\\)?input\.json(?:\s|['"]|$)''', command,
-                                 flags=re.IGNORECASE) is not None
-        observed = host._terminal_json(item.get('aggregated_output', ''))
         valid_helper = (isinstance(observed, dict)
                         and observed.get('schema_version') == '1.0'
                         and observed.get('status') in
                         {'applicable', 'unknown', 'needs_review', 'contradicted'}
                         and isinstance(observed.get('checks'), list)
                         and observed.get('truth_verified') is False)
-        if helper and valid_helper:
+        helper_tail = kinds[-1] == 'helper' or (len(kinds) > 1 and kinds[-2:] == ['helper', 'exit'])
+        if helper_tail and valid_helper:
             evidence.update(helper_executed=True, workspace_read_observed=True)
-        elif fixture_read and host._same_json(observed, payload):
+        elif kinds[-1] == 'input' and host._same_json(observed, payload):
             evidence['workspace_read_observed'] = True
     return evidence
 

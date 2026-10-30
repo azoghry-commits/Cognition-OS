@@ -86,6 +86,40 @@ def _terminal_json(text):
     return None
 
 
+def captured_command(item):
+    """Return allowlisted statement kinds and captured terminal JSON."""
+    if item.get('exit_code') != 0:
+        return None, None
+    command = item.get('command', '')
+    wrapper = re.fullmatch(r'"[^"\n]*(?:pwsh|powershell)\.exe" (?:-NoProfile )?-Command ([\'"])(.*)\1',
+                           command, flags=re.IGNORECASE | re.DOTALL)
+    body = wrapper.group(2) if wrapper else command
+    if any(token in body for token in ('\n', '\r', '|', '`', '$(', '&&')):
+        return None, None
+    kinds = []
+    for statement in body.split(';'):
+        try:
+            tokens = shlex.split(statement.strip().replace('\\', '/'))
+        except ValueError:
+            return None, None
+        if not tokens:
+            return None, None
+        name = tokens[0].casefold()
+        path = tokens[-1].replace('.//', './').removeprefix('./')
+        if (name == 'get-content' and all(t.casefold() in ('-raw', '-literalpath') for t in tokens[1:-1])
+                and path in ('input.json', '.agents/skills/case-intelligence/SKILL.md', '.agents/references/MEMORY.md')):
+            kinds.append('input' if path == 'input.json' else 'resource')
+        elif (name in ('python', 'python.exe', 'python3', 'py') and len(tokens) == 5
+                and tokens[1].removeprefix('./') == '.agents/scripts/cognition.py'
+                and tokens[2:] == ['memory-check', '--input', 'input.json']):
+            kinds.append('helper')
+        elif tokens == ['Write-Output', 'EXIT:$LASTEXITCODE']:
+            kinds.append('exit')
+        else:
+            return None, None
+    return kinds, _terminal_json(item.get('aggregated_output', ''))
+
+
 def command_evidence(commands, evaluation_input=None):
     """Accept only known read/helper argv and output bound to the case payload."""
     result = {'helper_executed': False, 'workspace_read_observed': False}
@@ -96,40 +130,9 @@ def command_evidence(commands, evaluation_input=None):
     except (TypeError, ValueError):
         expected = None
     for item in commands:
-        if item.get('exit_code') != 0:
+        kinds, observed = captured_command(item)
+        if not kinds:
             continue
-        command = item.get('command', '')
-        wrapper = re.fullmatch(r'"[^"\n]*(?:pwsh|powershell)\.exe" (?:-NoProfile )?-Command ([\'"])(.*)\1',
-                               command, flags=re.IGNORECASE | re.DOTALL)
-        body = wrapper.group(2) if wrapper else command
-        if any(token in body for token in ('\n', '\r', '|', '`', '$(', '&&')):
-            continue
-        kinds = []
-        for statement in body.split(';'):
-            try:
-                tokens = shlex.split(statement.strip().replace('\\', '/'))
-            except ValueError:
-                kinds.append('unsupported')
-                break
-            if not tokens:
-                kinds.append('unsupported')
-                break
-            name = tokens[0].casefold()
-            path = tokens[-1].replace('.//', './').removeprefix('./')
-            if (name == 'get-content' and all(t.casefold() in ('-raw', '-literalpath') for t in tokens[1:-1])
-                    and path in ('input.json', '.agents/skills/case-intelligence/SKILL.md', '.agents/references/MEMORY.md')):
-                kinds.append('input' if path == 'input.json' else 'resource')
-            elif (name in ('python', 'python.exe', 'python3', 'py') and len(tokens) == 5
-                    and tokens[1].removeprefix('./') == '.agents/scripts/cognition.py'
-                    and tokens[2:] == ['memory-check', '--input', 'input.json']):
-                kinds.append('helper')
-            elif tokens == ['Write-Output', 'EXIT:$LASTEXITCODE']:
-                kinds.append('exit')
-            else:
-                kinds.append('unsupported')
-        if not kinds or 'unsupported' in kinds:
-            continue
-        observed = _terminal_json(item.get('aggregated_output', ''))
         helper_tail = kinds[-1] == 'helper' or (len(kinds) > 1 and kinds[-2:] == ['helper', 'exit'])
         if helper_tail and expected is not None and _same_json(observed, expected):
             result.update(helper_executed=True, workspace_read_observed=True)
