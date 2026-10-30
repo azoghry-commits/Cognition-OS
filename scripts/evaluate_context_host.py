@@ -171,12 +171,13 @@ def parse_trace(text, evaluation_input=None):
     return result
 
 
-def summarize(baseline, candidate, labels, human_reviewed=False):
+def summarize(baseline, candidate, labels, human_reviewed=False,
+              evidence_resolver=bound_run_evidence):
     expected = {label['case_id']: label for label in labels}
     comparisons = {}
     metrics = {}
     for name, records in [('baseline', baseline), ('candidate', candidate)]:
-        evidence = [bound_run_evidence(run) for run in records]
+        evidence = [evidence_resolver(run) for run in records]
         scored = []
         tp = fp = fn = tn = 0
         errors = 0
@@ -224,7 +225,7 @@ def summarize(baseline, candidate, labels, human_reviewed=False):
              'execution_complete': c['execution_errors'] == 0 and metrics['baseline']['execution_errors'] == 0,
              'candidate_helper_observed': bool(candidate) and c['helper_executions'] == len(candidate),
              'workspace_reads_observed': bool(baseline and candidate) and all(
-                 bound_run_evidence(run)['workspace_read_observed'] for run in baseline + candidate),
+                 evidence_resolver(run)['workspace_read_observed'] for run in baseline + candidate),
              'precision': c['precision'] is not None and c['precision'] >= .9,
              'recall': c['recall'] is not None and c['recall'] >= .9,
              'false_positive_rate': c['false_positive_rate'] is not None and c['false_positive_rate'] <= .1,

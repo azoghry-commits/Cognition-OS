@@ -41,7 +41,9 @@ class OfflineAuditTests(unittest.TestCase):
         return path
 
     def test_real_v2_archive_replays_offline_without_promoting_legacy_approval(self):
-        with patch('subprocess.run', side_effect=AssertionError('No external commands during audit')):
+        with (patch('subprocess.run', side_effect=AssertionError('No external commands during audit')),
+              patch('scripts.evaluate_context_host.check_memory',
+                    side_effect=AssertionError('No current checker during audit'))):
             result = self.verify()
         self.assertEqual(result['status'], 'VERIFIED')
         self.assertTrue(result['summary_matches_recorded'])

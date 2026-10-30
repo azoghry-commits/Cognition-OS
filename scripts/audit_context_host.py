@@ -47,6 +47,40 @@ def _frozen_member(path, prefix):
     raise ValueError('Unsupported frozen source path: ' + path)
 
 
+def _captured_evidence(run):
+    """Validate captured helper/read evidence without current runtime execution."""
+    payload = run.get('evaluation_input')
+    if not isinstance(payload, dict):
+        return {'helper_executed': False, 'workspace_read_observed': False}
+    encoded = (json.dumps(payload, indent=2, allow_nan=False) + '\n').encode('utf-8')
+    hashes = {_sha(raw) for raw in (encoded, encoded.replace(b'\n', b'\r\n'))}
+    if run.get('input_sha256') not in hashes:
+        return {'helper_executed': False, 'workspace_read_observed': False}
+    evidence = {'helper_executed': False, 'workspace_read_observed': False}
+    for item in run.get('commands', []):
+        if item.get('exit_code') != 0:
+            continue
+        command = item.get('command', '')
+        helper = re.search(r'(?:^|[;&]\s*)python\s+\.agents/scripts/cognition\.py\s+'
+                           r'''memory-check\s+--input\s+input\.json(?:\s|['"]|$)''', command,
+                           flags=re.IGNORECASE) is not None
+        fixture_read = re.search(r'''(?:Get-Content(?:\s+-Raw)?|type)\s+'''
+                                 r'''(?:\.\\)?input\.json(?:\s|['"]|$)''', command,
+                                 flags=re.IGNORECASE) is not None
+        observed = host._terminal_json(item.get('aggregated_output', ''))
+        valid_helper = (isinstance(observed, dict)
+                        and observed.get('schema_version') == '1.0'
+                        and observed.get('status') in
+                        {'applicable', 'unknown', 'needs_review', 'contradicted'}
+                        and isinstance(observed.get('checks'), list)
+                        and observed.get('truth_verified') is False)
+        if helper and valid_helper:
+            evidence.update(helper_executed=True, workspace_read_observed=True)
+        elif fixture_read and host._same_json(observed, payload):
+            evidence['workspace_read_observed'] = True
+    return evidence
+
+
 def audit_archive(path, expected_sha256, cohort):
     path = Path(path)
     if path.stat().st_size > MAX_ARCHIVE_BYTES:
@@ -126,7 +160,7 @@ def audit_archive(path, expected_sha256, cohort):
                 for line in events.splitlines():
                     if line.strip() and not isinstance(read_json_bytes(line.encode('utf-8')), dict):
                         raise ValueError('Expected JSON event objects')
-                trace = host.parse_trace(events, evaluation_input=payload)
+                trace = host.parse_trace(events)
                 for key in ('commands', 'usage', 'completed', 'errors', 'thread_id'):
                     if not host._same_json(trace[key], run[key]):
                         raise ValueError('Trace differs from collected run: ' + key)
@@ -149,7 +183,7 @@ def audit_archive(path, expected_sha256, cohort):
                         or usage['cached_input_tokens'] > usage['input_tokens']):
                     raise ValueError('Missing or invalid token evidence')
                 run.update(trace, evaluation_input=payload)
-                evidence = host.bound_run_evidence(run)
+                evidence = _captured_evidence(run)
                 if not evidence['workspace_read_observed'] or (arm == 'candidate' and not evidence['helper_executed']):
                     raise ValueError('Missing fixture-bound read/helper execution proof')
 
@@ -159,7 +193,8 @@ def audit_archive(path, expected_sha256, cohort):
         # Historical reports retain their original approval policy. An archived,
         # unbound certificate never authorizes future collection under the new gate.
         summary = host.summarize(runs['baseline'], runs['candidate'], labels,
-                                 human_reviewed=review.get('approved') is True)
+                                 human_reviewed=review.get('approved') is True,
+                                 evidence_resolver=_captured_evidence)
         if not host._same_json(summary, document(prefix + 'summary.json')):
             raise ValueError('Replayed summary differs from recorded results')
         return {'status': 'VERIFIED', 'archive_sha256': expected_sha256, 'cohort': cohort,
