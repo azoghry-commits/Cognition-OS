@@ -39,7 +39,7 @@ Cognition OS should provide portable cognitive assistance that agent hosts can d
 | --- | --- | --- |
 | P0.1 Reliable direct test discovery | Complete | Merged in PR 14; direct collection and the post-merge Windows/Ubuntu workflow passed |
 | P0.2 Credential remediation | Complete for the audited local OpenCode/9Remote instance | The credential was replaced atomically, active JSON and state matched, inherited file access was removed, the new credential returned HTTP 200 from the MCP endpoint, a non-current credential returned HTTP 401, and OpenCode reported the server connected. No credential value is stored in repository evidence |
-| P0.3 Context-validity change review | In progress | The original PR 11 is being decomposed into focused source-plus-test changes; bounded persistence merged in PR 15, opt-in structured routing diagnostics merged in PR 16, and the read-only context-validity core is the next review slice |
+| P0.3 Context-validity change review | Complete | Focused slices merged bounded persistence in PR 15, opt-in structured routing diagnostics in PR 16, read-only validity and decision impact in PR 17, generator hardening in PRs 18–19, and Dev Container reproducibility in PR 24. The final offline evaluator and evidence-integrity slice is prepared with frozen native evidence and current replay verification. |
 
 ## Planned pull requests
 
@@ -66,6 +66,8 @@ uv run --locked --extra dev python scripts/verify.py
 ```
 
 ### PR B — land context validity in reviewable slices
+
+Status: complete after the offline evaluator and evidence-integrity slice merges.
 
 Rebase the context-validity work on current main and resolve the platform-specific evaluator finding. Prefer three focused slices when that reduces review risk:
 

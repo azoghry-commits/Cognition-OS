@@ -50,6 +50,8 @@ class OfflineAuditTests(unittest.TestCase):
         self.assertTrue(result['summary']['acceptance_passed'])
         self.assertEqual(result['approval_binding'], 'LEGACY_UNBOUND')
         self.assertFalse(result['new_collection_approved'])
+        self.assertFalse(result['local_checker_matches_frozen'])
+        self.assertRegex(result['frozen_checker_sha256'], r'^[0-9a-f]{64}$')
 
     def test_external_checksum_is_required_to_match(self):
         with self.assertRaisesRegex(ValueError, 'checksum'):

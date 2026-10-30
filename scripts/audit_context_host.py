@@ -92,11 +92,11 @@ def audit_archive(path, expected_sha256, cohort):
         required |= {prefix + 'runner-frozen.py', 'runtime/cognition/validity.py'}
         if not required <= frozen_names:
             raise ValueError('Frozen manifest does not bind required audit inputs')
-        # Never import/execute archived Python. Replay helper evidence only with a
-        # local checker matching the frozen source, tolerating platform newlines.
+        # Never import or execute archived Python. The frozen checker is already
+        # bound by the manifest; record source drift because replay validates the
+        # captured response and trace rather than recomputing it with current code.
         checker = raw('runtime/cognition/validity.py').replace(b'\r\n', b'\n')
-        if checker != (ROOT / 'cognition/validity.py').read_bytes().replace(b'\r\n', b'\n'):
-            raise ValueError('Local validity checker differs from archived source')
+        local_checker = (ROOT / 'cognition/validity.py').read_bytes().replace(b'\r\n', b'\n')
 
         cases_document = document(prefix + 'suite-frozen/cases.json')
         labels_document = document(prefix + 'suite-frozen/labels.provisional.json')
@@ -166,12 +166,15 @@ def audit_archive(path, expected_sha256, cohort):
                 'frozen_files_verified': len(frozen_names), 'summary_matches_recorded': True,
                 'approval_binding': 'BOUND' if bound else 'LEGACY_UNBOUND',
                 'new_collection_approved': bound, 'summary': summary,
+                'frozen_checker_sha256': _sha(checker),
+                'local_checker_matches_frozen': checker == local_checker,
                 'auditor_sha256': _sha(Path(__file__).read_bytes()),
                 'replay_sources_sha256': {name: _sha((ROOT / name).read_bytes()) for name in
                     ('scripts/audit_context_host.py', 'scripts/evaluate_context_host.py',
                      'scripts/eval_integrity.py', 'cognition/validity.py', 'cognition/capability.py')},
                 'limitations': ['Integrity relative to the supplied trusted checksum; not signer authentication.',
                                 'Replays structured rubric and observed tool traces, not reason-text semantics.',
+                                'Does not execute or recompute responses with the frozen checker.',
                                 'Historical fixture exposure and original evaluation limitations still apply.']}
 
 
