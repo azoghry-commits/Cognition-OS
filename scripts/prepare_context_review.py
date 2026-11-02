@@ -1,8 +1,11 @@
 """Prepare a content-bound review request for a fresh context-validity suite."""
 import argparse
 import json
+import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 from scripts.eval_integrity import read_json_bytes, review_fingerprints
 from scripts.evaluate_context_host import (ACCEPTANCE_THRESHOLDS, validate_protocol,
                                            validate_suite, write_json)

@@ -1,4 +1,6 @@
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,6 +14,12 @@ def write_json(path, value):
 
 
 class ContextReviewTests(unittest.TestCase):
+    def test_direct_entrypoint_loads_from_repository_root(self):
+        script = Path(__file__).resolve().parents[1] / 'scripts/prepare_context_review.py'
+        run = subprocess.run([sys.executable, str(script), '--help'], capture_output=True, text=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertIn('--fixtures', run.stdout)
+
     def suite(self, root):
         cases = {'cases': []}
         labels = {'human_reviewed': False, 'labels': []}
