@@ -30,6 +30,8 @@ Cognition OS equips agents in **Codex, Claude, Antigravity, GitHub Copilot, VS C
 
 The host remains in charge of the task, tools, permissions, and final deliverable. Cognition OS does not require users to select frameworks or run a separate analysis application.
 
+**Repository type:** this is a dependency-free Python library and CLI packaged as a portable agent-host plugin. It is not a backend service or an infrastructure-as-code project: it has no server, database, network listener, Terraform, Kubernetes, or deployment control plane. Runtime helpers execute locally when a host explicitly invokes them.
+
 ## How it works
 
 ```mermaid
@@ -145,6 +147,8 @@ uv run --locked --extra dev python scripts/verify.py
 ### Optional routing diagnostics
 
 Set `COGNITION_LOG_LEVEL=DEBUG` when a host integration needs routing diagnostics. Cognition OS then emits one JSON object per supported routing event to stderr. The records contain only allowlisted operational fields such as the selected policy or resolved capability tier; task content is excluded. Any other value, including an unset variable or `INFO`, keeps these diagnostics disabled.
+
+Copy `.env.example` only when your local host loads environment files. The baseline plugin needs no credentials. See the [security model](docs/SECURITY_MODEL.md) for trust boundaries and threat coverage.
 
 ```powershell
 $env:COGNITION_LOG_LEVEL = "DEBUG"
