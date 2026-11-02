@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'.dev-deps'))
-from cognition import engine as e
+from cognition import engine as e  # noqa: E402
 
 
 def validate_release_metadata():

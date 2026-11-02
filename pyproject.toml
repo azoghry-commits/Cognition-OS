@@ -31,7 +31,7 @@ line-length = 120
 extend-exclude = ["dist", "videos"]
 
 [tool.ruff.lint]
-select = ["E9", "F", "I", "UP", "B"]
+select = ["E4", "E9", "F", "I", "UP", "B"]
 
 [tool.coverage.run]
 branch = true
