@@ -83,6 +83,28 @@ class HostEvalTests(unittest.TestCase):
             self.assertIn('Human label approval is required', run.stderr)
             self.assertFalse(output.exists())
 
+    def test_legacy_two_hash_approval_cannot_launch_fresh_confirmation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fixtures = Path(folder) / 'suite'
+            fixtures.mkdir()
+            cases = {'cases': [{'case_id': 'HE-01', 'split': 'held_out', 'input': EVAL_INPUT}]}
+            labels = {'labels': [{'case_id': 'HE-01', 'status': 'unknown',
+                                 'reuse_allowed': False, 'review_required': True,
+                                 'negative_control': False}]}
+            certificate = {'approved': True, **integrity.review_fingerprints(cases, labels)}
+            for name, value in [('cases.json', cases), ('labels.provisional.json', labels),
+                                ('human-review.json', certificate)]:
+                host.write_json(fixtures / name, value)
+            output = Path(folder) / 'must-not-exist'
+            args = ['evaluate_context_host.py', '--run', '--fixtures', str(fixtures), '--output', str(output)]
+            with (patch.object(sys, 'argv', args), patch.object(host, 'run_case') as invoke,
+                  redirect_stderr(io.StringIO())):
+                with self.assertRaises(SystemExit) as error:
+                    host.main()
+            self.assertEqual(error.exception.code, 2)
+            invoke.assert_not_called()
+            self.assertFalse(output.exists())
+
     def test_candidate_prompt_batches_reads_and_preserves_authority_boundary(self):
         prompt = host.build_prompt('DEV-01', 'candidate')
         self.assertIn('one tool call', prompt)

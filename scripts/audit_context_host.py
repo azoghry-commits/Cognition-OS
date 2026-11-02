@@ -33,7 +33,7 @@ def _sha(raw):
 
 def _frozen_member(path, prefix):
     normalized = path.replace('\\', '/')
-    for name in ('cases.json', 'labels.provisional.json', 'human-review.json'):
+    for name in ('cases.json', 'labels.provisional.json', 'human-review.json', 'protocol.json'):
         if normalized.endswith('/' + name):
             return prefix + 'suite-frozen/' + name
     if normalized.endswith('/scripts/evaluate_context_host.py'):
@@ -206,7 +206,11 @@ def audit_archive(path, expected_sha256, cohort):
                 if not evidence['workspace_read_observed'] or (arm == 'candidate' and not evidence['helper_executed']):
                     raise ValueError('Missing fixture-bound read/helper execution proof')
 
-        bound = has_bound_approval(cases_document, labels_document, review)
+        protocol_member = prefix + 'suite-frozen/protocol.json'
+        protocol = document(protocol_member) if protocol_member in frozen_names else None
+        if protocol is not None:
+            host.validate_protocol(protocol)
+        bound = has_bound_approval(cases_document, labels_document, review, protocol)
         if 'hash_scheme' in review and not bound:
             raise ValueError('Approval fingerprints do not match the frozen suite')
         # Historical reports retain their original approval policy. An archived,
@@ -246,7 +250,9 @@ def main():
         if args.command == 'fingerprints':
             cases = read_json_bytes((args.fixtures / 'cases.json').read_bytes())
             labels = read_json_bytes((args.fixtures / 'labels.provisional.json').read_bytes())
-            result = review_fingerprints(cases, labels)
+            protocol_path = args.fixtures / 'protocol.json'
+            protocol = read_json_bytes(protocol_path.read_bytes()) if protocol_path.exists() else None
+            result = review_fingerprints(cases, labels, protocol)
         else:
             if args.summary.stat().st_size > MAX_FILE_BYTES:
                 raise ValueError('Summary size limit exceeded')
