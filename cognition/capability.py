@@ -3,9 +3,8 @@
 import json
 import math
 
-from .orchestration import plan_execution
 from .log import debug
-
+from .orchestration import plan_execution
 
 TIERS = {"constrained", "balanced", "advanced", "unknown"}
 COMPLEXITIES = {"low", "medium", "high", "unknown"}

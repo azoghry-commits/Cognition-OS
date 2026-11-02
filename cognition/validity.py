@@ -1,7 +1,7 @@
 """Bounded, read-only applicability checks using explicit observed facts."""
+import hashlib
 import json
 import math
-import hashlib
 from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path, PureWindowsPath

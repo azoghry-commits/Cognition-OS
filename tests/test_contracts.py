@@ -1,8 +1,8 @@
 import collections
-import json
-import re
 import unittest
+
 from cognition import engine as e
+
 
 class ContractTests(unittest.TestCase):
     def test_all_models_define_v4_1_agent_consumable_contracts(self):

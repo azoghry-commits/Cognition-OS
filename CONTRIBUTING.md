@@ -23,4 +23,6 @@ Keep each contribution focused enough that a reviewer can understand the behavio
 
 Generated package archives, credentials, private data, machine-specific state, and unrelated files do not belong in a contribution. Changes to contracts, persistence, permissions, dependencies, or distribution require an explicit rationale and compatible migration or rollback notes.
 
+Dependabot checks the locked Python development tools and GitHub Actions every week. Review dependency freshness at least quarterly, and handle one dependency family per focused pull request. Run `uv lock --check` and the full verifier after any dependency change; do not add a runtime dependency solely to satisfy an external repository score.
+
 The repository has no public license grant. Discuss licensing with the maintainer before contributing code intended for redistribution.

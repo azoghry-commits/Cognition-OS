@@ -94,6 +94,8 @@ Run native acceptance per host, repair OpenClaw, refresh status documents, and r
 - Store no credential values, personal configuration contents, or private prompts in repository evidence.
 - Do not add runtime services, health endpoints, or dependencies solely to improve an external score. Architecture changes require a product or reliability need.
 - Rescan external quality services only after their underlying repository signals are fixed. Treat the resulting score as external evidence, not a promised outcome.
+- Treat library/CLI/plugin classification as a rescore prerequisite. Infrastructure-as-code, health endpoints, or deployment controls are out of scope unless a product requirement introduces a service boundary.
+- Expand Ruff in reviewable stages: `F`, `I`, `UP`, and `B` first; add compatible `E` rules in separate formatting-focused changes after measuring their diff and regression risk.
 
 ## 0.6.0 exit criteria
 

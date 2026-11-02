@@ -1,7 +1,11 @@
+import hashlib
+import json
+import subprocess
 from pathlib import Path
-from pypdf import PdfReader
+
 from PIL import Image, ImageDraw
-import subprocess, hashlib, json
+from pypdf import PdfReader
+
 root=Path.cwd()
 pdf=root/'Cognition_OS_Strategic_Intelligence.pdf'
 r=PdfReader(pdf)

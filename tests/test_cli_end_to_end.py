@@ -5,7 +5,6 @@ import tempfile
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "scripts" / "cognition.py"
 
@@ -87,7 +86,22 @@ class CliEndToEndTests(unittest.TestCase):
 
         self.assertEqual(result.returncode, 2)
         self.assertEqual(result.stdout, "")
-        self.assertEqual(json.loads(result.stderr)["status"], "FAILED")
+        error = json.loads(result.stderr)
+        self.assertEqual(error["status"], "FAILED")
+        self.assertEqual(error["error_code"], "INVALID_INPUT")
+        self.assertEqual(error["action"], "compute")
+
+    def test_missing_input_file_has_distinct_io_exit_code(self):
+        with tempfile.TemporaryDirectory() as directory:
+            missing = Path(directory) / "missing.json"
+            result = self.invoke("compute", input_path=missing)
+
+        self.assertEqual(result.returncode, 3)
+        self.assertEqual(result.stdout, "")
+        error = json.loads(result.stderr)
+        self.assertEqual(error["status"], "FAILED")
+        self.assertEqual(error["error_code"], "INPUT_IO_ERROR")
+        self.assertEqual(error["action"], "compute")
 
 
 if __name__ == "__main__":

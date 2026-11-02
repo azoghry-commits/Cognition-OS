@@ -1,7 +1,9 @@
 """Generate maintained project guides and derived source inventories."""
 import json
 import re
-from build_catalog import ROOT,write,VERSION
+
+from build_catalog import ROOT, VERSION, write
+
 
 def build():
     if VERSION != '0.1.0':
@@ -429,6 +431,6 @@ def traceability():
             if re.match(r'^#{1,3} \d',line):rows.append([f'V31-{n:04}',f'V3.1 line {n}: {line.lstrip("# ")}','SOURCE_DERIVED','Approved native-plugin direction','See component docs and phase status','Applicable contract/gate passes with actual evidence','PROJECT_STATUS; TEST_REPORT; RELEASE_CHECKLIST','IMPLEMENTED / remaining gates UNVERIFIED'])
     header='# Requirements traceability\n\nEvery source major section, all 50 model rows, each PDF page and V3.1 numbered section are inventoried below. Atomic subrequirements remain in their preserved source section; the table is a coverage inventory, not a claim that all behavioral acceptance gates passed.\n\nProvenance vocabulary: SOURCE_DERIVED, EXTERNALLY_VERIFIED, ENGINEERING_ADAPTATION, NEW_PROPOSAL, UNVERIFIED, CONFLICTING, BLOCKED. Status vocabulary: VERIFIED, IMPLEMENTED, TESTED, PARTIALLY_TESTED, PROPOSED, BLOCKED, UNVERIFIED, FAILED. Source corrections are CONFLICTING with explicit ENGINEERING_ADAPTATION decisions in SOURCE_ANALYSIS. Platform findings are EXTERNALLY_VERIFIED, live outcomes separately recorded.\n\n| Requirement | Source/reference and original scope | Provenance | Transformation | Component | Acceptance | Evidence | Status |\n|---|---|---|---|---|---|---|---|\n'
     write('docs/REQUIREMENTS_TRACEABILITY.md',header+'\n'.join('| '+' | '.join(str(c).replace('|','/') for c in r)+' |' for r in rows)+'\n')
-    write('docs/evidence/requirements.json',[dict(zip(['id','source','provenance','transformation','component','acceptance','evidence','status'],r)) for r in rows])
+    write('docs/evidence/requirements.json',[dict(zip(['id','source','provenance','transformation','component','acceptance','evidence','status'],r,strict=True)) for r in rows])
 
 if __name__=='__main__':build()

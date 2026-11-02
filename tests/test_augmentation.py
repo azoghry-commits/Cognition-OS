@@ -3,8 +3,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from tests.link_support import directory_link
+
 from cognition import augmentation as a
+from tests.link_support import directory_link
 
 
 def context(**changes):

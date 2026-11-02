@@ -1,9 +1,9 @@
 """Deterministic local artifacts; no publication, install or personal config writes."""
 import hashlib
 import json
-import sys
 import zipfile
 from pathlib import Path
+
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'plugin.json').read_text())['version']
 RUNTIME_DIRS=['skills','cognitive-core','cognition','schemas','references','templates','assets','agents','adapters','hooks']

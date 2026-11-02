@@ -1,9 +1,10 @@
 """Validate full JSON schemas when dev dependency exists, references and shared assets."""
+import importlib.metadata
 import json
 import re
 import sys
-import importlib.metadata
 from pathlib import Path
+
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'.dev-deps'))
 from cognition import engine as e

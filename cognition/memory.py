@@ -2,10 +2,12 @@
 import hashlib
 import json
 import re
-from datetime import datetime,timezone
+from datetime import datetime, timezone
 from pathlib import Path
+
 from .storage import MAX_RECORD_BYTES, read_record
 from .validity import check_memory, validate_applicability
+
 
 class CaseStore:
     def __init__(self,workspace):

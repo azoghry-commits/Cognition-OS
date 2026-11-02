@@ -12,7 +12,7 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts import evaluate_context_host as host
-from scripts.eval_integrity import read_json_bytes, review_fingerprints, has_bound_approval
+from scripts.eval_integrity import has_bound_approval, read_json_bytes, review_fingerprints
 
 MAX_FILE_BYTES = 8 * 1024 * 1024
 MAX_TOTAL_BYTES = 64 * 1024 * 1024

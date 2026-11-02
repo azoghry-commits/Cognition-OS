@@ -3,19 +3,33 @@ import argparse
 import json
 import sys
 from pathlib import Path
+
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from cognition import mathematics as m
-from cognition import engine as e
 from cognition import augmentation as a
-from cognition.memory import CaseStore
+from cognition import engine as e
+from cognition import mathematics as m
+from cognition.capability import capability_plan, evaluate_capability
 from cognition.improvement import ImprovementStore
+from cognition.memory import CaseStore
 from cognition.orchestration import plan_execution
 from cognition.scaffolding import select_scaffolding
-from cognition.capability import capability_plan, evaluate_capability
-from cognition.token_efficiency import token_plan, evaluate_efficiency
+from cognition.token_efficiency import evaluate_efficiency, token_plan
 from cognition.validity import check_memory, decision_impact, snapshot_evidence
 
 CALCULATIONS={k:getattr(m,k) for k in ['ev','expected_value','scenario_compare','bayes','bayes_sequence','rice','decision_matrix','break_even','cost_benefit','sensitivity','simulate','pareto','critical_path','stock_flow']}
+
+
+def failure_response(action, error):
+    if isinstance(error, OSError):
+        code = 'INPUT_IO_ERROR'
+        exit_code = 3
+    elif isinstance(error, RecursionError):
+        code = 'INPUT_LIMIT_EXCEEDED'
+        exit_code = 2
+    else:
+        code = 'INVALID_INPUT'
+        exit_code = 2
+    return {'status':'FAILED','error_code':code,'action':action,'error':str(error)},exit_code
 
 def dispatch(action,data):
     if action=='memory-check':return check_memory(**data)
@@ -65,7 +79,8 @@ def main():
         print(json.dumps(result,ensure_ascii=True,indent=2,allow_nan=False))
         return 0
     except (ValueError,TypeError,KeyError,OverflowError,OSError,RecursionError,json.JSONDecodeError) as error:
-        print(json.dumps({'status':'FAILED','error':str(error)},ensure_ascii=True),file=sys.stderr)
-        return 2
+        failure,exit_code=failure_response(args.action,error)
+        print(json.dumps(failure,ensure_ascii=True),file=sys.stderr)
+        return exit_code
 
 if __name__=='__main__':sys.exit(main())
