@@ -1,16 +1,16 @@
-import json
 import hashlib
 import io
-from contextlib import redirect_stderr
-from unittest.mock import patch
-import tempfile
+import json
 import subprocess
 import sys
+import tempfile
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
+from unittest.mock import patch
 
-from scripts import evaluate_context_host as host
 from scripts import eval_integrity as integrity
+from scripts import evaluate_context_host as host
 
 EVAL_INPUT = {'record': {'title': 'Legacy'}, 'context': {}, 'now': '2026-10-23T12:00:00Z'}
 HELPER_RESULT = {'schema_version': '1.0', 'status': 'unknown', 'checked_at': '2026-10-23T12:00:00+00:00',

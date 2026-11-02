@@ -2,7 +2,6 @@
 
 from collections import deque
 
-
 STRATEGIES = {"AUTO", "SEQUENTIAL", "PARALLEL", "HYBRID"}
 
 

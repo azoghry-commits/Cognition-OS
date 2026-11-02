@@ -6,13 +6,16 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 import unittest
 import zipfile
 from pathlib import Path
-from cognition.engine import ROOT
+
+import tomllib
+
 from cognition import __version__
-from scripts.package_release import runtime_files,archive
+from cognition.engine import ROOT
+from scripts.package_release import archive, runtime_files
+
 
 class PackagingTests(unittest.TestCase):
     def test_generator_preserves_codex_hook_metadata(self):

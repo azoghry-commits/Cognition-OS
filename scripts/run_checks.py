@@ -6,10 +6,12 @@ import shutil
 import subprocess
 import sys
 import unittest
-from datetime import datetime,timezone
+from datetime import datetime, timezone
 from pathlib import Path
+
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from scripts.validate_package import validate
+
 
 def main():
     suite=unittest.defaultTestLoader.discover(str(ROOT/'tests'))

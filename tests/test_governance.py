@@ -1,10 +1,11 @@
-import json
 import tempfile
 import unittest
 from pathlib import Path
+
 from cognition import engine as e
 from cognition.memory import CaseStore
 from tests.link_support import directory_link
+
 
 class GovernanceTests(unittest.TestCase):
     def claim(self,kind='SOURCE_SUPPORTED',refs=None):return {'id':'c','text':'Claim','classification':kind,'evidence_ids':['e'] if refs is None else refs}

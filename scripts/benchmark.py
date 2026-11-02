@@ -5,8 +5,10 @@ import statistics
 import sys
 import time
 from pathlib import Path
+
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from cognition.mathematics import simulate
+
 
 def run():
     inputs=json.loads((ROOT/'references/examples/simulation.json').read_text())['inputs']

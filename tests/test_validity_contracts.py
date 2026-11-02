@@ -9,6 +9,7 @@ import zipfile
 from pathlib import Path
 
 import jsonschema
+
 from cognition.validity import check_memory
 from scripts import package_release
 from tests.test_validity import NOW, context, record

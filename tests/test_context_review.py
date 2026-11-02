@@ -5,8 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts import eval_integrity
-from scripts import prepare_context_review
+from scripts import eval_integrity, prepare_context_review
 
 
 def write_json(path, value):

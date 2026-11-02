@@ -1,10 +1,9 @@
 import json
 import tempfile
 import unittest
-from pathlib import Path
 
-from cognition.memory import CaseStore
 from cognition.improvement import ImprovementStore
+from cognition.memory import CaseStore
 from cognition.storage import MAX_RECORD_BYTES
 
 

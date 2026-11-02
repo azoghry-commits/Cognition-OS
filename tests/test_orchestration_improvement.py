@@ -1,6 +1,5 @@
 import tempfile
 import unittest
-from pathlib import Path
 
 from cognition.improvement import ImprovementStore
 from cognition.orchestration import plan_execution

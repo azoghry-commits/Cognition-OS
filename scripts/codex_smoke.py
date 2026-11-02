@@ -2,10 +2,10 @@
 import argparse
 import json
 import os
-from pathlib import Path
 import shutil
 import subprocess
 import time
+from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 INSTALLED=Path.home()/'.codex/plugins/cache/cognition-os-local/cognition-os/0.1.0'

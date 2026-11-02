@@ -57,7 +57,7 @@ def expected_value(outcomes, costs, unit):
     ps=[number(o['probability'],'probability',0,1) for o in outcomes]
     if not math.isclose(math.fsum(ps),1,rel_tol=0,abs_tol=1e-10): raise ValueError('Probabilities must sum to one')
     if any(o.get('unit',unit)!=unit for o in outcomes): raise ValueError('Mixed outcome units')
-    g=math.fsum(p*number(o['payoff'],'payoff') for p,o in zip(ps,outcomes))
+    g=math.fsum(p*number(o['payoff'],'payoff') for p,o in zip(ps,outcomes,strict=True))
     return finite_result({'gross_ev':g,'net_ev':g-number(costs,'costs',0),'unit':unit_name(unit),'classification':'CALCULATED_RESULT'})
 
 
@@ -137,7 +137,7 @@ def cost_benefit(costs, benefits, discount_rate, unit, period):
     if not costs or len(costs)!=len(benefits): raise ValueError('Equal nonempty period series required, starting at t=0')
     r=number(discount_rate,'discount_rate',0); unit_name(unit); unit_name(period)
     pv_c=0; pv_b=0
-    for t,(c,b) in enumerate(zip(costs,benefits)):
+    for t,(c,b) in enumerate(zip(costs,benefits,strict=True)):
         factor=(1+r)**(-t)
         pv_c+=number(c,'cost',0)*factor; pv_b+=number(b,'benefit',0)*factor
     return finite_result({'npv':pv_b-pv_c,'bcr':pv_b/pv_c if pv_c else None,'bcr_note':'undefined when discounted costs are zero' if pv_c==0 else None,'pv_costs':pv_c,'pv_benefits':pv_b,'unit':unit,'period':period,'t0':'first series entry'})
@@ -236,7 +236,7 @@ def stock_flow(initial_stock, inflows, outflows, time_step, stock_unit, time_uni
     s=number(initial_stock,'initial_stock',0); dt=number(time_step,'time_step',0)
     if not dt or len(inflows)!=len(outflows): raise ValueError('Positive time step and equal series required')
     series=[s]
-    for i,o in zip(inflows,outflows):
+    for i,o in zip(inflows,outflows,strict=True):
         s=s+(number(i,'inflow',0)-number(o,'outflow',0))*dt
         if s<0: raise ValueError('Outflow exceeds available stock; supply a constrained flow model')
         series.append(finite_result(s))

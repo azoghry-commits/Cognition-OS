@@ -1,7 +1,9 @@
 import math
 import unittest
 from decimal import Decimal
+
 from cognition import mathematics as m
+
 
 class MathematicsTests(unittest.TestCase):
     def test_ev_independent_decimal(self):
