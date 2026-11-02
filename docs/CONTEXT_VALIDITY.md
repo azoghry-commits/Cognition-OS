@@ -79,4 +79,4 @@ The [corrected v2 cohort](NATIVE_CONTEXT_VALIDITY_EVALUATION_V2.md) met product 
 
 ## Bound approval and reproducible replay
 
-New nonpilot host runs require the reviewed case/label canonical SHA-256 fingerprints in human-review.json. A changed suite or legacy unbound certificate cannot authorize collection. Historical results retain their original approval policy; [offline auditing](OFFLINE_EVALUATION_AUDIT.md) verifies complete frozen bundles without executing models or archived code.
+New nonpilot host runs require a fresh `protocol.json` and reviewed canonical SHA-256 fingerprints for the cases, provisional labels, and protocol in `human-review.json`. The protocol binds the unconsumed-suite status, host model/reasoning settings, and the exact acceptance thresholds used by the collector. A missing protocol, changed suite/threshold, consumed status, or legacy unbound certificate cannot authorize collection. Use the [review-packet workflow](OFFLINE_EVALUATION_AUDIT.md) before approval. Historical results retain their original approval policy; offline auditing verifies complete frozen bundles without executing models or archived code.

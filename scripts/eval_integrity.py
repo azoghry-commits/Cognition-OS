@@ -28,13 +28,16 @@ def json_fingerprint(value):
     return hashlib.sha256(encoded.encode('utf-8')).hexdigest()
 
 
-def review_fingerprints(cases, labels):
-    return {'hash_scheme': HASH_SCHEME, 'cases_sha256': json_fingerprint(cases),
-            'labels_sha256': json_fingerprint(labels)}
+def review_fingerprints(cases, labels, protocol=None):
+    fingerprints = {'hash_scheme': HASH_SCHEME, 'cases_sha256': json_fingerprint(cases),
+                    'labels_sha256': json_fingerprint(labels)}
+    if protocol is not None:
+        fingerprints['protocol_sha256'] = json_fingerprint(protocol)
+    return fingerprints
 
 
-def has_bound_approval(cases, labels, certificate):
+def has_bound_approval(cases, labels, certificate, protocol=None):
     if not isinstance(certificate, dict) or certificate.get('approved') is not True:
         return False
-    expected = review_fingerprints(cases, labels)
+    expected = review_fingerprints(cases, labels, protocol)
     return all(certificate.get(key) == value for key, value in expected.items())

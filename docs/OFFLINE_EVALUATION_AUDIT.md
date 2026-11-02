@@ -8,11 +8,19 @@ New nonpilot host collection requires approval tied to the exact reviewed JSON c
 uv run --locked --extra dev python scripts/audit_context_host.py fingerprints --fixtures tests/native-evals/context-validity-v2
 ```
 
-This prints hash_scheme, cases_sha256 and labels_sha256. It does not grant approval or modify any files. For a new suite, show the cases, provisional labels and these fingerprints to the human reviewer. After explicit approval, record approved=true, the reviewer statement/time and those exact fingerprint fields in human-review.json. Never refresh an old certificate automatically after changing inputs; obtain review of the changed content first.
+For a fresh suite, create `protocol.json` with `suite_status: UNCONSUMED`, the collector model and reasoning effort, and the acceptance thresholds defined in `scripts/evaluate_context_host.py`. Then prepare the review packet:
+
+```powershell
+uv run --locked --extra dev python scripts/prepare_context_review.py --fixtures tests/native-evals/<fresh-suite>
+```
+
+The command validates the case/label IDs, held-out split, minimum 20 cases, minimum 10 negative controls, fixed host settings, and frozen thresholds. It writes `review-request.json` with `approved: false` and the canonical hashes of cases, labels, and protocol. It does not invoke a host or grant approval.
+
+The `fingerprints` command prints the same three content hashes when `protocol.json` exists. For a new suite, show all three inputs and the review request to an independent reviewer. After explicit semantic approval, record `approved: true`, reviewer evidence, and the exact `cases_sha256`, `labels_sha256`, and `protocol_sha256` fields in `human-review.json`. Never refresh an old certificate automatically after changing inputs; obtain review of the changed content first.
 
 The scheme is canonical-json-sha256-v1: finite JSON serialized with sorted object keys, compact separators and ASCII escapes. Formatting, key order and platform line endings do not change approval. Values, types, array order and metadata changes do. Duplicate JSON keys and nonfinite numbers are rejected. Hashes bind content; they do not authenticate the human reviewer or prevent someone with write access from falsifying a certificate.
 
-A missing or mismatched binding blocks --run before creating output or calling the host. --pilot still uses its separate development case; preparing without --run remains possible and reports human_reviewed=false for historical unbound certificates. Consumed suites are diagnostic material, never fresh held-out evidence.
+A missing protocol, changed threshold, consumed status, or mismatched binding blocks `--run` before creating output or calling the host. `--pilot` still uses its separate development case; preparing without `--run` remains possible and reports `human_reviewed=false` for historical unbound certificates. Consumed suites are diagnostic material, never fresh held-out evidence.
 
 ## Offline replay
 

@@ -29,6 +29,15 @@ OUTPUT_SCHEMA = {
                    'reason': {'type': 'string'}}}
 
 HOST_MODEL = 'gpt-5.6-luna'
+ACCEPTANCE_THRESHOLDS = {
+    'minimum_paired_cases': 20,
+    'minimum_negative_controls': 10,
+    'minimum_precision': 0.90,
+    'minimum_recall': 0.90,
+    'maximum_false_positive_rate': 0.10,
+    'maximum_median_latency_overhead': 0.20,
+    'maximum_critical_errors': 0,
+}
 
 
 def host_command(cli, workspace, schema, response):
@@ -223,17 +232,24 @@ def summarize(baseline, candidate, labels, human_reviewed=False,
     median_overhead = statistics.median(ratios) if ratios else None
     c = metrics['candidate']
     gates = {'human_labels_reviewed': human_reviewed is True,
-             'enough_pairs': len(paired) >= 20 and paired == set(expected),
-             'negative_controls': sum(label.get('negative_control') is True for label in labels) >= 10,
+             'enough_pairs': len(paired) >= ACCEPTANCE_THRESHOLDS['minimum_paired_cases']
+             and paired == set(expected),
+             'negative_controls': sum(label.get('negative_control') is True for label in labels)
+             >= ACCEPTANCE_THRESHOLDS['minimum_negative_controls'],
              'execution_complete': c['execution_errors'] == 0 and metrics['baseline']['execution_errors'] == 0,
              'candidate_helper_observed': bool(candidate) and c['helper_executions'] == len(candidate),
              'workspace_reads_observed': bool(baseline and candidate) and all(
                  evidence_resolver(run)['workspace_read_observed'] for run in baseline + candidate),
-             'precision': c['precision'] is not None and c['precision'] >= .9,
-             'recall': c['recall'] is not None and c['recall'] >= .9,
-             'false_positive_rate': c['false_positive_rate'] is not None and c['false_positive_rate'] <= .1,
-             'latency': median_overhead is not None and median_overhead <= .2,
-             'no_observed_critical_error': not any(row['critical_error'] for row in comparisons['candidate'])}
+             'precision': c['precision'] is not None
+             and c['precision'] >= ACCEPTANCE_THRESHOLDS['minimum_precision'],
+             'recall': c['recall'] is not None
+             and c['recall'] >= ACCEPTANCE_THRESHOLDS['minimum_recall'],
+             'false_positive_rate': c['false_positive_rate'] is not None
+             and c['false_positive_rate'] <= ACCEPTANCE_THRESHOLDS['maximum_false_positive_rate'],
+             'latency': median_overhead is not None
+             and median_overhead <= ACCEPTANCE_THRESHOLDS['maximum_median_latency_overhead'],
+             'no_observed_critical_error': sum(row['critical_error'] for row in comparisons['candidate'])
+             <= ACCEPTANCE_THRESHOLDS['maximum_critical_errors']}
     capability = None
     if paired and set(before) == set(after):
         capability = evaluate_capability(comparisons['baseline'], comparisons['candidate'])
@@ -343,6 +359,17 @@ def validate_suite(cases, labels):
             validate_applicability(payload['record']['applicability'])
 
 
+def validate_protocol(protocol):
+    if not isinstance(protocol, dict):
+        raise ValueError('Fresh confirmation requires protocol.json')
+    if protocol.get('suite_status') != 'UNCONSUMED':
+        raise ValueError('Fresh confirmation requires suite_status=UNCONSUMED')
+    if protocol.get('model') != HOST_MODEL or protocol.get('reasoning_effort') != 'low':
+        raise ValueError('Protocol host settings do not match the collector')
+    if protocol.get('thresholds') != ACCEPTANCE_THRESHOLDS:
+        raise ValueError('Protocol thresholds do not match the collector')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', action='store_true', help='Actually invoke authenticated Codex CLI')
@@ -354,16 +381,23 @@ def main():
     parser.add_argument('--pilot', action='store_true', help='Use a separate development case, not held-out cases')
     args = parser.parse_args()
     fixtures = args.fixtures.resolve()
+    protocol_path = fixtures / 'protocol.json'
     paths = [fixtures / 'cases.json', fixtures / 'labels.provisional.json', fixtures / 'human-review.json',
              ROOT / 'scripts/evaluate_context_host.py', ROOT / 'docs/CONTEXT_VALIDITY.md']
+    if protocol_path.exists():
+        paths.append(protocol_path)
     cases_document = read_json_bytes(paths[0].read_bytes())
     labels_document = read_json_bytes(paths[1].read_bytes())
+    protocol_document = read_json_bytes(protocol_path.read_bytes()) if protocol_path.exists() else None
     cases = cases_document['cases']
     labels = labels_document['labels']
-    reviewed = has_bound_approval(cases_document, labels_document, read_json_bytes(paths[2].read_bytes()))
-    if args.run and not args.pilot and not reviewed:
-        parser.error('Human label approval is required and must match current case/label fingerprints')
+    reviewed = has_bound_approval(cases_document, labels_document, read_json_bytes(paths[2].read_bytes()),
+                                  protocol_document)
+    if args.run and not args.pilot and (protocol_document is None or not reviewed):
+        parser.error('Human label approval is required and must match current case, label, and protocol fingerprints')
     validate_suite(cases, labels)
+    if protocol_document is not None:
+        validate_protocol(protocol_document)
     if not 1 <= args.limit <= 20 or not 15 <= args.timeout <= 300:
         parser.error('limit must be 1..20 and timeout 15..300')
     sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
