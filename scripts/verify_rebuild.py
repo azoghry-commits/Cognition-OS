@@ -11,8 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from package_release import runtime_files
-from validate_package import validate
+from package_release import runtime_files  # noqa: E402
+from validate_package import validate  # noqa: E402
 
 
 def snapshot():

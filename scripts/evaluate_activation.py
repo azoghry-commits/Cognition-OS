@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from cognition.augmentation import assess
+from cognition.augmentation import assess  # noqa: E402
 
 
 def cases():

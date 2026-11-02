@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from cognition.augmentation import SCHEMAS
+from cognition.augmentation import SCHEMAS  # noqa: E402
 
 
 def write(path, data):

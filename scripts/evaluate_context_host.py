@@ -16,9 +16,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from cognition.capability import evaluate_capability
-from cognition.validity import check_memory, validate_applicability
-from scripts.eval_integrity import has_bound_approval, read_json_bytes
+from cognition.capability import evaluate_capability  # noqa: E402
+from cognition.validity import check_memory, validate_applicability  # noqa: E402
+from scripts.eval_integrity import has_bound_approval, read_json_bytes  # noqa: E402
 
 OUTPUT_SCHEMA = {
     'type': 'object', 'additionalProperties': False,
