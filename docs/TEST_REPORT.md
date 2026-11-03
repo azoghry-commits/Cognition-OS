@@ -1,5 +1,25 @@
 # Observed verification report
 
+## Current local verification — 2026-11-03
+
+Package 0.5.0, source baseline `6cdd137` with documentation-only working changes.
+`uv run --locked --extra dev python scripts/verify.py` exited 0 on Windows:
+dependency audit, Ruff, mypy, direct test discovery, 186 passed tests,
+1 skipped test, 293 passed subtests, 85% runtime coverage, package validation,
+and local archive construction. The audit skipped the local unpublished
+`cognition-os` project itself; no known vulnerabilities were reported for audited dependencies.
+Package validation observed 50 frameworks, 52 logical roles, and 12 skills.
+
+Read-only version probes returned Codex CLI 0.153.0, OpenCode 1.18.27,
+and OpenClaw 2026.10.9. Version probes do not establish native acceptance.
+See NATIVE_HOST_EVIDENCE_2026-10-27.md for the earlier observed controls:
+Codex explicit use passed, implicit use did not activate, and its negative
+control passed; OpenCode project-skill positive and negative controls passed.
+Fresh release-candidate host behavior, held-out quality confirmation, OpenClaw
+acceptance, and licensing remain open.
+
+## Historical baseline
+
 Evidence timestamp: 2026-10-20T03:03:24.009458+00:00. Python 3.13.15. Package 0.1.0 / specification 3.1.
 
 | Check | Observed result | Evidence |

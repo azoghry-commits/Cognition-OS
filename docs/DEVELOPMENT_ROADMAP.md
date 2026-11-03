@@ -39,7 +39,7 @@ Cognition OS should provide portable cognitive assistance that agent hosts can d
 | --- | --- | --- |
 | P0.1 Reliable direct test discovery | Complete | Merged in PR 14; direct collection and the post-merge Windows/Ubuntu workflow passed |
 | P0.2 Credential remediation | Complete for the audited local OpenCode/9Remote instance | The credential was replaced atomically, active JSON and state matched, inherited file access was removed, the new credential returned HTTP 200 from the MCP endpoint, a non-current credential returned HTTP 401, and OpenCode reported the server connected. No credential value is stored in repository evidence |
-| P0.3 Context-validity change review | Partially complete | Focused slices merged bounded persistence in PR 15, opt-in structured routing diagnostics in PR 16, read-only validity and decision impact in PR 17, generator hardening in PRs 18–19, and Dev Container reproducibility in PR 24. The final offline evaluator and evidence-integrity slice remains in open PR 11; its older green checks do not validate it against current main. |
+| P0.3 Context-validity change review | Implemented in focused slices; legacy PR reconciliation pending | PRs 15–19 and 24 delivered the runtime, generator, and container work. PR 25 delivered frozen offline evidence audit; PR 27 additionally bound review protocols to approval. Current focused offline, native-evaluator, and review-packet tests pass. PR 11 is a historical aggregate, not evidence of missing implementation; compare remaining differences before closing it as superseded. |
 | P1.4 Documentation and release hygiene | Partial | The active checklist and canonical test plan now agree on package 0.5.0 and the pytest verifier, and package validation rejects drift. Native acceptance, OpenClaw disposition, current test-report refresh, and the owner's license/distribution decision remain open. |
 | Continuous style maintenance | In progress | PRs 30–38 incrementally expanded Ruff coverage and passed cross-platform CI. This improves maintainability but does not establish host quality or a higher external score. |
 
@@ -69,7 +69,7 @@ uv run --locked --extra dev python scripts/verify.py
 
 ### PR B — land context validity in reviewable slices
 
-Status: partially complete. PR 11 remains open. Compare its final offline evaluator and evidence-integrity changes with current main, extract only missing behavior into a focused source-and-test PR, and run current CI before closing or superseding PR 11.
+Status: implemented through focused PRs, including offline audit in PR 25 and protocol approval in PR 27. PR 11 remains a historical aggregate. Its old branch would remove newer tests and protocol binding if used as a replacement for current main. Reconcile residual evidence-only differences before closing it as superseded.
 
 Rebase the context-validity work on current main and resolve the platform-specific evaluator finding. Prefer three focused slices when that reduces review risk:
 

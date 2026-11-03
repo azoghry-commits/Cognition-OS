@@ -25,4 +25,4 @@ Generated package archives, credentials, private data, machine-specific state, a
 
 Dependabot checks the locked Python development tools and GitHub Actions every week. Review dependency freshness at least quarterly, and handle one dependency family per focused pull request. Run `uv lock --check` and the full verifier after any dependency change; do not add a runtime dependency solely to satisfy an external repository score.
 
-The repository has no public license grant. Discuss licensing with the maintainer before contributing code intended for redistribution.
+The project is licensed under Apache-2.0 (see LICENSE). Unless explicitly agreed otherwise, contributions are submitted under the same license. Preserve third-party copyright and license notices.

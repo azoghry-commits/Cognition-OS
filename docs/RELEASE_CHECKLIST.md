@@ -18,7 +18,8 @@ This package is an engineering candidate, not a production-certified release. Re
 - [ ] Complete adversarial host evaluations and permission-denial/fallback tests.
 - [ ] Collect independently reviewable held-out native quality, latency, token, and critical-error results under frozen thresholds.
 - [ ] Accept OpenClaw natively or record its current unsupported state with bounded failure evidence.
-- [ ] Owner confirms licensing/distribution terms and explicitly authorizes external publication.
+- [x] Owner selected Apache-2.0 on 2026-11-03; LICENSE and package metadata declare the license.
+- [ ] Review third-party source rights and explicitly authorize a public release.
 
 Release policy: preserve versioned ZIP and SHA-256, verify archive inventory, smoke after install, keep rollback version and project cases outside cache. No public upload or marketplace publication is performed by the local packaging script. Upgrade regenerates adapters from canonical core and reruns checks; rollback restores a reviewed prior artifact with schema compatibility review. A passed deterministic test suite cannot close the behavioral or licensing gates.
 

@@ -7,6 +7,8 @@ name = "cognition-os"
 version = "0.5.0"
 description = "Portable cognitive assistance for agent hosts"
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{ name = "Cognition OS project" }]
 dependencies = []
