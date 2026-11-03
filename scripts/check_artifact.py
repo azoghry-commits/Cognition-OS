@@ -12,10 +12,20 @@ def main():
         raw = sys.stdin.buffer.read(262145)
         if len(raw) > 262144:
             raise ValueError('Hook payload exceeds bound')
-        payload = json.loads(raw, parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Nonfinite payload')))
+        payload = json.loads(
+            raw,
+            parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Nonfinite payload')),
+        )
         print(json.dumps(handle_event(payload), ensure_ascii=True))
     except (ValueError, TypeError, OSError, RecursionError):
-        print(json.dumps({'systemMessage': 'Cognition OS advisory hook unavailable: input or artifact could not be inspected. No validation success is claimed.'}))
+        print(
+            json.dumps(
+                {
+                    'systemMessage': 'Cognition OS advisory hook unavailable: input or artifact could not be '
+                    'inspected. No validation success is claimed.'
+                }
+            )
+        )
     return 0
 
 
