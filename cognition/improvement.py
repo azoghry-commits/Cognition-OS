@@ -142,5 +142,12 @@ class ImprovementStore:
         for path in sorted(base.glob("*.json")):
             record = self._read(path.stem)
             if state is None or record["state"] == state:
-                records.append({"id": path.stem, "title": record["observation"]["title"], "state": record["state"], "updated_at": record["updated_at"]})
+                records.append(
+                    {
+                        "id": path.stem,
+                        "title": record["observation"]["title"],
+                        "state": record["state"],
+                        "updated_at": record["updated_at"],
+                    }
+                )
         return records
