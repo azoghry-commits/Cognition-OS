@@ -69,7 +69,7 @@ uv run --locked --extra dev python scripts/verify.py
 
 ### PR B — land context validity in reviewable slices
 
-Status: implemented through focused PRs, including offline audit in PR 25 and protocol approval in PR 27. PR 11 remains a historical aggregate. Its old branch would remove newer tests and protocol binding if used as a replacement for current main. Reconcile residual evidence-only differences before closing it as superseded.
+Status: implemented through focused PRs, including offline audit in PR 25 and protocol approval in PR 27. Historical aggregate PR 11 was closed as superseded on 2026-11-03; its branch remains available for provenance. Apache-2.0 was adopted in PR 40. The owner's AI-generated source declaration and bounded asset inspection are recorded in MATERIAL_PROVENANCE.md. Native acceptance and independently reviewed held-out confirmation remain open.
 
 Rebase the context-validity work on current main and resolve the platform-specific evaluator finding. Prefer three focused slices when that reduces review risk:
 
