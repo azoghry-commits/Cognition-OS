@@ -119,12 +119,21 @@ def _cases(records, label):
         raise ValueError(f"{label} cases are required")
     output = {}
     for record in records:
-        if not isinstance(record, dict) or not isinstance(record.get("case_id"), str) or not record["case_id"]:
+        if (
+            not isinstance(record, dict)
+            or not isinstance(record.get("case_id"), str)
+            or not record["case_id"]
+        ):
             raise ValueError(f"Invalid {label} case")
         if record["case_id"] in output:
             raise ValueError(f"Duplicate {label} case id")
         score = record.get("score")
-        if isinstance(score, bool) or not isinstance(score, (int, float)) or not math.isfinite(score) or not 0 <= score <= 1:
+        if (
+            isinstance(score, bool)
+            or not isinstance(score, (int, float))
+            or not math.isfinite(score)
+            or not 0 <= score <= 1
+        ):
             raise ValueError(f"Invalid {label} score")
         critical_error = record.get("critical_error", False)
         if not isinstance(critical_error, bool):
@@ -189,5 +198,8 @@ def evaluate_capability(baseline, candidate, minimum_pairs=20, minimum_effect=0.
         "critical_regressions": critical_regressions,
         "thresholds": {"minimum_pairs": minimum_pairs, "minimum_effect": minimum_effect, "alpha": alpha},
         "gates": gates,
-        "limitations": ["This evaluates the supplied paired cases only; representativeness, judge quality, latency, and cost need separate evidence."],
+        "limitations": [
+            "This evaluates the supplied paired cases only; representativeness, judge quality, latency, and cost "
+            "need separate evidence."
+        ],
     }
