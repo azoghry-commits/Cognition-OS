@@ -219,7 +219,7 @@ We welcome contributions that make Cognition OS more useful, reliable, and hones
 
 Contributions are reviewed for scope, correctness, security, maintainability, and evidence quality. A submission is not accepted until a maintainer approves and merges it. Please discuss changes that introduce new dependencies, alter security boundaries, or change the V4.1 design before investing in a large implementation.
 
-**Licensing and distribution are still project gates.** The repository currently does not declare an open-source license. Before contributing code, please open an issue to discuss the proposed contribution and its licensing; do not assume that a pull request grants permission to redistribute your work. See the [release checklist](docs/RELEASE_CHECKLIST.md).
+Licensed under [Apache License 2.0](LICENSE). Contributions are accepted under the same license unless explicitly agreed otherwise. Third-party materials retain their respective rights and notices. See the [release checklist](docs/RELEASE_CHECKLIST.md) for release acceptance.
 
 </details>
 
@@ -233,7 +233,7 @@ The **V4.1 package candidate is implemented and locally checked**. Native accept
 | Routing | Authored deterministic cases check the activation rules; they are not observed model choices |
 | Cross-host package | Codex, Claude, Antigravity, Copilot, VS Code, OpenCode, Command Code, OpenClaw, and Hermes have separate acceptance requirements; evidence on one does not certify another |
 | Comparative outcomes | A/B/C/D host evaluation and measured quality, overhead, and latency remain open |
-| Release | Licensing and distribution approval remain open gates |
+| Release | Apache-2.0 selected; native acceptance and release publication remain separate gates |
 
 Read the active [development roadmap](docs/DEVELOPMENT_ROADMAP.md), [rebuild status](docs/REBUILD_STATUS_V4_1.md), [platform verification](docs/PLATFORM_VERIFICATION_V4_1.md), [migration plan](docs/V4_1_MIGRATION_PLAN.md), and [changelog](CHANGELOG.md) for details. The retired blueprint and strategic PDF are no longer required by the build or distributed repository; the canonical generated catalog and provenance fields remain.
 

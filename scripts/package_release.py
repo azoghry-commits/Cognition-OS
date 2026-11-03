@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'plugin.json').read_text())['version']
 RUNTIME_DIRS=['skills','cognitive-core','cognition','schemas','references','templates','assets','agents','adapters','hooks']
 SCRIPTS=['scripts/cognition.py','scripts/check_artifact.py']
-RUNTIME_FILES=['plugin.json','openclaw.plugin.json','.claude-plugin/plugin.json','.codex-plugin/plugin.json','README.md','CHANGELOG.md']
+RUNTIME_FILES=['plugin.json','openclaw.plugin.json','.claude-plugin/plugin.json','.codex-plugin/plugin.json','README.md','CHANGELOG.md','LICENSE']
 
 def runtime_files():
     files=[ROOT/f for f in RUNTIME_FILES+SCRIPTS]
@@ -38,7 +38,7 @@ def package():
         'description':'Cognition OS portable skills, orchestration and governed improvement.'},indent=2)+'\n').encode()
     antigravity_items.append(('plugin.json',antigravity_manifest))
     antigravity=dist/f'cognition-os-antigravity-{VERSION}.zip';archive(antigravity,antigravity_items)
-    qa_files=[]
+    qa_files=[ROOT/'LICENSE']
     for directory in ['tests','scripts']:
         qa_files.extend(p for p in (ROOT/directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
     qa_files.extend(p for p in (ROOT/'docs/evidence').glob('*.json'))
