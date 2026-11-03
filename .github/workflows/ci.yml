@@ -23,7 +23,8 @@ jobs:
         run: >-
           uv run --locked --extra dev ruff check cognition/artifact_validation.py cognition/capability.py
           cognition/improvement.py scripts/check_artifact.py scripts/host_probe.py
-          scripts/prepare_local_marketplace.py --select E501,E701,E702
+          scripts/prepare_local_marketplace.py scripts/prepare_desktop_catalog.py
+          --select E501,E701,E702
       - run: uv run --locked --extra dev mypy cognition
       - run: uv run --locked --extra dev pytest --collect-only -q
       - run: uv run --locked --extra dev coverage run -m pytest
