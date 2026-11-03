@@ -19,6 +19,8 @@ jobs:
       - run: uv sync --locked --extra dev
       - run: uv run --locked --extra dev pip-audit --progress-spinner off
       - run: uv run --locked --extra dev ruff check cognition scripts tests
+      - name: Enforce staged style cleanup
+        run: uv run --locked --extra dev ruff check cognition/artifact_validation.py --select E501,E701,E702
       - run: uv run --locked --extra dev mypy cognition
       - run: uv run --locked --extra dev pytest --collect-only -q
       - run: uv run --locked --extra dev coverage run -m pytest
